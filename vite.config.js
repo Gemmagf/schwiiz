@@ -3,9 +3,13 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 // PWA offline-first: precache l'app shell, funciona sense connexió i és instal·lable.
-// base './' perquè funcioni també servida des d'una subcarpeta (GitHub Pages).
-export default defineConfig({
-  base: './',
+//
+// base: a GitHub Pages l'app penja de /schwiiz/, no de l'arrel. El service worker
+// necessita rutes absolutes correctes per al navigateFallback, així que en build
+// s'hi posa la subcarpeta. En desenvolupament es queda a l'arrel.
+// Si algun dia la mous a un domini propi o a l'arrel, canvia-ho aquí.
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/schwiiz/' : '/',
   plugins: [
     react(),
     VitePWA({
@@ -33,4 +37,4 @@ export default defineConfig({
       }
     })
   ]
-})
+}))
