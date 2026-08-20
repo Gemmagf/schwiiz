@@ -19,7 +19,7 @@ function streak(sessions) {
   return n
 }
 
-export default function Dashboard({ vocab, srs, quiz, sessions, onStart, onGoTo }) {
+export default function Dashboard({ vocab = [], srs, quiz, sessions, onStart, onGoTo }) {
   const s = stats(vocab, srs)
   const pendents = s.nous + s.arepassar
   const pct = s.total ? Math.round((s.apresos / s.total) * 100) : 0

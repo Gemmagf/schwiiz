@@ -9,7 +9,7 @@ const DIRECTIONS = [
   { id: 'de2ch', label: 'Hochdeutsch → Dialecte', front: 'de', hint: 'per fixar els canvis de so' }
 ]
 
-export default function Flashcards({ vocab, srs, onGrade, topicFilter, setTopicFilter, dir, setDir, voiceURI }) {
+export default function Flashcards({ vocab = [], srs, onGrade, topicFilter, setTopicFilter, dir, setDir, voiceURI }) {
   const [queue, setQueue] = useState(null) // null = encara no s'ha començat
   const [idx, setIdx] = useState(0)
   const [shown, setShown] = useState(false)

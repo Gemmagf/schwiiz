@@ -44,6 +44,14 @@ export default function Phrases({ voiceURI, reader }) {
             ))}
           </div>
 
+          <p className="hint">
+            Les situacions segueixen els capítols 28–34 de <b>Schweizerdeutsch verstehen</b>.
+            {tag !== 'tots' && (() => {
+              const t = PHRASE_TAGS.find((x) => x.id === tag)
+              return t ? ` Ara mires el capítol ${t.unit}: ${t.label}.` : null
+            })()}
+          </p>
+
           <ul className="phrase-list">
             {llista.map((p) => (
               <li key={p.id}>

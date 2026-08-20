@@ -68,7 +68,7 @@ function clamp(e) {
 }
 
 // Targetes que toca repassar avui (les noves compten com a pendents).
-export function dueCards(items, states, today = todayISO()) {
+export function dueCards(items = [], states = {}, today = todayISO()) {
   return items.filter((it) => {
     const s = states[it.id]
     return !s || !s.due || s.due <= today
@@ -76,7 +76,7 @@ export function dueCards(items, states, today = todayISO()) {
 }
 
 // Classificació ràpida per al tauler.
-export function stats(items, states, today = todayISO()) {
+export function stats(items = [], states = {}, today = todayISO()) {
   let nous = 0, arepassar = 0, apresos = 0
   for (const it of items) {
     const s = states[it.id]

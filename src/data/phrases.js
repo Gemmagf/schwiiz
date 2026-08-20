@@ -2,12 +2,16 @@
 // PHRASES  = frases soltes, filtrables per etiqueta.
 // DIALOGS  = converses curtes, línia a línia, per llegir en veu alta.
 
+// Les etiquetes segueixen els capítols de situacions del Holle (28–34).
 export const PHRASE_TAGS = [
-  { id: 'sobreviure', label: 'Sobreviure', emoji: '🆘' },
-  { id: 'presentar', label: 'Presentar-se', emoji: '🙋' },
-  { id: 'social', label: 'Social', emoji: '💬' },
-  { id: 'feina', label: 'Feina', emoji: '💼' },
-  { id: 'fora', label: 'Al carrer', emoji: '🚶' }
+  { id: 'sobreviure', label: 'Demanar ajuda', emoji: '🆘', unit: '34' },
+  { id: 'presentar', label: 'Presentar-se', emoji: '🙋', unit: '28' },
+  { id: 'salutacions', label: 'Salutacions', emoji: '👋', unit: '29' },
+  { id: 'smalltalk', label: 'Smalltalk', emoji: '💬', unit: '30' },
+  { id: 'metge', label: 'Al metge', emoji: '🩺', unit: '31' },
+  { id: 'feina', label: 'Feina i entrevista', emoji: '💼', unit: '32' },
+  { id: 'hotel', label: 'A l’hotel', emoji: '🛎️', unit: '33' },
+  { id: 'fora', label: 'Compres, camí i tren', emoji: '🚶', unit: '34' }
 ]
 
 export const PHRASES = [
@@ -36,17 +40,17 @@ export const PHRASES = [
   { id: 'p29', ch: 'Redsch du Änglisch?', de: 'Sprichst du Englisch?', ca: 'Parles anglès?', tag: 'presentar' },
 
   // Social
-  { id: 'p40', ch: 'Wie gaht’s dir?', de: 'Wie geht es dir?', ca: 'Com estàs?', tag: 'social' },
-  { id: 'p41', ch: 'Ganz guet, danke.', de: 'Ganz gut, danke.', ca: 'Molt bé, gràcies.', tag: 'social' },
-  { id: 'p42', ch: 'Was machsch du so?', de: 'Was machst du so?', ca: 'Què fas? / Com et va?', tag: 'social' },
-  { id: 'p43', ch: 'Gömmer?', de: 'Gehen wir?', ca: 'Anem?', tag: 'social', note: 'Contracció de "gönd mir". Molt col·loquial i molt usada.' },
-  { id: 'p44', ch: 'Häsch Luscht?', de: 'Hast du Lust?', ca: 'Et ve de gust?', tag: 'social' },
-  { id: 'p45', ch: 'Machemer öppis am Samschtig?', de: 'Machen wir etwas am Samstag?', ca: 'Fem alguna cosa dissabte?', tag: 'social' },
-  { id: 'p46', ch: 'Bis spöter!', de: 'Bis später!', ca: 'Fins després!', tag: 'social' },
-  { id: 'p47', ch: 'Schöns Wuchenänd!', de: 'Schönes Wochenende!', ca: 'Bon cap de setmana!', tag: 'social' },
-  { id: 'p48', ch: 'Alles Gueti!', de: 'Alles Gute!', ca: 'Molta sort! / Que vagi bé!', tag: 'social' },
-  { id: 'p49', ch: 'Das isch mega guet!', de: 'Das ist sehr gut!', ca: 'Això està molt bé!', tag: 'social' },
-  { id: 'p50', ch: 'Ich ha mi verspöted, sorry.', de: 'Ich habe mich verspätet, sorry.', ca: 'Faig tard, perdona.', tag: 'social' },
+  { id: 'p40', ch: 'Wie gaht’s dir?', de: 'Wie geht es dir?', ca: 'Com estàs?', tag: 'smalltalk' },
+  { id: 'p41', ch: 'Ganz guet, danke.', de: 'Ganz gut, danke.', ca: 'Molt bé, gràcies.', tag: 'smalltalk' },
+  { id: 'p42', ch: 'Was machsch du so?', de: 'Was machst du so?', ca: 'Què fas? / Com et va?', tag: 'smalltalk' },
+  { id: 'p43', ch: 'Gömmer?', de: 'Gehen wir?', ca: 'Anem?', tag: 'smalltalk', note: 'Contracció de "gönd mir". Molt col·loquial i molt usada.' },
+  { id: 'p44', ch: 'Häsch Luscht?', de: 'Hast du Lust?', ca: 'Et ve de gust?', tag: 'smalltalk' },
+  { id: 'p45', ch: 'Machemer öppis am Samschtig?', de: 'Machen wir etwas am Samstag?', ca: 'Fem alguna cosa dissabte?', tag: 'smalltalk' },
+  { id: 'p46', ch: 'Bis spöter!', de: 'Bis später!', ca: 'Fins després!', tag: 'smalltalk' },
+  { id: 'p47', ch: 'Schöns Wuchenänd!', de: 'Schönes Wochenende!', ca: 'Bon cap de setmana!', tag: 'smalltalk' },
+  { id: 'p48', ch: 'Alles Gueti!', de: 'Alles Gute!', ca: 'Molta sort! / Que vagi bé!', tag: 'smalltalk' },
+  { id: 'p49', ch: 'Das isch mega guet!', de: 'Das ist sehr gut!', ca: 'Això està molt bé!', tag: 'smalltalk' },
+  { id: 'p50', ch: 'Ich ha mi verspöted, sorry.', de: 'Ich habe mich verspätet, sorry.', ca: 'Faig tard, perdona.', tag: 'smalltalk' },
 
   // Feina
   { id: 'p60', ch: 'Ich ha en Termin am zäni.', de: 'Ich habe einen Termin um zehn.', ca: 'Tinc una cita a les deu.', tag: 'feina' },
@@ -70,7 +74,60 @@ export const PHRASES = [
   { id: 'p86', ch: 'Chan ich mit Charte zale?', de: 'Kann ich mit Karte zahlen?', ca: 'Puc pagar amb targeta?', tag: 'fora' },
   { id: 'p87', ch: 'Isch das no frei?', de: 'Ist der Platz noch frei?', ca: 'Aquest lloc és lliure?', tag: 'fora' },
   { id: 'p88', ch: 'D Rächnig, bitte.', de: 'Die Rechnung, bitte.', ca: 'El compte, si us plau.', tag: 'fora' },
-  { id: 'p89', ch: 'Stimmt so.', de: 'Stimmt so.', ca: 'Quedi’s el canvi.', tag: 'fora' }
+  { id: 'p89', ch: 'Stimmt so.', de: 'Stimmt so.', ca: 'Quedi’s el canvi.', tag: 'fora' },
+
+  // ---- Salutacions (Holle · cap. 29 Begrüssungen) ----
+  { id: 'p100', ch: 'Grüezi mitenand!', de: 'Guten Tag zusammen!', ca: 'Bon dia a tots! (formal, a un grup)', tag: 'salutacions' },
+  { id: 'p101', ch: 'Guete Morge!', de: 'Guten Morgen!', ca: 'Bon dia! (al matí)', tag: 'salutacions' },
+  { id: 'p102', ch: 'Guete Aabig!', de: 'Guten Abend!', ca: 'Bon vespre!', tag: 'salutacions' },
+  { id: 'p103', ch: 'Grüess di!', de: 'Grüss dich!', ca: 'Hola! (informal, a una persona)', tag: 'salutacions' },
+  { id: 'p104', ch: 'Lang nöd gseh!', de: 'Lange nicht gesehen!', ca: 'Fa temps que no ens vèiem!', tag: 'salutacions' },
+  { id: 'p105', ch: 'Und selber?', de: 'Und selbst?', ca: 'I tu què? (tornant la pregunta)', tag: 'salutacions' },
+  { id: 'p106', ch: 'Machs guet!', de: 'Mach’s gut!', ca: 'Que vagi bé! (comiat informal)', tag: 'salutacions' },
+  { id: 'p107', ch: 'Bis bald!', de: 'Bis bald!', ca: 'Fins aviat!', tag: 'salutacions' },
+
+  // ---- Smalltalk (Holle · cap. 30) ----
+  { id: 'p120', ch: 'Schöns Wätter hüt, gäll?', de: 'Schönes Wetter heute, oder?', ca: 'Quin bon dia fa avui, oi?', tag: 'smalltalk', note: 'El "gäll?" final és puríssim suís: busca que l’altre t’ho confirmi.' },
+  { id: 'p121', ch: 'Wohnsch du scho lang da?', de: 'Wohnst du schon lange hier?', ca: 'Fa molt que vius aquí?', tag: 'smalltalk' },
+  { id: 'p122', ch: 'Gfallt’s dir z Züri?', de: 'Gefällt es dir in Zürich?', ca: 'T’agrada Zuric?', tag: 'smalltalk' },
+  { id: 'p123', ch: 'Was machsch i de Freiziit?', de: 'Was machst du in der Freizeit?', ca: 'Què fas al temps lliure?', tag: 'smalltalk' },
+  { id: 'p124', ch: 'Häsch es schöns Wuchenänd gha?', de: 'Hattest du ein schönes Wochenende?', ca: 'Has fet bon cap de setmana?', tag: 'smalltalk' },
+  { id: 'p125', ch: 'Ich mues jetzt leider goh.', de: 'Ich muss jetzt leider gehen.', ca: 'Ara me n’he d’anar, em sap greu.', tag: 'smalltalk' },
+  { id: 'p126', ch: 'Mir sind üs scho mal begägnet, oder?', de: 'Wir sind uns schon mal begegnet, oder?', ca: 'Ja ens hem vist abans, oi?', tag: 'smalltalk' },
+
+  // ---- Al metge (Holle · cap. 31 Arzttermin) ----
+  { id: 'p140', ch: 'Ich hätt gärn en Termin.', de: 'Ich hätte gern einen Termin.', ca: 'Voldria hora.', tag: 'metge' },
+  { id: 'p141', ch: 'Ich fühl mi nöd guet.', de: 'Ich fühle mich nicht gut.', ca: 'No em trobo bé.', tag: 'metge' },
+  { id: 'p142', ch: 'Ich ha Chopfweh.', de: 'Ich habe Kopfschmerzen.', ca: 'Em fa mal el cap.', tag: 'metge', note: 'El patró és -weh: Buuchweh, Halsweh, Zahnweh.' },
+  { id: 'p143', ch: 'Ich ha Buuchweh.', de: 'Ich habe Bauchschmerzen.', ca: 'Em fa mal la panxa.', tag: 'metge' },
+  { id: 'p144', ch: 'Wo tuet’s weh?', de: 'Wo tut es weh?', ca: 'On et fa mal?', tag: 'metge' },
+  { id: 'p145', ch: 'Sit wenn händ Sie das?', de: 'Seit wann haben Sie das?', ca: 'Des de quan ho té?', tag: 'metge' },
+  { id: 'p146', ch: 'Sit drü Täg.', de: 'Seit drei Tagen.', ca: 'Des de fa tres dies.', tag: 'metge' },
+  { id: 'p147', ch: 'Ich bi allergisch uf Penicillin.', de: 'Ich bin allergisch gegen Penizillin.', ca: 'Sóc al·lèrgica a la penicil·lina.', tag: 'metge' },
+  { id: 'p148', ch: 'Nämed Sie Medikamänt?', de: 'Nehmen Sie Medikamente?', ca: 'Pren alguna medicació?', tag: 'metge' },
+  { id: 'p149', ch: 'Ich schriibe Sie chrank.', de: 'Ich schreibe Sie krank.', ca: 'Li faré la baixa.', tag: 'metge' },
+
+  // ---- Entrevista de feina (Holle · cap. 32 Bewerbungsgespräch) ----
+  { id: 'p160', ch: 'Ich han mi uf d Stell beworbe.', de: 'Ich habe mich auf die Stelle beworben.', ca: 'M’he presentat a la plaça.', tag: 'feina' },
+  { id: 'p161', ch: 'Verzelled Sie öppis über sich.', de: 'Erzählen Sie etwas über sich.', ca: 'Expliqui’m alguna cosa de vostè.', tag: 'feina' },
+  { id: 'p162', ch: 'Ich han füf Johr Erfahrig i dem Bereich.', de: 'Ich habe fünf Jahre Erfahrung in diesem Bereich.', ca: 'Tinc cinc anys d’experiència en aquest camp.', tag: 'feina' },
+  { id: 'p163', ch: 'Wieso wänd Sie bi üs schaffe?', de: 'Warum wollen Sie bei uns arbeiten?', ca: 'Per què vol treballar amb nosaltres?', tag: 'feina' },
+  { id: 'p164', ch: 'Was sind Ihri Stärchi?', de: 'Was sind Ihre Stärken?', ca: 'Quins són els seus punts forts?', tag: 'feina' },
+  { id: 'p165', ch: 'Wänn chönted Sie aafange?', de: 'Wann könnten Sie anfangen?', ca: 'Quan podria començar?', tag: 'feina' },
+  { id: 'p166', ch: 'Wie gross isch s Pensum?', de: 'Wie hoch ist das Pensum?', ca: 'Quin percentatge de jornada és?', tag: 'feina', note: 'El "Pensum" (60%, 80%, 100%) és central a Suïssa. Es pregunta sempre.' },
+  { id: 'p167', ch: 'Mir mälded üs bi Ihne.', de: 'Wir melden uns bei Ihnen.', ca: 'Ja li direm alguna cosa.', tag: 'feina' },
+
+  // ---- A l’hotel (Holle · cap. 33 Im Hotel) ----
+  { id: 'p180', ch: 'Händ Sie na es Zimmer frei?', de: 'Haben Sie noch ein Zimmer frei?', ca: 'Els queda alguna habitació?', tag: 'hotel' },
+  { id: 'p181', ch: 'Ich hätt gärn es Zimmer für zwei Nächt.', de: 'Ich hätte gern ein Zimmer für zwei Nächte.', ca: 'Voldria una habitació per dues nits.', tag: 'hotel' },
+  { id: 'p182', ch: 'Für ei Person oder für zwei?', de: 'Für eine Person oder für zwei?', ca: 'Per a una persona o per a dues?', tag: 'hotel' },
+  { id: 'p183', ch: 'Isch s Zmorge inbegriffe?', de: 'Ist das Frühstück inbegriffen?', ca: 'L’esmorzar hi va inclòs?', tag: 'hotel' },
+  { id: 'p184', ch: 'Uf welche Name?', de: 'Auf welchen Namen?', ca: 'A quin nom?', tag: 'hotel' },
+  { id: 'p185', ch: 'Ich möcht iichecke.', de: 'Ich möchte einchecken.', ca: 'Voldria fer el check-in.', tag: 'hotel' },
+  { id: 'p186', ch: 'Wänn gits Zmorge?', de: 'Wann gibt es Frühstück?', ca: 'A quina hora és l’esmorzar?', tag: 'hotel' },
+  { id: 'p187', ch: 'Bis wänn mues ich uschecke?', de: 'Bis wann muss ich auschecken?', ca: 'Fins a quina hora puc fer el check-out?', tag: 'hotel' },
+  { id: 'p188', ch: 'Wie isch s WLAN-Passwort?', de: 'Wie ist das WLAN-Passwort?', ca: 'Quina és la contrasenya del wifi?', tag: 'hotel' },
+  { id: 'p189', ch: 'De Schlüssel, bitte.', de: 'Den Schlüssel, bitte.', ca: 'La clau, si us plau.', tag: 'hotel' }
 ]
 
 export const DIALOGS = [

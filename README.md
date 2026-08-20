@@ -8,7 +8,7 @@ Offline-first · s'actualitza per git · flashcards amb repàs espaiat, gramàti
 - **Tauler**: quantes paraules tens assentades, què toca repassar avui, ratxa de dies.
 - **Repàs**: flashcards amb SRS (tipus Anki). Tres direccions: català→dialecte,
   dialecte→català i Hochdeutsch→dialecte. Filtrable per tema.
-- **Gramàtica**: 20 temes amb explicació, taules de conjugació i 108 exercicis que es
+- **Gramàtica**: 31 temes amb explicació, taules de conjugació i 163 exercicis que es
   corregeixen sols.
 - **Llegir**: tres coses en una.
   - *Textos*: lector on toques qualsevol paraula i en surt la traducció (resolent formes
@@ -16,7 +16,7 @@ Offline-first · s'actualitza per git · flashcards amb repàs espaiat, gramàti
     converteix en flashcard i entra al repàs espaiat. Les paraules que ja tens surten
     subratllades dins del text. Pots afegir-hi els teus propis capítols.
   - *Diàlegs*: 6 converses per situació.
-  - *Frases*: 51 frases per situació, amb opció de tapar la traducció.
+  - *Frases*: 94 frases per situació, amb opció de tapar la traducció.
 - **Ajustos**: veu, sincronització del progrés amb git, exportar dades.
 
 ## Els llibres de classe
@@ -25,9 +25,14 @@ L'app està pensada per acompanyar tres llibres:
 
 | Llibre | Autor | Què n'aporta |
 |---|---|---|
-| *Schweizerdeutsch verstehen* | Andrea Holle | vocabulari i teoria |
-| *Schwiizerdütsch leicht gemacht — S Schwiizerdüütsch vo Züri* | Verena Schorn | ordre dels temes de gramàtica |
+| *Schweizerdeutsch verstehen* | Andrea Holle | **ordre dels temes de gramàtica, situacions i vocabulari** |
+| *Schwiizerdütsch leicht gemacht — S Schwiizerdüütsch vo Züri* | Verena Schorn | pendent (17 lliçons) |
 | *Hansdampf — Gschichte us em Züri Oberland, Band 2* | Johann Widmer | lectura |
+
+Els 31 temes de gramàtica segueixen l'ordre dels capítols 1–27 del Holle i cada tema
+en porta el número a la vista. Les etiquetes de Frases segueixen els capítols 28–34,
+i els temes de vocabulari, les seves llistes de Vokabeln. La correspondència completa
+és a [`content/mapa-holle.md`](content/mapa-holle.md).
 
 > El text dels llibres **no** ve amb l'app i no s'hi ha de copiar: són obres amb drets
 > d'autor. Els capítols que vulguis treballar els afegeixes tu des de *Llegir → Afegir un
@@ -87,9 +92,9 @@ entre dispositius:
 content/          material de classe en brut (font, no el llegeix l'app)
 data/state.json   progrés sincronitzat des del mòbil
 src/
-  data/vocab.js     226 paraules: dialecte · Hochdeutsch · català
-  data/grammar.js   20 temes + 108 exercicis
-  data/phrases.js   51 frases + 6 diàlegs
+  data/vocab.js     294 paraules: dialecte · Hochdeutsch · català
+  data/grammar.js   31 temes + 163 exercicis
+  data/phrases.js   94 frases + 6 diàlegs
   data/readings.js  llibres de referència + textos d'exemple propis
   data/glossary.js  189 paraules de suport + 73 formes conjugades, per al lector
   data/lessons.js   índex de classes

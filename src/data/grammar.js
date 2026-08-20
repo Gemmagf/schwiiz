@@ -9,9 +9,12 @@
 //   book: 'holle' | 'schorn'   (vegeu src/data/readings.js)
 //   unit: 'K3'                 (capítol/unitat dins del llibre)
 // Encara no s'han omplert: falta l'índex dels llibres.
-export const GRAMMAR = [
+const TEMES = [
   {
     id: 'g01',
+    book: 'holle',
+    unit: '08',
+    order: 8.1,
     title: 'El verb sii (ser / estar)',
     emoji: '🟰',
     lesson: 'base',
@@ -40,6 +43,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g02',
+    book: 'holle',
+    unit: '08',
+    order: 8.2,
     title: 'El verb haa (tenir)',
     emoji: '🤲',
     lesson: 'base',
@@ -67,6 +73,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g03',
+    book: 'holle',
+    unit: '08 · 19',
+    order: 8.3,
     title: 'Present dels verbs regulars',
     emoji: '🔁',
     lesson: 'base',
@@ -96,6 +105,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g04',
+    book: 'holle',
+    unit: '01',
+    order: 1,
     title: 'Els canvis de so (la clau de tot)',
     emoji: '🔊',
     lesson: 'base',
@@ -120,6 +132,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g05',
+    book: 'holle',
+    unit: '02–03',
+    order: 2,
     title: 'Articles: de, d, s',
     emoji: '📌',
     lesson: 'base',
@@ -146,6 +161,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g06',
+    book: 'holle',
+    unit: '04',
+    order: 4,
     title: 'Negació: nöd i kei',
     emoji: '🚫',
     lesson: 'base',
@@ -168,6 +186,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g07',
+    book: 'holle',
+    unit: '08',
+    order: 8.4,
     title: 'Verbs modals: chöne, wölle, müese',
     emoji: '🎛️',
     lesson: 'base',
@@ -197,6 +218,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g08',
+    book: 'holle',
+    unit: '20',
+    order: 20,
     title: 'El passat: només el perfet',
     emoji: '⏪',
     lesson: 'base',
@@ -231,6 +255,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g09',
+    book: 'holle',
+    unit: '10 · 23',
+    order: 10,
     title: 'Ordre de les paraules',
     emoji: '🧩',
     lesson: 'base',
@@ -253,6 +280,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g10',
+    book: 'holle',
+    unit: null,
+    order: 99,
     title: 'El diminutiu -li',
     emoji: '🐣',
     lesson: 'base',
@@ -274,6 +304,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g11',
+    book: 'holle',
+    unit: '06 · 12',
+    order: 6.5,
     title: 'Pronoms: datiu i acusatiu',
     emoji: '👉',
     lesson: 'base',
@@ -299,6 +332,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g12',
+    book: 'holle',
+    unit: '16',
+    order: 16,
     title: 'Paraules interrogatives',
     emoji: '❓',
     lesson: 'base',
@@ -320,6 +356,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g13',
+    book: 'holle',
+    unit: '27',
+    order: 27.1,
     title: 'Konjunktiv II: wär, hätt, chönt',
     emoji: '🎩',
     lesson: 'base',
@@ -352,6 +391,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g14',
+    book: 'holle',
+    unit: '15',
+    order: 15,
     title: 'L’imperatiu',
     emoji: '📣',
     lesson: 'base',
@@ -373,6 +415,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g15',
+    book: 'holle',
+    unit: '21',
+    order: 21,
     title: 'El futur (que no existeix)',
     emoji: '⏩',
     lesson: 'base',
@@ -393,6 +438,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g16',
+    book: 'holle',
+    unit: '08 · 23',
+    order: 8.5,
     title: 'Verbs separables',
     emoji: '✂️',
     lesson: 'base',
@@ -415,6 +463,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g17',
+    book: 'holle',
+    unit: '25',
+    order: 25,
     title: 'Les relatives amb «wo»',
     emoji: '🔗',
     lesson: 'base',
@@ -437,6 +488,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g18',
+    book: 'holle',
+    unit: '24',
+    order: 24,
     title: 'Comparar: grösser, am gröschte',
     emoji: '📊',
     lesson: 'base',
@@ -469,6 +523,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g19',
+    book: 'holle',
+    unit: '19',
+    order: 19,
     title: 'Estar fent: «am … sii»',
     emoji: '⏳',
     lesson: 'base',
@@ -490,6 +547,9 @@ export const GRAMMAR = [
   },
   {
     id: 'g20',
+    book: 'holle',
+    unit: '13',
+    order: 13,
     title: 'Adjectius davant del substantiu',
     emoji: '🎨',
     lesson: 'base',
@@ -518,5 +578,345 @@ export const GRAMMAR = [
       { id: 'g20e4', type: 'gap', q: 'Darrere del verb no porta terminació: D Frau isch ___. (alt)', a: ['alt'], why: 'Ús predicatiu → adjectiu nu.' },
       { id: 'g20e5', type: 'choice', q: 'Quina terminació delata més que parles dialecte i no alemany?', options: ['La masculina -e', 'La femenina -i', 'Cap'], a: 1, why: 'L’alemany fa "eine gute Frau"; el dialecte, "e gueti Frau".' }
     ]
+  },
+  {
+    id: 'g21',
+    book: 'holle',
+    unit: '05',
+    order: 5,
+    title: 'Demostratius: dä, die, das',
+    emoji: '👆',
+    lesson: 'base',
+    summary: 'Assenyalar coses. Són les mateixes paraules que els articles, però dites amb força.',
+    points: [
+      '**dä** Maa (masculí) · **die** Frau (femení) · **das** Chind (neutre) · **die** Chind (plural)',
+      'Fixa’t que són els articles de/d/s però en la forma llarga i accentuada.',
+      'Per precisar on és, s’hi afegeix **da** (aquí) o **det** (allà):',
+      '**dä** Maa **da** = aquest home d’aquí · **die** Frau **det** = aquella dona d’allà',
+      '**das** tot sol vol dir "això": "Was isch **das**?" · "**Das** isch guet."'
+    ],
+    table: {
+      head: ['Gènere', 'Article', 'Demostratiu'],
+      rows: [['masculí', 'de Maa', 'dä Maa'], ['femení', 'd Frau', 'die Frau'], ['neutre', 's Chind', 'das Chind'], ['plural', 'd Chind', 'die Chind']]
+    },
+    exercises: [
+      { id: 'g21e1', type: 'gap', q: '___ Maa da isch min Nachbar. (aquest)', a: ['dä'], why: 'Masculí → dä.' },
+      { id: 'g21e2', type: 'choice', q: '___ Frau det schaffet mit mir.', options: ['dä', 'die', 'das'], a: 1, why: 'Femení → die.' },
+      { id: 'g21e3', type: 'gap', q: 'Was isch ___? (això)', a: ['das'], why: '"das" tot sol = això.' },
+      { id: 'g21e4', type: 'choice', q: 'Quina diferència hi ha entre «de Maa» i «dä Maa»?', options: ['Cap', 'El primer és l’article, el segon assenyala', 'El segon és plural'], a: 1, why: 'Mateixa família de paraules: l’article dit amb força es torna demostratiu.' },
+      { id: 'g21e5', type: 'choice', q: 'Com dius «aquelles criatures d’allà»?', options: ['die Chind det', 'das Chind det', 'dä Chind det'], a: 0, why: 'Plural → die, i "det" per marcar la distància.' }
+    ]
+  },
+  {
+    id: 'g22',
+    book: 'holle',
+    unit: '06',
+    order: 6,
+    title: 'El plural dels substantius',
+    emoji: '👥',
+    lesson: 'base',
+    summary: 'La pista fiable no és la terminació: és l’article. En plural sempre és «d».',
+    points: [
+      'Sigui quin sigui el gènere, **el plural porta sempre d**: d Manne, d Fraue, d Chind.',
+      'Quatre patrons de formació:',
+      'Sense canvi: s Chind → d **Chind** · s Zimmer → d **Zimmer**',
+      'Només Umlaut: de Tag → d **Täg** · de Vogel → d **Vögel**',
+      'Amb -e: de Fründ → d **Fründe** · d Frau → d **Fraue**',
+      'Amb -er i Umlaut: s Huus → d **Hüüser** · s Buech → d **Büecher**',
+      'Aquí el dialecte s’allunya de l’alemany: molts masculins fan el plural només amb Umlaut, sense afegir res.'
+    ],
+    table: {
+      head: ['Singular', 'Plural', 'Patró'],
+      rows: [
+        ['s Chind', 'd Chind', 'sense canvi'],
+        ['de Tag', 'd Täg', 'Umlaut'],
+        ['de Fründ', 'd Fründe', '+ -e'],
+        ['s Huus', 'd Hüüser', '+ -er i Umlaut'],
+        ['s Buech', 'd Büecher', '+ -er i Umlaut']
+      ]
+    },
+    exercises: [
+      { id: 'g22e1', type: 'gap', q: 'Plural de «s Huus» → d ___', a: ['hüüser', 'huuser'], why: '-er amb Umlaut: Hüüser.' },
+      { id: 'g22e2', type: 'gap', q: 'Plural de «de Tag» → d ___', a: ['täg', 'taeg'], why: 'Només Umlaut: Täg.' },
+      { id: 'g22e3', type: 'choice', q: 'Plural de «s Chind»:', options: ['d Chinder', 'd Chind', 'd Chinde'], a: 1, why: 'No canvia. L’article "d" és l’única marca.' },
+      { id: 'g22e4', type: 'choice', q: 'Quina és la pista més fiable que un substantiu és plural?', options: ['La terminació', 'L’article «d»', 'L’Umlaut'], a: 1, why: 'Les terminacions varien; l’article "d" hi és sempre.' },
+      { id: 'g22e5', type: 'gap', q: 'Plural de «s Buech» → d ___', a: ['büecher', 'buecher'], why: 'Büecher.' }
+    ]
+  },
+  {
+    id: 'g23',
+    book: 'holle',
+    unit: '07',
+    order: 7,
+    title: 'Tractament: du o Sie',
+    emoji: '🤝',
+    lesson: 'base',
+    summary: 'Equivocar-s’hi és el error que més es nota. A Suïssa es va amb més compte que a Alemanya.',
+    points: [
+      '**Sie** fa servir sempre les formes de plural: Sie **händ**, Sie **chönd**, Sie **sind**.',
+      'Salutació: **Grüezi** va amb Sie · **Hoi** i **Sali** van amb du.',
+      'Comiat: **Uf Wiederluege** amb Sie · **Tschüss** o **Ciao** amb du.',
+      'De **Sie** a: desconeguts, botigues, gent gran, clients, l’administració.',
+      'De **du** a: amics, família, criatures, i a molta feina entre companys.',
+      'El **du** l’ofereix sempre la persona gran o de més rang: "Sölle mer **duze**?"',
+      'Regla pràctica: si dubtes, Sie. Passar de Sie a du és fàcil; a l’inrevés és incòmode.'
+    ],
+    exercises: [
+      { id: 'g23e1', type: 'choice', q: 'A la caixa d’un supermercat, com saludes?', options: ['Hoi!', 'Grüezi!', 'Sali!'], a: 1, why: 'Amb desconeguts, Grüezi i Sie.' },
+      { id: 'g23e2', type: 'gap', q: 'Amb Sie: ___ Sie hüt Ziit? (de haa)', a: ['händ', 'hand'], why: 'Sie sempre amb la forma de plural: händ.' },
+      { id: 'g23e3', type: 'choice', q: 'Quina és correcta amb vostè?', options: ['Chasch Sie mer hälfe?', 'Chönd Sie mer hälfe?', 'Cha Sie mer hälfe?'], a: 1, why: 'Sie + chönd (plural).' },
+      { id: 'g23e4', type: 'choice', q: 'Qui ofereix passar al «du»?', options: ['Qui vulgui', 'La persona més gran o de més rang', 'Sempre la més jove'], a: 1, why: 'A Suïssa és una norma força respectada.' },
+      { id: 'g23e5', type: 'choice', q: 'Si dubtes, què fas servir?', options: ['du, és més amable', 'Sie', 'Depèn del dia'], a: 1, why: 'Sie mai ofèn; du fora de lloc, sí.' }
+    ]
+  },
+  {
+    id: 'g24',
+    book: 'holle',
+    unit: '09',
+    order: 9,
+    title: 'Gang go & chum cho',
+    emoji: '🚶',
+    lesson: 'base',
+    summary: 'Una construcció que l’alemany no té i que sentiràs cada dia. Anar a fer una cosa.',
+    points: [
+      'Per dir "anar a fer alguna cosa" s’hi posa **go** entremig:',
+      '**gaa** + **go** + infinitiu → Ich **gang go poschte**. = Vaig a comprar.',
+      'Ich **gang go schlafe**. = Me’n vaig a dormir. · Mir **gönd go ässe**. = Anem a menjar.',
+      'Amb el verb venir, la partícula és **cho**:',
+      '**cho** + **cho** + infinitiu → **Chunsch cho ässe?** = Véns a menjar?',
+      'Er **chunt cho luege**. = Ve a mirar.',
+      'La partícula no es tradueix i **no es pot ometre**. En alemany seria només "Ich gehe einkaufen".',
+      'És una de les marques més clares que parles dialecte i no alemany.'
+    ],
+    table: {
+      head: ['Züridütsch', 'Hochdeutsch', 'Català'],
+      rows: [
+        ['Ich gang go poschte.', 'Ich gehe einkaufen.', 'Vaig a comprar.'],
+        ['Mir gönd go ässe.', 'Wir gehen essen.', 'Anem a menjar.'],
+        ['Chunsch cho luege?', 'Kommst du schauen?', 'Véns a mirar?'],
+        ['Ich gang go schlafe.', 'Ich gehe schlafen.', 'Me’n vaig a dormir.']
+      ]
+    },
+    exercises: [
+      { id: 'g24e1', type: 'gap', q: 'Ich gang ___ poschte. (la partícula)', a: ['go'], why: 'Amb gaa, sempre "go".' },
+      { id: 'g24e2', type: 'gap', q: 'Chunsch ___ ässe? (la partícula)', a: ['cho'], why: 'Amb cho, la partícula és "cho".' },
+      { id: 'g24e3', type: 'choice', q: 'Quina és correcta?', options: ['Mir gönd ässe.', 'Mir gönd go ässe.', 'Mir gönd cho ässe.'], a: 1, why: 'gaa demana "go". Sense partícula sona a alemany.' },
+      { id: 'g24e4', type: 'choice', q: 'Què vol dir «go» aquí?', options: ['Res per si sola, és obligatòria', '«ja»', '«cap a»'], a: 0, why: 'No es tradueix; forma part de la construcció.' },
+      { id: 'g24e5', type: 'choice', q: 'Tradueix: «Ve a ajudar.»', options: ['Er chunt hälfe.', 'Er chunt cho hälfe.', 'Er gaht go hälfe.'], a: 1, why: 'cho + cho + infinitiu.' }
+    ]
+  },
+  {
+    id: 'g25',
+    book: 'holle',
+    unit: '11',
+    order: 11,
+    title: 'Nombres ordinals i dates',
+    emoji: '📅',
+    lesson: 'base',
+    summary: 'Primer, segon, tercer… i com es diu una data.',
+    points: [
+      '**erschte · zweite · dritte · vierte · füfte · sächste · sibte · achte · nüünte · zähnte**',
+      'A partir del 20 s’hi afegeix **-schte**: zwänzg → **zwänzgschte**',
+      'Dates amb **am** + ordinal: **am erschte Mai** · **am zwölfte Februar**',
+      'Pisos amb **im**: **im dritte Stock** = al tercer pis',
+      'Recorda que els cardinals van al revés que en català: **einezwänzg** = 21 (u-i-vint).'
+    ],
+    table: {
+      head: ['Nombre', 'Cardinal', 'Ordinal'],
+      rows: [['1', 'eis', 'erschte'], ['2', 'zwei', 'zweite'], ['3', 'drü', 'dritte'], ['5', 'foif', 'füfte'], ['10', 'zäh', 'zähnte'], ['20', 'zwänzg', 'zwänzgschte']]
+    },
+    exercises: [
+      { id: 'g25e1', type: 'gap', q: 'Ordinal d’«eis» → ___', a: ['erschte', 'erscht'], why: 'erschte, com "erste" en alemany.' },
+      { id: 'g25e2', type: 'choice', q: 'Com dius «l’u de maig»?', options: ['am eis Mai', 'am erschte Mai', 'de eis Mai'], a: 1, why: 'am + ordinal.' },
+      { id: 'g25e3', type: 'gap', q: 'Ordinal de «drü» → ___', a: ['dritte', 'dritt'], why: 'dritte.' },
+      { id: 'g25e4', type: 'choice', q: 'Què vol dir «einezwänzg»?', options: ['12', '21', '20'], a: 1, why: 'Primer la unitat, després la desena: u-i-vint = 21.' },
+      { id: 'g25e5', type: 'choice', q: 'Com dius «al tercer pis»?', options: ['am dritte Stock', 'im dritte Stock', 'uf dritte Stock'], a: 1, why: 'Pisos amb "im".' }
+    ]
+  },
+  {
+    id: 'g26',
+    book: 'holle',
+    unit: '14',
+    order: 14,
+    title: 'Possessius: min, mini, mis',
+    emoji: '🫱',
+    lesson: 'base',
+    summary: 'Les mateixes tres terminacions que els adjectius: -n / -i / -s.',
+    points: [
+      'masculí **min** Vatter · femení **mini** Mueter · neutre **mis** Chind · plural **mini** Chind',
+      'Amb tu: **din** Vatter · **dini** Mueter · **dis** Chind · **dini** Chind',
+      'D’ell: **sin** / **sini** / **sis** · De nosaltres: **üse** / **üsi** / **üses**',
+      'Fixa’t en el patró: la femenina i el plural fan **-i**, igual que els adjectius (e guet**i** Frau).',
+      'Recorda que el genitiu no existeix: "la casa del meu germà" = s Huus **vo mim** Brueder.'
+    ],
+    table: {
+      head: ['', 'masculí', 'femení', 'neutre'],
+      rows: [
+        ['el meu', 'min Vatter', 'mini Mueter', 'mis Chind'],
+        ['el teu', 'din Vatter', 'dini Mueter', 'dis Chind'],
+        ['el seu (d’ell)', 'sin Vatter', 'sini Mueter', 'sis Chind'],
+        ['el nostre', 'üse Vatter', 'üsi Mueter', 'üses Chind']
+      ]
+    },
+    exercises: [
+      { id: 'g26e1', type: 'gap', q: '___ Mueter chunt morn. (la meva)', a: ['mini'], why: 'Femení → -i: mini Mueter.' },
+      { id: 'g26e2', type: 'choice', q: '___ Chind isch chrank. (el meu)', options: ['min', 'mini', 'mis'], a: 2, why: 'Neutre → -s: mis Chind.' },
+      { id: 'g26e3', type: 'gap', q: 'Wo isch ___ Velo? (la teva bici, s Velo és neutre)', a: ['dis'], why: 'Neutre → dis.' },
+      { id: 'g26e4', type: 'choice', q: 'Com dius «la casa de la meva germana»?', options: ['mini Schwöschter s Huus', 's Huus vo minere Schwöschter', 's Huus minere Schwöschter'], a: 1, why: 'Sense genitiu: vo + datiu.' },
+      { id: 'g26e5', type: 'choice', q: 'Quina terminació comparteixen el femení i el plural?', options: ['-n', '-i', '-s'], a: 1, why: 'mini Mueter i mini Chind: totes dues amb -i.' }
+    ]
+  },
+  {
+    id: 'g27',
+    book: 'holle',
+    unit: '17',
+    order: 17,
+    title: 'Preposicions i contraccions',
+    emoji: '📍',
+    lesson: 'base',
+    summary: 'El que costa no són les preposicions: són les contraccions, que s’escriuen totes juntes.',
+    points: [
+      'De lloc: **i / im** (a dins) · **uf / ufem** (sobre) · **under** · **über** · **näbet** (al costat) · **zwüsche** · **vor** · **hinder** · **bi** (a casa de)',
+      'De temps: **am** Mäntig · **im** Summer · **am** achti (hora) · **sit** · **bis** · **vor** · **nach**',
+      'De causa i finalitat: **für** · **wäge** (per culpa de) · **zum** + infinitiu (per a)',
+      'Contraccions que has de reconèixer de seguida:',
+      'i + em = **im** · a + em = **am** · zu + em = **zum** · uf + em = **ufem** · bi + em = **bim** · vo + em = **vom** · i + eme = **ime**',
+      'Amb ciutats es fa servir **z**: **z** Züri · **z** Bärn (i no "in Zürich").'
+    ],
+    table: {
+      head: ['Contracció', 'Ve de', 'Exemple'],
+      rows: [
+        ['im', 'i + em', 'im Büro'],
+        ['am', 'a + em', 'am Bahnhof'],
+        ['zum', 'zu + em', 'zum Aazt'],
+        ['ufem', 'uf + em', 'ufem Tisch'],
+        ['bim', 'bi + em', 'bim Dokter'],
+        ['ime', 'i + eme', 'ime Zug']
+      ]
+    },
+    exercises: [
+      { id: 'g27e1', type: 'gap', q: 'Ich bi ___ Büro. (a l’oficina)', a: ['im'], why: 'i + em = im.' },
+      { id: 'g27e2', type: 'choice', q: 'S Buech ligt ___ Tisch.', options: ['im', 'ufem', 'zum'], a: 1, why: 'Sobre la taula → uf + em = ufem.' },
+      { id: 'g27e3', type: 'gap', q: 'Ich wohne ___ Züri. (a Zuric)', a: ['z'], why: 'Amb ciutats, "z": z Züri.' },
+      { id: 'g27e4', type: 'choice', q: 'Com dius «dilluns»?', options: ['uf Mäntig', 'am Mäntig', 'im Mäntig'], a: 1, why: 'Dies de la setmana amb "am".' },
+      { id: 'g27e5', type: 'gap', q: 'Ich gang ___ Dokter. (a cal metge)', a: ['zum'], why: 'zu + em = zum.' },
+      { id: 'g27e6', type: 'choice', q: '«ime Zug» ve de…', options: ['i + em', 'i + eme', 'i + de'], a: 1, why: 'Amb article indeterminat: i + eme = ime (en un tren).' }
+    ]
+  },
+  {
+    id: 'g28',
+    book: 'holle',
+    unit: '18',
+    order: 18,
+    title: 'Conjuncions i on va el verb',
+    emoji: '⛓️',
+    lesson: 'base',
+    summary: 'La conjunció que tries decideix on acaba el verb. És la regla que més s’oblida.',
+    points: [
+      'Les que **no** mouen el verb (queda en segona posició): **und · oder · aber · dänn · sondern**',
+      'Ich bi müed, **aber** ich **chume** trotzdem.',
+      'Les que **envien el verb al final**: **wil · dass · öb · wenn · wo · öbwohl · bevor · bis · damit**',
+      'Ich chume nöd, **wil** ich chrank **bi**.',
+      'Er het gfrogt, **öb** ich Ziit **han**.',
+      '**dass** sovint es deixa caure: "Ich glaub, er chunt spöter." I aleshores el verb es queda en segona posició.'
+    ],
+    table: {
+      head: ['Tipus', 'Conjuncions', 'El verb va…'],
+      rows: [
+        ['coordinants', 'und, oder, aber, dänn', 'en segona posició'],
+        ['subordinants', 'wil, dass, öb, wenn, wo, öbwohl', 'al final']
+      ]
+    },
+    exercises: [
+      { id: 'g28e1', type: 'choice', q: 'Quina és correcta?', options: ['Ich blibe deheim, wil ich bi müed.', 'Ich blibe deheim, wil ich müed bi.', 'Ich blibe deheim, wil bi ich müed.'], a: 1, why: '"wil" és subordinant → el verb tanca la frase.' },
+      { id: 'g28e2', type: 'choice', q: 'I amb «aber»?', options: ['…, aber ich chume trotzdem.', '…, aber ich trotzdem chume.', '…, aber chume ich trotzdem.'], a: 0, why: '"aber" no mou res: el verb es queda en segona posició.' },
+      { id: 'g28e3', type: 'gap', q: 'Er het gfrogt, ___ ich Ziit han. (si)', a: ['öb'], why: '"öb" = si (interrogativa indirecta), i envia el verb al final.' },
+      { id: 'g28e4', type: 'choice', q: 'Quina conjunció NO envia el verb al final?', options: ['wil', 'öbwohl', 'oder'], a: 2, why: 'und/oder/aber/dänn són coordinants.' },
+      { id: 'g28e5', type: 'choice', q: 'Si deixes caure el «dass», on va el verb?', options: ['Continua al final', 'Torna a la segona posició', 'Al principi'], a: 1, why: 'Sense "dass" la frase deixa de ser subordinada d’ordre: "Ich glaub, er chunt spöter."' }
+    ]
+  },
+  {
+    id: 'g29',
+    book: 'holle',
+    unit: '22',
+    order: 22,
+    title: 'La passiva (i com evitar-la)',
+    emoji: '🔄',
+    lesson: 'base',
+    summary: 'Existeix, però el dialecte la defuig. El que fan de debò és una altra cosa.',
+    points: [
+      'El que sentiràs de veritat és **me** (= "hom", l’alemany "man") amb el verb en actiu:',
+      '**Me** macht das so. = Això es fa així. · **Me** seit, es sig guet.',
+      'Aquesta és la manera natural. Si dubtes, tira per aquí.',
+      'La passiva de manual existeix amb **werde** + participi: "S Huus **wird** bout."',
+      'ich **wird** · du **wirsch** · er **wird**',
+      'Al passat, el participi de werde és **worde**: "Es **isch** gmacht **worde**." = Es va fer.',
+      'Compte: «werde» serveix per a la passiva, però **no** per fer el futur (el futur no existeix).'
+    ],
+    exercises: [
+      { id: 'g29e1', type: 'choice', q: 'Com diria un suís «això es fa així»?', options: ['Das wird so gmacht.', 'Me macht das so.', 'Das isch so gmacht.'], a: 1, why: 'Totes dues s’entenen, però la natural en dialecte és amb "me".' },
+      { id: 'g29e2', type: 'gap', q: 'Es isch scho gmacht ___. (participi de werde)', a: ['worde'], why: 'werde → worde. "Es isch gmacht worde" = es va fer.' },
+      { id: 'g29e3', type: 'choice', q: 'Per a què NO serveix «werde» en dialecte?', options: ['Per a la passiva', 'Per fer el futur', 'Per a les dues coses'], a: 1, why: 'El futur es fa amb el present. "werde" queda per a la passiva.' },
+      { id: 'g29e4', type: 'gap', q: '___ seit, das sig nöd eifach. (hom diu)', a: ['me', 'mer'], why: '"me" (o "mer") = man.' },
+      { id: 'g29e5', type: 'choice', q: '«S Huus wird bout» vol dir…', options: ['La casa es construeix', 'La casa es construirà', 'La casa s’ha construït'], a: 0, why: 'Passiva de present. El futur necessitaria una paraula de temps.' }
+    ]
+  },
+  {
+    id: 'g30',
+    book: 'holle',
+    unit: '26',
+    order: 26,
+    title: 'Verbs reflexius',
+    emoji: '🪞',
+    lesson: 'base',
+    summary: 'Els pronoms són els mateixos que ja saps: mi, di, sich.',
+    points: [
+      'Acusatiu: **mi · di · sich · üs · eu · sich**',
+      'Ich freue **mi**. = M’alegro. · Setz **di**! = Seu! · Er wäscht **sich**.',
+      'Quan l’acció es fa "per a un mateix", el pronom va en **datiu**: **mer · dir · em**',
+      'Ich chaufe **mer** es Buech. = Em compro un llibre.',
+      'Ich han **mer** es Glacé kauft. = M’he comprat un gelat.',
+      'Reflexius que faràs servir molt: sich **freue** (alegrar-se), sich **setze** (seure), sich **verspöte** (fer tard), sich **uskänne** (orientar-se).'
+    ],
+    table: {
+      head: ['Persona', 'Acusatiu', 'Datiu'],
+      rows: [['jo', 'mi', 'mer'], ['tu', 'di', 'dir'], ['ell/ella', 'sich', 'em / ere'], ['nosaltres', 'üs', 'üs']]
+    },
+    exercises: [
+      { id: 'g30e1', type: 'gap', q: 'Ich freue ___! (m’alegro)', a: ['mi'], why: 'Acusatiu reflexiu de 1a persona: mi.' },
+      { id: 'g30e2', type: 'gap', q: 'Setz ___! (seu, a un amic)', a: ['di'], why: 'Imperatiu + reflexiu de tu: Setz di!' },
+      { id: 'g30e3', type: 'choice', q: 'Ich chaufe ___ es nöis Velo. (per a mi)', options: ['mi', 'mer', 'mich'], a: 1, why: 'Acció per a un mateix → datiu: mer.' },
+      { id: 'g30e4', type: 'choice', q: 'Com dius «he fet tard»?', options: ['Ich ha mi verspöted.', 'Ich ha mer verspöted.', 'Ich bi mi verspöted.'], a: 0, why: 'sich verspöte, amb haa i el reflexiu en acusatiu.' },
+      { id: 'g30e5', type: 'gap', q: 'Er wäscht ___. (es renta)', a: ['sich'], why: '3a persona: sich.' }
+    ]
+  },
+  {
+    id: 'g31',
+    book: 'holle',
+    unit: '27',
+    order: 27.2,
+    title: 'Estil indirecte: seig i häig',
+    emoji: '💬',
+    lesson: 'base',
+    summary: 'Quan expliques el que ha dit un altre i no en respons. Dues formes que has de reconèixer.',
+    points: [
+      'De **sii** surt **seig** · de **haa** surt **häig**.',
+      'Er het gseit, er **seig** chrank. = Ha dit que estava malalt.',
+      'Sie het gseit, sie **häig** kei Ziit. = Ha dit que no tenia temps.',
+      'Fer servir seig/häig marca distància: **ho expliques, però no dius que sigui veritat**.',
+      'Amb la resta de verbs, el dialecte normalment tira pel dret amb l’indicatiu:',
+      'Er het gseit, er **chunt** spöter. = Ha dit que vindrà més tard.',
+      'Les sentiràs sobretot a les notícies, als xafardeigs i quan algú es vol treure responsabilitat de sobre.'
+    ],
+    exercises: [
+      { id: 'g31e1', type: 'gap', q: 'Er het gseit, er ___ chrank. (de sii)', a: ['seig'], why: 'sii → seig en estil indirecte.' },
+      { id: 'g31e2', type: 'gap', q: 'Sie het gseit, sie ___ kei Ziit. (de haa)', a: ['häig'], why: 'haa → häig.' },
+      { id: 'g31e3', type: 'choice', q: 'Què hi afegeix «seig» respecte de dir «er isch chrank»?', options: ['Res, és més formal', 'Que ho expliques però no en respons', 'Que és mentida'], a: 1, why: 'Marca que estàs citant algú altre, sense comprometre’t.' },
+      { id: 'g31e4', type: 'choice', q: 'Amb la majoria de verbs, com es fa l’estil indirecte en dialecte?', options: ['Amb formes especials per a cada verb', 'Amb l’indicatiu normal', 'No es pot fer'], a: 1, why: 'Només sii i haa tenen formes pròpies d’ús corrent; la resta van en indicatiu.' }
+    ]
   }
 ]
+
+// S'exporta en l'ordre del llibre de l'Andrea Holle (Schweizerdeutsch verstehen).
+// Els temes sense capítol (unit: null) van al final.
+export const GRAMMAR = [...TEMES].sort((a, b) => (a.order || 99) - (b.order || 99))

@@ -18,9 +18,14 @@ export const TOPICS = [
   { id: 'ciutat', label: 'Ciutat i transport', emoji: '🚋' },
   { id: 'feina', label: 'Feina', emoji: '💼' },
   { id: 'verbs', label: 'Verbs', emoji: '🏃' },
-  { id: 'adjectius', label: 'Adjectius', emoji: '🎨' },
+  { id: 'adjectius', label: 'Adjectius', emoji: '↔️' },
   { id: 'connectors', label: 'Connectors', emoji: '🔗' },
   { id: 'salut', label: 'Cos i salut', emoji: '🩺' },
+  { id: 'colors', label: 'Colors', emoji: '🎨' },
+  { id: 'calendari', label: 'Mesos i estacions', emoji: '📅' },
+  { id: 'animals', label: 'Animals', emoji: '🐄' },
+  { id: 'sentiments', label: 'Sentiments', emoji: '💭' },
+  { id: 'suis', label: 'Típicament suís', emoji: '🇨🇭' },
   { id: 'lectura', label: 'De les lectures', emoji: '📖' }
 ]
 
@@ -281,5 +286,85 @@ export const VOCAB = [
   { id: 'v316', ch: 'de Dokter', de: 'der Arzt', ca: 'el metge', topic: 'salut', lesson: 'base' },
   { id: 'v317', ch: 'd Apothek', de: 'die Apotheke', ca: 'la farmàcia', topic: 'salut', lesson: 'base' },
   { id: 'v318', ch: 'Weh haa', de: 'Schmerzen haben', ca: 'tenir mal', topic: 'salut', lesson: 'base', note: '"Ich ha Chopfweh" = em fa mal el cap.' },
-  { id: 'v319', ch: 'd Grippe', de: 'die Grippe', ca: 'la grip', topic: 'salut', lesson: 'base' }
+  { id: 'v319', ch: 'd Grippe', de: 'die Grippe', ca: 'la grip', topic: 'salut', lesson: 'base' },
+
+  // ---- Colors (Holle · Farben) ----
+  { id: 'v400', ch: 'rot', de: 'rot', ca: 'vermell', topic: 'colors', lesson: 'base', book: 'holle' },
+  { id: 'v401', ch: 'blau', de: 'blau', ca: 'blau', topic: 'colors', lesson: 'base', book: 'holle' },
+  { id: 'v402', ch: 'grüen', de: 'grün', ca: 'verd', topic: 'colors', lesson: 'base', book: 'holle' },
+  { id: 'v403', ch: 'gääl', de: 'gelb', ca: 'groc', topic: 'colors', lesson: 'base', book: 'holle' },
+  { id: 'v404', ch: 'schwarz', de: 'schwarz', ca: 'negre', topic: 'colors', lesson: 'base', book: 'holle' },
+  { id: 'v405', ch: 'wiiss', de: 'weiss', ca: 'blanc', topic: 'colors', lesson: 'base', book: 'holle' },
+  { id: 'v406', ch: 'grau', de: 'grau', ca: 'gris', topic: 'colors', lesson: 'base', book: 'holle' },
+  { id: 'v407', ch: 'bruun', de: 'braun', ca: 'marró', topic: 'colors', lesson: 'base', book: 'holle' },
+  { id: 'v408', ch: 'orange', de: 'orange', ca: 'taronja', topic: 'colors', lesson: 'base', book: 'holle' },
+  { id: 'v409', ch: 'rosa', de: 'rosa', ca: 'rosa', topic: 'colors', lesson: 'base', book: 'holle' },
+
+  // ---- Mesos i estacions (Holle · Monate, Jahreszeiten) ----
+  { id: 'v420', ch: 'Januar', de: 'Januar', ca: 'gener', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v421', ch: 'Februar', de: 'Februar', ca: 'febrer', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v422', ch: 'März', de: 'März', ca: 'març', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v423', ch: 'April', de: 'April', ca: 'abril', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v424', ch: 'Mai', de: 'Mai', ca: 'maig', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v425', ch: 'Juni', de: 'Juni', ca: 'juny', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v426', ch: 'Juli', de: 'Juli', ca: 'juliol', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v427', ch: 'Auguscht', de: 'August', ca: 'agost', topic: 'calendari', lesson: 'base', book: 'holle', note: 'Aquí es nota el -st → -scht.' },
+  { id: 'v428', ch: 'Septämber', de: 'September', ca: 'setembre', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v429', ch: 'Oktober', de: 'Oktober', ca: 'octubre', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v430', ch: 'Novämber', de: 'November', ca: 'novembre', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v431', ch: 'Dezämber', de: 'Dezember', ca: 'desembre', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v432', ch: 'de Frühlig', de: 'der Frühling', ca: 'la primavera', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v433', ch: 'de Summer', de: 'der Sommer', ca: 'l’estiu', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v434', ch: 'de Herbscht', de: 'der Herbst', ca: 'la tardor', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v435', ch: 'de Winter', de: 'der Winter', ca: 'l’hivern', topic: 'calendari', lesson: 'base', book: 'holle' },
+
+  // ---- Animals (Holle · Tiere) ----
+  { id: 'v450', ch: 'de Hund', de: 'der Hund', ca: 'el gos', topic: 'animals', lesson: 'base', book: 'holle' },
+  { id: 'v451', ch: 'd Chatz', de: 'die Katze', ca: 'el gat', topic: 'animals', lesson: 'base', book: 'holle', note: 'k → ch, un cop més.' },
+  { id: 'v452', ch: 's Ross', de: 'das Pferd', ca: 'el cavall', topic: 'animals', lesson: 'base', book: 'holle', note: 'A Suïssa "Ross", no "Pferd".' },
+  { id: 'v453', ch: 'd Chue', de: 'die Kuh', ca: 'la vaca', topic: 'animals', lesson: 'base', book: 'holle' },
+  { id: 'v454', ch: 'd Geiss', de: 'die Ziege', ca: 'la cabra', topic: 'animals', lesson: 'base', book: 'holle' },
+  { id: 'v455', ch: 's Schaf', de: 'das Schaf', ca: 'l’ovella', topic: 'animals', lesson: 'base', book: 'holle' },
+  { id: 'v456', ch: 'de Vogel', de: 'der Vogel', ca: 'l’ocell', topic: 'animals', lesson: 'base', book: 'holle' },
+  { id: 'v457', ch: 'de Fisch', de: 'der Fisch', ca: 'el peix', topic: 'animals', lesson: 'base', book: 'holle' },
+  { id: 'v458', ch: 'd Muus', de: 'die Maus', ca: 'el ratolí', topic: 'animals', lesson: 'base', book: 'holle' },
+  { id: 'v459', ch: 'de Bär', de: 'der Bär', ca: 'l’ós', topic: 'animals', lesson: 'base', book: 'holle' },
+  { id: 'v460', ch: 'de Fuchs', de: 'der Fuchs', ca: 'la guineu', topic: 'animals', lesson: 'base', book: 'holle' },
+  { id: 'v461', ch: 'de Has', de: 'der Hase', ca: 'la llebre', topic: 'animals', lesson: 'base', book: 'holle' },
+
+  // ---- Sentiments (Holle · Gefühle & Stimmungen) ----
+  { id: 'v470', ch: 'fro', de: 'froh', ca: 'content', topic: 'sentiments', lesson: 'base', book: 'holle' },
+  { id: 'v471', ch: 'truurig', de: 'traurig', ca: 'trist', topic: 'sentiments', lesson: 'base', book: 'holle' },
+  { id: 'v472', ch: 'wüetig', de: 'wütend', ca: 'enfadat', topic: 'sentiments', lesson: 'base', book: 'holle' },
+  { id: 'v473', ch: 'nervös', de: 'nervös', ca: 'nerviós', topic: 'sentiments', lesson: 'base', book: 'holle' },
+  { id: 'v474', ch: 'zfride', de: 'zufrieden', ca: 'satisfet', topic: 'sentiments', lesson: 'base', book: 'holle' },
+  { id: 'v475', ch: 'gschtresst', de: 'gestresst', ca: 'estressat', topic: 'sentiments', lesson: 'base', book: 'holle' },
+  { id: 'v476', ch: 'stolz', de: 'stolz', ca: 'orgullós', topic: 'sentiments', lesson: 'base', book: 'holle' },
+  { id: 'v477', ch: 'enttüüscht', de: 'enttäuscht', ca: 'decebut', topic: 'sentiments', lesson: 'base', book: 'holle' },
+  { id: 'v478', ch: 'überrascht', de: 'überrascht', ca: 'sorprès', topic: 'sentiments', lesson: 'base', book: 'holle' },
+  { id: 'v479', ch: 'verliebt', de: 'verliebt', ca: 'enamorat', topic: 'sentiments', lesson: 'base', book: 'holle' },
+  { id: 'v480', ch: 'schüch', de: 'schüchtern', ca: 'tímid', topic: 'sentiments', lesson: 'base', book: 'holle' },
+  { id: 'v481', ch: 'Ich ha Angscht', de: 'Ich habe Angst', ca: 'Tinc por', topic: 'sentiments', lesson: 'base', book: 'holle' },
+
+  // ---- Típicament suís (Holle · Typisch schweizerisch) ----
+  { id: 'v500', ch: 's Natel', de: 'das Handy', ca: 'el mòbil', topic: 'suis', lesson: 'base', book: 'holle', note: 'A Alemanya diuen "Handy" i no entenen "Natel".' },
+  { id: 'v501', ch: 's Rüebli', de: 'die Karotte', ca: 'la pastanaga', topic: 'suis', lesson: 'base', book: 'holle', note: 'D’aquí ve la Rüeblitorte, el pastís de pastanaga.' },
+  { id: 'v502', ch: 'poschte', de: 'einkaufen', ca: 'fer la compra', topic: 'suis', lesson: 'base', book: 'holle', note: '"Ich gang go poschte" és la frase suïssa per excel·lència.' },
+  { id: 'v503', ch: 'gäll?', de: 'oder? / nicht wahr?', ca: 'oi?', topic: 'suis', lesson: 'base', book: 'holle', note: 'Es posa al final de qualsevol frase per buscar complicitat.' },
+  { id: 'v504', ch: 's Guetzli', de: 'der Keks', ca: 'la galeta', topic: 'suis', lesson: 'base', book: 'holle' },
+  { id: 'v505', ch: 'de Föhn', de: 'der Föhn', ca: 'el vent càlid dels Alps', topic: 'suis', lesson: 'base', book: 'holle', note: 'Se’n culpa el mal humor i el mal de cap de mig país.' },
+  { id: 'v506', ch: 's Trottinett', de: 'der Roller', ca: 'el patinet', topic: 'suis', lesson: 'base', book: 'holle', note: 'Del francès, com Velo i Billett.' },
+  { id: 'v507', ch: 'de Coiffeur', de: 'der Friseur', ca: 'la perruqueria', topic: 'suis', lesson: 'base', book: 'holle' },
+  { id: 'v508', ch: 's Portemonnaie', de: 'das Portemonnaie', ca: 'el moneder', topic: 'suis', lesson: 'base', book: 'holle' },
+  { id: 'v509', ch: 's Nastuech', de: 'das Taschentuch', ca: 'el mocador', topic: 'suis', lesson: 'base', book: 'holle' },
+  { id: 'v510', ch: 'de Znüni-Halt', de: 'die Znüni-Pause', ca: 'la pausa del mos de mig matí', topic: 'suis', lesson: 'base', book: 'holle' },
+  { id: 'v511', ch: 'schwiizerdütsch schwätze', de: 'Schweizerdeutsch sprechen', ca: 'parlar suís-alemany', topic: 'suis', lesson: 'base', book: 'holle', note: '"schwätze" és més de Basilea; a Zuric, "rede".' },
+
+  // ---- Caràcter (Holle · Menschen & Persönlichkeiten) ----
+  { id: 'v520', ch: 'nätt', de: 'nett', ca: 'simpàtic', topic: 'persones', lesson: 'base', book: 'holle' },
+  { id: 'v521', ch: 'offe', de: 'offen', ca: 'obert (de caràcter)', topic: 'persones', lesson: 'base', book: 'holle' },
+  { id: 'v522', ch: 'streng', de: 'streng', ca: 'estricte', topic: 'persones', lesson: 'base', book: 'holle' },
+  { id: 'v523', ch: 'grosszügig', de: 'grosszügig', ca: 'generós', topic: 'persones', lesson: 'base', book: 'holle' },
+  { id: 'v524', ch: 'pünktlich', de: 'pünktlich', ca: 'puntual', topic: 'persones', lesson: 'base', book: 'holle', note: 'A Suïssa no és un afalac: és el mínim.' },
+  { id: 'v525', ch: 'zueverlässig', de: 'zuverlässig', ca: 'de fiar', topic: 'persones', lesson: 'base', book: 'holle' }
 ]
