@@ -207,3 +207,57 @@ h3 { font-size: 15px; margin: 18px 4px 8px; }
 .sync-state { border-radius: 10px; padding: 10px 12px; font-size: 13px; line-height: 1.45; margin-top: 12px; }
 .sync-state.pend { background: #fbf3e6; border: 1px solid #ecdcbf; color: #8a6a2f; }
 .sync-state.ok { background: #eef4ec; border: 1px solid var(--ok); color: #3f6340; }
+
+/* ---- Lector ---- */
+.reader-bar { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+.mini { flex: 1; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 9px 12px; font-size: 13px; color: var(--ink); cursor: pointer; white-space: nowrap; }
+.tornar { background: none; border: none; color: var(--brand-2); font-size: 14px; font-weight: 600; cursor: pointer; padding: 0 0 8px; }
+
+.read-card { display: flex; align-items: stretch; gap: 6px; margin-bottom: 9px; }
+.read-open { flex: 1; text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 13px 14px; cursor: pointer; color: var(--ink); display: flex; flex-direction: column; gap: 3px; }
+.read-open b { font-size: 15px; }
+.read-open span { font-size: 12.5px; color: var(--muted); }
+.read-card .del { background: var(--card); border: 1px solid var(--line); border-radius: 12px; width: 44px; font-size: 15px; }
+
+.read-title { font-size: 22px; margin: 4px 0 6px; }
+.read-intro { font-size: 13.5px; line-height: 1.5; color: #3a444a; background: #eef2f4; border-left: 3px solid var(--brand-2); border-radius: 0 8px 8px 0; padding: 10px 12px; margin: 0 0 10px; }
+.read-body { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 6px 14px 14px; margin-bottom: 14px; }
+.read-body p { font-size: 17px; line-height: 1.85; margin: 14px 0; }
+.w { font: inherit; background: none; border: none; padding: 0 1px; margin: 0; color: inherit; cursor: pointer; border-radius: 4px; border-bottom: 1px solid transparent; }
+.w:active { background: #f0ece6; }
+.w.tinc { border-bottom: 2px solid var(--ok); }
+.w.sel { background: var(--brand); color: #fff; }
+
+.reader label { display: block; font-size: 13px; color: var(--muted); margin: 12px 0 0; }
+.reader input, .reader select, .reader textarea {
+  width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px;
+  font-size: 15px; margin-top: 4px; background: var(--card); color: var(--ink);
+  font-family: inherit;
+}
+.reader textarea { line-height: 1.6; resize: vertical; }
+
+.mywords { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 9px; }
+.mywords li { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.mywords li.pendent { border-color: #ecdcbf; background: #fdfaf4; }
+.mw-head { display: flex; align-items: center; gap: 8px; }
+.mw-head .ch { flex: 1; font-size: 17px; color: var(--brand); }
+.mw-todo { font-size: 13px; color: #8a6a2f; margin-top: 4px; }
+.mw-src { font-size: 11.5px; color: var(--muted); margin-top: 6px; }
+
+/* Panell de la paraula tocada */
+.panel-fons { position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 25; }
+.panel {
+  position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 100%; max-width: 640px; background: var(--card); z-index: 26;
+  border-radius: 18px 18px 0 0; padding: 16px 16px calc(16px + var(--safe-b));
+  box-shadow: 0 -6px 24px rgba(0,0,0,.18); max-height: 85vh; overflow-y: auto;
+}
+.panel-head { display: flex; align-items: center; gap: 8px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.panel-head .ch { flex: 1; font-size: 22px; color: var(--brand); }
+.panel-x { background: none; border: none; font-size: 17px; color: var(--muted); cursor: pointer; }
+.panel-found { padding: 12px 0 4px; display: flex; flex-direction: column; gap: 8px; }
+.panel-via { font-size: 12.5px; color: var(--muted); }
+.panel-font { font-size: 11.5px; color: var(--muted); }
+.panel-nores { font-size: 13.5px; line-height: 1.5; color: #8a6a2f; background: #fbf3e6; border: 1px solid #ecdcbf; border-radius: 10px; padding: 10px 12px; margin: 12px 0 0; }
+.panel label { display: block; font-size: 13px; color: var(--muted); margin: 12px 0 0; }
+.panel input { width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 15px; margin-top: 4px; background: var(--bg); color: var(--ink); }

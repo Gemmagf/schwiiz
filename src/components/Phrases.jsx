@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import { PHRASES, PHRASE_TAGS, DIALOGS } from '../data/phrases.js'
 import { speak, ttsAvailable } from '../lib/tts.js'
+import Reader from './Reader.jsx'
 
 function Speak({ text, voiceURI }) {
   if (!ttsAvailable()) return null
   return <button className="speak" onClick={() => speak(text, { voiceURI })} aria-label="Escoltar">🔊</button>
 }
 
-export default function Phrases({ voiceURI }) {
-  const [vista, setVista] = useState('frases')
+export default function Phrases({ voiceURI, reader }) {
+  const [vista, setVista] = useState('textos')
   const [tag, setTag] = useState('tots')
   const [tapat, setTapat] = useState(false)
   const [obert, setObert] = useState(DIALOGS[0].id)
@@ -18,14 +19,19 @@ export default function Phrases({ voiceURI }) {
   return (
     <div className="phrases">
       <div className="subtabs">
-        <button className={vista === 'frases' ? 'active' : ''} onClick={() => setVista('frases')}>💬 Frases</button>
+        <button className={vista === 'textos' ? 'active' : ''} onClick={() => setVista('textos')}>📖 Textos</button>
         <button className={vista === 'dialegs' ? 'active' : ''} onClick={() => setVista('dialegs')}>🎭 Diàlegs</button>
+        <button className={vista === 'frases' ? 'active' : ''} onClick={() => setVista('frases')}>💬 Frases</button>
       </div>
 
-      <label className="cover-toggle">
-        <input type="checkbox" checked={tapat} onChange={(e) => setTapat(e.target.checked)} />
-        Tapar les traduccions (toca per destapar)
-      </label>
+      {vista === 'textos' && <Reader {...reader} voiceURI={voiceURI} />}
+
+      {vista !== 'textos' && (
+        <label className="cover-toggle">
+          <input type="checkbox" checked={tapat} onChange={(e) => setTapat(e.target.checked)} />
+          Tapar les traduccions (toca per destapar)
+        </label>
+      )}
 
       {vista === 'frases' ? (
         <>
@@ -54,7 +60,7 @@ export default function Phrases({ voiceURI }) {
             ))}
           </ul>
         </>
-      ) : (
+      ) : vista === 'dialegs' ? (
         DIALOGS.map((d) => {
           const isOpen = obert === d.id
           return (
@@ -85,7 +91,7 @@ export default function Phrases({ voiceURI }) {
             </section>
           )
         })
-      )}
+      ) : null}
     </div>
   )
 }

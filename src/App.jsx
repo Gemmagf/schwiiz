@@ -1,7 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
-  getAllSrs, putSrs, getAllQuiz, putQuiz, bumpSession, getSessions, getConfig, setConfig, importAll
+  getAllSrs, putSrs, getAllQuiz, putQuiz, bumpSession, getSessions, getConfig, setConfig, importAll,
+  getCards, putCard, deleteCard, getTexts, putText, deleteText
 } from './lib/db.js'
+import { VOCAB } from './data/vocab.js'
 import { syncIfDirty, isConfigured, pullFromGit } from './lib/sync.js'
 import { todayISO } from './lib/srs.js'
 import Dashboard from './components/Dashboard.jsx'
@@ -14,7 +16,7 @@ const TABS = [
   { id: 'dash', label: 'Tauler', emoji: '🏠' },
   { id: 'cards', label: 'Repàs', emoji: '🃏' },
   { id: 'gram', label: 'Gramàtica', emoji: '📐' },
-  { id: 'frases', label: 'Frases', emoji: '💬' },
+  { id: 'frases', label: 'Llegir', emoji: '📖' },
   { id: 'set', label: 'Ajustos', emoji: '⚙️' }
 ]
 
@@ -28,15 +30,21 @@ export default function App() {
   const [topicFilter, setTopicFilter] = useState('tots')
   const [dir, setDir] = useState('ca2ch')
   const [voiceURI, setVoiceURIState] = useState('')
+  const [cards, setCards] = useState([])       // targetes que has fet tu llegint
+  const [texts, setTexts] = useState([])       // capítols que has enganxat tu
   const [dirty, setDirty] = useState(false)     // hi ha progrés sense pujar al repo
   const [syncOn, setSyncOn] = useState(false)   // el sync amb git està configurat
 
   async function refresh() {
-    const [s, q, se, d, cfg] = await Promise.all([
-      getAllSrs(), getAllQuiz(), getSessions(), getConfig('dirty'), isConfigured()
+    const [s, q, se, c, t, d, cfg] = await Promise.all([
+      getAllSrs(), getAllQuiz(), getSessions(), getCards(), getTexts(), getConfig('dirty'), isConfigured()
     ])
-    setSrs(s); setQuiz(q); setSessions(se); setDirty(Boolean(d)); setSyncOn(cfg)
+    setSrs(s); setQuiz(q); setSessions(se); setCards(c); setTexts(t)
+    setDirty(Boolean(d)); setSyncOn(cfg)
   }
+
+  // Les targetes que has afegit llegint entren al repàs com qualsevol altra.
+  const vocab = useMemo(() => [...VOCAB, ...cards], [cards])
 
   useEffect(() => {
     refresh()
@@ -95,6 +103,36 @@ export default function App() {
     scheduleSync()
   }
 
+  async function addCard(dades) {
+    await putCard({ id: 'u' + Date.now().toString(36), ...dades })
+    await refresh()
+    scheduleSync()
+  }
+
+  async function updateCard(card) {
+    await putCard(card)
+    await refresh()
+    scheduleSync()
+  }
+
+  async function removeCard(id) {
+    await deleteCard(id)
+    await refresh()
+    scheduleSync()
+  }
+
+  async function addText(text) {
+    await putText(text)
+    await refresh()
+    scheduleSync()
+  }
+
+  async function removeText(id) {
+    await deleteText(id)
+    await refresh()
+    scheduleSync()
+  }
+
   async function saveVoice(uri) {
     setVoiceURIState(uri)
     await setConfig('voiceURI', uri)
@@ -124,21 +162,30 @@ export default function App() {
       <main className="content">
         {tab === 'dash' && (
           <Dashboard
-            srs={srs} quiz={quiz} sessions={sessions}
+            vocab={vocab} srs={srs} quiz={quiz} sessions={sessions}
             onStart={() => setTab('cards')}
             onGoTo={goTo}
           />
         )}
         {tab === 'cards' && (
           <Flashcards
-            srs={srs} onGrade={onGrade}
+            vocab={vocab} srs={srs} onGrade={onGrade}
             topicFilter={topicFilter} setTopicFilter={setTopicFilter}
             dir={dir} setDir={saveDir}
             voiceURI={voiceURI}
           />
         )}
         {tab === 'gram' && <Grammar quiz={quiz} onAnswer={onQuizAnswer} />}
-        {tab === 'frases' && <Phrases voiceURI={voiceURI} />}
+        {tab === 'frases' && (
+          <Phrases
+            voiceURI={voiceURI}
+            reader={{
+              userCards: cards, texts,
+              onAddCard: addCard, onUpdateCard: updateCard, onDeleteCard: removeCard,
+              onAddText: addText, onDeleteText: removeText
+            }}
+          />
+        )}
         {tab === 'set' && (
           <Settings
             getConfig={getConfig} setConfig={setConfig}

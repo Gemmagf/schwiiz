@@ -10,9 +10,29 @@ Offline-first · s'actualitza per git · flashcards amb repàs espaiat, gramàti
   dialecte→català i Hochdeutsch→dialecte. Filtrable per tema.
 - **Gramàtica**: 12 temes amb explicació, taules de conjugació i 70 exercicis que es
   corregeixen sols.
-- **Frases**: 51 frases per situació i 6 diàlegs, amb opció de tapar la traducció per
-  autoavaluar-se.
+- **Llegir**: tres coses en una.
+  - *Textos*: lector on toques qualsevol paraula i en surt la traducció (resolent formes
+    conjugades: `gfahre` → `fahre`, `Hüüsli` → `Huus`). D'un toc més, la paraula es
+    converteix en flashcard i entra al repàs espaiat. Les paraules que ja tens surten
+    subratllades dins del text. Pots afegir-hi els teus propis capítols.
+  - *Diàlegs*: 6 converses per situació.
+  - *Frases*: 51 frases per situació, amb opció de tapar la traducció.
 - **Ajustos**: veu, sincronització del progrés amb git, exportar dades.
+
+## Els llibres de classe
+
+L'app està pensada per acompanyar tres llibres:
+
+| Llibre | Autor | Què n'aporta |
+|---|---|---|
+| *Schweizerdeutsch verstehen* | Andrea Holle | vocabulari i teoria |
+| *Schwiizerdütsch leicht gemacht — S Schwiizerdüütsch vo Züri* | Verena Schorn | ordre dels temes de gramàtica |
+| *Hansdampf — Gschichte us em Züri Oberland, Band 2* | Johann Widmer | lectura |
+
+> El text dels llibres **no** ve amb l'app i no s'hi ha de copiar: són obres amb drets
+> d'autor. Els capítols que vulguis treballar els afegeixes tu des de *Llegir → Afegir un
+> text*, i es queden al teu dispositiu. Els textos d'exemple que porta l'app estan escrits
+> expressament per a ella.
 
 ## El cicle setmanal
 
@@ -70,8 +90,11 @@ src/
   data/vocab.js     226 paraules: dialecte · Hochdeutsch · català
   data/grammar.js   12 temes + 70 exercicis
   data/phrases.js   51 frases + 6 diàlegs
+  data/readings.js  llibres de referència + textos d'exemple propis
+  data/glossary.js  189 paraules de suport + 73 formes conjugades, per al lector
   data/lessons.js   índex de classes
   lib/srs.js        repàs espaiat (SM-2 simplificat)
+  lib/lookup.js     cerca d'una paraula tocada dins d'un text
   lib/db.js         IndexedDB (offline)
   lib/sync.js       sincronització GitHub
   lib/tts.js        pronunciació

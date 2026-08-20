@@ -4,7 +4,7 @@
 import { openDB } from 'idb'
 
 const DB_NAME = 'schwiiz'
-const DB_VERSION = 1
+const DB_VERSION = 2
 
 export const dbReady = openDB(DB_NAME, DB_VERSION, {
   upgrade(db) {
@@ -19,6 +19,14 @@ export const dbReady = openDB(DB_NAME, DB_VERSION, {
     }
     if (!db.objectStoreNames.contains('meta')) {
       db.createObjectStore('meta', { keyPath: 'key' }) // config + flag dirty
+    }
+    if (!db.objectStoreNames.contains('cards')) {
+      // Targetes creades per tu llegint: { id, ch, de, ca, topic, source, note, createdAt }
+      db.createObjectStore('cards', { keyPath: 'id' })
+    }
+    if (!db.objectStoreNames.contains('texts')) {
+      // Capítols que has enganxat tu: { id, title, book, body, createdAt }
+      db.createObjectStore('texts', { keyPath: 'id' })
     }
   }
 })
@@ -93,6 +101,49 @@ export async function getSessions() {
   return db.getAll('sessions')
 }
 
+// ---- Targetes pròpies (de les lectures) ----
+export async function getCards() {
+  const db = await dbReady
+  const all = await db.getAll('cards')
+  return all.sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''))
+}
+
+export async function putCard(card) {
+  const db = await dbReady
+  const rec = { createdAt: new Date().toISOString(), topic: 'lectura', ...card }
+  await db.put('cards', rec)
+  await markDirty()
+  return rec
+}
+
+export async function deleteCard(id) {
+  const db = await dbReady
+  await db.delete('cards', id)
+  await db.delete('srs', id) // fora la targeta, fora el seu estat de repàs
+  await markDirty()
+}
+
+// ---- Textos propis ----
+export async function getTexts() {
+  const db = await dbReady
+  const all = await db.getAll('texts')
+  return all.sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''))
+}
+
+export async function putText(text) {
+  const db = await dbReady
+  const rec = { createdAt: new Date().toISOString(), ...text }
+  await db.put('texts', rec)
+  await markDirty()
+  return rec
+}
+
+export async function deleteText(id) {
+  const db = await dbReady
+  await db.delete('texts', id)
+  await markDirty()
+}
+
 // ---- Config ----
 export async function getConfig(key) {
   const db = await dbReady
@@ -111,13 +162,15 @@ export async function exportAll() {
     srs: await db.getAll('srs'),
     quiz: await db.getAll('quiz'),
     sessions: await db.getAll('sessions'),
+    cards: await db.getAll('cards'),
+    texts: await db.getAll('texts'),
     exportedAt: new Date().toISOString()
   }
 }
 
 export async function importAll(state) {
   const db = await dbReady
-  for (const s of ['srs', 'quiz', 'sessions']) {
+  for (const s of ['srs', 'quiz', 'sessions', 'cards', 'texts']) {
     if (!Array.isArray(state[s])) continue
     const tx = db.transaction(s, 'readwrite')
     await tx.store.clear()

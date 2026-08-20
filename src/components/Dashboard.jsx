@@ -1,4 +1,4 @@
-import { VOCAB, TOPICS } from '../data/vocab.js'
+import { TOPICS } from '../data/vocab.js'
 import { GRAMMAR } from '../data/grammar.js'
 import { PHRASES, DIALOGS } from '../data/phrases.js'
 import { stats, todayISO } from '../lib/srs.js'
@@ -19,8 +19,8 @@ function streak(sessions) {
   return n
 }
 
-export default function Dashboard({ srs, quiz, sessions, onStart, onGoTo }) {
-  const s = stats(VOCAB, srs)
+export default function Dashboard({ vocab, srs, quiz, sessions, onStart, onGoTo }) {
+  const s = stats(vocab, srs)
   const pendents = s.nous + s.arepassar
   const pct = s.total ? Math.round((s.apresos / s.total) * 100) : 0
   const totalEx = GRAMMAR.reduce((a, g) => a + g.exercises.length, 0)
@@ -56,7 +56,8 @@ export default function Dashboard({ srs, quiz, sessions, onStart, onGoTo }) {
       <h2>Per tema</h2>
       <div className="topic-grid">
         {TOPICS.map((t) => {
-          const items = VOCAB.filter((v) => v.topic === t.id)
+          const items = vocab.filter((v) => v.topic === t.id)
+          if (!items.length) return null
           const ts = stats(items, srs)
           const p = ts.total ? Math.round((ts.apresos / ts.total) * 100) : 0
           return (

@@ -20,9 +20,14 @@ export const TOPICS = [
   { id: 'verbs', label: 'Verbs', emoji: '🏃' },
   { id: 'adjectius', label: 'Adjectius', emoji: '🎨' },
   { id: 'connectors', label: 'Connectors', emoji: '🔗' },
-  { id: 'salut', label: 'Cos i salut', emoji: '🩺' }
+  { id: 'salut', label: 'Cos i salut', emoji: '🩺' },
+  { id: 'lectura', label: 'De les lectures', emoji: '📖' }
 ]
 
+// Camps opcionals per lligar el contingut als llibres de classe:
+//   book: 'holle' | 'schorn'   (vegeu src/data/readings.js)
+//   unit: 'K3'                 (capítol/unitat dins del llibre)
+// Encara no s'han omplert: falta l'índex dels llibres.
 export const VOCAB = [
   // ---- Salutacions ----
   { id: 'v001', ch: 'Grüezi', de: 'Guten Tag', ca: 'Bon dia (formal, a una persona)', topic: 'salutacions', lesson: 'base' },

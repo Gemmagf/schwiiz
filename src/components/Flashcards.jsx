@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { VOCAB, TOPICS } from '../data/vocab.js'
+import { TOPICS } from '../data/vocab.js'
 import { GRADES, dueCards, grade as gradeCard, newCard, todayISO } from '../lib/srs.js'
 import { speak, ttsAvailable } from '../lib/tts.js'
 
@@ -9,7 +9,7 @@ const DIRECTIONS = [
   { id: 'de2ch', label: 'Hochdeutsch → Dialecte', front: 'de', hint: 'per fixar els canvis de so' }
 ]
 
-export default function Flashcards({ srs, onGrade, topicFilter, setTopicFilter, dir, setDir, voiceURI }) {
+export default function Flashcards({ vocab, srs, onGrade, topicFilter, setTopicFilter, dir, setDir, voiceURI }) {
   const [queue, setQueue] = useState(null) // null = encara no s'ha començat
   const [idx, setIdx] = useState(0)
   const [shown, setShown] = useState(false)
@@ -17,8 +17,8 @@ export default function Flashcards({ srs, onGrade, topicFilter, setTopicFilter, 
   const [lliure, setLliure] = useState(false)
 
   const pool = useMemo(
-    () => (topicFilter === 'tots' ? VOCAB : VOCAB.filter((v) => v.topic === topicFilter)),
-    [topicFilter]
+    () => (topicFilter === 'tots' ? vocab : vocab.filter((v) => v.topic === topicFilter)),
+    [topicFilter, vocab]
   )
   const pendents = useMemo(() => dueCards(pool, srs), [pool, srs])
 
@@ -77,10 +77,11 @@ export default function Flashcards({ srs, onGrade, topicFilter, setTopicFilter, 
         <h2>Tema</h2>
         <div className="filters">
           <button className={`chip ${topicFilter === 'tots' ? 'active' : ''}`} onClick={() => setTopicFilter('tots')}>
-            Tots ({VOCAB.length})
+            Tots ({vocab.length})
           </button>
           {TOPICS.map((t) => {
-            const n = VOCAB.filter((v) => v.topic === t.id).length
+            const n = vocab.filter((v) => v.topic === t.id).length
+            if (!n) return null
             return (
               <button key={t.id} className={`chip ${topicFilter === t.id ? 'active' : ''}`} onClick={() => setTopicFilter(t.id)}>
                 {t.emoji} {t.label} ({n})

@@ -5,6 +5,10 @@
 //   'gap'    -> q amb ___, a = array de respostes acceptades (es compara en minúscules, sense accents)
 // `why` és l'explicació que surt després de respondre.
 
+// Camps opcionals per lligar el contingut als llibres de classe:
+//   book: 'holle' | 'schorn'   (vegeu src/data/readings.js)
+//   unit: 'K3'                 (capítol/unitat dins del llibre)
+// Encara no s'han omplert: falta l'índex dels llibres.
 export const GRAMMAR = [
   {
     id: 'g01',
