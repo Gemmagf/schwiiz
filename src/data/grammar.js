@@ -317,5 +317,206 @@ export const GRAMMAR = [
       { id: 'g12e4', type: 'choice', q: '___ choschtet das? (quant)', options: ['Wievil', 'Was', 'Wie'], a: 0, why: 'Wievil choschtet das? — també val "Was choschtet das?".' },
       { id: 'g12e5', type: 'gap', q: '___ chunsch du? (quan)', a: ['wänn', 'wann'], why: 'Wänn chunsch du?' }
     ]
+  },
+  {
+    id: 'g13',
+    title: 'Konjunktiv II: wär, hätt, chönt',
+    emoji: '🎩',
+    lesson: 'base',
+    summary: 'La forma de la cortesia i de les hipòtesis. La faràs servir cada dia per demanar coses.',
+    points: [
+      '**sii** → ich **wär** · du **wärsch** · er **wär** · mir **wäred**',
+      '**haa** → ich **hätt** · du **hättsch** · er **hätt** · mir **hätted**',
+      '**chöne** → ich **chönt** · du **chöntsch** · er **chönt** · mir **chönted**',
+      '**wölle** → ich **wett** (= voldria). "Ich wett es Bier" és la manera normal de demanar.',
+      'Per a la resta de verbs: **wür / würd** + infinitiu → "Ich **wür** säge…"',
+      'Das **wär** super! · **Chöntsch** mer hälfe? · Ich **hätt** gärn en Kaffi.'
+    ],
+    table: {
+      head: ['', 'Present', 'Konjunktiv II'],
+      rows: [
+        ['ich sóc / seria', 'ich bi', 'ich wär'],
+        ['jo tinc / tindria', 'ich ha', 'ich hätt'],
+        ['jo puc / podria', 'ich cha', 'ich chönt'],
+        ['jo vull / voldria', 'ich wott', 'ich wett'],
+        ['jo faig / faria', 'ich mache', 'ich wür mache']
+      ]
+    },
+    exercises: [
+      { id: 'g13e1', type: 'gap', q: 'Ich ___ gärn es Glas Wii. (voldria — de haa)', a: ['hätt'], why: '"Ich hätt gärn…" és LA fórmula per demanar qualsevol cosa.' },
+      { id: 'g13e2', type: 'choice', q: '___ Sie mer hälfe? (posa-hi el Konjunktiv)', options: ['Chönd', 'Chönted', 'Chasch'], a: 1, why: 'Konjunktiv de chöne en forma de cortesia: chönted Sie. "Chönd Sie" (present) també s’usa, però és menys suau.' },
+      { id: 'g13e3', type: 'gap', q: 'Das ___ super! (seria)', a: ['wär'], why: 'sii → wär.' },
+      { id: 'g13e4', type: 'choice', q: 'Com dius «voldria anar»?', options: ['Ich wott gaa.', 'Ich wett gaa.', 'Ich wär gaa.'], a: 1, why: '"wott" = vull (directe). "wett" = voldria (educat).' },
+      { id: 'g13e5', type: 'choice', q: 'Wänn ich Ziit ___, wür ich cho.', options: ['ha', 'hätt', 'händ'], a: 1, why: 'Hipòtesi → Konjunktiv: wänn ich Ziit hätt.' }
+    ]
+  },
+  {
+    id: 'g14',
+    title: 'L’imperatiu',
+    emoji: '📣',
+    lesson: 'base',
+    summary: 'Donar ordres i instruccions. Dues formes: tu i vosaltres/vostè.',
+    points: [
+      'A **du**: l’arrel del verb, sense terminació. **Chum!** **Gang!** **Lueg!** **Mach!** **Wart!**',
+      'A **ihr** i a **Sie**: arrel + **-ed**. **Chömed!** **Gönd!** **Lueged!** **Mached!**',
+      'Amb vostè s’hi afegeix el pronom: **Lueged Sie!** · **Chömed Sie!**',
+      'Per suavitzar-ho: hi poses **bitte**, o ho gires en pregunta — "**Chöntsch** du…?"',
+      'Molt sentit al carrer: **Lueg mal!** (mira!) · **Wart chli!** (espera una mica!)'
+    ],
+    exercises: [
+      { id: 'g14e1', type: 'gap', q: 'Digues a un amic que vingui: ___! (cho)', a: ['chum'], why: 'Imperatiu de du: arrel nua → Chum!' },
+      { id: 'g14e2', type: 'choice', q: 'Digues a un grup que miri: ___!', options: ['Lueg', 'Lueged', 'Luege'], a: 1, why: 'Plural i vostè → arrel + -ed: Lueged!' },
+      { id: 'g14e3', type: 'gap', q: 'Digues a un amic que esperi una mica: ___ chli! (warte)', a: ['wart'], why: 'Wart chli!' },
+      { id: 'g14e4', type: 'choice', q: 'Com dius «entri, si us plau» a un client?', options: ['Chum bitte ine!', 'Chömed Sie bitte ine!', 'Chömed bitte ine!'], a: 1, why: 'Amb vostè: forma en -ed + Sie.' },
+      { id: 'g14e5', type: 'choice', q: 'Quina manera de demanar és la MÉS educada?', options: ['Gib mer s Salz!', 'Gib mer bitte s Salz.', 'Chöntsch mer bitte s Salz gää?'], a: 2, why: 'Girar-ho en pregunta amb Konjunktiv és el registre més suau.' }
+    ]
+  },
+  {
+    id: 'g15',
+    title: 'El futur (que no existeix)',
+    emoji: '⏩',
+    lesson: 'base',
+    summary: 'Una altra bona notícia: el dialecte no té futur. Es fa servir el present.',
+    points: [
+      'Oblida "werden". En dialecte pràcticament no s’usa per fer el futur.',
+      'Present + una paraula de temps i ja tens el futur:',
+      '**Morn gang ich** uf Bärn. = Demà aniré a Berna.',
+      '**Nächscht Wuche fangt** de Kurs **aa**. = La setmana vinent començarà el curs.',
+      'Recorda l’ordre: si comences per la paraula de temps, el verb continua sent el segon.'
+    ],
+    exercises: [
+      { id: 'g15e1', type: 'choice', q: 'Com dius «demà treballaré»?', options: ['Morn wird ich schaffe.', 'Morn schaffe ich.', 'Morn ich schaffe.'], a: 1, why: 'Present + "morn". I el verb en segona posició.' },
+      { id: 'g15e2', type: 'choice', q: 'Com dius «l’any que ve aniré a Suïssa»?', options: ['Nächschts Johr gang ich i d Schwiiz.', 'Nächschts Johr werde ich i d Schwiiz gaa.', 'Ich gang werde i d Schwiiz.'], a: 0, why: 'Present + expressió de temps.' },
+      { id: 'g15e3', type: 'gap', q: 'Completa amb el present: Morn ___ ich di aa. (rüefe = trucar)', a: ['rüefe'], why: '1a persona = infinitiu: rüefe. El prefix "aa" va al final.' },
+      { id: 'g15e4', type: 'choice', q: 'Quants temps verbals de passat i futur té el dialecte?', options: ['Un passat i un futur', 'Un passat i cap futur', 'Dos passats i un futur'], a: 1, why: 'Només el perfet per al passat, i res per al futur: el present ho cobreix.' }
+    ]
+  },
+  {
+    id: 'g16',
+    title: 'Verbs separables',
+    emoji: '✂️',
+    lesson: 'base',
+    summary: 'Verbs que es parteixen: el prefix se’n va al final de la frase.',
+    points: [
+      '**uufstah** (llevar-se) → Ich **stande** am sibni **uf**.',
+      '**aafange** (començar) → De Film **fangt** am achti **aa**.',
+      '**iichaufe** (fer la compra) → Ich **chaufe** am Samschtig **ii**.',
+      '**mitcho** (venir amb) → **Chunsch** du **mit**?',
+      'Al perfet el prefix torna a enganxar-se, davant del ge-: uf**g**stande, aa**g**fange.',
+      'Ich bi am sibni **uufgstande**. · De Film het **aagfange**.'
+    ],
+    exercises: [
+      { id: 'g16e1', type: 'choice', q: 'Quina és correcta? (uufstah, a les set)', options: ['Ich uufstande am sibni.', 'Ich stande am sibni uf.', 'Ich stande uf am sibni.'], a: 1, why: 'El prefix "uf" tanca la frase.' },
+      { id: 'g16e2', type: 'gap', q: 'De Kurs fangt am nüüni ___. (aafange)', a: ['aa', 'a'], why: 'El prefix separat va al final: fangt … aa.' },
+      { id: 'g16e3', type: 'choice', q: 'Com preguntes «véns amb nosaltres?»', options: ['Mitchunsch du?', 'Chunsch du mit?', 'Du mitchunsch?'], a: 1, why: 'Verb primer (pregunta), prefix al final.' },
+      { id: 'g16e4', type: 'choice', q: 'Passat de «Ich stande uf»:', options: ['Ich bi uufgstande.', 'Ich ha uufgstande.', 'Ich bi gstande uf.'], a: 0, why: 'Verb de moviment/canvi d’estat → sii. I el prefix torna a enganxar-se: uufgstande.' },
+      { id: 'g16e5', type: 'gap', q: 'Digues a algú que pari: Hör ___! (ufhöre)', a: ['uf', 'ufe'], why: 'Hör uf! = Prou!' }
+    ]
+  },
+  {
+    id: 'g17',
+    title: 'Les relatives amb «wo»',
+    emoji: '🔗',
+    lesson: 'base',
+    summary: 'Una sola paraula per a totes les relatives. Aquí el dialecte és molt més fàcil que l’alemany.',
+    points: [
+      'L’alemany fa der/die/das/den/dem segons el cas. El dialecte fa **wo** i prou.',
+      'De Maa, **wo** det staht, isch min Nachbar.',
+      'D Frau, **wo** ich gseh han, isch d Chefin.',
+      'S Buech, **wo** ich läse, isch guet.',
+      '**wo** també vol dir "quan" per al passat: "**Wo** ich chli gsi bi…" = Quan era petita…',
+      'Com sempre en subordinada, el verb se’n va al final.'
+    ],
+    exercises: [
+      { id: 'g17e1', type: 'gap', q: 'De Zug, ___ am achti fahrt, isch voll.', a: ['wo'], why: 'Totes les relatives fan "wo".' },
+      { id: 'g17e2', type: 'choice', q: 'Quina és correcta?', options: ['D Frau, die ich kännt han…', 'D Frau, wo ich kännt han…', 'D Frau, welchi ich kännt han…'], a: 1, why: 'En dialecte no es fan servir die/der/welche per a relatives: només "wo".' },
+      { id: 'g17e3', type: 'choice', q: 'Tradueix: «Quan era petita, vivia a Barcelona.»', options: ['Wänn ich chli gsi bi, han ich z Barcelona gwohnt.', 'Wo ich chli gsi bi, han ich z Barcelona gwohnt.', 'Als ich chli gsi bi, han ich z Barcelona gwohnt.'], a: 1, why: 'Per al passat puntual, "wo" fa d’"als". "Wänn" és per a condicions o coses repetides.' },
+      { id: 'g17e4', type: 'choice', q: 'On va el verb dins de la relativa?', options: ['En segona posició', 'Al final', 'Just després de wo'], a: 1, why: 'Subordinada → verb conjugat al final: "…, wo ich gseh han."' },
+      { id: 'g17e5', type: 'gap', q: 'S Huus, ___ mir chauft händ, isch alt.', a: ['wo'], why: 'wo, sempre wo.' }
+    ]
+  },
+  {
+    id: 'g18',
+    title: 'Comparar: grösser, am gröschte',
+    emoji: '📊',
+    lesson: 'base',
+    summary: 'Comparatiu amb -er i superlatiu amb «am …-schte».',
+    points: [
+      'Comparatiu: adjectiu + **-er** → gross → **grösser** · schnäll → **schnäller**',
+      'Superlatiu: **am** + adjectiu + **-schte** → **am gröschte** · **am schnällschte**',
+      'Irregulars que has de saber: guet → **besser** → **am beschte**',
+      'vil → **mee** → **am meischte** · gärn → **lieber** → **am liebschte**',
+      'Per comparar es fa servir **als**: "Er isch grösser **als** ich."',
+      '"Ich ha **lieber** Tee" = m’estimo més el te.'
+    ],
+    table: {
+      head: ['Base', 'Comparatiu', 'Superlatiu'],
+      rows: [
+        ['gross', 'grösser', 'am gröschte'],
+        ['schnäll', 'schnäller', 'am schnällschte'],
+        ['guet', 'besser', 'am beschte'],
+        ['vil', 'mee', 'am meischte'],
+        ['gärn', 'lieber', 'am liebschte']
+      ]
+    },
+    exercises: [
+      { id: 'g18e1', type: 'gap', q: 'Züri isch ___ als Bärn. (gross)', a: ['grösser'], why: 'Comparatiu: -er.' },
+      { id: 'g18e2', type: 'choice', q: 'Das isch ___ Lösig. (la millor)', options: ['di guet', 'di beschti', 'di mee'], a: 1, why: 'guet → besser → am beschte / di beschti davant d’un substantiu.' },
+      { id: 'g18e3', type: 'gap', q: 'Ich ha ___ Kaffi als Tee. (m’estimo més)', a: ['lieber'], why: 'gärn → lieber.' },
+      { id: 'g18e4', type: 'choice', q: 'Com dius «ell corre més ràpid»?', options: ['Er springt am schnällschte.', 'Er springt schnäller.', 'Er springt mee schnäll.'], a: 1, why: 'Comparatiu amb -er, mai amb "mee" davant.' },
+      { id: 'g18e5', type: 'gap', q: 'Superlatiu de «schnäll»: am ___', a: ['schnällschte', 'schnellschte'], why: 'am + -schte.' }
+    ]
+  },
+  {
+    id: 'g19',
+    title: 'Estar fent: «am … sii»',
+    emoji: '⏳',
+    lesson: 'base',
+    summary: 'El dialecte sí que té una forma per dir que estàs fent una cosa ara mateix. L’alemany estàndard no.',
+    points: [
+      'Estructura: **sii** conjugat + **am** + infinitiu (escrit en majúscula, com un substantiu).',
+      'Ich **bi am Schaffe**. = Estic treballant.',
+      'Er **isch am Ässe**. = Està menjant.',
+      'Mir **sind am Luege**. = Estem mirant.',
+      'És el paral·lel exacte del "estic + gerundi" català, i s’usa molt.',
+      'Compte: no és el mateix que el present normal. "Ich schaffe" = treballo (en general).'
+    ],
+    exercises: [
+      { id: 'g19e1', type: 'gap', q: 'Ich ___ am Choche. (estic cuinant)', a: ['bi'], why: 'sii + am + infinitiu: ich bi am Choche.' },
+      { id: 'g19e2', type: 'choice', q: 'Com dius «està dormint»?', options: ['Er schlaft.', 'Er isch am Schlafe.', 'Er isch schlafe.'], a: 1, why: 'sii + am + infinitiu.' },
+      { id: 'g19e3', type: 'choice', q: 'Quina diferència hi ha entre «Ich schaffe» i «Ich bi am Schaffe»?', options: ['Cap, són sinònims', 'La primera és general, la segona és ara mateix', 'La primera és passat'], a: 1, why: '"Ich schaffe" = treballo (en general). "Ich bi am Schaffe" = estic treballant ara.' },
+      { id: 'g19e4', type: 'gap', q: 'Mir ___ am Ässe. (estem menjant)', a: ['sind'], why: 'Plural de sii: sind.' }
+    ]
+  },
+  {
+    id: 'g20',
+    title: 'Adjectius davant del substantiu',
+    emoji: '🎨',
+    lesson: 'base',
+    summary: 'Les terminacions -e / -i / -s. Aquí el dialecte NO fa igual que l’alemany.',
+    points: [
+      'Darrere de sii no porten res: "De Maa isch **alt**." · "D Frau isch **alt**."',
+      'Davant d’un substantiu amb article indeterminat, sí:',
+      'masculí: en **alte** Maa · femení: e **alti** Frau · neutre: es **alts** Chind',
+      'plural: **alti** Chind',
+      'La femenina en **-i** és la que més sona a suís (alemany: eine alt**e** Frau).',
+      'La neutra fa **-s**, no -es: es guet**s** Buech.'
+    ],
+    table: {
+      head: ['Gènere', 'Dialecte', 'Hochdeutsch'],
+      rows: [
+        ['masculí', 'en guete Maa', 'ein guter Mann'],
+        ['femení', 'e gueti Frau', 'eine gute Frau'],
+        ['neutre', 'es guets Chind', 'ein gutes Kind'],
+        ['plural', 'gueti Chind', 'gute Kinder']
+      ]
+    },
+    exercises: [
+      { id: 'g20e1', type: 'gap', q: 'Es isch e ___ Frau. (nätt)', a: ['nätti', 'netti'], why: 'Femení indeterminat → -i.' },
+      { id: 'g20e2', type: 'choice', q: 'Das isch es ___ Buech.', options: ['guete', 'gueti', 'guets'], a: 2, why: 'Neutre → -s: es guets Buech.' },
+      { id: 'g20e3', type: 'choice', q: 'Ich ha en ___ Fründ.', options: ['guete', 'gueti', 'guets'], a: 0, why: 'Masculí → -e: en guete Fründ.' },
+      { id: 'g20e4', type: 'gap', q: 'Darrere del verb no porta terminació: D Frau isch ___. (alt)', a: ['alt'], why: 'Ús predicatiu → adjectiu nu.' },
+      { id: 'g20e5', type: 'choice', q: 'Quina terminació delata més que parles dialecte i no alemany?', options: ['La masculina -e', 'La femenina -i', 'Cap'], a: 1, why: 'L’alemany fa "eine gute Frau"; el dialecte, "e gueti Frau".' }
+    ]
   }
 ]

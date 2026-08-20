@@ -8,7 +8,7 @@ Offline-first · s'actualitza per git · flashcards amb repàs espaiat, gramàti
 - **Tauler**: quantes paraules tens assentades, què toca repassar avui, ratxa de dies.
 - **Repàs**: flashcards amb SRS (tipus Anki). Tres direccions: català→dialecte,
   dialecte→català i Hochdeutsch→dialecte. Filtrable per tema.
-- **Gramàtica**: 12 temes amb explicació, taules de conjugació i 70 exercicis que es
+- **Gramàtica**: 20 temes amb explicació, taules de conjugació i 108 exercicis que es
   corregeixen sols.
 - **Llegir**: tres coses en una.
   - *Textos*: lector on toques qualsevol paraula i en surt la traducció (resolent formes
@@ -88,7 +88,7 @@ content/          material de classe en brut (font, no el llegeix l'app)
 data/state.json   progrés sincronitzat des del mòbil
 src/
   data/vocab.js     226 paraules: dialecte · Hochdeutsch · català
-  data/grammar.js   12 temes + 70 exercicis
+  data/grammar.js   20 temes + 108 exercicis
   data/phrases.js   51 frases + 6 diàlegs
   data/readings.js  llibres de referència + textos d'exemple propis
   data/glossary.js  189 paraules de suport + 73 formes conjugades, per al lector
