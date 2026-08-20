@@ -28,10 +28,14 @@ export default function App() {
   const [topicFilter, setTopicFilter] = useState('tots')
   const [dir, setDir] = useState('ca2ch')
   const [voiceURI, setVoiceURIState] = useState('')
+  const [dirty, setDirty] = useState(false)     // hi ha progrés sense pujar al repo
+  const [syncOn, setSyncOn] = useState(false)   // el sync amb git està configurat
 
   async function refresh() {
-    const [s, q, se] = await Promise.all([getAllSrs(), getAllQuiz(), getSessions()])
-    setSrs(s); setQuiz(q); setSessions(se)
+    const [s, q, se, d, cfg] = await Promise.all([
+      getAllSrs(), getAllQuiz(), getSessions(), getConfig('dirty'), isConfigured()
+    ])
+    setSrs(s); setQuiz(q); setSessions(se); setDirty(Boolean(d)); setSyncOn(cfg)
   }
 
   useEffect(() => {
@@ -64,7 +68,7 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    if (online) syncIfDirty().then((r) => { if (r.ok) setToast('Sincronitzat ✓') })
+    if (online) syncIfDirty().then((r) => { if (r.ok) { setToast('Sincronitzat ✓'); setDirty(false) } })
   }, [online])
 
   // Agrupa les pujades: espera 8 s sense canvis per fer UN sol commit.
@@ -74,7 +78,7 @@ export default function App() {
     syncTimer.current = setTimeout(async () => {
       if (!navigator.onLine || !(await isConfigured())) return
       const r = await syncIfDirty()
-      if (r.ok) setToast('Sincronitzat ✓')
+      if (r.ok) { setToast('Sincronitzat ✓'); setDirty(false) }
     }, 8000)
   }
 
@@ -110,7 +114,11 @@ export default function App() {
     <div className="app">
       <header className="topbar">
         <div className="brand">🇨🇭 <span>Schwiiz</span></div>
-        {!online && <div className="net off">offline</div>}
+        {(!online || (syncOn && dirty)) && (
+          <button className={`net ${online ? 'pend' : 'off'}`} onClick={() => setTab('set')}>
+            {online ? '↑ sense pujar' : 'offline'}
+          </button>
+        )}
       </header>
 
       <main className="content">
@@ -135,6 +143,7 @@ export default function App() {
           <Settings
             getConfig={getConfig} setConfig={setConfig}
             setToast={setToast} onReload={refresh}
+            dirty={dirty} syncOn={syncOn}
             voiceURI={voiceURI} setVoiceURI={saveVoice}
           />
         )}

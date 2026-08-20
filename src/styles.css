@@ -200,3 +200,10 @@ h3 { font-size: 15px; margin: 18px 4px 8px; }
 
 .toast { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 999px; font-size: 13px; animation: fade 2.6s forwards; z-index: 20; }
 @keyframes fade { 0%,80% { opacity: 1; } 100% { opacity: 0; } }
+
+/* Estat de sincronització */
+.net { font-size: 12px; background: rgba(255,255,255,.2); border: none; color: #fff; border-radius: 999px; padding: 4px 11px; cursor: pointer; }
+.net.pend { background: rgba(255,255,255,.28); font-weight: 600; }
+.sync-state { border-radius: 10px; padding: 10px 12px; font-size: 13px; line-height: 1.45; margin-top: 12px; }
+.sync-state.pend { background: #fbf3e6; border: 1px solid #ecdcbf; color: #8a6a2f; }
+.sync-state.ok { background: #eef4ec; border: 1px solid var(--ok); color: #3f6340; }

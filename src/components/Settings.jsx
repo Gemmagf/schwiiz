@@ -3,7 +3,7 @@ import { pushToGit, pullFromGit, isConfigured } from '../lib/sync.js'
 import { importAll, resetSrs, resetQuiz, exportAll } from '../lib/db.js'
 import { voices, onVoicesReady, speak, ttsAvailable } from '../lib/tts.js'
 
-export default function Settings({ getConfig, setConfig, setToast, onReload, voiceURI, setVoiceURI }) {
+export default function Settings({ getConfig, setConfig, setToast, onReload, voiceURI, setVoiceURI, dirty, syncOn }) {
   const [gh, setGh] = useState({ gh_owner: '', gh_repo: 'schwiiz', gh_branch: 'main', gh_token: '' })
   const [lastSync, setLastSync] = useState('')
   const [llista, setLlista] = useState([])
@@ -31,7 +31,7 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
     try {
       const r = await pushToGit()
       setToast(r.ok ? 'Progrés pujat a git ✓' : `No s’ha pogut pujar: ${r.reason}`)
-      if (r.ok) setLastSync(new Date().toISOString())
+      if (r.ok) { setLastSync(new Date().toISOString()); await onReload() }
     } catch (e) {
       setToast(`Error: ${e.message}`)
     }
@@ -98,6 +98,13 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
         Opcional. Serveix per passar el teu progrés d’un dispositiu a un altre. Sense això l’app
         funciona igual, però el progrés només viu en aquest mòbil.
       </p>
+      {syncOn && (
+        <div className={`sync-state ${dirty ? 'pend' : 'ok'}`}>
+          {dirty
+            ? '↑ Tens progrés sense pujar. Es puja sol quan hi hagi connexió, o prem «Pujar progrés».'
+            : '✓ Tot el progrés està pujat al repo.'}
+        </div>
+      )}
       <label>Usuari de GitHub</label>
       <input value={gh.gh_owner} onChange={(e) => setGh({ ...gh, gh_owner: e.target.value })} placeholder="Gemmagf" autoCapitalize="off" />
       <label>Repo</label>
