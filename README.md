@@ -1,6 +1,8 @@
 # 🇨🇭 Schwiiz
 
-PWA privada per estudiar **suís-alemany (Züridütsch)**.
+**▶ https://gemmagf.github.io/schwiiz/**
+
+PWA per estudiar **suís-alemany (Züridütsch)**.
 Offline-first · s'actualitza per git · flashcards amb repàs espaiat, gramàtica i frases.
 
 ## Què fa
@@ -66,12 +68,13 @@ npm run build      # build de producció a dist/
 npm run preview    # servir el build
 ```
 
-## Publicar a GitHub Pages
+## Desplegament
 
-1. Crea el repo a GitHub (pot ser privat; Pages requereix compte de pagament si és privat,
-   si no fes-lo públic).
-2. A **Settings → Pages → Source**, tria **GitHub Actions**.
-3. `git push` a `main`. El workflow `.github/workflows/deploy.yml` fa la resta.
+Ja està en marxa a **https://gemmagf.github.io/schwiiz/**. Cada `git push` a `main`
+dispara `.github/workflows/deploy.yml`, que compila i publica. No has de fer res més.
+
+L'app viu a la subcarpeta `/schwiiz/`, i per això `vite.config.js` hi posa `base:
+'/schwiiz/'` quan compila. Si algun dia la mous a un domini propi, canvia-ho allà.
 
 ## Sincronitzar el progrés entre dispositius (opcional)
 
