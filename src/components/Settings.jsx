@@ -3,8 +3,12 @@ import { pushToGit, pullFromGit, isConfigured } from '../lib/sync.js'
 import { importAll, resetSrs, resetQuiz, exportAll } from '../lib/db.js'
 import { voices, onVoicesReady, speak, ttsAvailable } from '../lib/tts.js'
 
+// El progrés va a un repo PRIVAT a part, no al públic on viu l'app:
+// hi viatgen les teves paraules i els capítols de lectura.
+const DEFECTES = { gh_owner: 'Gemmagf', gh_repo: 'schwiiz-data', gh_branch: 'main', gh_token: '' }
+
 export default function Settings({ getConfig, setConfig, setToast, onReload, voiceURI, setVoiceURI, dirty, syncOn }) {
-  const [gh, setGh] = useState({ gh_owner: '', gh_repo: 'schwiiz', gh_branch: 'main', gh_token: '' })
+  const [gh, setGh] = useState({ gh_owner: 'Gemmagf', gh_repo: 'schwiiz-data', gh_branch: 'main', gh_token: '' })
   const [lastSync, setLastSync] = useState('')
   const [llista, setLlista] = useState([])
   const [ocupat, setOcupat] = useState(false)
@@ -13,7 +17,7 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
     (async () => {
       const vals = {}
       for (const k of ['gh_owner', 'gh_repo', 'gh_branch', 'gh_token']) {
-        vals[k] = (await getConfig(k)) || (k === 'gh_repo' ? 'schwiiz' : k === 'gh_branch' ? 'main' : '')
+        vals[k] = (await getConfig(k)) || DEFECTES[k] || ''
       }
       setGh(vals)
       setLastSync((await getConfig('lastSync')) || '')
@@ -96,7 +100,8 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
       <h2>Sincronitzar el progrés amb git</h2>
       <p className="hint">
         Opcional. Serveix per passar el teu progrés d’un dispositiu a un altre. Sense això l’app
-        funciona igual, però el progrés només viu en aquest mòbil.
+        funciona igual, però el progrés només viu en aquest mòbil. Va al repo <b>privat</b>
+        schwiiz-data, no al públic: hi viatgen les teves paraules i els capítols de lectura.
       </p>
       {syncOn && (
         <div className={`sync-state ${dirty ? 'pend' : 'ok'}`}>
