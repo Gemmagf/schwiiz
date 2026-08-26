@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { pushToGit, pullFromGit, isConfigured } from '../lib/sync.js'
 import { importAll, resetSrs, resetQuiz, exportAll } from '../lib/db.js'
 import { voices, onVoicesReady, speak, ttsAvailable } from '../lib/tts.js'
+import { todayISO } from '../lib/srs.js'
 
 // El progrés va a un repo PRIVAT a part, no al públic on viu l'app:
 // hi viatgen les teves paraules i els capítols de lectura.
@@ -60,7 +61,7 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
     const blob = new Blob([JSON.stringify(dades, null, 2)], { type: 'application/json' })
     const a = document.createElement('a')
     a.href = URL.createObjectURL(blob)
-    a.download = `schwiiz-progres-${new Date().toISOString().slice(0, 10)}.json`
+    a.download = `schwiiz-progres-${todayISO()}.json`
     a.click()
     URL.revokeObjectURL(a.href)
   }
