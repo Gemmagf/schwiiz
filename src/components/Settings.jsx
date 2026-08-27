@@ -20,6 +20,13 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
       for (const k of ['gh_owner', 'gh_repo', 'gh_branch', 'gh_token']) {
         vals[k] = (await getConfig(k)) || DEFECTES[k] || ''
       }
+      // Hi va haver un moment amb un repo de dades a part. Ja no existeix:
+      // si la config el té guardat, es corregeix sola.
+      if (vals.gh_repo === 'schwiiz-data') {
+        vals.gh_repo = 'schwiiz'
+        await setConfig('gh_repo', 'schwiiz')
+        setToast('Repo corregit a «schwiiz» ✓')
+      }
       setGh(vals)
       setLastSync((await getConfig('lastSync')) || '')
     })()
@@ -54,6 +61,24 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
       setToast(`Error: ${e.message}`)
     }
     setOcupat(false)
+  }
+
+  // A iOS una PWA es pot quedar encallada en una versió antiga. Això la neteja de debò:
+  // esborra el service worker i tota la memòria cau, i recarrega.
+  async function actualitzar() {
+    if (!confirm('Es baixarà l’última versió de l’app. El teu progrés NO es toca. Continuar?')) return
+    setOcupat(true)
+    try {
+      if ('serviceWorker' in navigator) {
+        const regs = await navigator.serviceWorker.getRegistrations()
+        await Promise.all(regs.map((r) => r.unregister()))
+      }
+      if (window.caches) {
+        const noms = await caches.keys()
+        await Promise.all(noms.map((n) => caches.delete(n)))
+      }
+    } catch { /* si el navegador no ho permet, la recàrrega ja farà el que pugui */ }
+    location.reload(true)
   }
 
   async function exportar() {
@@ -118,7 +143,7 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
       <input value={gh.gh_repo} onChange={(e) => setGh({ ...gh, gh_repo: e.target.value })} autoCapitalize="off" />
       <label>Branca</label>
       <input value={gh.gh_branch} onChange={(e) => setGh({ ...gh, gh_branch: e.target.value })} autoCapitalize="off" />
-      <label>Token (fine-grained, només aquest repo, Contents: read/write)</label>
+      <label>Token (fine-grained sobre <code>schwiiz</code>, Contents: read/write)</label>
       <input type="password" value={gh.gh_token} onChange={(e) => setGh({ ...gh, gh_token: e.target.value })} placeholder="github_pat_..." autoCapitalize="off" />
       <p className="hint warn">
         El token es guarda en aquest dispositiu (IndexedDB), sense xifrar. Fes servir només un token
@@ -140,8 +165,14 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
 
       <h2>Versió</h2>
       <p className="hint">
-        Compilada el {typeof __BUILD__ !== 'undefined' ? __BUILD__ : '—'} (UTC). Si aquesta data
-        és més antiga del que esperes, tanca l’app del tot i torna-la a obrir amb connexió.
+        Compilada el <b>{typeof __BUILD__ !== 'undefined' ? __BUILD__ : '—'}</b> (UTC).
+      </p>
+      <div className="btn-row">
+        <button onClick={actualitzar} disabled={ocupat}>↻ Forçar actualització</button>
+      </div>
+      <p className="hint">
+        Fes-ho servir si la data de dalt no coincideix amb l’última versió. Esborra la memòria
+        cau i el service worker i torna a baixar l’app. El progrés no es toca.
       </p>
 
       <h2>Dades</h2>
