@@ -1414,9 +1414,9 @@
     },
     {
       "id": "g08e5",
-      "ok": false,
-      "tries": 1,
-      "at": "2026-08-27T15:11:40.055Z"
+      "ok": true,
+      "tries": 2,
+      "at": "2026-08-27T15:24:43.949Z"
     },
     {
       "id": "g10e1",
@@ -1524,10 +1524,10 @@
       "date": "2026-08-27",
       "reviewed": 125,
       "correct": 21,
-      "exercicis": 7,
-      "exercicisOk": 4
+      "exercicis": 8,
+      "exercicisOk": 5
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-27T15:24:41.454Z"
+  "exportedAt": "2026-08-27T15:24:51.985Z"
 }
