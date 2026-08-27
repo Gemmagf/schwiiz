@@ -4,12 +4,12 @@ import { importAll, resetSrs, resetQuiz, exportAll } from '../lib/db.js'
 import { voices, onVoicesReady, speak, ttsAvailable } from '../lib/tts.js'
 import { todayISO } from '../lib/srs.js'
 
-// El progrés va a un repo PRIVAT a part, no al públic on viu l'app:
-// hi viatgen les teves paraules i els capítols de lectura.
-const DEFECTES = { gh_owner: 'Gemmagf', gh_repo: 'schwiiz-data', gh_branch: 'main', gh_token: '' }
+// Un sol repo, com al caleta-tracker: el codi i el progrés viuen junts.
+// És privat, i per això els teus capítols de lectura hi poden anar sense problema.
+const DEFECTES = { gh_owner: 'Gemmagf', gh_repo: 'schwiiz', gh_branch: 'main', gh_token: '' }
 
 export default function Settings({ getConfig, setConfig, setToast, onReload, voiceURI, setVoiceURI, dirty, syncOn }) {
-  const [gh, setGh] = useState({ gh_owner: 'Gemmagf', gh_repo: 'schwiiz-data', gh_branch: 'main', gh_token: '' })
+  const [gh, setGh] = useState({ gh_owner: 'Gemmagf', gh_repo: 'schwiiz', gh_branch: 'main', gh_token: '' })
   const [lastSync, setLastSync] = useState('')
   const [llista, setLlista] = useState([])
   const [ocupat, setOcupat] = useState(false)
@@ -101,8 +101,8 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
       <h2>Sincronitzar el progrés amb git</h2>
       <p className="hint">
         Opcional. Serveix per passar el teu progrés d’un dispositiu a un altre. Sense això l’app
-        funciona igual, però el progrés només viu en aquest mòbil. Va al repo <b>privat</b>
-        schwiiz-data, no al públic: hi viatgen les teves paraules i els capítols de lectura.
+        funciona igual, però el progrés només viu en aquest mòbil. Va a <code>data/state.json</code>
+        del repo <b>schwiiz</b>, que és privat.
       </p>
       {syncOn && (
         <div className={`sync-state ${dirty ? 'pend' : 'ok'}`}>

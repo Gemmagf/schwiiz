@@ -8,7 +8,7 @@
 // Config (a IndexedDB, store 'meta'):
 //   gh_token  -> PAT fine-grained, només aquest repo, Contents: read/write
 //   gh_owner  -> usuari de GitHub
-//   gh_repo   -> 'schwiiz-data'  (PRIVAT — hi van els teus textos, no el repo públic)
+//   gh_repo   -> 'schwiiz'  (el mateix repo de l'app, que és privat)
 //   gh_branch -> 'main'
 
 import { exportAll, getConfig, setConfig } from './db.js'

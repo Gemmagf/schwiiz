@@ -1,8 +1,7 @@
 # 🇨🇭 Schwiiz
 
-**▶ https://gemmagf.github.io/schwiiz/**
-
-PWA per estudiar **suís-alemany (Züridütsch)**.
+PWA **privada** per estudiar **suís-alemany (Züridütsch)**.
+Offline-first · desplegada a Vercel · el progrés se sincronitza a aquest mateix repo.
 Offline-first · s'actualitza per git · flashcards amb repàs espaiat, gramàtica i frases.
 
 ## Què fa
@@ -70,11 +69,11 @@ npm run preview    # servir el build
 
 ## Desplegament
 
-Ja està en marxa a **https://gemmagf.github.io/schwiiz/**. Cada `git push` a `main`
-dispara `.github/workflows/deploy.yml`, que compila i publica. No has de fer res més.
+A **Vercel**, connectat a aquest repo (mateix muntatge que `caleta-tracker`). Cada push a
+`main` desplega sol.
 
-L'app viu a la subcarpeta `/schwiiz/`, i per això `vite.config.js` hi posa `base:
-'/schwiiz/'` quan compila. Si algun dia la mous a un domini propi, canvia-ho allà.
+`vercel.json` porta un `ignoreCommand` que **salta la compilació quan només ha canviat
+`data/`**: així sincronitzar el progrés des del mòbil no engega desplegaments inútils.
 
 ## Sincronitzar el progrés entre dispositius (opcional)
 
@@ -83,8 +82,11 @@ entre dispositius:
 
 1. Crea un **Personal Access Token fine-grained** limitat NOMÉS a aquest repo, amb
    **Contents: Read and write**.
-2. A l'app → **Ajustos**, omple usuari, repo, branca i token, i prem **Desar config**.
-3. **⬆ Pujar progrés** fa un commit a `data/state.json`.
+2. A l'app → **Ajustos**, omple usuari, repo (`schwiiz`), branca i token, i prem **Desar config**.
+3. **⬆ Pujar progrés** fa un commit a `data/state.json` d'aquest mateix repo.
+
+Com que el repo és privat, els capítols de lectura que hi sincronitzis no són visibles
+per ningú més.
 
 > ⚠️ El token es guarda sense xifrar a IndexedDB del dispositiu. És acceptable per a ús
 > personal amb un token fine-grained limitat a aquest repo. Si perds el mòbil, revoca'l.
