@@ -102,6 +102,7 @@ export default function App() {
 
   async function onQuizAnswer(id, ok) {
     await putQuiz(id, ok)
+    await bumpSession(todayISO(), ok, 'exercici')
     await refresh()
     scheduleSync()
   }

@@ -86,11 +86,20 @@ export async function resetQuiz(ids) {
 }
 
 // ---- Sessions (ratxa diària) ----
-export async function bumpSession(date, correct) {
+// tipus: 'targeta' (flashcard) o 'exercici' (gramàtica). Es compten a part
+// perquè al gràfic es vegin com dues coses diferents.
+export async function bumpSession(date, correct, tipus = 'targeta') {
   const db = await dbReady
   const rec = (await db.get('sessions', date)) || { date, reviewed: 0, correct: 0 }
-  rec.reviewed += 1
-  if (correct) rec.correct += 1
+  rec.exercicis = rec.exercicis || 0
+  rec.exercicisOk = rec.exercicisOk || 0
+  if (tipus === 'exercici') {
+    rec.exercicis += 1
+    if (correct) rec.exercicisOk += 1
+  } else {
+    rec.reviewed += 1
+    if (correct) rec.correct += 1
+  }
   await db.put('sessions', rec)
   await markDirty()
   return rec

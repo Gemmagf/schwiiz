@@ -44,18 +44,25 @@ function ultims30(sessions) {
     d.setDate(d.getDate() - i)
     const iso = todayISO(d)
     const s = sessions.find((x) => x.date === iso)
-    serie.push({ iso, repassades: s?.reviewed || 0, encertades: s?.correct || 0 })
+    serie.push({
+      iso,
+      repassades: s?.reviewed || 0,
+      exercicis: s?.exercicis || 0,
+      total: (s?.reviewed || 0) + (s?.exercicis || 0)
+    })
   }
   return serie
 }
 
 function Evolucio({ sessions }) {
   const serie = ultims30(sessions)
-  const max = Math.max(1, ...serie.map((d) => d.repassades))
+  const max = Math.max(1, ...serie.map((d) => d.total))
   const totalRepassades = sessions.reduce((a, s) => a + s.reviewed, 0)
-  const totalEncertades = sessions.reduce((a, s) => a + s.correct, 0)
-  const diesEstudiats = sessions.filter((s) => s.reviewed > 0).length
-  const encert = totalRepassades ? Math.round((totalEncertades / totalRepassades) * 100) : 0
+  const totalExercicis = sessions.reduce((a, s) => a + (s.exercicis || 0), 0)
+  const totalEncertades = sessions.reduce((a, s) => a + s.correct + (s.exercicisOk || 0), 0)
+  const diesEstudiats = sessions.filter((s) => s.reviewed > 0 || (s.exercicis || 0) > 0).length
+  const fets = totalRepassades + totalExercicis
+  const encert = fets ? Math.round((totalEncertades / fets) * 100) : 0
 
   if (!diesEstudiats) {
     return <p className="hint">Quan comencis a repassar, aquí hi veuràs l’evolució dia a dia.</p>
@@ -65,19 +72,28 @@ function Evolucio({ sessions }) {
     <>
       <div className="sparkbars" role="img" aria-label={`Repassos dels últims 30 dies, màxim ${max} en un dia`}>
         {serie.map((d) => (
-          <div key={d.iso} className="sb" title={`${d.iso}: ${d.repassades} repassades`}>
-            <div
-              className={`sb-fill ${d.repassades ? '' : 'buit'}`}
-              style={{ height: `${d.repassades ? Math.max(6, (d.repassades / max) * 100) : 2}%` }}
-            />
+          <div key={d.iso} className="sb" title={`${d.iso}: ${d.repassades} targetes · ${d.exercicis} exercicis`}>
+            {d.total === 0 && <div className="sb-fill buit" style={{ height: '2%' }} />}
+            {d.exercicis > 0 && (
+              <div className="sb-fill ex" style={{ height: `${Math.max(4, (d.exercicis / max) * 100)}%` }} />
+            )}
+            {d.repassades > 0 && (
+              <div className="sb-fill" style={{ height: `${Math.max(4, (d.repassades / max) * 100)}%` }} />
+            )}
           </div>
         ))}
       </div>
       <div className="spark-eixos"><span>fa 30 dies</span><span>avui</span></div>
 
+      <div className="spark-llegenda">
+        <span><i className="mostra targ" /> targetes</span>
+        <span><i className="mostra exer" /> exercicis</span>
+      </div>
+
       <div className="stat-row">
         <div className="stat-cell"><b>{diesEstudiats}</b><span>dies estudiats</span></div>
-        <div className="stat-cell"><b>{totalRepassades}</b><span>repassos</span></div>
+        <div className="stat-cell"><b>{totalRepassades}</b><span>targetes</span></div>
+        <div className="stat-cell"><b>{totalExercicis}</b><span>exercicis</span></div>
         <div className="stat-cell ok"><b>{encert}%</b><span>d’encert</span></div>
       </div>
     </>
@@ -90,16 +106,29 @@ export default function Dashboard({ vocab = [], srs, quiz, sessions, onStart, on
   const pct = s.total ? Math.round((s.apresos / s.total) * 100) : 0
   const totalEx = GRAMMAR.reduce((a, g) => a + g.exercises.length, 0)
   const exOk = Object.values(quiz).filter((q) => q.ok).length
+  const pctGram = totalEx ? Math.round((exOk / totalEx) * 100) : 0
   const ratxa = streak(sessions)
   const avui = sessions.find((x) => x.date === todayISO())
 
   return (
     <div className="dash">
       <div className="hero">
-        <div className="ring" style={{ '--p': `${pct * 3.6}deg` }}>
-          <div className="ring-num">{pct}%</div>
+        <div className="anells">
+          <div className="anell-bloc">
+            <div className="ring" style={{ '--p': `${pct * 3.6}deg` }}>
+              <div className="ring-num">{pct}%</div>
+            </div>
+            <b>Vocabulari</b>
+            <span>{s.apresos} de {s.total} paraules</span>
+          </div>
+          <div className="anell-bloc">
+            <div className="ring gram" style={{ '--p': `${pctGram * 3.6}deg` }}>
+              <div className="ring-num">{pctGram}%</div>
+            </div>
+            <b>Gramàtica entesa</b>
+            <span>{exOk} de {totalEx} exercicis</span>
+          </div>
         </div>
-        <p className="count">{s.apresos} de {s.total} paraules assentades</p>
         {ratxa > 0 && (
           <div className="streak">
             🔥 {ratxa} {ratxa === 1 ? 'dia' : 'dies'} seguits
@@ -114,7 +143,12 @@ export default function Dashboard({ vocab = [], srs, quiz, sessions, onStart, on
       {pendents === 0 && (
         <p className="hint center">Torna demà, o entra a Repàs i força una sessió lliure.</p>
       )}
-      {avui && <p className="hint center">Avui: {avui.reviewed} repassades · {avui.correct} encertades</p>}
+      {avui && (
+        <p className="hint center">
+          Avui: {avui.reviewed} {avui.reviewed === 1 ? 'targeta' : 'targetes'}
+          {' · '}{avui.exercicis || 0} {avui.exercicis === 1 ? 'exercici' : 'exercicis'} de gramàtica
+        </p>
+      )}
 
       <h2>La teva evolució</h2>
       <Evolucio sessions={sessions} />
@@ -147,7 +181,7 @@ export default function Dashboard({ vocab = [], srs, quiz, sessions, onStart, on
       <div className="link-cards">
         <button className="link-card" onClick={() => onGoTo('gram')}>
           <b>📐 Gramàtica</b>
-          <span>{GRAMMAR.length} temes · {exOk}/{totalEx} exercicis encertats</span>
+          <span>{GRAMMAR.length} temes · en queden {totalEx - exOk} per encertar</span>
         </button>
         <button className="link-card" onClick={() => onGoTo('frases')}>
           <b>💬 Frases i diàlegs</b>
