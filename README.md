@@ -80,6 +80,10 @@ npm run preview    # servir el build
 A **GitHub Pages**, a https://gemmagf.github.io/schwiiz/. Cada push a `main` dispara
 `.github/workflows/deploy.yml`, que compila i publica.
 
+L'app comprova si hi ha versió nova cada cop que la tornes a obrir (i un cop per hora) i
+et surt un avís per aplicar-la. No es recarrega sola per no tallar-te una sessió de repàs.
+Si mai es queda encallada, Ajustos → **↻ Forçar actualització**.
+
 `paths-ignore` deixa fora `data/`, `content/` i el README: sincronitzar el progrés des del
 mòbil no engega desplegaments inútils.
 

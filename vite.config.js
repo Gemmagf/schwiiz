@@ -12,7 +12,10 @@ export default defineConfig(({ command }) => ({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
+      // 'prompt' + registre manual a main.jsx: així podem comprovar si hi ha versió
+      // nova cada cop que tornes a l'app, i avisar-te sense tallar-te una sessió.
+      registerType: 'prompt',
+      injectRegister: null,
       includeAssets: ['favicon.svg', 'favicon-32.png', 'apple-touch-icon.png'],
       manifest: {
         name: 'Schwiiz · Züridütsch',
@@ -34,7 +37,11 @@ export default defineConfig(({ command }) => ({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,ico,json}'],
-        navigateFallback: 'index.html'
+        navigateFallback: 'index.html',
+        // Que el service worker prengui el control ja des de la primera visita.
+        // Sense això la primera càrrega queda sense controlador i el flux
+        // d'actualització no s'acaba de tancar.
+        clientsClaim: true
       }
     })
   ]
