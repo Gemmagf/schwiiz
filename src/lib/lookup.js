@@ -31,7 +31,8 @@ function clausDe(entrada) {
     const parts = net.split(/\s+/)
     if (parts.length > 1) {
       claus.add(parts[parts.length - 1])       // "de maa" -> "maa"
-      if (parts[0].length > 2) claus.add(parts[0])
+      // La primera paraula NO s'indexa: «Guet Nacht» segrestava «guet»,
+      // que ha de resoldre's a l'adjectiu.
     }
   }
   return [...claus]
@@ -79,9 +80,16 @@ function variants(w) {
   // participis: gmacht -> macht, gsi -> si
   if (w.startsWith('g') && w.length > 3) push(w.slice(1))
   if (w.startsWith('ge') && w.length > 4) push(w.slice(2))
-  // terminacions verbals
+  // Terminacions verbals. Si la terminació és clarament de verb (-sch, -ed, -et, -st, -t),
+  // primer es prova l'arrel + e, que és com acaben els infinitius: schmöcksch -> schmöcke.
+  // Sense això, «langet» anava a parar a «lang» (molta estona) en comptes de «lange» (ser prou).
+  const verbals = ['sch', 'ed', 'et', 'st', 't']
   for (const suf of ['sch', 'ed', 'et', 'st', 't', 'e', 'n', 's']) {
-    if (w.endsWith(suf) && w.length - suf.length >= 2) push(w.slice(0, -suf.length))
+    if (w.endsWith(suf) && w.length - suf.length >= 2) {
+      const arrel = w.slice(0, -suf.length)
+      if (verbals.includes(suf)) push(arrel + 'e')
+      push(arrel)
+    }
   }
   // infinitiu: la majoria acaben en -e
   push(w + 'e')

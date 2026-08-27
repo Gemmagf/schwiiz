@@ -10,7 +10,7 @@ Offline-first · s'actualitza per git · flashcards amb repàs espaiat, gramàti
 - **Tauler**: quantes paraules tens assentades, què toca repassar avui, ratxa de dies.
 - **Repàs**: flashcards amb SRS (tipus Anki). Tres direccions: català→dialecte,
   dialecte→català i Hochdeutsch→dialecte. Filtrable per tema.
-- **Gramàtica**: 31 temes amb explicació, taules de conjugació i 163 exercicis que es
+- **Gramàtica**: 40 temes amb explicació, taules de conjugació i 233 exercicis que es
   corregeixen sols.
 - **Llegir**: tres coses en una.
   - *Textos*: lector on toques qualsevol paraula i en surt la traducció (resolent formes
@@ -28,7 +28,7 @@ L'app està pensada per acompanyar tres llibres:
 | Llibre | Autor | Què n'aporta |
 |---|---|---|
 | *Schweizerdeutsch verstehen* | Andrea Holle | **ordre dels temes de gramàtica, situacions i vocabulari** |
-| *Schwiizerdütsch leicht gemacht — S Schwiizerdüütsch vo Züri* | Verena Schorn | pendent (17 lliçons) |
+| *Schwiizerdütsch leicht gemacht — S Schwiizerdüütsch vo Züri* | Verena Schorn | material de classe setmana a setmana |
 | *Hansdampf — Gschichte us em Züri Oberland, Band 2* | Johann Widmer | lectura |
 
 Els 31 temes de gramàtica segueixen l'ordre dels capítols 1–27 del Holle i cada tema
@@ -95,8 +95,8 @@ entre dispositius:
 content/          material de classe en brut (font, no el llegeix l'app)
 data/state.json   progrés sincronitzat des del mòbil
 src/
-  data/vocab.js     294 paraules: dialecte · Hochdeutsch · català
-  data/grammar.js   31 temes + 163 exercicis
+  data/vocab.js     450 paraules: dialecte · Hochdeutsch · català
+  data/grammar.js   40 temes + 233 exercicis
   data/phrases.js   94 frases + 6 diàlegs
   data/readings.js  llibres de referència + textos d'exemple propis
   data/glossary.js  189 paraules de suport + 73 formes conjugades, per al lector

@@ -28,6 +28,7 @@ export default function App() {
   const [online, setOnline] = useState(navigator.onLine)
   const [toast, setToast] = useState('')
   const [topicFilter, setTopicFilter] = useState('tots')
+  const [lessonFilter, setLessonFilter] = useState('tots')
   const [dir, setDir] = useState('ca2ch')
   const [voiceURI, setVoiceURIState] = useState('')
   const [cards, setCards] = useState([])       // targetes que has fet tu llegint
@@ -171,6 +172,7 @@ export default function App() {
           <Flashcards
             vocab={vocab} srs={srs} onGrade={onGrade}
             topicFilter={topicFilter} setTopicFilter={setTopicFilter}
+            lessonFilter={lessonFilter} setLessonFilter={setLessonFilter}
             dir={dir} setDir={saveDir}
             voiceURI={voiceURI}
           />

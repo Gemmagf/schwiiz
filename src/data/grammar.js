@@ -171,17 +171,19 @@ const TEMES = [
     points: [
       '**nöd** nega verbs, adjectius i frases senceres. Va DESPRÉS del verb conjugat.',
       'Ich verstahn **nöd**. · Das isch **nöd** guet. · Ich gang hüt **nöd** ge schaffe.',
-      '**kei** nega substantius (= cap, gens de). Va DAVANT del substantiu.',
-      'Ich ha **kei** Ziit. · Es hät **kei** Brot meh.',
-      'Regla ràpida: si darrere hi va un substantiu sense article → kei. Si no → nöd.'
+      '**kän / kä / käs** nega substantius (= cap, gens de). Va DAVANT del substantiu.',
+      'Es declina com l’article indeterminat: **kän** Hunger (m) · **kä** Milch (f) · **käs** Gäld (n).',
+      'Ich ha **kä** Ziit. · Es hät **käs** Brot meh.',
+      'Regla ràpida: si darrere hi va un substantiu sense article → kän/kä/käs. Si no → nöd.',
+      'També trobaràs escrit «kei» sense declinar. El curs de classe fa servir les formes declinades: tens el detall al tema «Article negatiu».'
     ],
     exercises: [
-      { id: 'g06e1', type: 'gap', q: 'Ich ha ___ Gäld.', a: ['kei'], why: 'Davant d’un substantiu → kei.' },
+      { id: 'g06e1', type: 'gap', q: 'Ich ha ___ Gäld (n).', a: ['käs', 'kas'], why: 'Davant d’un substantiu neutre → käs.' },
       { id: 'g06e2', type: 'gap', q: 'Das isch ___ richtig.', a: ['nöd', 'nod'], why: 'Nega un adjectiu → nöd.' },
-      { id: 'g06e3', type: 'choice', q: 'Ich verstahn ___.', options: ['kei', 'nöd', 'nüüt'], a: 1, why: 'Nega el verb → nöd. ("Ich verstahn nüüt" = no entenc RES, també correcte però és una altra cosa.)' },
-      { id: 'g06e4', type: 'choice', q: 'Er het ___ Auto.', options: ['nöd', 'kei', 'nüüt'], a: 1, why: 'Substantiu → kei.' },
+      { id: 'g06e3', type: 'choice', q: 'Ich verstahn ___.', options: ['kä', 'nöd', 'nüüt'], a: 1, why: 'Nega el verb → nöd. ("Ich verstahn nüüt" = no entenc RES, també correcte però és una altra cosa.)' },
+      { id: 'g06e4', type: 'choice', q: 'Er het ___ Auto (n).', options: ['nöd', 'käs', 'nüüt'], a: 1, why: 'Substantiu neutre → käs.' },
       { id: 'g06e5', type: 'gap', q: 'Mir gönd hüt ___ i d Stadt.', a: ['nöd', 'nod'], why: 'Nega tota la frase → nöd, després del verb.' },
-      { id: 'g06e6', type: 'choice', q: 'Com dius "no ho sé"?', options: ['Ich weiss kei.', 'Ich weiss nöd.', 'Ich nöd weiss.'], a: 1, why: 'nöd va SEMPRE després del verb conjugat, mai davant.' }
+      { id: 'g06e6', type: 'choice', q: 'Com dius "no ho sé"?', options: ['Ich weiss kä.', 'Ich weiss nöd.', 'Ich nöd weiss.'], a: 1, why: 'nöd va SEMPRE després del verb conjugat, mai davant.' }
     ]
   },
   {
@@ -913,6 +915,337 @@ const TEMES = [
       { id: 'g31e2', type: 'gap', q: 'Sie het gseit, sie ___ kei Ziit. (de haa)', a: ['häig'], why: 'haa → häig.' },
       { id: 'g31e3', type: 'choice', q: 'Què hi afegeix «seig» respecte de dir «er isch chrank»?', options: ['Res, és més formal', 'Que ho expliques però no en respons', 'Que és mentida'], a: 1, why: 'Marca que estàs citant algú altre, sense comprometre’t.' },
       { id: 'g31e4', type: 'choice', q: 'Amb la majoria de verbs, com es fa l’estil indirecte en dialecte?', options: ['Amb formes especials per a cada verb', 'Amb l’indicatiu normal', 'No es pot fer'], a: 1, why: 'Només sii i haa tenen formes pròpies d’ús corrent; la resta van en indicatiu.' }
+    ]
+  },
+  {
+    id: 's01',
+    book: 'schorn',
+    unit: '2.3',
+    order: 3.1,
+    title: 'Article indeterminat: en, e, es',
+    emoji: '1️⃣',
+    lesson: 'c01',
+    summary: 'De la classe del 26/08. L’alemany «ein» es parteix en tres formes segons el gènere.',
+    points: [
+      'masculí **en** · femení **e** · neutre **es**',
+      'ein → **e** · ein → **en** · ein → **es** (les tres surten del mateix «ein»)',
+      '**en** Löffel · **e** Gable · **es** Mässer',
+      '**en** Chochherd · **e** Pfanne · **es** Chochrezäpt',
+      'Es fa servir igual que en alemany: quan parles d’una cosa per primera vegada o de qualsevol de la mena.',
+      'La **e** femenina no porta -n. Aquest és l’error típic: «e Frau», no «en Frau».'
+    ],
+    table: {
+      head: ['Gènere', 'Article', 'Exemple de classe'],
+      rows: [
+        ['masculí', 'en', 'en Pass, en Helm, en Chugi'],
+        ['femení', 'e', 'e Massage, e Gable, e Agända'],
+        ['neutre', 'es', 'es Schampoo, es Mässer, es Zäddeli']
+      ]
+    },
+    exercises: [
+      { id: 's01e1', type: 'gap', q: 'Mir bruuched ___ Pass (m) zum reise.', a: ['en'], why: 'Masculí → en.' },
+      { id: 's01e2', type: 'gap', q: 'D Leona bruucht ___ Massage (f) zum entspanne.', a: ['e'], why: 'Femení → e, sense -n.' },
+      { id: 's01e3', type: 'choice', q: 'Was für ___ Schampoo (n) bruuchsch du?', options: ['en', 'e', 'es'], a: 2, why: 'Neutre → es.' },
+      { id: 's01e4', type: 'gap', q: 'De Andri bruucht ___ Helm (m) zum Skifahre.', a: ['en'], why: 'Masculí → en.' },
+      { id: 's01e5', type: 'gap', q: 'Zum Ässe bruucht me ___ Gable (f).', a: ['e'], why: 'Gable és femenina → e Gable.' },
+      { id: 's01e6', type: 'choice', q: 'Zum choche bruuch i ___ Chochrezäpt.', options: ['en', 'e', 'es'], a: 2, why: 'Chochrezäpt és neutre → es.' },
+      { id: 's01e7', type: 'gap', q: 'Ich bruuch ___ Fründin (f) zum glücklich sii.', a: ['e'], why: 'Femení → e.' },
+      { id: 's01e8', type: 'choice', q: 'Quin error és el més típic?', options: ['Posar «es» al masculí', 'Posar «en» al femení', 'Posar «e» al neutre'], a: 1, why: 'La femenina és «e» pelada. «en Frau» delata de seguida.' }
+    ]
+  },
+  {
+    id: 's02',
+    book: 'schorn',
+    unit: '2.4',
+    order: 4.1,
+    title: 'Article negatiu: kän, kä, käs',
+    emoji: '🚷',
+    lesson: 'c01',
+    summary: 'De la classe del 26/08. El «cap» també es declina, exactament com l’article indeterminat.',
+    points: [
+      'masculí **kän** · femení **kä** · neutre **käs** · plural **kä**',
+      'Fixa’t que segueix el patró d’en/e/es amb una k- al davant: **kän** / **kä** / **käs**.',
+      'Ich ha **kän** Hunger. · Sie hät **käs** Gäld. · Es hät **kä** Milch.',
+      'Er hät **kä** Brüeder und **kä** Schwöschter. (plural → kä)',
+      'Serveix tant per a coses comptables com per a no comptables: **käs** Auto, **kän** Strom.',
+      'Forma emfàtica, quan ho vols remarcar: **käin** · **käi** · **käis**.',
+      'Expressió que has de saber: **uf kän Fall** = de cap manera.',
+      'També veuràs escrit «kei» sense declinar. El curs ensenya les formes declinades; fes-les servir.'
+    ],
+    table: {
+      head: ['Gènere', 'Indeterminat', 'Negatiu', 'Emfàtic'],
+      rows: [
+        ['masculí', 'en', 'kän', 'käin'],
+        ['femení', 'e', 'kä', 'käi'],
+        ['neutre', 'es', 'käs', 'käis'],
+        ['plural', '—', 'kä', 'käi']
+      ]
+    },
+    exercises: [
+      { id: 's02e1', type: 'gap', q: 'Händ Ihr es Auto? — Nei, mir händ ___ Auto (n).', a: ['käs'], why: 'Neutre → käs.' },
+      { id: 's02e2', type: 'gap', q: 'De Strom isch uusgfalle. Mir händ ___ Strom (m).', a: ['kän'], why: 'Masculí → kän.' },
+      { id: 's02e3', type: 'choice', q: 'Wettsch öppis ässe? — Nei danke, ich ha ___ Hunger (m).', options: ['kä', 'kän', 'käs'], a: 1, why: 'Hunger és masculí → kän. També val per a coses no comptables.' },
+      { id: 's02e4', type: 'gap', q: 'Em Dario sini Familie isch arm. Sie hät ___ Gäld (n).', a: ['käs'], why: 'Gäld és neutre → käs.' },
+      { id: 's02e5', type: 'gap', q: 'Öise Chüehlschrank isch läär. Es hät ___ Milch (f) drin.', a: ['kä'], why: 'Femení → kä.' },
+      { id: 's02e6', type: 'choice', q: 'De Gion isch es Einzelchind. Er hät ___ Brüeder und ___ Schwöschter.', options: ['kän / kä', 'kä / kä', 'käs / käs'], a: 1, why: 'Els dos són plurals → kä.' },
+      { id: 's02e7', type: 'gap', q: 'Säisch mer, was passiert isch? — Nei, uf ___ Fall!', a: ['kän'], why: '«uf kän Fall» = de cap manera. Aprèn-t’ho sencer.' },
+      { id: 's02e8', type: 'choice', q: 'Chan i au echli spöter choo? — Ja, das isch ___ Problem (n).', options: ['kän', 'kä', 'käs'], a: 2, why: 'Problem és neutre → käs Problem.' },
+      { id: 's02e9', type: 'gap', q: 'Ich ha welle go poschte, aber es hät ___ Gschäft (n) offe ghaa.', a: ['käs'], why: 'Gschäft és neutre → käs.' },
+      { id: 's02e10', type: 'choice', q: 'Com remarques amb força que no en tens gens, d’una cosa neutra?', options: ['käs', 'käis', 'kei'], a: 1, why: 'La forma emfàtica del neutre és «käis».' }
+    ]
+  },
+  {
+    id: 's03',
+    book: 'schorn',
+    unit: '2.3',
+    order: 13.1,
+    title: 'Adjectius amb article indeterminat',
+    emoji: '🖍️',
+    lesson: 'c01',
+    summary: 'De la classe del 26/08. La terminació de l’adjectiu rima amb la de l’article. És mecànic.',
+    points: [
+      'masculí: **en** guet**e** Vorschlag',
+      'femení: **e** guet**i** Lösig',
+      'neutre: **es** guet**s** Aagebot',
+      'El truc: mira com acaba l’article i posa-hi la mateixa lletra a l’adjectiu.',
+      '**en** … **-e** · **e** … **-i** · **es** … **-s**',
+      'Funciona igual tant si l’adjectiu acaba en consonant com en vocal:',
+      '**en** intressant**e** Bruef · **e** intelligänt**i** Frag · **es** international**s** Labor',
+      'Darrere del verb l’adjectiu va pelat: «De Vorschlag isch **guet**.»'
+    ],
+    table: {
+      head: ['Gènere', 'Article', 'Adjectiu', 'Exemple'],
+      rows: [
+        ['masculí', 'en', '-e', 'en wichtige Chund'],
+        ['femení', 'e', '-i', 'e wichtigi Sach'],
+        ['neutre', 'es', '-s', 'es wichtigs Projekt']
+      ]
+    },
+    exercises: [
+      { id: 's03e1', type: 'gap', q: 'Terminació: en guet___ Vorschlag (m)', a: ['e'], why: 'Masculí: en … -e.' },
+      { id: 's03e2', type: 'gap', q: 'Terminació: e guet___ Lösig (f)', a: ['i'], why: 'Femení: e … -i.' },
+      { id: 's03e3', type: 'gap', q: 'Terminació: es guet___ Aagebot (n)', a: ['s'], why: 'Neutre: es … -s.' },
+      { id: 's03e4', type: 'choice', q: 'Com es diu «un client important»?', options: ['e wichtigi Chund', 'en wichtige Chund', 'es wichtigs Chund'], a: 1, why: 'Chund és masculí → en wichtige Chund.' },
+      { id: 's03e5', type: 'choice', q: 'Com es diu «un restaurant car»?', options: ['en tüüre Reschtaurant', 'e tüüri Reschtaurant', 'es tüürs Reschtaurant'], a: 2, why: 'Reschtaurant és neutre → es tüürs.' },
+      { id: 's03e6', type: 'gap', q: 'e intelligänt___ Antwort (f) gäh', a: ['i'], why: 'Femení → -i, també amb adjectius acabats en consonant.' },
+      { id: 's03e7', type: 'choice', q: 'Com es diu «una metgessa amb experiència»?', options: ['e erfahreni Ärztin', 'en erfahrene Ärztin', 'es erfahrens Ärztin'], a: 0, why: 'Ärztin és femenina → e … -i.' },
+      { id: 's03e8', type: 'gap', q: 'es alt___ Buech (n) läse', a: ['s'], why: 'Neutre → -s: es alts Buech.' },
+      { id: 's03e9', type: 'choice', q: 'I darrere del verb? «De Chueche isch ___.»', options: ['feine', 'feini', 'fein'], a: 2, why: 'En posició predicativa l’adjectiu no porta res.' },
+      { id: 's03e10', type: 'gap', q: 'en einzeln___ Socke (m)', a: ['e'], why: 'Socke és masculí en dialecte → en einzelne Socke.' }
+    ]
+  },
+  {
+    id: 's04',
+    book: 'schorn',
+    unit: '2.3',
+    order: 17.5,
+    title: 'Finalitat: zum + infinitiu',
+    emoji: '🎯',
+    lesson: 'c01',
+    summary: 'De la classe del 26/08. Per dir per a què serveix una cosa. Molt més curt que en alemany.',
+    points: [
+      'Estructura: **zum** + infinitiu, al final de la frase.',
+      'Ich bruuch en Pass **zum reise**. = Necessito un passaport per viatjar.',
+      'E Massage **zum entspanne**. · En Suugroboter **zum Ziit spare**.',
+      'Ich bruuch en Fründ **zum glücklich sii**.',
+      'En alemany caldria «um … zu»: *um zu reisen*. En dialecte n’hi ha prou amb **zum**.',
+      'Si hi ha complement, va entremig: zum **d Haar** wäsche · zum **Ziit** spare.'
+    ],
+    exercises: [
+      { id: 's04e1', type: 'gap', q: 'Ich bruuch en Pass ___ reise. (per)', a: ['zum'], why: 'zum + infinitiu.' },
+      { id: 's04e2', type: 'choice', q: 'Com dius «per estalviar temps»?', options: ['um Ziit zum spare', 'zum Ziit spare', 'für Ziit spare'], a: 1, why: 'zum + complement + infinitiu.' },
+      { id: 's04e3', type: 'choice', q: 'Tradueix: «Necessito una amiga per ser feliç.»', options: ['Ich bruuch e Fründin zum glücklich sii.', 'Ich bruuch e Fründin um glücklich zu sii.', 'Ich bruuch e Fründin für glücklich sii.'], a: 0, why: 'El dialecte no fa servir «um … zu».' },
+      { id: 's04e4', type: 'gap', q: 'Was für es Schampoo bruuchsch du ___ d Haar wäsche?', a: ['zum'], why: 'El complement «d Haar» va entre el zum i l’infinitiu.' },
+      { id: 's04e5', type: 'choice', q: 'On va l’infinitiu?', options: ['Just després de zum', 'Al final de la frase', 'Al principi'], a: 1, why: 'Tanca la frase, com sempre amb els infinitius.' }
+    ]
+  },
+  {
+    id: 's05',
+    book: 'schorn',
+    unit: '3.5',
+    order: 16.1,
+    title: '«Wele…?» o «Was für…?»',
+    emoji: '🤔',
+    lesson: 'c01',
+    summary: 'De la classe del 26/08. Dues preguntes que en català es diuen igual però que no ho són.',
+    points: [
+      '**Wele…?** = quin d’aquests? Tries dins d’un conjunt conegut. La resposta porta article **determinat**.',
+      '**Was für…?** = quina mena de? Preguntes pel tipus. La resposta porta article **indeterminat**.',
+      'Wele es declina amb el patró de sempre: **wele** (m) · **weli** (f) · **wels** (n) · **weli** (pl)',
+      '**Wele** Bär häsch welle? — **De** Plüschbär! (d’aquells d’allà, aquell)',
+      '**Was für en** Chäs häsch welle? — **En** Weichchäs! (de quina mena)',
+      'Truc infal·lible: si pots respondre «aquell d’allà», és **Wele**. Si respons «un de tou», és **Was für**.'
+    ],
+    table: {
+      head: ['', 'Wele…? (quin)', 'Was für…? (quina mena)'],
+      rows: [
+        ['masculí', 'Wele Bär?', 'Was für en Chäs?'],
+        ['femení', 'Weli Chügelibahn?', 'Was für e Schoggi?'],
+        ['neutre', 'Wels Autöli?', 'Was für es Brot?'],
+        ['resposta', 'de / d / s …', 'en / e / es …']
+      ]
+    },
+    exercises: [
+      { id: 's05e1', type: 'gap', q: '___ Bär häsch welle? — De Plüschbär! (masculí)', a: ['wele'], why: 'Masculí → wele. La resposta amb article determinat confirma que era «Wele».' },
+      { id: 's05e2', type: 'gap', q: '___ Chügelibahn häsch welle? — Die us Holz! (femení)', a: ['weli'], why: 'Femení → weli.' },
+      { id: 's05e3', type: 'choice', q: '___ Autöli häsch welle? — S rote Autöli!', options: ['Wele', 'Weli', 'Wels'], a: 2, why: 'Autöli és neutre → wels.' },
+      { id: 's05e4', type: 'choice', q: 'Was für ___ Chäs häsch welle? — En Weichchäs.', options: ['en', 'e', 'es'], a: 0, why: 'Was für + article indeterminat, i Chäs és masculí → en.' },
+      { id: 's05e5', type: 'choice', q: 'Was für ___ Schoggi? — E Dunkli.', options: ['en', 'e', 'es'], a: 1, why: 'Schoggi és femenina → e.' },
+      { id: 's05e6', type: 'choice', q: 'La resposta és «die vo Jura». Quina pregunta era?', options: ['Weli Kafimaschine macht de bescht Kafi?', 'Was für e Kafimaschine macht de bescht Kafi?'], a: 0, why: '«die vo Jura» és article determinat: tries dins d’un conjunt → Weli.' },
+      { id: 's05e7', type: 'choice', q: 'La resposta és «es iPhone oder es anders». Quina pregunta era?', options: ['Wels Smartphon häsch kauft?', 'Was für es Smartphon häsch kauft?'], a: 1, why: 'Article indeterminat: preguntes per la mena → Was für.' },
+      { id: 's05e8', type: 'choice', q: 'Quin és el truc per distingir-les?', options: ['El gènere del substantiu', 'L’article de la resposta', 'La posició del verb'], a: 1, why: 'Determinat → Wele. Indeterminat → Was für.' }
+    ]
+  },
+  {
+    id: 's06',
+    book: 'schorn',
+    unit: '3.4',
+    order: 5.1,
+    title: 'Demostratius amb «daa» i «deet»',
+    emoji: '👉',
+    lesson: 'c01',
+    summary: 'De la classe del 26/08. Assenyalar coses i dir si són a prop o lluny.',
+    points: [
+      '**dä** (m) · **die** (f) · **das** (n) · **die** (pl)',
+      'Per situar-les s’hi afegeix **daa** (aquí) o **deet** (allà), darrere del substantiu:',
+      'Gfallt dir **das** T-Shirt **daa**? · Gfallt dir **die** Jagge, wo **deet** liit?',
+      'Poden anar soles, sense substantiu: «Gfallt dir die Brülle daa?» — «Ja, **die** gfallt mer.»',
+      'Amb les estacions i els períodes de temps marquen «aquest» en contrast amb l’anterior:',
+      'De letscht Summer sim-mer id Berge, aber **dä** Summer möcht i as Meer.',
+      'Compte de no confondre **dä** (demostratiu, accentuat) amb **de** (article, àton).'
+    ],
+    table: {
+      head: ['Gènere', 'Article', 'Demostratiu', 'Exemple de classe'],
+      rows: [
+        ['masculí', 'de Bleistift', 'dä Bleistift', 'Dä isch vo Caran d’Ache.'],
+        ['femení', 'd Schoggi', 'die Schoggi', 'Die isch vom Sprüngli.'],
+        ['neutre', 's Medikamänt', 'das Medikamänt', 'Das isch vo de Novartis.']
+      ]
+    },
+    exercises: [
+      { id: 's06e1', type: 'gap', q: '___ Bleistift (m) isch vo de Firma Caran d’Ache.', a: ['dä'], why: 'Masculí → dä.' },
+      { id: 's06e2', type: 'gap', q: '___ Schoggi (f) isch vom Sprüngli.', a: ['die'], why: 'Femení → die.' },
+      { id: 's06e3', type: 'choice', q: '___ Medikamänt isch vo de Novartis.', options: ['Dä', 'Die', 'Das'], a: 2, why: 'Medikamänt és neutre → das.' },
+      { id: 's06e4', type: 'gap', q: 'Gfallt dir ___ Jagge, wo deet liit? (femení)', a: ['die'], why: 'Jagge és femenina → die. I «deet» diu que és la d’allà.' },
+      { id: 's06e5', type: 'choice', q: 'Gfallt dir ___ Hämp daa?', options: ['dä', 'die', 'das'], a: 2, why: 'Hämp és neutre → das Hämp daa.' },
+      { id: 's06e6', type: 'gap', q: 'De letscht Winter bin i go Skifahre, aber ___ Winter gang i go Schneeschuehlaufe.', a: ['dä'], why: 'Winter és masculí → dä Winter (aquest hivern).' },
+      { id: 's06e7', type: 'choice', q: 'Què vol dir «deet»?', options: ['aquí', 'allà', 'ara'], a: 1, why: 'daa = aquí, deet = allà.' }
+    ]
+  },
+  {
+    id: 's07',
+    book: 'schorn',
+    unit: 'pronúncia',
+    order: 1.1,
+    title: 'Els diftongs descendents ie, ue, üe',
+    emoji: '🎵',
+    lesson: 'c01',
+    summary: 'De la classe del 26/08. Dos sons seguits que cauen d’agut a greu. Si no els fas, no sones suïssa.',
+    points: [
+      'No es llegeixen com una vocal llarga: són **dos sons**, i el segon cau. Bi-er, Blue-me, Brüe-der.',
+      'La regla mnemotècnica de classe: «Mit em **ÜE** han i **Müe**, s **UE** git mer z **tue**, und s **IE** graatet **nie**.»',
+      '**ie** — B**ie**r, Br**ie**f, Chr**ie**si (cirera), D**ie**b, T**ie**r, v**ie**r, w**ie**, n**ie**, l**ie**cht',
+      '**ue** — Bl**ue**me, B**ue**b, B**ue**ch, Ch**ue**, Ch**ue**che, F**ue**ss, M**ue**ter, St**ue**l, g**ue**t, gn**ue**g, s**ue**che, l**ue**ge',
+      '**üe** — Br**üe**der, Ch**üe**, Fr**üe**lig, F**üe**ss, Gm**üe**s, m**üe**d, gr**üe**n, gr**üe**zi, m**üe**se',
+      'Trabucallengües de classe: «De D**ie**b fl**ie**t vor v**ie**r l**ie**be St**ie**rli.»',
+      '«M**ue**ter t**ue** d G**ue**tslibüchs gn**ue**g g**ue**t z**ue**!»',
+      '«M**ii**n Br**üe**der f**üe**rt di m**üe**de Ch**üe** a d Ch**üe**li.»',
+      '⚠️ Compte: **no** tot «ie» alemany es torna diftong. *vier* → v**ie**r sí, però *sieben* → s**i**be i *Sieb* → S**ii**b, no.'
+    ],
+    table: {
+      head: ['Diftong', 'Exemples', 'Sona com'],
+      rows: [
+        ['ie', 'Bier, Tier, vier, nie', 'i → e (cau)'],
+        ['ue', 'guet, Buech, Mueter, Chue', 'u → e (cau)'],
+        ['üe', 'müed, grüen, Brüeder, Gmües', 'ü → e (cau)']
+      ]
+    },
+    exercises: [
+      { id: 's07e1', type: 'choice', q: 'Com es llegeix «guet»?', options: ['gu-et, amb dos sons', 'guuut, com una u llarga', 'g-vet'], a: 0, why: 'És un diftong descendent: la u cau cap a la e.' },
+      { id: 's07e2', type: 'gap', q: 'Hochdeutsch «Bruder» → dialecte: Br___der', a: ['üe'], why: 'Brüeder, amb üe.' },
+      { id: 's07e3', type: 'gap', q: 'Hochdeutsch «Kuchen» → dialecte: Ch___che', a: ['ue'], why: 'Chueche.' },
+      { id: 's07e4', type: 'choice', q: 'Quina d’aquestes NO porta diftong descendent?', options: ['müed', 'sibe', 'Blueme'], a: 1, why: '«sieben» → «sibe», amb i simple. No tot ie alemany es converteix.' },
+      { id: 's07e5', type: 'choice', q: 'Què diu la regla mnemotècnica sobre l’ÜE?', options: ['«han i Müe» (em costa)', '«git mer z tue»', '«graatet nie»'], a: 0, why: 'Mit em ÜE han i Müe — justament la que costa més.' },
+      { id: 's07e6', type: 'gap', q: 'Hochdeutsch «grün» → dialecte: gr___n', a: ['üe'], why: 'grüen. Igual que grüezi.' },
+      { id: 's07e7', type: 'choice', q: '«Chriesi» vol dir…', options: ['guerra', 'cirera', 'crisi'], a: 1, why: 'Chriesi = Kirsche. «Chrieg» sí que és guerra: vigila-les.' }
+    ]
+  },
+  {
+    id: 's08',
+    book: 'schorn',
+    unit: 'lèxic',
+    order: 8.6,
+    title: 'Verbs suïssos i falsos amics',
+    emoji: '⚠️',
+    lesson: 'c01',
+    summary: 'De la classe del 26/08. Verbs que existeixen en alemany però volen dir una altra cosa. Aquí es cau de quatre grapes.',
+    points: [
+      '**lauffe** = caminar (NO córrer). «Du muesch mee **lauffe**» = has de caminar més.',
+      'Per córrer: **räne** o **springe**. Per saltar: **gumpe**.',
+      '**schaffe** = treballar (NO crear). «Er **schaffet** nüme vil.»',
+      'Per crear, fer: **mache**. «Das hät en Künschtler **gmacht**.»',
+      '**schmöcke** = fer olor / olorar (NO tastar). «**Schmöcksch** dë Gschtank?»',
+      'Per tenir gust: **tunke**. «Wie **tunkt** s di?» = com et sap?',
+      '**hebe** = aguantar, subjectar (NO aixecar). «**Heb** emaal de Hamer!»',
+      'Per aixecar: **lupfe**. «**Lupf** emaal dë Choorb!»',
+      'I quatre més que sentiràs cada dia: **aalüüte** (trucar), **gspüüre** (notar), **trüle** (girar), **lange** (ser prou).',
+      '«Jetz **langet** s aber!» = ja n’hi ha prou!'
+    ],
+    table: {
+      head: ['Vol dir', 'Dialecte', 'Trampa'],
+      rows: [
+        ['caminar', 'lauffe', 'sembla «laufen» = córrer'],
+        ['córrer', 'räne, springe', 'springe no és «saltar»'],
+        ['saltar', 'gumpe', '—'],
+        ['treballar', 'schaffe', 'a Alemanya «schaffen» = aconseguir'],
+        ['fer, crear', 'mache', '—'],
+        ['fer olor', 'schmöcke', 'sembla «schmecken» = tenir gust'],
+        ['tenir gust', 'tunke', '—'],
+        ['aguantar', 'hebe', 'sembla «heben» = aixecar'],
+        ['aixecar', 'lupfe', '—'],
+        ['rebre', 'überchoo', '—'],
+        ['escoltar', 'lose', '—'],
+        ['trucar', 'aalüüte', '—']
+      ]
+    },
+    exercises: [
+      { id: 's08e1', type: 'choice', q: '«Du muesch mee lauffe» vol dir…', options: ['has de córrer més', 'has de caminar més', 'has de treballar més'], a: 1, why: 'lauffe = caminar. El fals amic més traïdor de tots.' },
+      { id: 's08e2', type: 'gap', q: 'Per dir «córrer» en dialecte: ___ (o springe)', a: ['räne', 'rane'], why: 'räne o springe.' },
+      { id: 's08e3', type: 'choice', q: '«Schmöcksch das?» pregunta si…', options: ['ho tastes', 'ho notes al nas', 'ho sents'], a: 1, why: 'schmöcke = fer olor / olorar. Per al gust és «tunke».' },
+      { id: 's08e4', type: 'choice', q: 'El teu company et diu «Heb emaal de Hamer!». Què vol?', options: ['Que aixequis el martell', 'Que aguantis el martell', 'Que li donis el martell'], a: 1, why: 'hebe = aguantar. Per aixecar seria «Lupf de Hamer!».' },
+      { id: 's08e5', type: 'gap', q: '«Er ___ nüme vil» = ja no treballa gaire.', a: ['schaffet'], why: 'schaffe = treballar, 3a persona schaffet.' },
+      { id: 's08e6', type: 'choice', q: '«Wie tunkt s di?» pregunta…', options: ['com et sap', 'com et sents', 'què en penses'], a: 0, why: 'tunke = tenir gust.' },
+      { id: 's08e7', type: 'choice', q: '«Jetz langet s aber!» vol dir…', options: ['Ja arriba!', 'Ja n’hi ha prou!', 'Ja és llarg!'], a: 1, why: 'lange = ser suficient. Es diu enfadada.' },
+      { id: 's08e8', type: 'gap', q: 'Per dir «trucar per telèfon»: ___ (o telifoniere)', a: ['aalüüte', 'aalute'], why: '«Ich han ere wele aalüüte.»' },
+      { id: 's08e9', type: 'choice', q: 'Un artista ha fet una obra. Quin verb hi va?', options: ['Das hät en Künschtler gschafft.', 'Das hät en Künschtler gmacht.'], a: 1, why: 'mache = crear. schaffe és treballar.' }
+    ]
+  },
+  {
+    id: 's09',
+    book: 'schorn',
+    unit: '2.3',
+    order: 5.6,
+    title: '«e so-n-en» i «irgend en»',
+    emoji: '🔀',
+    lesson: 'c01',
+    summary: 'De la classe del 26/08. Un tal…, un… qualsevol. Amb la -n- que apareix del no-res.',
+    points: [
+      '**e so-n-en / e so-n-e / e so-n-es** = un/una tal…, semblant.',
+      'Das isch **e so-n-en** stuure Bock! = Quin home més tossut!',
+      'Was **so-n-es** Chind nöd alles mit sich umeträit! = El que arriba a carregar una criatura així!',
+      '**irgend en / irgend e / irgend es** = un/una… qualsevol.',
+      '**Irgend en** Grund git s. = Algun motiu hi deu haver.',
+      'Uf **irgend e** Art löst sich jedes Problem. = D’una manera o altra tot se soluciona.',
+      'Wänn Sie **irgend es** Aaliigge händ, lüütet Sie mir aa.',
+      'La **-n-** del mig és una lligadura: el dialecte la posa entre dues vocals perquè no xoquin. Ho fa a tot arreu: «wie-**n**-er», «chume-**n**-i».'
+    ],
+    exercises: [
+      { id: 's09e1', type: 'choice', q: 'Das isch e so-n-___ stuure Bock (m)!', options: ['en', 'e', 'es'], a: 0, why: 'Bock és masculí → so-n-en.' },
+      { id: 's09e2', type: 'gap', q: 'Irgend ___ Grund (m) git s, warum d Steiböck striitet.', a: ['en'], why: 'Masculí → irgend en.' },
+      { id: 's09e3', type: 'gap', q: 'Uf irgend ___ Art (f) löst sich jedes Problem.', a: ['e'], why: 'Art és femenina → irgend e.' },
+      { id: 's09e4', type: 'choice', q: 'Wänn Sie irgend ___ Aaliigge (n) händ, lüütet Sie mir aa.', options: ['en', 'e', 'es'], a: 2, why: 'Aaliigge és neutre → irgend es.' },
+      { id: 's09e5', type: 'choice', q: 'Per què hi ha una -n- a «e so-n-en»?', options: ['És part de la paraula', 'Uneix dues vocals perquè no xoquin', 'Marca el plural'], a: 1, why: 'És la lligadura del dialecte, com a «wie-n-er» o «chume-n-i».' },
+      { id: 's09e6', type: 'gap', q: 'Irgend ___ Chundin (f) hät aaglüütet.', a: ['e'], why: 'Chundin és femenina → irgend e.' }
     ]
   }
 ]

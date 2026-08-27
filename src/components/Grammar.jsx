@@ -107,9 +107,9 @@ export default function Grammar({ quiz, onAnswer }) {
   return (
     <div className="grammar">
       <p className="hint">
-        Els temes segueixen l’ordre dels capítols de <b>Schweizerdeutsch verstehen</b> (Andrea
-        Holle), per poder-los seguir amb el llibre a la mà. Cada tema té l’explicació i després
-        exercicis que es corregeixen sols.
+        Els temes segueixen l’ordre dels capítols de <b>Schweizerdeutsch verstehen</b> (Holle).
+        Els que porten <b>Schorn</b> vénen del curs de classe i s’han col·locat al costat del
+        capítol equivalent. Cada tema té l’explicació i després exercicis que es corregeixen sols.
       </p>
 
       {GRAMMAR.map((g) => {
@@ -121,7 +121,11 @@ export default function Grammar({ quiz, onAnswer }) {
             <button className="study-head" onClick={() => setObert(isOpen ? null : g.id)}>
               <span className="sh-title">
                 <span>{g.emoji} {g.title}</span>
-                {g.unit && <em className="unit">Holle · cap. {g.unit}</em>}
+                {g.unit && (
+                  <em className="unit">
+                    {g.book === 'schorn' ? `Schorn · ${g.unit}` : `Holle · cap. ${g.unit}`}
+                  </em>
+                )}
               </span>
               <span className="exam-count">{fets ? `${ok}/${g.exercises.length}` : `${g.exercises.length} ex.`} {isOpen ? '▾' : '▸'}</span>
             </button>

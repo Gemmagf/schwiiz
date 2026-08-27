@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { TOPICS } from '../data/vocab.js'
+import { LESSONS } from '../data/lessons.js'
 import { GRADES, dueCards, grade as gradeCard, newCard, todayISO } from '../lib/srs.js'
 import { speak, ttsAvailable } from '../lib/tts.js'
 
@@ -9,21 +10,24 @@ const DIRECTIONS = [
   { id: 'de2ch', label: 'Hochdeutsch → Dialecte', front: 'de', hint: 'per fixar els canvis de so' }
 ]
 
-export default function Flashcards({ vocab = [], srs, onGrade, topicFilter, setTopicFilter, dir, setDir, voiceURI }) {
+export default function Flashcards({ vocab = [], srs, onGrade, topicFilter, setTopicFilter, lessonFilter, setLessonFilter, dir, setDir, voiceURI }) {
   const [queue, setQueue] = useState(null) // null = encara no s'ha començat
   const [idx, setIdx] = useState(0)
   const [shown, setShown] = useState(false)
   const [done, setDone] = useState(0)
   const [lliure, setLliure] = useState(false)
 
-  const pool = useMemo(
-    () => (topicFilter === 'tots' ? vocab : vocab.filter((v) => v.topic === topicFilter)),
-    [topicFilter, vocab]
-  )
+  // Es filtra primer per lliçó (d'on ve la paraula) i després per tema.
+  const pool = useMemo(() => {
+    let p = vocab
+    if (lessonFilter !== 'tots') p = p.filter((v) => (v.lesson || 'base') === lessonFilter)
+    if (topicFilter !== 'tots') p = p.filter((v) => v.topic === topicFilter)
+    return p
+  }, [topicFilter, lessonFilter, vocab])
   const pendents = useMemo(() => dueCards(pool, srs), [pool, srs])
 
   // Si canvia el filtre, es tanca la sessió en curs perquè no barregi temes.
-  useEffect(() => { setQueue(null); setIdx(0); setShown(false); setDone(0) }, [topicFilter, dir])
+  useEffect(() => { setQueue(null); setIdx(0); setShown(false); setDone(0) }, [topicFilter, lessonFilter, dir])
 
   function start(forcarTot = false) {
     const base = forcarTot ? pool : pendents
@@ -74,13 +78,35 @@ export default function Flashcards({ vocab = [], srs, onGrade, topicFilter, setT
           ))}
         </div>
 
+        <h2>D’on ve</h2>
+        <div className="filters">
+          <button className={`chip ${lessonFilter === 'tots' ? 'active' : ''}`} onClick={() => setLessonFilter('tots')}>
+            Tot ({vocab.length})
+          </button>
+          {LESSONS.map((l) => {
+            const n = vocab.filter((v) => (v.lesson || 'base') === l.id).length
+            if (!n) return null
+            return (
+              <button key={l.id} className={`chip ${lessonFilter === l.id ? 'active' : ''}`} onClick={() => setLessonFilter(l.id)}>
+                {l.date ? `📘 ${l.title.split('—')[0].trim()}` : '📗 Fonaments'} ({n})
+              </button>
+            )
+          })}
+          {vocab.some((v) => v.topic === 'lectura') && (
+            <button className={`chip ${lessonFilter === 'lectura' ? 'active' : ''}`} onClick={() => setLessonFilter('lectura')}>
+              📖 Les meves ({vocab.filter((v) => v.topic === 'lectura').length})
+            </button>
+          )}
+        </div>
+
         <h2>Tema</h2>
         <div className="filters">
           <button className={`chip ${topicFilter === 'tots' ? 'active' : ''}`} onClick={() => setTopicFilter('tots')}>
-            Tots ({vocab.length})
+            Tots ({pool.length})
           </button>
           {TOPICS.map((t) => {
-            const n = vocab.filter((v) => v.topic === t.id).length
+            const base = lessonFilter === 'tots' ? vocab : vocab.filter((v) => (v.lesson || 'base') === lessonFilter)
+            const n = base.filter((v) => v.topic === t.id).length
             if (!n) return null
             return (
               <button key={t.id} className={`chip ${topicFilter === t.id ? 'active' : ''}`} onClick={() => setTopicFilter(t.id)}>
