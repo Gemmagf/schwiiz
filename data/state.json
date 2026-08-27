@@ -1,7 +1,23 @@
 {
-  "srs": [],
+  "srs": [
+    {
+      "id": "c1080",
+      "ease": 2.3,
+      "interval": 0,
+      "reps": 0,
+      "lapses": 1,
+      "due": "2026-08-27",
+      "last": "2026-08-27"
+    }
+  ],
   "quiz": [],
-  "sessions": [],
+  "sessions": [
+    {
+      "date": "2026-08-27",
+      "reviewed": 1,
+      "correct": 0
+    }
+  ],
   "cards": [],
-  "exportedAt": "2026-08-27T14:40:34.443Z"
+  "exportedAt": "2026-08-27T14:41:17.880Z"
 }
