@@ -8,7 +8,7 @@ import { todayISO } from '../lib/srs.js'
 // Els capítols de lectura NO hi van (vegeu src/lib/db.js).
 const DEFECTES = { gh_owner: 'Gemmagf', gh_repo: 'schwiiz', gh_branch: 'main', gh_token: '' }
 
-export default function Settings({ getConfig, setConfig, setToast, onReload, voiceURI, setVoiceURI, dirty, syncOn }) {
+export default function Settings({ getConfig, setConfig, setToast, onReload, voiceURI, setVoiceURI, dirty, syncOn, mida, setMida }) {
   const [gh, setGh] = useState({ gh_owner: 'Gemmagf', gh_repo: 'schwiiz', gh_branch: 'main', gh_token: '' })
   const [lastSync, setLastSync] = useState('')
   const [llista, setLlista] = useState([])
@@ -103,6 +103,17 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
 
   return (
     <div className="settings">
+      <h2>Repàs</h2>
+      <label>Targetes per tanda</label>
+      <select value={mida} onChange={(e) => setMida(Number(e.target.value))}>
+        {[50, 100, 150, 200, 300, 500].map((n) => <option key={n} value={n}>{n}</option>)}
+      </select>
+      <p className="hint">
+        Quantes targetes et proposa cada tanda. Quan l’acabes pots fer-ne una altra: el compte
+        del dia va sumant. Dins de cada tanda entren primer les que et costen més (les que has
+        fallat més vegades i les que tens menys assentades), i s’omple amb targetes noves.
+      </p>
+
       <h2>Pronunciació</h2>
       {!ttsAvailable() ? (
         <p className="hint">Aquest navegador no té síntesi de veu.</p>

@@ -9,8 +9,12 @@ Offline-first · s'actualitza per git · flashcards amb repàs espaiat, gramàti
 ## Què fa
 
 - **Tauler**: quantes paraules tens assentades, què toca repassar avui, ratxa de dies.
-- **Repàs**: flashcards amb SRS (tipus Anki). Tres direccions: català→dialecte,
-  dialecte→català i Hochdeutsch→dialecte. Filtrable per tema.
+- **Repàs**: flashcards amb SRS (tipus Anki), sempre barrejades. Tandes de 200 targetes
+  (configurable); quan n'acabes una en pots fer una altra i el compte del dia va sumant.
+  Cada tanda prioritza les que et costen més — les que has fallat més vegades i les que
+  tens menys assentades — i s'omple amb targetes noves. Les que marques «Un altre cop»
+  tornen dins de la mateixa tanda, i les de «Costa» hi tornen un cop. La direcció i els
+  filtres per tema o classe són opcionals i van plegats.
 - **Gramàtica**: 40 temes amb explicació, taules de conjugació i 233 exercicis que es
   corregeixen sols.
 - **Llegir**: tres coses en una.

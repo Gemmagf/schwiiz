@@ -29,6 +29,7 @@ export default function App() {
   const [toast, setToast] = useState('')
   const [topicFilter, setTopicFilter] = useState('tots')
   const [lessonFilter, setLessonFilter] = useState('tots')
+  const [mida, setMida] = useState(200) // targetes per tanda
   const [dir, setDir] = useState('ca2ch')
   const [voiceURI, setVoiceURIState] = useState('')
   const [cards, setCards] = useState([])       // targetes que has fet tu llegint
@@ -52,6 +53,7 @@ export default function App() {
     ;(async () => {
       setVoiceURIState((await getConfig('voiceURI')) || '')
       setDir((await getConfig('dir')) || 'ca2ch')
+      setMida((await getConfig('mida')) || 200)
     })()
     const on = () => setOnline(true)
     const off = () => setOnline(false)
@@ -139,6 +141,11 @@ export default function App() {
     await setConfig('voiceURI', uri)
   }
 
+  async function saveMida(n) {
+    setMida(n)
+    await setConfig('mida', n)
+  }
+
   async function saveDir(d) {
     setDir(d)
     await setConfig('dir', d)
@@ -171,6 +178,7 @@ export default function App() {
         {tab === 'cards' && (
           <Flashcards
             vocab={vocab} srs={srs} onGrade={onGrade}
+            mida={mida} avuiFetes={sessions.find((x) => x.date === todayISO())?.reviewed || 0}
             topicFilter={topicFilter} setTopicFilter={setTopicFilter}
             lessonFilter={lessonFilter} setLessonFilter={setLessonFilter}
             dir={dir} setDir={saveDir}
@@ -194,6 +202,7 @@ export default function App() {
             setToast={setToast} onReload={refresh}
             dirty={dirty} syncOn={syncOn}
             voiceURI={voiceURI} setVoiceURI={saveVoice}
+            mida={mida} setMida={saveMida}
           />
         )}
       </main>

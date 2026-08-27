@@ -75,6 +75,37 @@ export function dueCards(items = [], states = {}, today = todayISO()) {
   })
 }
 
+// Barreja de debò (Fisher-Yates). El truc de sort(() => Math.random() - 0.5)
+// no reparteix uniformement: deixa les targetes gairebé on eren.
+export function barreja(llista) {
+  const a = [...llista]
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
+// Construeix una tanda de repàs.
+//   1. Primer les que toquen, ordenades per com de malament te les saps:
+//      més fallades, després menys facilitat, després les vençudes de fa més temps.
+//   2. Si no n'hi ha prou per omplir la tanda, s'hi afegeixen targetes noves.
+//   3. Tot barrejat al final: la sessió no ha d'anar per temes.
+export function construeixTanda(items, states, mida, today = todayISO()) {
+  const vençudes = []
+  const noves = []
+  for (const it of items) {
+    const s = states[it.id]
+    if (!s || !s.reps) noves.push(it)
+    else if (s.due <= today) vençudes.push(it)
+  }
+  vençudes.sort((a, b) => {
+    const A = states[a.id], B = states[b.id]
+    return (B.lapses - A.lapses) || (A.ease - B.ease) || A.due.localeCompare(B.due)
+  })
+  return barreja([...vençudes, ...barreja(noves)].slice(0, mida))
+}
+
 // Classificació ràpida per al tauler.
 export function stats(items = [], states = {}, today = todayISO()) {
   let nous = 0, arepassar = 0, apresos = 0
