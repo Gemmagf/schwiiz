@@ -16,6 +16,17 @@ import { exportAll, getConfig, setConfig } from './db.js'
 const API = 'https://api.github.com'
 const STATE_PATH = 'data/state.json'
 
+// Els codis d'error de GitHub no diuen res a qui els llegeix. Els traduïm al que
+// s'ha de fer per arreglar-ho.
+function explica(status, { owner, repo, branch }) {
+  if (status === 401) return 'El token no és vàlid o ha caducat. Genera’n un de nou.'
+  if (status === 403) return `El token no té permís d’escriptura. Ha de tenir «Contents: Read and write» sobre ${repo}.`
+  if (status === 404) return `No es troba ${owner}/${repo} (branca ${branch}). Comprova el nom del repo i que el token hi tingui accés seleccionat.`
+  if (status === 409) return 'Conflicte: algú altre ha pujat abans. Torna-ho a provar.'
+  if (status === 422) return `La branca «${branch}» no existeix en aquest repo.`
+  return `GitHub ha respost ${status}.`
+}
+
 async function ghConfig() {
   const [token, owner, repo, branch] = await Promise.all([
     getConfig('gh_token'), getConfig('gh_owner'), getConfig('gh_repo'), getConfig('gh_branch')
@@ -35,8 +46,8 @@ async function getRemoteSha({ token, owner, repo, branch }) {
   const res = await fetch(`${API}/repos/${owner}/${repo}/contents/${STATE_PATH}?ref=${branch}`, {
     headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }
   })
-  if (res.status === 404) return null
-  if (!res.ok) throw new Error(`GitHub GET ${res.status}`)
+  if (res.status === 404) return null // el fitxer encara no existeix: el crearem
+  if (!res.ok) throw new Error(explica(res.status, { owner, repo, branch }))
   return (await res.json()).sha
 }
 
@@ -59,7 +70,7 @@ export async function pushToGit() {
       ...(sha ? { sha } : {})
     })
   })
-  if (!res.ok) throw new Error(`GitHub PUT ${res.status}`)
+  if (!res.ok) throw new Error(explica(res.status, c))
   await setConfig('dirty', false)
   await setConfig('lastSync', new Date().toISOString())
   return { ok: true }

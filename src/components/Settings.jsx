@@ -137,6 +137,12 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
         no arriba, tanca-la del tot i torna-la a obrir.
       </p>
 
+      <h2>Versió</h2>
+      <p className="hint">
+        Compilada el {typeof __BUILD__ !== 'undefined' ? __BUILD__ : '—'} (UTC). Si aquesta data
+        és més antiga del que esperes, tanca l’app del tot i torna-la a obrir amb connexió.
+      </p>
+
       <h2>Dades</h2>
       <div className="btn-row">
         <button onClick={exportar}>Exportar JSON</button>

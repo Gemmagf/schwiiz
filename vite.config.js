@@ -9,6 +9,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 // s'hi posa la subcarpeta. En desenvolupament es queda a l'arrel.
 // Si algun dia la mous a un domini propi o a l'arrel, canvia-ho aquí.
 export default defineConfig(({ command }) => ({
+  define: { __BUILD__: JSON.stringify(new Date().toISOString().slice(0, 16).replace('T', ' ')) },
   base: command === 'build' ? '/schwiiz/' : '/',
   plugins: [
     react(),
