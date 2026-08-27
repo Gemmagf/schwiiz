@@ -1,11 +1,29 @@
 {
   "srs": [
     {
-      "id": "c1006",
+      "id": "c1001",
       "ease": 2.3,
       "interval": 0,
       "reps": 0,
       "lapses": 1,
+      "due": "2026-08-27",
+      "last": "2026-08-27"
+    },
+    {
+      "id": "c1004",
+      "ease": 2.3,
+      "interval": 0,
+      "reps": 0,
+      "lapses": 1,
+      "due": "2026-08-27",
+      "last": "2026-08-27"
+    },
+    {
+      "id": "c1006",
+      "ease": 2.1,
+      "interval": 0,
+      "reps": 0,
+      "lapses": 2,
       "due": "2026-08-27",
       "last": "2026-08-27"
     },
@@ -47,19 +65,19 @@
     },
     {
       "id": "c1033",
-      "ease": 2.3,
+      "ease": 2.1,
       "interval": 0,
       "reps": 0,
-      "lapses": 1,
+      "lapses": 2,
       "due": "2026-08-27",
       "last": "2026-08-27"
     },
     {
       "id": "c1035",
-      "ease": 2.3,
+      "ease": 2.1,
       "interval": 0,
       "reps": 0,
-      "lapses": 1,
+      "lapses": 2,
       "due": "2026-08-27",
       "last": "2026-08-27"
     },
@@ -74,15 +92,33 @@
     },
     {
       "id": "c1046",
-      "ease": 2.3,
+      "ease": 2.1,
       "interval": 0,
       "reps": 0,
-      "lapses": 1,
+      "lapses": 2,
       "due": "2026-08-27",
       "last": "2026-08-27"
     },
     {
       "id": "c1047",
+      "ease": 2.45,
+      "interval": 3,
+      "reps": 1,
+      "lapses": 1,
+      "due": "2026-08-30",
+      "last": "2026-08-27"
+    },
+    {
+      "id": "c1069",
+      "ease": 2.65,
+      "interval": 3,
+      "reps": 1,
+      "lapses": 0,
+      "due": "2026-08-30",
+      "last": "2026-08-27"
+    },
+    {
+      "id": "c1071",
       "ease": 2.3,
       "interval": 0,
       "reps": 0,
@@ -92,73 +128,73 @@
     },
     {
       "id": "c1081",
-      "ease": 2.3,
+      "ease": 2.1,
       "interval": 0,
       "reps": 0,
-      "lapses": 1,
+      "lapses": 2,
       "due": "2026-08-27",
       "last": "2026-08-27"
     },
     {
       "id": "c1087",
       "ease": 2.3,
-      "interval": 0,
-      "reps": 0,
+      "interval": 1,
+      "reps": 1,
       "lapses": 1,
-      "due": "2026-08-27",
+      "due": "2026-08-28",
       "last": "2026-08-27"
     },
     {
       "id": "c1090",
-      "ease": 2.3,
+      "ease": 2.1,
       "interval": 0,
       "reps": 0,
-      "lapses": 1,
+      "lapses": 2,
       "due": "2026-08-27",
       "last": "2026-08-27"
     },
     {
       "id": "c1098",
-      "ease": 2.3,
+      "ease": 2.1,
       "interval": 0,
       "reps": 0,
-      "lapses": 1,
+      "lapses": 2,
       "due": "2026-08-27",
       "last": "2026-08-27"
     },
     {
       "id": "c1110",
-      "ease": 2.3,
-      "interval": 0,
-      "reps": 0,
+      "ease": 2.15,
+      "interval": 1,
+      "reps": 1,
       "lapses": 1,
-      "due": "2026-08-27",
+      "due": "2026-08-28",
       "last": "2026-08-27"
     },
     {
       "id": "c1114",
-      "ease": 2.3,
+      "ease": 2.1,
       "interval": 0,
       "reps": 0,
-      "lapses": 1,
+      "lapses": 2,
       "due": "2026-08-27",
       "last": "2026-08-27"
     },
     {
       "id": "c1123",
-      "ease": 2.3,
+      "ease": 2.1,
       "interval": 0,
       "reps": 0,
-      "lapses": 1,
+      "lapses": 2,
       "due": "2026-08-27",
       "last": "2026-08-27"
     },
     {
       "id": "c1125",
-      "ease": 2.3,
+      "ease": 2.1,
       "interval": 0,
       "reps": 0,
-      "lapses": 1,
+      "lapses": 2,
       "due": "2026-08-27",
       "last": "2026-08-27"
     },
@@ -190,11 +226,20 @@
       "last": "2026-08-27"
     },
     {
+      "id": "c1142",
+      "ease": 2.65,
+      "interval": 3,
+      "reps": 1,
+      "lapses": 0,
+      "due": "2026-08-30",
+      "last": "2026-08-27"
+    },
+    {
       "id": "c1149",
-      "ease": 2.3,
+      "ease": 2.1,
       "interval": 0,
       "reps": 0,
-      "lapses": 1,
+      "lapses": 2,
       "due": "2026-08-27",
       "last": "2026-08-27"
     },
@@ -209,10 +254,10 @@
     },
     {
       "id": "c1166",
-      "ease": 2.3,
+      "ease": 2.1,
       "interval": 0,
       "reps": 0,
-      "lapses": 1,
+      "lapses": 2,
       "due": "2026-08-27",
       "last": "2026-08-27"
     },
@@ -226,11 +271,20 @@
       "last": "2026-08-27"
     },
     {
+      "id": "c1171",
+      "ease": 2.65,
+      "interval": 3,
+      "reps": 1,
+      "lapses": 0,
+      "due": "2026-08-30",
+      "last": "2026-08-27"
+    },
+    {
       "id": "c1175",
-      "ease": 2.3,
+      "ease": 2.1,
       "interval": 0,
       "reps": 0,
-      "lapses": 1,
+      "lapses": 2,
       "due": "2026-08-27",
       "last": "2026-08-27"
     },
@@ -245,11 +299,11 @@
     },
     {
       "id": "c1198",
-      "ease": 2.3,
-      "interval": 0,
-      "reps": 0,
+      "ease": 2.15,
+      "interval": 1,
+      "reps": 1,
       "lapses": 1,
-      "due": "2026-08-27",
+      "due": "2026-08-28",
       "last": "2026-08-27"
     },
     {
@@ -263,6 +317,24 @@
     },
     {
       "id": "c1212",
+      "ease": 2.1,
+      "interval": 0,
+      "reps": 0,
+      "lapses": 2,
+      "due": "2026-08-27",
+      "last": "2026-08-27"
+    },
+    {
+      "id": "c1218",
+      "ease": 2.1,
+      "interval": 0,
+      "reps": 0,
+      "lapses": 2,
+      "due": "2026-08-27",
+      "last": "2026-08-27"
+    },
+    {
+      "id": "c1220",
       "ease": 2.3,
       "interval": 0,
       "reps": 0,
@@ -271,7 +343,7 @@
       "last": "2026-08-27"
     },
     {
-      "id": "c1218",
+      "id": "c1224",
       "ease": 2.3,
       "interval": 0,
       "reps": 0,
@@ -281,10 +353,10 @@
     },
     {
       "id": "c1227",
-      "ease": 2.3,
+      "ease": 2.1,
       "interval": 0,
       "reps": 0,
-      "lapses": 1,
+      "lapses": 2,
       "due": "2026-08-27",
       "last": "2026-08-27"
     },
@@ -1336,11 +1408,11 @@
     },
     {
       "date": "2026-08-27",
-      "reviewed": 32,
-      "correct": 8
+      "reviewed": 60,
+      "correct": 13
     }
   ],
   "cards": [],
   "texts": [],
-  "exportedAt": "2026-08-27T12:39:21.499Z"
+  "exportedAt": "2026-08-27T12:43:16.722Z"
 }
