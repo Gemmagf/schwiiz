@@ -5,7 +5,7 @@ import { voices, onVoicesReady, speak, ttsAvailable } from '../lib/tts.js'
 import { todayISO } from '../lib/srs.js'
 
 // Un sol repo, com al caleta-tracker: el codi i el progrés viuen junts.
-// És privat, i per això els teus capítols de lectura hi poden anar sense problema.
+// Els capítols de lectura NO hi van (vegeu src/lib/db.js).
 const DEFECTES = { gh_owner: 'Gemmagf', gh_repo: 'schwiiz', gh_branch: 'main', gh_token: '' }
 
 export default function Settings({ getConfig, setConfig, setToast, onReload, voiceURI, setVoiceURI, dirty, syncOn }) {
@@ -101,8 +101,9 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
       <h2>Sincronitzar el progrés amb git</h2>
       <p className="hint">
         Opcional. Serveix per passar el teu progrés d’un dispositiu a un altre. Sense això l’app
-        funciona igual, però el progrés només viu en aquest mòbil. Va a <code>data/state.json</code>
-        del repo <b>schwiiz</b>, que és privat.
+        funciona igual, però el progrés només viu en aquest mòbil. Puja el repàs, la ratxa, els
+        exercicis i les teves paraules a <code>data/state.json</code>. Els <b>capítols de
+        lectura no hi pugen mai</b>: es queden en aquest dispositiu.
       </p>
       {syncOn && (
         <div className={`sync-state ${dirty ? 'pend' : 'ok'}`}>

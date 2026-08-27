@@ -100,8 +100,9 @@ export default function Reader({ userCards, texts, onAddCard, onUpdateCard, onDe
         <button className="tornar" onClick={() => setVista('llista')}>← Tornar</button>
         <h2>Afegir un text</h2>
         <p className="hint">
-          Enganxa o escriu el capítol que estàs treballant. Es guarda al teu dispositiu i no
-          es publica enlloc. Si tens el sync amb git activat, viatjarà amb el teu progrés.
+          Enganxa o escriu el capítol que estàs treballant. Es guarda <b>només en aquest
+          dispositiu</b> i no puja mai a git, ni tan sols amb la sincronització activada.
+          Per moure’l a un altre mòbil, fes servir «Exportar JSON» als Ajustos.
         </p>
         <label>Títol</label>
         <input value={nou.title} onChange={(e) => setNou({ ...nou, title: e.target.value })} placeholder="p. ex. Hansdampf — Kapitel 3" />

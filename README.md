@@ -1,7 +1,9 @@
 # 🇨🇭 Schwiiz
 
-PWA **privada** per estudiar **suís-alemany (Züridütsch)**.
-Offline-first · desplegada a Vercel · el progrés se sincronitza a aquest mateix repo.
+**▶ https://gemmagf.github.io/schwiiz/**
+
+PWA per estudiar **suís-alemany (Züridütsch)**.
+Offline-first · el progrés se sincronitza a aquest mateix repo.
 Offline-first · s'actualitza per git · flashcards amb repàs espaiat, gramàtica i frases.
 
 ## Què fa
@@ -69,11 +71,14 @@ npm run preview    # servir el build
 
 ## Desplegament
 
-A **Vercel**, connectat a aquest repo (mateix muntatge que `caleta-tracker`). Cada push a
-`main` desplega sol.
+A **GitHub Pages**, a https://gemmagf.github.io/schwiiz/. Cada push a `main` dispara
+`.github/workflows/deploy.yml`, que compila i publica.
 
-`vercel.json` porta un `ignoreCommand` que **salta la compilació quan només ha canviat
-`data/`**: així sincronitzar el progrés des del mòbil no engega desplegaments inútils.
+`paths-ignore` deixa fora `data/`, `content/` i el README: sincronitzar el progrés des del
+mòbil no engega desplegaments inútils.
+
+L'app penja de la subcarpeta `/schwiiz/`, i per això `vite.config.js` hi posa
+`base: '/schwiiz/'` en compilar.
 
 ## Sincronitzar el progrés entre dispositius (opcional)
 
@@ -85,8 +90,10 @@ entre dispositius:
 2. A l'app → **Ajustos**, omple usuari, repo (`schwiiz`), branca i token, i prem **Desar config**.
 3. **⬆ Pujar progrés** fa un commit a `data/state.json` d'aquest mateix repo.
 
-Com que el repo és privat, els capítols de lectura que hi sincronitzis no són visibles
-per ningú més.
+Se sincronitzen el repàs espaiat, els exercicis, la ratxa i les paraules que has afegit
+llegint. Els **capítols de lectura no**: com que aquest repo és públic i hi pot haver text
+de llibres amb drets d'autor, es queden al dispositiu (igual que el `caleta-tracker` fa
+amb les fotos). Per moure'ls, hi ha «Exportar JSON».
 
 > ⚠️ El token es guarda sense xifrar a IndexedDB del dispositiu. És acceptable per a ús
 > personal amb un token fine-grained limitat a aquest repo. Si perds el mòbil, revoca'l.

@@ -4,10 +4,11 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // PWA offline-first: precache l'app shell, funciona sense connexió i és instal·lable.
 //
-// base './': a Vercel l'app se serveix des de l'arrel del domini.
-export default defineConfig(() => ({
+// base: a GitHub Pages l'app penja de /schwiiz/, no de l'arrel, i el service worker
+// necessita rutes correctes per al navigateFallback. En desenvolupament, a l'arrel.
+export default defineConfig(({ command }) => ({
   define: { __BUILD__: JSON.stringify(new Date().toISOString().slice(0, 16).replace('T', ' ')) },
-  base: './',
+  base: command === 'build' ? '/schwiiz/' : '/',
   plugins: [
     react(),
     VitePWA({

@@ -124,6 +124,9 @@ export async function deleteCard(id) {
 }
 
 // ---- Textos propis ----
+// ⚠️ NO se sincronitzen a git, a propòsit: hi pot haver text de llibres amb drets
+//    d'autor i el repo de l'app és públic. Es queden en aquest dispositiu, igual que
+//    el caleta-tracker fa amb les fotos. Per moure'ls, fes servir Exportar JSON.
 export async function getTexts() {
   const db = await dbReady
   const all = await db.getAll('texts')
@@ -163,14 +166,14 @@ export async function exportAll() {
     quiz: await db.getAll('quiz'),
     sessions: await db.getAll('sessions'),
     cards: await db.getAll('cards'),
-    texts: await db.getAll('texts'),
+    // 'texts' queda fora expressament: vegeu la nota de més amunt.
     exportedAt: new Date().toISOString()
   }
 }
 
 export async function importAll(state) {
   const db = await dbReady
-  for (const s of ['srs', 'quiz', 'sessions', 'cards', 'texts']) {
+  for (const s of ['srs', 'quiz', 'sessions', 'cards']) {
     if (!Array.isArray(state[s])) continue
     const tx = db.transaction(s, 'readwrite')
     await tx.store.clear()
