@@ -15,7 +15,9 @@ Offline-first · s'actualitza per git · flashcards amb repàs espaiat, gramàti
   tens menys assentades — i s'omple amb targetes noves. Les que marques «Un altre cop»
   tornen dins de la mateixa tanda, i les de «Costa» hi tornen un cop. La direcció i els
   filtres per tema o classe són opcionals i van plegats.
-- **Gramàtica**: 40 temes amb explicació, taules de conjugació i 233 exercicis que es
+- **Gramàtica**: dos modes — *Per temes* (40 temes en l'ordre dels llibres) i *Practicar*
+  (tanda de 10/20/30/50 exercicis barrejats, prioritzant els fallats i els no fets).
+  En total, 233 exercicis que es
   corregeixen sols.
 - **Llegir**: tres coses en una.
   - *Textos*: lector on toques qualsevol paraula i en surt la traducció (resolent formes

@@ -281,3 +281,7 @@ h3 { font-size: 15px; margin: 18px 4px 8px; }
 .filtres-toggle { display: flex; align-items: center; gap: 7px; width: 100%; background: none; border: none; color: var(--muted); font-size: 13.5px; padding: 20px 4px 8px; cursor: pointer; }
 .filtres-toggle .punt { width: 7px; height: 7px; border-radius: 50%; background: var(--brand); }
 .filtres-panel { border-top: 1px solid var(--line); padding-top: 4px; }
+
+/* Gramàtica: mode de pràctica */
+.practica-tema { font-size: 13px; color: var(--muted); margin: 0 4px 10px; }
+.practica .quiz { margin-bottom: 14px; }
