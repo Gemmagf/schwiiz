@@ -1,8 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
-  <!-- Fons complet: iOS i Android hi posen el seu arrodoniment -->
-  <rect width="1024" height="1024" fill="#ffffff"/>
-  <g transform="translate(512,512) scale(1.24) translate(-581,-462)">
-    <!-- Speech bubble -->
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- App tile -->
+  <rect x="72" y="72" width="880" height="880" rx="180" fill="#ffffff" filter="url(#shadow)"/>
+
+  <!-- Speech bubble -->
   <path d="M260 240
            C260 180 310 150 390 150
            H560
@@ -28,9 +34,9 @@
   </text>
 
   <!-- Swiss badge -->
-  <circle cx="820" cy="332" r="82" fill="#d52b1e"/>
-  <rect x="804" y="284" width="32" height="96" rx="3" fill="#ffffff"/>
-  <rect x="772" y="316" width="96" height="32" rx="3" fill="#ffffff"/>
+  <circle cx="735" cy="340" r="82" fill="#d52b1e"/>
+  <rect x="704" y="286" width="62" height="108" rx="4" fill="#ffffff"/>
+  <rect x="681" y="309" width="108" height="62" rx="4" fill="#ffffff"/>
 
   <!-- Mountains -->
   <path d="M260 775 L505 505 L700 775 Z" fill="#565656"/>
@@ -43,5 +49,4 @@
   <path d="M690 650 L742 585 L793 652
            L766 636 L744 671 L720 634 Z"
         fill="#ffffff"/>
-  </g>
 </svg>

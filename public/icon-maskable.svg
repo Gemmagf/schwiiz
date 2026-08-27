@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
   <!-- Fons complet: iOS i Android hi posen el seu arrodoniment -->
   <rect width="1024" height="1024" fill="#ffffff"/>
-  <g transform="translate(512,512) scale(1.24) translate(-581,-462)">
+  <g transform="translate(512,512) scale(0.95) translate(-581,-462)">
     <!-- Speech bubble -->
   <path d="M260 240
            C260 180 310 150 390 150

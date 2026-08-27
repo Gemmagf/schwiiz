@@ -1,5 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="112" fill="#a8323b"/>
-  <path d="M232 128h48v72h72v48h-72v72h-48v-72h-72v-48h72z" fill="#fff"/>
-  <path d="M96 400l72-96 48 56 64-88 136 128z" fill="#fff" opacity=".92"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- Fons complet: iOS i Android hi posen el seu arrodoniment -->
+  <rect width="1024" height="1024" fill="#ffffff"/>
+  <g transform="translate(512,512) scale(1.24) translate(-581,-462)">
+    <!-- Speech bubble -->
+  <path d="M260 240
+           C260 180 310 150 390 150
+           H560
+           C650 150 700 195 700 260
+           V365
+           C700 435 648 475 570 475
+           H420
+           L365 535
+           L375 472
+           C305 462 260 420 260 360
+           Z"
+        fill="#d52b1e"/>
+
+  <text x="475" y="305" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="70" font-weight="700" fill="#ffffff">
+    üsi
+  </text>
+  <text x="475" y="385" text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="70" font-weight="700" fill="#ffffff">
+    dütsch
+  </text>
+
+  <!-- Swiss badge -->
+  <circle cx="820" cy="332" r="82" fill="#d52b1e"/>
+  <rect x="804" y="284" width="32" height="96" rx="3" fill="#ffffff"/>
+  <rect x="772" y="316" width="96" height="32" rx="3" fill="#ffffff"/>
+
+  <!-- Mountains -->
+  <path d="M260 775 L505 505 L700 775 Z" fill="#565656"/>
+  <path d="M595 775 L742 585 L875 775 Z" fill="#9a9a9a"/>
+
+  <!-- Snow caps -->
+  <path d="M420 598 L505 505 L575 603
+           L535 576 L505 622 L475 572 Z"
+        fill="#ffffff"/>
+  <path d="M690 650 L742 585 L793 652
+           L766 636 L744 671 L720 634 Z"
+        fill="#ffffff"/>
+  </g>
 </svg>
