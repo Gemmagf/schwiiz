@@ -42,23 +42,46 @@ export async function isConfigured() {
 const b64encode = (str) => btoa(unescape(encodeURIComponent(str)))
 const b64decode = (str) => decodeURIComponent(escape(atob(str)))
 
-async function getRemoteSha({ token, owner, repo, branch }) {
+async function getRemote({ token, owner, repo, branch }) {
   const res = await fetch(`${API}/repos/${owner}/${repo}/contents/${STATE_PATH}?ref=${branch}`, {
     headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' }
   })
-  if (res.status === 404) return null // el fitxer encara no existeix: el crearem
+  if (res.status === 404) return { sha: null, estat: null } // encara no existeix: el crearem
   if (!res.ok) throw new Error(explica(res.status, { owner, repo, branch }))
-  return (await res.json()).sha
+  const json = await res.json()
+  let estat = null
+  try { estat = JSON.parse(b64decode(json.content)) } catch { /* il·legible: no en podrem comparar */ }
+  return { sha: json.sha, estat }
 }
 
-export async function pushToGit() {
+// Xarxa de seguretat: si aquest dispositiu ha perdut les dades (app reinstal·lada,
+// dades del navegador esborrades), la pujada següent s'enduria per davant la còpia
+// bona del repo. Abans de pujar, mirem si el que hi ha al repo és molt més gran.
+function semblaPerdua(local, remot) {
+  if (!remot) return false
+  const aqui = (local.srs || []).length
+  const alla = (remot.srs || []).length
+  return alla >= 10 && aqui < alla * 0.5
+}
+
+export async function pushToGit({ force = false } = {}) {
   if (!navigator.onLine) return { ok: false, reason: 'offline' }
   const c = await ghConfig()
   if (!c.token || !c.owner || !c.repo) return { ok: false, reason: 'not-configured' }
 
   const state = await exportAll()
+  const { sha, estat: remot } = await getRemote(c)
+
+  if (!force && semblaPerdua(state, remot)) {
+    const e = new Error(
+      `Al repo hi ha ${remot.srs.length} targetes amb repàs i en aquest dispositiu només ${(state.srs || []).length}. ` +
+      'Sembla que aquest dispositiu ha perdut dades. Baixa el progrés abans de pujar res.'
+    )
+    e.codi = 'possible-perdua'
+    throw e
+  }
+
   const content = b64encode(JSON.stringify(state, null, 2))
-  const sha = await getRemoteSha(c)
 
   const res = await fetch(`${API}/repos/${c.owner}/${c.repo}/contents/${STATE_PATH}`, {
     method: 'PUT',

@@ -5,8 +5,8 @@ import { GRADES, dueCards, construeixTanda, grade as gradeCard, newCard } from '
 import { speak, ttsAvailable } from '../lib/tts.js'
 
 const DIRECTIONS = [
-  { id: 'ca2ch', label: 'Català → Dialecte', front: 'ca', hint: 'et fa produir, és el que costa' },
-  { id: 'ch2ca', label: 'Dialecte → Català', front: 'ch', hint: 'reconèixer, més fàcil' },
+  { id: 'ch2ca', label: 'Dialecte → Català', front: 'ch', hint: 'llegeixes el dialecte i en surt el català i l’alemany' },
+  { id: 'ca2ch', label: 'Català → Dialecte', front: 'ca', hint: 'et fa produir, és el que més costa' },
   { id: 'de2ch', label: 'Hochdeutsch → Dialecte', front: 'de', hint: 'per fixar els canvis de so' }
 ]
 
@@ -20,7 +20,7 @@ export default function Flashcards({
   const [done, setDone] = useState(0)
   const [ronda, setRonda] = useState(0)
   const [lliure, setLliure] = useState(false)
-  const [filtresOberts, setFiltresOberts] = useState(false)
+  const [filtresOberts, setFiltresOberts] = useState(true)
 
   // Les que has marcat «Costa» tornen una vegada dins de la mateixa tanda.
   // Amb el Set evitem que una targeta difícil et faci un bucle infinit.

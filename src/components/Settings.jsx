@@ -41,7 +41,19 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
   async function pujar() {
     setOcupat(true)
     try {
-      const r = await pushToGit()
+      let r
+      try {
+        r = await pushToGit()
+      } catch (e) {
+        if (e.codi !== 'possible-perdua') throw e
+        // Millor perdre una sessió d'avui que la còpia bona de setmanes
+        if (!confirm(`${e.message}\n\nVols pujar igualment i sobreescriure el que hi ha al repo?`)) {
+          setToast('Pujada aturada. Prem «⬇ Baixar progrés».')
+          setOcupat(false)
+          return
+        }
+        r = await pushToGit({ force: true })
+      }
       setToast(r.ok ? 'Progrés pujat a git ✓' : `No s’ha pogut pujar: ${r.reason}`)
       if (r.ok) { setLastSync(new Date().toISOString()); await onReload() }
     } catch (e) {

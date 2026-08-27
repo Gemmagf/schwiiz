@@ -30,7 +30,7 @@ export default function App() {
   const [topicFilter, setTopicFilter] = useState('tots')
   const [lessonFilter, setLessonFilter] = useState('tots')
   const [mida, setMida] = useState(200) // targetes per tanda
-  const [dir, setDir] = useState('ca2ch')
+  const [dir, setDir] = useState('ch2ca')
   const [voiceURI, setVoiceURIState] = useState('')
   const [cards, setCards] = useState([])       // targetes que has fet tu llegint
   const [texts, setTexts] = useState([])       // capítols que has enganxat tu
@@ -52,7 +52,7 @@ export default function App() {
     refresh()
     ;(async () => {
       setVoiceURIState((await getConfig('voiceURI')) || '')
-      setDir((await getConfig('dir')) || 'ca2ch')
+      setDir((await getConfig('dir')) || 'ch2ca')
       setMida((await getConfig('mida')) || 200)
     })()
     const on = () => setOnline(true)
