@@ -1699,6 +1699,12 @@
       "ok": true,
       "tries": 2,
       "at": "2026-08-27T15:24:17.209Z"
+    },
+    {
+      "id": "s09e1",
+      "ok": true,
+      "tries": 1,
+      "at": "2026-08-28T21:41:49.298Z"
     }
   ],
   "sessions": [
@@ -1723,10 +1729,10 @@
       "date": "2026-08-28",
       "reviewed": 173,
       "correct": 87,
-      "exercicis": 4,
-      "exercicisOk": 1
+      "exercicis": 5,
+      "exercicisOk": 2
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-28T21:41:43.600Z"
+  "exportedAt": "2026-08-28T21:41:57.315Z"
 }
