@@ -1625,8 +1625,8 @@
     {
       "id": "g16e5",
       "ok": false,
-      "tries": 1,
-      "at": "2026-08-27T15:09:39.169Z"
+      "tries": 2,
+      "at": "2026-08-28T21:43:59.476Z"
     },
     {
       "id": "g17e2",
@@ -1741,10 +1741,10 @@
       "date": "2026-08-28",
       "reviewed": 173,
       "correct": 87,
-      "exercicis": 7,
+      "exercicis": 8,
       "exercicisOk": 2
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-28T21:43:56.002Z"
+  "exportedAt": "2026-08-28T21:44:07.503Z"
 }
