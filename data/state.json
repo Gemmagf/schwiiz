@@ -1695,6 +1695,12 @@
       "at": "2026-08-27T15:25:00.632Z"
     },
     {
+      "id": "s08e5",
+      "ok": false,
+      "tries": 1,
+      "at": "2026-08-28T21:43:34.829Z"
+    },
+    {
       "id": "s08e9",
       "ok": true,
       "tries": 2,
@@ -1729,10 +1735,10 @@
       "date": "2026-08-28",
       "reviewed": 173,
       "correct": 87,
-      "exercicis": 5,
+      "exercicis": 6,
       "exercicisOk": 2
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-28T21:41:57.315Z"
+  "exportedAt": "2026-08-28T21:43:42.878Z"
 }
