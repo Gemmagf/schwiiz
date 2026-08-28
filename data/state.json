@@ -1496,12 +1496,12 @@
     },
     {
       "id": "v521",
-      "ease": 2.45,
-      "interval": 3,
-      "reps": 1,
-      "lapses": 1,
+      "ease": 2.25,
+      "interval": 0,
+      "reps": 0,
+      "lapses": 2,
       "due": "2026-08-28",
-      "last": "2026-08-25"
+      "last": "2026-08-28"
     },
     {
       "id": "v522",
@@ -1709,12 +1709,12 @@
     },
     {
       "date": "2026-08-28",
-      "reviewed": 118,
+      "reviewed": 119,
       "correct": 37,
       "exercicis": 0,
       "exercicisOk": 0
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-28T06:21:19.968Z"
+  "exportedAt": "2026-08-28T21:37:18.800Z"
 }
