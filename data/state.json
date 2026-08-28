@@ -1648,9 +1648,9 @@
     },
     {
       "id": "g29e3",
-      "ok": false,
-      "tries": 2,
-      "at": "2026-08-27T15:24:27.217Z"
+      "ok": true,
+      "tries": 3,
+      "at": "2026-08-28T21:40:54.482Z"
     },
     {
       "id": "g31e1",
@@ -1711,10 +1711,10 @@
       "date": "2026-08-28",
       "reviewed": 173,
       "correct": 87,
-      "exercicis": 0,
-      "exercicisOk": 0
+      "exercicis": 1,
+      "exercicisOk": 1
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-28T21:40:49.477Z"
+  "exportedAt": "2026-08-28T21:41:02.503Z"
 }
