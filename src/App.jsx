@@ -4,6 +4,7 @@ import {
   getCards, putCard, deleteCard, getTexts, putText, deleteText
 } from './lib/db.js'
 import { VOCAB } from './data/vocab.js'
+import { LESSONS } from './data/lessons.js'
 import { syncIfDirty, isConfigured, pullFromGit } from './lib/sync.js'
 import { todayISO } from './lib/srs.js'
 import Dashboard from './components/Dashboard.jsx'
@@ -30,6 +31,8 @@ export default function App() {
   const [topicFilter, setTopicFilter] = useState('tots')
   const [lessonFilter, setLessonFilter] = useState('tots')
   const [mida, setMida] = useState(200) // targetes per tanda
+  const [practicaLliso, setPracticaLliso] = useState(null)
+  const [gramMode, setGramMode] = useState('temes')
   const [dir, setDir] = useState('ch2ca')
   const [voiceURI, setVoiceURIState] = useState('')
   const [cards, setCards] = useState([])       // targetes que has fet tu llegint
@@ -152,6 +155,19 @@ export default function App() {
     await setConfig('dir', d)
   }
 
+  // Des de la targeta de «Repàs abans de classe» del tauler
+  function repasClasse(tipus, llisoId) {
+    if (tipus === 'vocab') {
+      setLessonFilter(llisoId)
+      setTopicFilter('tots')
+      setTab('cards')
+    } else {
+      setPracticaLliso(llisoId)
+      setGramMode('practica')
+      setTab('gram')
+    }
+  }
+
   function goTo(destí, tema) {
     if (tema) setTopicFilter(tema)
     setTab(destí)
@@ -174,6 +190,7 @@ export default function App() {
             vocab={vocab} srs={srs} quiz={quiz} sessions={sessions}
             onStart={() => setTab('cards')}
             onGoTo={goTo}
+            onRepasClasse={repasClasse}
           />
         )}
         {tab === 'cards' && (
@@ -186,7 +203,15 @@ export default function App() {
             voiceURI={voiceURI}
           />
         )}
-        {tab === 'gram' && <Grammar quiz={quiz} onAnswer={onQuizAnswer} />}
+        {tab === 'gram' && (
+          <Grammar
+            quiz={quiz} onAnswer={onQuizAnswer}
+            practicaLliso={practicaLliso}
+            titolLliso={LESSONS.find((l) => l.id === practicaLliso)?.title || ''}
+            modeInicial={gramMode}
+            key={gramMode + (practicaLliso || '')}
+          />
+        )}
         {tab === 'frases' && (
           <Phrases
             voiceURI={voiceURI}
@@ -212,7 +237,14 @@ export default function App() {
 
       <nav className="tabbar">
         {TABS.map((t) => (
-          <button key={t.id} className={tab === t.id ? 'active' : ''} onClick={() => setTab(t.id)}>
+          <button
+            key={t.id}
+            className={tab === t.id ? 'active' : ''}
+            onClick={() => {
+              if (t.id !== 'gram') { setPracticaLliso(null); setGramMode('temes') }
+              setTab(t.id)
+            }}
+          >
             <span className="emoji">{t.emoji}</span>
             <span className="lbl">{t.label}</span>
           </button>

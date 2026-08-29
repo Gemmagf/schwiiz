@@ -1,5 +1,6 @@
 import { TOPICS } from '../data/vocab.js'
 import { GRAMMAR } from '../data/grammar.js'
+import { LESSONS } from '../data/lessons.js'
 import { PHRASES, DIALOGS } from '../data/phrases.js'
 import { stats, todayISO } from '../lib/srs.js'
 
@@ -100,7 +101,60 @@ function Evolucio({ sessions }) {
   )
 }
 
-export default function Dashboard({ vocab = [], srs, quiz, sessions, onStart, onGoTo }) {
+// L'última classe amb data. El dia de la setmana surt d'aquí, així que si algun
+// dia canvies d'horari només cal que la data de la classe nova sigui correcta.
+function ultimaClasse() {
+  return LESSONS.filter((l) => l.date).sort((a, b) => b.date.localeCompare(a.date))[0] || null
+}
+
+// Moment de repassar: la vigília a partir de les 17 h, o el mateix dia fins a les 14 h
+// (a la tarda ja tens la classe nova).
+function esHoraDeRepassar(classe, ara = new Date()) {
+  if (!classe) return false
+  const diaClasse = new Date(classe.date + 'T12:00:00').getDay()
+  const vigilia = (diaClasse + 6) % 7
+  const dia = ara.getDay(), hora = ara.getHours()
+  return (dia === vigilia && hora >= 17) || (dia === diaClasse && hora < 14)
+}
+
+function RepasClasse({ vocab, srs, quiz, onAnar }) {
+  const classe = ultimaClasse()
+  if (!classe) return null
+
+  const paraules = vocab.filter((v) => v.lesson === classe.id)
+  const temes = GRAMMAR.filter((g) => g.lesson === classe.id)
+  const exercicis = temes.flatMap((g) => g.exercises)
+  if (!paraules.length && !exercicis.length) return null
+
+  const st = stats(paraules, srs)
+  const exOk = exercicis.filter((e) => quiz[e.id]?.ok).length
+  const toca = esHoraDeRepassar(classe)
+
+  return (
+    <section className={`preclasse ${toca ? 'toca' : ''}`}>
+      <div className="preclasse-cap">
+        <b>🎓 Repàs abans de classe</b>
+        {toca && <span className="ara">ara toca</span>}
+      </div>
+      <p className="preclasse-sub">{classe.title} · {classe.date}</p>
+
+      <div className="preclasse-botons">
+        <button onClick={() => onAnar('vocab', classe.id)}>
+          <b>{st.nous + st.arepassar}</b>
+          <span>paraules per repassar</span>
+          <em>{st.apresos}/{st.total} assentades</em>
+        </button>
+        <button onClick={() => onAnar('gram', classe.id)}>
+          <b>{exercicis.length - exOk}</b>
+          <span>exercicis per encertar</span>
+          <em>{exOk}/{exercicis.length} encertats</em>
+        </button>
+      </div>
+    </section>
+  )
+}
+
+export default function Dashboard({ vocab = [], srs, quiz, sessions, onStart, onGoTo, onRepasClasse }) {
   const s = stats(vocab, srs)
   const pendents = s.nous + s.arepassar
   const pct = s.total ? Math.round((s.apresos / s.total) * 100) : 0
@@ -149,6 +203,8 @@ export default function Dashboard({ vocab = [], srs, quiz, sessions, onStart, on
           {' · '}{avui.exercicis || 0} {avui.exercicis === 1 ? 'exercici' : 'exercicis'} de gramàtica
         </p>
       )}
+
+      <RepasClasse vocab={vocab} srs={srs} quiz={quiz} onAnar={onRepasClasse} />
 
       <h2>La teva evolució</h2>
       <Evolucio sessions={sessions} />

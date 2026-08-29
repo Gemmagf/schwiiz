@@ -106,14 +106,15 @@ function Exercise({ ex, saved, onAnswer, onResolt }) {
 
 // Tots els exercicis, amb el tema d'on surten, per poder-los barrejar.
 const TOTS = GRAMMAR.flatMap((g) =>
-  g.exercises.map((ex) => ({ ex, tema: g.title, emoji: g.emoji, unit: g.unit, book: g.book }))
+  g.exercises.map((ex) => ({ ex, tema: g.title, emoji: g.emoji, unit: g.unit, book: g.book, lesson: g.lesson }))
 )
 
 // Tria N exercicis. No és del tot a l'atzar: primer els que no has fet mai,
 // després els que vas fallar, i s'omple amb la resta. Al final, barrejat.
-function triaExercicis(quiz, n) {
+function triaExercicis(quiz, n, lliso) {
   const mai = [], fallats = [], encertats = []
-  for (const t of TOTS) {
+  const font = lliso ? TOTS.filter((t) => t.lesson === lliso) : TOTS
+  for (const t of font) {
     const q = quiz[t.ex.id]
     if (!q) mai.push(t)
     else if (!q.ok) fallats.push(t)
@@ -122,20 +123,21 @@ function triaExercicis(quiz, n) {
   return barreja([...barreja(fallats), ...barreja(mai), ...barreja(encertats)].slice(0, n))
 }
 
-function Practica({ quiz, onAnswer }) {
+function Practica({ quiz, onAnswer, lliso, titolLliso }) {
   const [mida, setMida] = useState(20)
   const [tanda, setTanda] = useState(null)
   const [i, setI] = useState(0)
   const [resolt, setResolt] = useState(false)
   const [encerts, setEncerts] = useState(0)
 
+  const font = useMemo(() => (lliso ? TOTS.filter((t) => t.lesson === lliso) : TOTS), [lliso])
   const pendents = useMemo(
-    () => TOTS.filter((t) => !quiz[t.ex.id] || !quiz[t.ex.id].ok).length,
-    [quiz]
+    () => font.filter((t) => !quiz[t.ex.id] || !quiz[t.ex.id].ok).length,
+    [quiz, font]
   )
 
   function comenca() {
-    setTanda(triaExercicis(quiz, mida))
+    setTanda(triaExercicis(quiz, mida, lliso))
     setI(0); setResolt(false); setEncerts(0)
   }
 
@@ -143,8 +145,9 @@ function Practica({ quiz, onAnswer }) {
     return (
       <div className="practica">
         <p className="hint">
-          Una tanda d’exercicis barrejats de tots els temes. Entren primer els que has fallat i
-          els que no has fet mai; la resta s’omple amb els que ja tens fets.
+          {lliso
+            ? `Només els exercicis de ${titolLliso}. Entren primer els que has fallat i els que no has fet mai.`
+            : 'Una tanda d’exercicis barrejats de tots els temes. Entren primer els que has fallat i els que no has fet mai; la resta s’omple amb els que ja tens fets.'}
         </p>
         <div className="avui-box"><b>{pendents}</b><span>exercicis per encertar</span></div>
         <h2>Quants</h2>
@@ -153,7 +156,7 @@ function Practica({ quiz, onAnswer }) {
             <button key={n} className={`chip ${mida === n ? 'active' : ''}`} onClick={() => setMida(n)}>{n}</button>
           ))}
         </div>
-        <button className="cta" onClick={comenca}>Començar {Math.min(mida, TOTS.length)} exercicis</button>
+        <button className="cta" onClick={comenca}>Començar {Math.min(mida, font.length)} exercicis</button>
       </div>
     )
   }
@@ -202,9 +205,9 @@ function Practica({ quiz, onAnswer }) {
   )
 }
 
-export default function Grammar({ quiz, onAnswer }) {
+export default function Grammar({ quiz, onAnswer, practicaLliso, titolLliso, modeInicial }) {
   const [obert, setObert] = useState(GRAMMAR[0].id)
-  const [mode, setMode] = useState('temes')
+  const [mode, setMode] = useState(modeInicial || 'temes')
 
   return (
     <div className="grammar">
@@ -213,7 +216,7 @@ export default function Grammar({ quiz, onAnswer }) {
         <button className={mode === 'practica' ? 'active' : ''} onClick={() => setMode('practica')}>🎲 Practicar</button>
       </div>
 
-      {mode === 'practica' && <Practica quiz={quiz} onAnswer={onAnswer} />}
+      {mode === 'practica' && <Practica quiz={quiz} onAnswer={onAnswer} lliso={practicaLliso} titolLliso={titolLliso} />}
 
       {mode === 'temes' && (<>
       <p className="hint">
