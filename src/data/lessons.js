@@ -12,8 +12,14 @@ export const LESSONS = [
   {
     id: 'c01',
     title: 'Classe 1 — articles i adjectius',
+    date: '2026-08-19',
+    note: 'Schorn 2.3 i 2.4: article indeterminat en/e/es, article negatiu kän/kä/käs, terminacions de l’adjectiu, zum + infinitiu i «e so-n-en». Més la fitxa de pronunciació dels diftongs ie·ue·üe.'
+  },
+  {
+    id: 'c02',
+    title: 'Classe 2 — demostratius i interrogatius',
     date: '2026-08-26',
-    note: 'Schorn 2.3 i 2.4 (article indeterminat i negatiu), 3.4 i 3.5 (demostratius, Wele/Was für), diftongs ie·ue·üe i els verbs típicament suïssos.'
+    note: 'Schorn 3.4 i 3.5: demostratius amb daa/deet, i «Wele…?» contra «Was für…?». Més el full de verbs típicament suïssos i falsos amics.'
   }
 ]
 

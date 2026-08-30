@@ -925,7 +925,7 @@ const TEMES = [
     title: 'Article indeterminat: en, e, es',
     emoji: '1️⃣',
     lesson: 'c01',
-    summary: 'De la classe del 26/08. L’alemany «ein» es parteix en tres formes segons el gènere.',
+    summary: 'De la classe del 19/08. L’alemany «ein» es parteix en tres formes segons el gènere.',
     points: [
       'masculí **en** · femení **e** · neutre **es**',
       'ein → **e** · ein → **en** · ein → **es** (les tres surten del mateix «ein»)',
@@ -961,7 +961,7 @@ const TEMES = [
     title: 'Article negatiu: kän, kä, käs',
     emoji: '🚷',
     lesson: 'c01',
-    summary: 'De la classe del 26/08. El «cap» també es declina, exactament com l’article indeterminat.',
+    summary: 'De la classe del 19/08. El «cap» també es declina, exactament com l’article indeterminat.',
     points: [
       'masculí **kän** · femení **kä** · neutre **käs** · plural **kä**',
       'Fixa’t que segueix el patró d’en/e/es amb una k- al davant: **kän** / **kä** / **käs**.',
@@ -1002,7 +1002,7 @@ const TEMES = [
     title: 'Adjectius amb article indeterminat',
     emoji: '🖍️',
     lesson: 'c01',
-    summary: 'De la classe del 26/08. La terminació de l’adjectiu rima amb la de l’article. És mecànic.',
+    summary: 'De la classe del 19/08. La terminació de l’adjectiu rima amb la de l’article. És mecànic.',
     points: [
       'masculí: **en** guet**e** Vorschlag',
       'femení: **e** guet**i** Lösig',
@@ -1042,7 +1042,7 @@ const TEMES = [
     title: 'Finalitat: zum + infinitiu',
     emoji: '🎯',
     lesson: 'c01',
-    summary: 'De la classe del 26/08. Per dir per a què serveix una cosa. Molt més curt que en alemany.',
+    summary: 'De la classe del 19/08. Per dir per a què serveix una cosa. Molt més curt que en alemany.',
     points: [
       'Estructura: **zum** + infinitiu, al final de la frase.',
       'Ich bruuch en Pass **zum reise**. = Necessito un passaport per viatjar.',
@@ -1066,7 +1066,7 @@ const TEMES = [
     order: 16.1,
     title: '«Wele…?» o «Was für…?»',
     emoji: '🤔',
-    lesson: 'c01',
+    lesson: 'c02',
     summary: 'De la classe del 26/08. Dues preguntes que en català es diuen igual però que no ho són.',
     points: [
       '**Wele…?** = quin d’aquests? Tries dins d’un conjunt conegut. La resposta porta article **determinat**.',
@@ -1103,7 +1103,7 @@ const TEMES = [
     order: 5.1,
     title: 'Demostratius amb «daa» i «deet»',
     emoji: '👉',
-    lesson: 'c01',
+    lesson: 'c02',
     summary: 'De la classe del 26/08. Assenyalar coses i dir si són a prop o lluny.',
     points: [
       '**dä** (m) · **die** (f) · **das** (n) · **die** (pl)',
@@ -1140,7 +1140,7 @@ const TEMES = [
     title: 'Els diftongs descendents ie, ue, üe',
     emoji: '🎵',
     lesson: 'c01',
-    summary: 'De la classe del 26/08. Dos sons seguits que cauen d’agut a greu. Si no els fas, no sones suïssa.',
+    summary: 'De la classe del 19/08. Dos sons seguits que cauen d’agut a greu. Si no els fas, no sones suïssa.',
     points: [
       'No es llegeixen com una vocal llarga: són **dos sons**, i el segon cau. Bi-er, Blue-me, Brüe-der.',
       'La regla mnemotècnica de classe: «Mit em **ÜE** han i **Müe**, s **UE** git mer z **tue**, und s **IE** graatet **nie**.»',
@@ -1177,7 +1177,7 @@ const TEMES = [
     order: 8.6,
     title: 'Verbs suïssos i falsos amics',
     emoji: '⚠️',
-    lesson: 'c01',
+    lesson: 'c02',
     summary: 'De la classe del 26/08. Verbs que existeixen en alemany però volen dir una altra cosa. Aquí es cau de quatre grapes.',
     points: [
       '**lauffe** = caminar (NO córrer). «Du muesch mee **lauffe**» = has de caminar més.',
@@ -1228,7 +1228,7 @@ const TEMES = [
     title: '«e so-n-en» i «irgend en»',
     emoji: '🔀',
     lesson: 'c01',
-    summary: 'De la classe del 26/08. Un tal…, un… qualsevol. Amb la -n- que apareix del no-res.',
+    summary: 'De la classe del 19/08. Un tal…, un… qualsevol. Amb la -n- que apareix del no-res.',
     points: [
       '**e so-n-en / e so-n-e / e so-n-es** = un/una tal…, semblant.',
       'Das isch **e so-n-en** stuure Bock! = Quin home més tossut!',

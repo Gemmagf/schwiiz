@@ -55,6 +55,13 @@ Gefühle & Stimmungen, Familienmitglieder, Typisch schweizerisch.
 
 No cobert a propòsit: *Juristische Wörter & Begriffe* (molt específic; s'afegirà si el necessites).
 
+## Classes
+
+| Classe | Data | Què s'hi va fer |
+|---|---|---|
+| c01 | 2026-08-19 | Schorn 2.3 i 2.4 · articles, adjectius, zum + infinitiu, «e so-n-en» · diftongs ie·ue·üe |
+| c02 | 2026-08-26 | Schorn 3.4 i 3.5 · demostratius amb daa/deet, «Wele…?» contra «Was für…?» · verbs suïssos i falsos amics |
+
 ## Pendent
 
 L'índex de **Schwiizerdütsch leicht gemacht** (Verena Schorn), que té 17 lliçons.
