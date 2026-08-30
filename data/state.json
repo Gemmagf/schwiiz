@@ -1933,9 +1933,9 @@
     },
     {
       "id": "g16e5",
-      "ok": false,
-      "tries": 2,
-      "at": "2026-08-28T21:43:59.476Z"
+      "ok": true,
+      "tries": 3,
+      "at": "2026-08-30T06:22:31.747Z"
     },
     {
       "id": "g17e2",
@@ -2018,8 +2018,8 @@
     {
       "id": "s08e5",
       "ok": false,
-      "tries": 1,
-      "at": "2026-08-28T21:43:34.829Z"
+      "tries": 2,
+      "at": "2026-08-30T06:22:41.348Z"
     },
     {
       "id": "s08e9",
@@ -2070,10 +2070,10 @@
       "date": "2026-08-30",
       "reviewed": 0,
       "correct": 0,
-      "exercicis": 4,
-      "exercicisOk": 1
+      "exercicis": 6,
+      "exercicisOk": 2
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-30T06:22:31.599Z"
+  "exportedAt": "2026-08-30T06:22:49.378Z"
 }
