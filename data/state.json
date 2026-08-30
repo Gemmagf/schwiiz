@@ -1836,6 +1836,12 @@
       "at": "2026-08-27T15:11:00.901Z"
     },
     {
+      "id": "g03e1",
+      "ok": false,
+      "tries": 1,
+      "at": "2026-08-30T06:22:01.456Z"
+    },
+    {
       "id": "g03e5",
       "ok": true,
       "tries": 1,
@@ -2053,8 +2059,15 @@
       "correct": 49,
       "exercicis": 0,
       "exercicisOk": 0
+    },
+    {
+      "date": "2026-08-30",
+      "reviewed": 0,
+      "correct": 0,
+      "exercicis": 1,
+      "exercicisOk": 0
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-30T06:21:16.670Z"
+  "exportedAt": "2026-08-30T06:22:09.487Z"
 }
