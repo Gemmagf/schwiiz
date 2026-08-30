@@ -1950,6 +1950,12 @@
       "at": "2026-08-27T15:10:00.201Z"
     },
     {
+      "id": "g19e2",
+      "ok": false,
+      "tries": 1,
+      "at": "2026-08-30T06:22:12.891Z"
+    },
+    {
       "id": "g23e4",
       "ok": true,
       "tries": 1,
@@ -2064,10 +2070,10 @@
       "date": "2026-08-30",
       "reviewed": 0,
       "correct": 0,
-      "exercicis": 1,
+      "exercicis": 2,
       "exercicisOk": 0
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-30T06:22:09.487Z"
+  "exportedAt": "2026-08-30T06:22:20.921Z"
 }
