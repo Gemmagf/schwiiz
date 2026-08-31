@@ -938,12 +938,12 @@
     },
     {
       "id": "v132",
-      "ease": 2,
-      "interval": 1,
-      "reps": 2,
+      "ease": 2.15,
+      "interval": 3,
+      "reps": 3,
       "lapses": 1,
-      "due": "2026-08-30",
-      "last": "2026-08-29"
+      "due": "2026-09-03",
+      "last": "2026-08-31"
     },
     {
       "id": "v134",
@@ -1226,12 +1226,12 @@
     },
     {
       "id": "v230",
-      "ease": 2.65,
-      "interval": 3,
-      "reps": 1,
+      "ease": 2.8,
+      "interval": 6,
+      "reps": 2,
       "lapses": 0,
-      "due": "2026-08-31",
-      "last": "2026-08-28"
+      "due": "2026-09-06",
+      "last": "2026-08-31"
     },
     {
       "id": "v232",
@@ -2081,12 +2081,12 @@
     },
     {
       "date": "2026-08-31",
-      "reviewed": 39,
-      "correct": 27,
+      "reviewed": 41,
+      "correct": 29,
       "exercicis": 0,
       "exercicisOk": 0
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-31T20:11:05.087Z"
+  "exportedAt": "2026-08-31T20:11:20.131Z"
 }
