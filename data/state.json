@@ -1450,6 +1450,15 @@
       "last": "2026-08-28"
     },
     {
+      "id": "v282",
+      "ease": 2.3,
+      "interval": 0,
+      "reps": 0,
+      "lapses": 1,
+      "due": "2026-08-31",
+      "last": "2026-08-31"
+    },
+    {
       "id": "v283",
       "ease": 2.3,
       "interval": 6,
@@ -2081,12 +2090,12 @@
     },
     {
       "date": "2026-08-31",
-      "reviewed": 41,
+      "reviewed": 42,
       "correct": 29,
       "exercicis": 0,
       "exercicisOk": 0
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-31T20:11:20.131Z"
+  "exportedAt": "2026-08-31T20:11:34.989Z"
 }
