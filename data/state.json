@@ -2013,6 +2013,12 @@
       "at": "2026-08-31T20:19:46.210Z"
     },
     {
+      "id": "s02e4",
+      "ok": true,
+      "tries": 1,
+      "at": "2026-08-31T20:20:48.581Z"
+    },
+    {
       "id": "s03e4",
       "ok": true,
       "tries": 2,
@@ -2092,10 +2098,10 @@
       "date": "2026-08-31",
       "reviewed": 77,
       "correct": 50,
-      "exercicis": 7,
-      "exercicisOk": 1
+      "exercicis": 8,
+      "exercicisOk": 2
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-31T20:19:54.245Z"
+  "exportedAt": "2026-08-31T20:20:56.621Z"
 }
