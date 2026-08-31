@@ -173,11 +173,11 @@
     },
     {
       "id": "c1071",
-      "ease": 2.25,
-      "interval": 0,
-      "reps": 0,
+      "ease": 2.4,
+      "interval": 3,
+      "reps": 1,
       "lapses": 2,
-      "due": "2026-08-31",
+      "due": "2026-09-03",
       "last": "2026-08-31"
     },
     {
@@ -2090,12 +2090,12 @@
     },
     {
       "date": "2026-08-31",
-      "reviewed": 59,
-      "correct": 40,
+      "reviewed": 60,
+      "correct": 41,
       "exercicis": 0,
       "exercicisOk": 0
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-31T20:17:01.669Z"
+  "exportedAt": "2026-08-31T20:17:20.964Z"
 }
