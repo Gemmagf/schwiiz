@@ -1912,9 +1912,9 @@
     },
     {
       "id": "g06e3",
-      "ok": false,
-      "tries": 2,
-      "at": "2026-08-30T06:22:23.575Z"
+      "ok": true,
+      "tries": 3,
+      "at": "2026-08-31T20:18:21.717Z"
     },
     {
       "id": "g08e5",
@@ -2092,10 +2092,10 @@
       "date": "2026-08-31",
       "reviewed": 77,
       "correct": 50,
-      "exercicis": 0,
-      "exercicisOk": 0
+      "exercicis": 1,
+      "exercicisOk": 1
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-31T20:18:18.829Z"
+  "exportedAt": "2026-08-31T20:18:29.738Z"
 }
