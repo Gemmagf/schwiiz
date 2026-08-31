@@ -1971,6 +1971,12 @@
       "at": "2026-08-31T20:18:51.543Z"
     },
     {
+      "id": "g19e4",
+      "ok": false,
+      "tries": 1,
+      "at": "2026-08-31T20:20:58.884Z"
+    },
+    {
       "id": "g23e4",
       "ok": true,
       "tries": 1,
@@ -2098,10 +2104,10 @@
       "date": "2026-08-31",
       "reviewed": 77,
       "correct": 50,
-      "exercicis": 8,
+      "exercicis": 9,
       "exercicisOk": 2
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-31T20:20:56.621Z"
+  "exportedAt": "2026-08-31T20:22:18.012Z"
 }
