@@ -2033,8 +2033,8 @@
     {
       "id": "s08e5",
       "ok": false,
-      "tries": 2,
-      "at": "2026-08-30T06:22:41.348Z"
+      "tries": 3,
+      "at": "2026-08-31T20:19:03.155Z"
     },
     {
       "id": "s08e9",
@@ -2092,10 +2092,10 @@
       "date": "2026-08-31",
       "reviewed": 77,
       "correct": 50,
-      "exercicis": 4,
+      "exercicis": 5,
       "exercicisOk": 1
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-31T20:18:59.568Z"
+  "exportedAt": "2026-08-31T20:19:11.190Z"
 }
