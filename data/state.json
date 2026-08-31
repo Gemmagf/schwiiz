@@ -1847,8 +1847,8 @@
     {
       "id": "g03e1",
       "ok": false,
-      "tries": 1,
-      "at": "2026-08-30T06:22:01.456Z"
+      "tries": 2,
+      "at": "2026-08-31T20:18:32.872Z"
     },
     {
       "id": "g03e5",
@@ -2092,10 +2092,10 @@
       "date": "2026-08-31",
       "reviewed": 77,
       "correct": 50,
-      "exercicis": 1,
+      "exercicis": 2,
       "exercicisOk": 1
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-31T20:18:29.738Z"
+  "exportedAt": "2026-08-31T20:18:40.903Z"
 }
