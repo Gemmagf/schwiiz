@@ -1937,8 +1937,8 @@
     {
       "id": "g14e1",
       "ok": false,
-      "tries": 1,
-      "at": "2026-08-30T06:22:49.396Z"
+      "tries": 2,
+      "at": "2026-08-31T20:22:32.128Z"
     },
     {
       "id": "g14e2",
@@ -2104,10 +2104,10 @@
       "date": "2026-08-31",
       "reviewed": 77,
       "correct": 50,
-      "exercicis": 9,
+      "exercicis": 10,
       "exercicisOk": 2
     }
   ],
   "cards": [],
-  "exportedAt": "2026-08-31T20:22:18.012Z"
+  "exportedAt": "2026-08-31T20:22:40.257Z"
 }
