@@ -795,5 +795,7 @@ export const VOCAB = [
   { id: 'c4216', ch: 'bereise', de: 'bereisen', ca: 'recórrer viatjant', topic: 'verbs', lesson: 'c04', book: 'holle' },
   { id: 'c4217', ch: 'de Bernhardiner', de: 'der Bernhardiner', ca: 'el sant bernat (gos)', topic: 'animals', lesson: 'c04', book: 'holle', note: 'El gos de rescat dels Alps suïssos.' },
   { id: 'c4218', ch: 'd Toure', de: 'die Tour', ca: 'l’excursió', topic: 'ciutat', lesson: 'c04', book: 'holle' },
-  { id: 'c4219', ch: 'de Wäg', de: 'der Weg', ca: 'el camí', topic: 'ciutat', lesson: 'c04', book: 'holle', note: 'Plural: d Wäge. «Wohi eus all die Wäge füehred.»' }
+  { id: 'c4219', ch: 'de Wäg', de: 'der Weg', ca: 'el camí', topic: 'ciutat', lesson: 'c04', book: 'holle', note: 'Plural: d Wäge. «Wohi eus all die Wäge füehred.»' },
+
+  { id: 'c3095', ch: 'de Gugus', de: 'der Unsinn; der Kram', ca: 'bestieses; andròmines', topic: 'suis', lesson: 'c03', book: 'holle', note: 'Dues coses alhora: tonteries («Das isch doch nur Gugus!») i trastos sense importància. «Mach kei Gugus!» = no facis el ximple, o no en facis un drama.' }
 ]
