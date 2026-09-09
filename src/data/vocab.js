@@ -773,5 +773,27 @@ export const VOCAB = [
   { id: 'c4186', ch: 'de Vogel', de: 'der Vogel', ca: 'l’ocell', topic: 'animals', lesson: 'c04', book: 'holle', note: 'Plural: d Vögel.' },
   { id: 'c4187', ch: 'd Sunne', de: 'die Sonne', ca: 'el sol', topic: 'ciutat', lesson: 'c04', book: 'holle' },
   { id: 'c4188', ch: 'en Huufe', de: 'ein Haufen', ca: 'un munt de', topic: 'nombres', lesson: 'c04', book: 'schorn' },
-  { id: 'c4189', ch: 'di meischte / e paar', de: 'die meisten / ein paar', ca: 'la majoria / uns quants', topic: 'nombres', lesson: 'c04', book: 'schorn' }
+  { id: 'c4189', ch: 'di meischte / e paar', de: 'die meisten / ein paar', ca: 'la majoria / uns quants', topic: 'nombres', lesson: 'c04', book: 'schorn' },
+
+  // ---- Més vocabulari de la cançó de classe (la lletra no hi és, només els mots) ----
+  { id: 'c4200', ch: 'versetze', de: 'versetzen', ca: 'moure de lloc', topic: 'verbs', lesson: 'c04', book: 'holle', note: '«Bärge versetze» = moure muntanyes.' },
+  { id: 'c4201', ch: 'd Hürde', de: 'die Hürde', ca: 'l’obstacle', topic: 'basics', lesson: 'c04', book: 'holle' },
+  { id: 'c4202', ch: 'd Würde', de: 'die Würde', ca: 'la dignitat', topic: 'basics', lesson: 'c04', book: 'holle' },
+  { id: 'c4203', ch: 's Ziel', de: 'das Ziel', ca: 'l’objectiu, la meta', topic: 'basics', lesson: 'c04', book: 'holle' },
+  { id: 'c4204', ch: 'de Begleiter', de: 'der Begleiter', ca: 'l’acompanyant', topic: 'persones', lesson: 'c04', book: 'holle' },
+  { id: 'c4205', ch: 'de Kompass', de: 'der Kompass', ca: 'la brúixola', topic: 'objectes', lesson: 'c04', book: 'holle' },
+  { id: 'c4206', ch: 's Fäld / d Fälder', de: 'das Feld / die Felder', ca: 'el camp / els camps', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4207', ch: 'd Blüete', de: 'die Blüte', ca: 'la flor (en flor)', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4208', ch: 'de Ruggewind', de: 'der Rückenwind', ca: 'el vent de cua', topic: 'ciutat', lesson: 'c04', book: 'holle', note: 'Figuradament: una empenta a favor.' },
+  { id: 'c4209', ch: 'd Chance', de: 'die Chance', ca: 'l’oportunitat', topic: 'basics', lesson: 'c04', book: 'holle' },
+  { id: 'c4210', ch: 'einsam', de: 'einsam', ca: 'sol, solitari', topic: 'sentiments', lesson: 'c04', book: 'holle' },
+  { id: 'c4211', ch: 'verpflichtet', de: 'verpflichtet', ca: 'compromès, obligat', topic: 'sentiments', lesson: 'c04', book: 'holle' },
+  { id: 'c4212', ch: 'entschlosse', de: 'entschlossen', ca: 'decidit', topic: 'sentiments', lesson: 'c04', book: 'holle' },
+  { id: 'c4213', ch: 'stürme', de: 'stürmen', ca: 'bufar fort, empènyer', topic: 'verbs', lesson: 'c04', book: 'holle' },
+  { id: 'c4214', ch: 'ligge', de: 'liegen', ca: 'jeure, estar estirat', topic: 'verbs', lesson: 'c04', book: 'holle' },
+  { id: 'c4215', ch: 'füehre', de: 'führen', ca: 'portar, guiar', topic: 'verbs', lesson: 'c04', book: 'holle' },
+  { id: 'c4216', ch: 'bereise', de: 'bereisen', ca: 'recórrer viatjant', topic: 'verbs', lesson: 'c04', book: 'holle' },
+  { id: 'c4217', ch: 'de Bernhardiner', de: 'der Bernhardiner', ca: 'el sant bernat (gos)', topic: 'animals', lesson: 'c04', book: 'holle', note: 'El gos de rescat dels Alps suïssos.' },
+  { id: 'c4218', ch: 'd Toure', de: 'die Tour', ca: 'l’excursió', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4219', ch: 'de Wäg', de: 'der Weg', ca: 'el camí', topic: 'ciutat', lesson: 'c04', book: 'holle', note: 'Plural: d Wäge. «Wohi eus all die Wäge füehred.»' }
 ]
