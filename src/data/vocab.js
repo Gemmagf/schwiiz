@@ -130,6 +130,7 @@ export const VOCAB = [
   { id: 'v101', ch: 'Samschtig', de: 'Samstag', ca: 'dissabte', topic: 'temps', lesson: 'base' },
   { id: 'v102', ch: 'Sunntig', de: 'Sonntag', ca: 'diumenge', topic: 'temps', lesson: 'base' },
   { id: 'v103', ch: 'd Wuche', de: 'die Woche', ca: 'la setmana', topic: 'temps', lesson: 'base' },
+  { id: 'v111', ch: 's Buech', de: 'das Buch', ca: 'el llibre', topic: 'objectes', lesson: 'base', note: 'Plural: d Büecher.' },
   { id: 'v110', ch: 'de Tag', de: 'der Tag', ca: 'el dia', topic: 'temps', lesson: 'base', note: 'Plural: d Täg, només amb Umlaut.' },
   { id: 'v104', ch: 's Johr', de: 'das Jahr', ca: 'l’any', topic: 'temps', lesson: 'base' },
   { id: 'v105', ch: 'jetzt', de: 'jetzt', ca: 'ara', topic: 'temps', lesson: 'base' },
@@ -551,5 +552,226 @@ export const VOCAB = [
   { id: 'c1225', ch: 'trüle', de: 'drehen', ca: 'girar', topic: 'verbs', lesson: 'c02', book: 'schorn', note: '«Chasch diin Chopf echli trüle?»' },
   { id: 'c1226', ch: 'lange', de: 'ausreichen', ca: 'ser prou', topic: 'verbs', lesson: 'c02', book: 'schorn', note: '«Jetz langet s aber!» = ja n’hi ha prou!' },
   { id: 'c1227', ch: 'schwiine', de: 'schwinden, abnehmen', ca: 'minvar', topic: 'verbs', lesson: 'c02', book: 'schorn', note: '«De Moond schwiinet.»' },
-  { id: 'c1228', ch: 'gsee', de: 'sehen', ca: 'veure', topic: 'verbs', lesson: 'c02', book: 'schorn', note: '«Ich gseene gaar nüüt.»' }
+  { id: 'c1228', ch: 'gsee', de: 'sehen', ca: 'veure', topic: 'verbs', lesson: 'c02', book: 'schorn', note: '«Ich gseene gaar nüüt.»' },
+
+  // ===================================================================
+  // Classe 3 — 02/09/2026 · Holle 04 (negació) i 05 (demostratius)
+  // + full «Typisch schweizerische Ausdrücke» p. 102
+  // ===================================================================
+
+  // ---- Animals de granja (full p. 102) ----
+  { id: 'c3001', ch: 's Ross', de: 'das Pferd', ca: 'el cavall', topic: 'animals', lesson: 'c03', book: 'holle' },
+  { id: 'c3002', ch: 's Gampiross', de: 'das Schaukelpferd', ca: 'el cavallet de balancí', topic: 'animals', lesson: 'c03', book: 'holle' },
+  { id: 'c3003', ch: 'd Gäiss', de: 'die Ziege', ca: 'la cabra', topic: 'animals', lesson: 'c03', book: 'holle', note: 'De la Gäiss en surten el Gäissechèès i la Gäissemilch.' },
+  { id: 'c3004', ch: 'de Gäissbock', de: 'der Ziegenbock', ca: 'el boc', topic: 'animals', lesson: 'c03', book: 'holle' },
+  { id: 'c3005', ch: 's Huen', de: 'das Huhn', ca: 'la gallina', topic: 'animals', lesson: 'c03', book: 'holle' },
+  { id: 'c3006', ch: 'd Gluggere', de: 'die Glucke', ca: 'la lloca', topic: 'animals', lesson: 'c03', book: 'holle', note: '«Die Mueter isch e Gluggere» — dit d’una mare massa protectora.' },
+  { id: 'c3007', ch: 's Bibeli', de: 'das Küken', ca: 'el pollet', topic: 'animals', lesson: 'c03', book: 'holle' },
+  { id: 'c3008', ch: 'de Sumervogel', de: 'der Schmetterling', ca: 'la papallona', topic: 'animals', lesson: 'c03', book: 'holle', note: 'Literalment «ocell d’estiu». Molt més bonic que Schmetterling.' },
+  { id: 'c3009', ch: 's Müüsli', de: 'das Mäuschen', ca: 'el ratolinet', topic: 'animals', lesson: 'c03', book: 'holle' },
+  { id: 'c3010', ch: 's Mues', de: 'der Brei', ca: 'el puré', topic: 'menjar', lesson: 'c03', book: 'holle' },
+  { id: 'c3011', ch: 'd Chatze', de: 'die Katze', ca: 'el gat', topic: 'animals', lesson: 'c03', book: 'holle' },
+
+  // ---- Viatjar (full p. 102) ----
+  { id: 'c3020', ch: 's Bilet', de: 'die Fahrkarte', ca: 'el bitllet', topic: 'ciutat', lesson: 'c03', book: 'holle', note: 'Avui també se sent «Ticket». «Es Retour, es äifachs Bilet.»' },
+  { id: 'c3021', ch: 'de Fiirtig', de: 'der Feiertag', ca: 'el dia festiu', topic: 'temps', lesson: 'c03', book: 'holle', note: '«Der 1. Auguscht isch en Fiirtig» — la festa nacional suïssa.' },
+  { id: 'c3022', ch: 'de Wèèrchtig', de: 'der Werktag', ca: 'el dia feiner', topic: 'temps', lesson: 'c03', book: 'holle' },
+  { id: 'c3023', ch: 'de Wuchetaag', de: 'der Wochentag', ca: 'el dia de la setmana', topic: 'temps', lesson: 'c03', book: 'holle' },
+  { id: 'c3024', ch: 'de Zuug', de: 'der Zug', ca: 'el tren', topic: 'ciutat', lesson: 'c03', book: 'holle' },
+  { id: 'c3025', ch: 'd Isepaan', de: 'die Eisenbahn', ca: 'el ferrocarril', topic: 'ciutat', lesson: 'c03', book: 'holle' },
+  { id: 'c3026', ch: 's Gläis', de: 'das Gleis', ca: 'la via', topic: 'ciutat', lesson: 'c03', book: 'holle', note: '«Uf em Gläis 4 chum i dänn aa.»' },
+
+  // ---- Adverbis de matís (full p. 102) ----
+  { id: 'c3030', ch: 'amigs', de: 'jeweils', ca: 'cada vegada, habitualment', topic: 'connectors', lesson: 'c03', book: 'holle', note: '«Si gaat amigs uf Züri go poschte.»' },
+  { id: 'c3031', ch: 'ämel', de: 'jedenfalls', ca: 'si més no, en tot cas', topic: 'connectors', lesson: 'c03', book: 'holle', note: '«Ich han ämel nüüt ghöört.»' },
+  { id: 'c3032', ch: 'efängs', de: 'vorläufig einmal', ca: 'de moment', topic: 'connectors', lesson: 'c03', book: 'holle', note: '«Mir gönd efängs.»' },
+  { id: 'c3033', ch: 'eso / ase', de: 'so', ca: 'així', topic: 'connectors', lesson: 'c03', book: 'holle', note: 'De «also». «Si isch eso gschwätzig.»' },
+  { id: 'c3034', ch: 'ächt', de: 'wohl, vermutlich', ca: 'deu ser que…', topic: 'connectors', lesson: 'c03', book: 'holle', note: '«Sind s ächt verräist?»' },
+  { id: 'c3035', ch: 'mäini', de: 'vermutlich (meine ich)', ca: 'em sembla que sí', topic: 'connectors', lesson: 'c03', book: 'holle', note: 'De «meine ich». La resposta típica: «Mäini scho.»' },
+  { id: 'c3036', ch: 'allpott', de: 'immer wieder', ca: 'contínuament', topic: 'connectors', lesson: 'c03', book: 'holle', note: '«S rägnet allpott und glii wider.»' },
+  { id: 'c3037', ch: 'abenand', de: 'entzwei', ca: 'trencat en dos', topic: 'connectors', lesson: 'c03', book: 'holle', note: '«Das schöön Glaas isch abenand.»' },
+  { id: 'c3038', ch: 'anenand', de: 'ununterbrochen', ca: 'sense parar', topic: 'connectors', lesson: 'c03', book: 'holle', note: '«Föif Stund anenand hät si gspilt.»' },
+  { id: 'c3039', ch: 'umenand', de: 'umher', ca: 'd’un cantó a l’altre', topic: 'connectors', lesson: 'c03', book: 'holle', note: '«Was pfurisch immer umenand?»' },
+  { id: 'c3040', ch: 'momoll', de: 'doch, doch!', ca: 'i tant que sí!', topic: 'basics', lesson: 'c03', book: 'holle', note: 'El «doch» reforçat. «Äch, chunsch nöd mit? Momoll!»' },
+  { id: 'c3041', ch: 'äch', de: 'ach!', ca: 'ai, va…', topic: 'basics', lesson: 'c03', book: 'holle' },
+
+  // ---- Indefinits amb ö- (full p. 102) ----
+  { id: 'c3050', ch: 'öppe', de: 'etwa', ca: 'aproximadament, potser', topic: 'basics', lesson: 'c03', book: 'holle', note: 'No el confonguis amb öpper (algú) ni öppis (alguna cosa).' },
+  { id: 'c3051', ch: 'öppen emaal', de: 'hie und da einmal', ca: 'de tant en tant', topic: 'basics', lesson: 'c03', book: 'holle' },
+  { id: 'c3052', ch: 'öppedie', de: 'dann und wann', ca: 'de vegades', topic: 'basics', lesson: 'c03', book: 'holle' },
+
+  // ---- Cortesia (full p. 102) ----
+  { id: 'c3060', ch: 'bis so guet', de: 'sei so gut; bitte', ca: 'fes el favor', topic: 'salutacions', lesson: 'c03', book: 'holle', note: '«Nimm bis so guet dèè Brief mit!»' },
+  { id: 'c3061', ch: 'tschau', de: 'tschüss', ca: 'adéu (només amb du)', topic: 'salutacions', lesson: 'c03', book: 'holle', note: 'De l’italià ciao. Amb Sie, «Uf Widerluege».' },
+  { id: 'c3062', ch: 'Äxgüsi!', de: 'Entschuldigung!', ca: 'Perdó!', topic: 'salutacions', lesson: 'c03', book: 'holle', note: 'Del francès «excusez». També «Pardon!».' },
+
+  // ---- Substantius dels exercicis (Holle 04 i 05) ----
+  { id: 'c3070', ch: 'd Tante', de: 'die Tante', ca: 'la tia', topic: 'persones', lesson: 'c03', book: 'holle' },
+  { id: 'c3071', ch: 'de Brunne', de: 'der Brunnen', ca: 'la font', topic: 'ciutat', lesson: 'c03', book: 'holle' },
+  { id: 'c3072', ch: 'de Wald', de: 'der Wald', ca: 'el bosc', topic: 'ciutat', lesson: 'c03', book: 'holle' },
+  { id: 'c3073', ch: 'd Terrasse', de: 'die Terrasse', ca: 'la terrassa', topic: 'casa', lesson: 'c03', book: 'holle' },
+  { id: 'c3074', ch: 's Meitli', de: 'das Mädchen', ca: 'la noia', topic: 'persones', lesson: 'c03', book: 'holle' },
+  { id: 'c3075', ch: 's Resti', de: 'das Restaurant', ca: 'el restaurant', topic: 'ciutat', lesson: 'c03', book: 'holle', note: 'Forma escurçada de Reschtaurant.' },
+  { id: 'c3076', ch: 'de Stei', de: 'der Stein', ca: 'la pedra', topic: 'ciutat', lesson: 'c03', book: 'holle' },
+  { id: 'c3077', ch: 'de Ries', de: 'der Riese', ca: 'el gegant', topic: 'persones', lesson: 'c03', book: 'holle' },
+  { id: 'c3078', ch: 'de Abfall', de: 'der Müll', ca: 'les escombraries', topic: 'casa', lesson: 'c03', book: 'holle', note: 'A Zuric també «de Ghüder».' },
+  { id: 'c3079', ch: 'd Pflanze', de: 'die Pflanze', ca: 'la planta', topic: 'casa', lesson: 'c03', book: 'holle' },
+  { id: 'c3080', ch: 'd Flöte', de: 'die Flöte', ca: 'la flauta', topic: 'objectes', lesson: 'c03', book: 'holle' },
+  { id: 'c3081', ch: 's Chleid', de: 'das Kleid', ca: 'el vestit', topic: 'roba', lesson: 'c03', book: 'holle' },
+  { id: 'c3082', ch: 'd Banane', de: 'die Banane', ca: 'el plàtan', topic: 'menjar', lesson: 'c03', book: 'holle' },
+  { id: 'c3083', ch: 'de Täller', de: 'der Teller', ca: 'el plat', topic: 'casa', lesson: 'c03', book: 'holle' },
+  { id: 'c3084', ch: 's Glas', de: 'das Glas', ca: 'el got', topic: 'casa', lesson: 'c03', book: 'holle' },
+  { id: 'c3085', ch: 'de Fuessball', de: 'der Fussball', ca: 'el futbol', topic: 'basics', lesson: 'c03', book: 'holle' },
+  { id: 'c3086', ch: 'de Lehrer / d Lehrerin', de: 'der Lehrer / die Lehrerin', ca: 'el mestre / la mestra', topic: 'persones', lesson: 'c03', book: 'holle' },
+  { id: 'c3087', ch: 'de Professor', de: 'der Professor', ca: 'el professor', topic: 'persones', lesson: 'c03', book: 'holle' },
+  { id: 'c3088', ch: 's Auto', de: 'das Auto', ca: 'el cotxe', topic: 'ciutat', lesson: 'c03', book: 'holle' },
+  { id: 'c3089', ch: 'd Chile', de: 'die Kirche', ca: 'l’església', topic: 'ciutat', lesson: 'c03', book: 'holle', note: '«Die Chile staat änet der Limet» — a l’altra banda del Limmat.' },
+  { id: 'c3090', ch: 'de Chlütter', de: 'das Geld', ca: 'la pasta (diners)', topic: 'compres', lesson: 'c03', book: 'holle', note: 'Col·loquial, com «Stütz».' },
+
+  // ===================================================================
+  // Classe 4 — 09/09/2026 · Holle 06 (pronoms i plurals) + Schorn 6.1
+  // + full «Typisch schweizerische Ausdrücke» p. 103
+  // ===================================================================
+
+  // ---- Cos (Schorn 6-4a) ----
+  { id: 'c4001', ch: 'de Hals', de: 'der Hals', ca: 'el coll', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4002', ch: 'de Arm', de: 'der Arm', ca: 'el braç', topic: 'salut', lesson: 'c04', book: 'schorn', note: 'Plural amb Umlaut: d Ärm.' },
+  { id: 'c4003', ch: 'de Elleboge', de: 'der Ellbogen', ca: 'el colze', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4004', ch: 'de Finger', de: 'der Finger', ca: 'el dit', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4005', ch: 'de Mage', de: 'der Magen', ca: 'l’estómac', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4006', ch: 'de Darm', de: 'der Darm', ca: 'l’intestí', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4007', ch: 'de Chnoche', de: 'der Knochen', ca: 'l’os', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4008', ch: 'd Nase', de: 'die Nase', ca: 'el nas', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4009', ch: 'd Zunge', de: 'die Zunge', ca: 'la llengua', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4010', ch: 'd Läbere', de: 'die Leber', ca: 'el fetge', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4011', ch: 'd Niere', de: 'die Niere', ca: 'el ronyó', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4012', ch: 's Gsicht', de: 'das Gesicht', ca: 'la cara', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4013', ch: 's Muul', de: 'der Mund', ca: 'la boca', topic: 'salut', lesson: 'c04', book: 'schorn', note: 'Plural: d Müüler (Umlaut + -er).' },
+  { id: 'c4014', ch: 's Hirni', de: 'das Gehirn', ca: 'el cervell', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4015', ch: 's Aug', de: 'das Auge', ca: 'l’ull', topic: 'salut', lesson: 'c04', book: 'schorn', note: 'Plural: d Auge.' },
+  { id: 'c4016', ch: 's Ohr', de: 'das Ohr', ca: 'l’orella', topic: 'salut', lesson: 'c04', book: 'schorn', note: 'Plural: d Ohre.' },
+  { id: 'c4017', ch: 's Chnüü', de: 'das Knie', ca: 'el genoll', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4018', ch: 's Rippli', de: 'die Rippe', ca: 'la costella', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4019', ch: 's Herz', de: 'das Herz', ca: 'el cor', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4020', ch: 's Bei', de: 'das Bein', ca: 'la cama', topic: 'salut', lesson: 'c04', book: 'schorn' },
+
+  // ---- Medicina (Schorn 6-4b) ----
+  { id: 'c4030', ch: 'de Undersuech', de: 'die Untersuchung', ca: 'la revisió mèdica', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4031', ch: 'de Gips', de: 'der Gips', ca: 'el guix', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4032', ch: 'de Labor-Bricht', de: 'der Laborbericht', ca: 'l’informe del laboratori', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4033', ch: 's Arzt-Rezäpt', de: 'das Arztrezept', ca: 'la recepta mèdica', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4034', ch: 's Rönggebild', de: 'das Röntgenbild', ca: 'la radiografia', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4035', ch: 'd Entzündig', de: 'die Entzündung', ca: 'la inflamació', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4036', ch: 'd Operation', de: 'die Operation', ca: 'l’operació', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4037', ch: 'd Impfig', de: 'die Impfung', ca: 'la vacuna', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4038', ch: 'd Tablette', de: 'die Tablette', ca: 'la pastilla', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4039', ch: 'd Pille', de: 'die Pille', ca: 'la píndola', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4040', ch: 'd Sprütze', de: 'die Spritze', ca: 'la injecció', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4041', ch: 'd Wunde', de: 'die Wunde', ca: 'la ferida', topic: 'salut', lesson: 'c04', book: 'schorn' },
+  { id: 'c4042', ch: 'verheile', de: 'verheilen', ca: 'cicatritzar', topic: 'verbs', lesson: 'c04', book: 'schorn' },
+  { id: 'c4043', ch: 'wirke', de: 'wirken', ca: 'fer efecte', topic: 'verbs', lesson: 'c04', book: 'schorn', note: '«Die Tablette hät sofort gwürkt.»' },
+
+  // ---- Família (Schorn 6-4c) ----
+  { id: 'c4050', ch: 's Grosi', de: 'die Oma', ca: 'l’àvia', topic: 'persones', lesson: 'c04', book: 'schorn', note: 'És neutre, tot i referir-se a una dona: és un diminutiu.' },
+  { id: 'c4051', ch: 'de Grossvater / d Grossmuetter', de: 'der Grossvater / die Grossmutter', ca: 'l’avi / l’àvia', topic: 'persones', lesson: 'c04', book: 'schorn' },
+  { id: 'c4052', ch: 'de Sohn', de: 'der Sohn', ca: 'el fill', topic: 'persones', lesson: 'c04', book: 'schorn' },
+  { id: 'c4053', ch: 'de Unggle', de: 'der Onkel', ca: 'l’oncle', topic: 'persones', lesson: 'c04', book: 'schorn' },
+  { id: 'c4054', ch: 's Baby', de: 'das Baby', ca: 'el nadó', topic: 'persones', lesson: 'c04', book: 'schorn' },
+
+  // ---- Menjar (Schorn 6-4d) ----
+  { id: 'c4060', ch: 'de Salat', de: 'der Salat', ca: 'l’enciam', topic: 'menjar', lesson: 'c04', book: 'schorn' },
+  { id: 'c4061', ch: 'de Härdöpfel', de: 'die Kartoffel', ca: 'la patata', topic: 'menjar', lesson: 'c04', book: 'schorn', note: 'Literalment «poma de terra», com en francès.' },
+  { id: 'c4062', ch: 'de Bluemechohl', de: 'der Blumenkohl', ca: 'la coliflor', topic: 'menjar', lesson: 'c04', book: 'schorn' },
+  { id: 'c4063', ch: 'de Fänchel', de: 'der Fenchel', ca: 'el fonoll', topic: 'menjar', lesson: 'c04', book: 'schorn' },
+  { id: 'c4064', ch: 'd Gurke', de: 'die Gurke', ca: 'el cogombre', topic: 'menjar', lesson: 'c04', book: 'schorn' },
+  { id: 'c4065', ch: 'd Peperoni', de: 'die Paprika', ca: 'el pebrot', topic: 'menjar', lesson: 'c04', book: 'schorn' },
+  { id: 'c4066', ch: 'd Tomate', de: 'die Tomate', ca: 'el tomàquet', topic: 'menjar', lesson: 'c04', book: 'schorn' },
+  { id: 'c4067', ch: 'd Rande', de: 'die Rande / rote Beete', ca: 'la remolatxa', topic: 'menjar', lesson: 'c04', book: 'schorn' },
+  { id: 'c4068', ch: 'd Bire', de: 'die Birne', ca: 'la pera', topic: 'menjar', lesson: 'c04', book: 'schorn' },
+  { id: 'c4069', ch: 'd Zitrone', de: 'die Zitrone', ca: 'la llimona', topic: 'menjar', lesson: 'c04', book: 'schorn' },
+  { id: 'c4070', ch: 's Ei', de: 'das Ei', ca: 'l’ou', topic: 'menjar', lesson: 'c04', book: 'schorn' },
+  { id: 'c4071', ch: 's Himbeeri', de: 'die Himbeere', ca: 'la gerd', topic: 'menjar', lesson: 'c04', book: 'schorn' },
+  { id: 'c4072', ch: 'd Fläsche', de: 'die Flasche', ca: 'l’ampolla', topic: 'casa', lesson: 'c04', book: 'schorn' },
+  { id: 'c4073', ch: 'd Tasse', de: 'die Tasse', ca: 'la tassa', topic: 'casa', lesson: 'c04', book: 'schorn' },
+
+  // ---- Plurals (Holle 06 i Schorn 6-1) ----
+  { id: 'c4080', ch: 'de Kuss', de: 'der Kuss', ca: 'el petó', topic: 'basics', lesson: 'c04', book: 'holle', note: 'Plural: d Küss.' },
+  { id: 'c4081', ch: 'de Bode', de: 'der Boden', ca: 'el terra', topic: 'casa', lesson: 'c04', book: 'holle', note: 'Plural: d Böde.' },
+  { id: 'c4082', ch: 'de Wage', de: 'der Wagen', ca: 'el carro, el vagó', topic: 'ciutat', lesson: 'c04', book: 'holle', note: 'Plural: d Wäge.' },
+  { id: 'c4083', ch: 'de Buur', de: 'der Bauer', ca: 'el pagès', topic: 'persones', lesson: 'c04', book: 'holle', note: 'Plural: d Buure.' },
+  { id: 'c4084', ch: 'd Schuel', de: 'die Schule', ca: 'l’escola', topic: 'ciutat', lesson: 'c04', book: 'holle', note: 'Plural: d Schuele.' },
+  { id: 'c4085', ch: 's Chalb', de: 'das Kalb', ca: 'el vedell', topic: 'animals', lesson: 'c04', book: 'holle', note: 'Plural: d Chälber.' },
+  { id: 'c4086', ch: 'de Esel', de: 'der Esel', ca: 'l’ase', topic: 'animals', lesson: 'c04', book: 'schorn', note: 'Plural igual: d Esel.' },
+  { id: 'c4087', ch: 'de Chäfer', de: 'der Käfer', ca: 'l’escarabat', topic: 'animals', lesson: 'c04', book: 'schorn' },
+  { id: 'c4088', ch: 'de Igel', de: 'der Igel', ca: 'l’eriçó', topic: 'animals', lesson: 'c04', book: 'schorn' },
+  { id: 'c4089', ch: 'd Erchlärig', de: 'die Erklärung', ca: 'l’explicació', topic: 'feina', lesson: 'c04', book: 'schorn' },
+  { id: 'c4090', ch: 's Flugzüüg', de: 'das Flugzeug', ca: 'l’avió', topic: 'ciutat', lesson: 'c04', book: 'schorn' },
+  { id: 'c4091', ch: 's Sägelboot', de: 'das Segelboot', ca: 'el veler', topic: 'ciutat', lesson: 'c04', book: 'schorn' },
+  { id: 'c4092', ch: 's Halstuech', de: 'das Halstuch', ca: 'el mocador de coll', topic: 'roba', lesson: 'c04', book: 'schorn' },
+
+  // ---- Diners i administració (Schorn 6-2, full p. 103) ----
+  { id: 'c4100', ch: 'de Monet', de: 'der Monat', ca: 'el mes', topic: 'temps', lesson: 'c04', book: 'schorn' },
+  { id: 'c4101', ch: 'de Kredit', de: 'der Kredit', ca: 'el crèdit', topic: 'compres', lesson: 'c04', book: 'schorn' },
+  { id: 'c4102', ch: 'de Zins', de: 'der Zins', ca: 'l’interès', topic: 'compres', lesson: 'c04', book: 'schorn' },
+  { id: 'c4103', ch: 'de Franke', de: 'der Franken', ca: 'el franc', topic: 'compres', lesson: 'c04', book: 'schorn' },
+  { id: 'c4104', ch: 'd Rächnig', de: 'die Rechnung', ca: 'la factura, el compte', topic: 'compres', lesson: 'c04', book: 'holle', note: '«Chönd Si mer d Rächnig bringe?»' },
+  { id: 'c4105', ch: 'de Stütz', de: 'das Geld', ca: 'la pasta (diners)', topic: 'compres', lesson: 'c04', book: 'holle', note: '«Häre mit de Stütz!» = vinga, la pasta!' },
+  { id: 'c4106', ch: 'd Regierig', de: 'die Regierung', ca: 'el govern', topic: 'feina', lesson: 'c04', book: 'schorn' },
+  { id: 'c4107', ch: 'd Partei', de: 'die Partei', ca: 'el partit polític', topic: 'feina', lesson: 'c04', book: 'schorn' },
+  { id: 'c4108', ch: 'd Wahl', de: 'die Wahl', ca: 'l’elecció', topic: 'feina', lesson: 'c04', book: 'schorn' },
+  { id: 'c4109', ch: 'd Abstimmig', de: 'die Abstimmung', ca: 'la votació', topic: 'feina', lesson: 'c04', book: 'schorn', note: 'A Suïssa se’n fan quatre l’any.' },
+  { id: 'c4110', ch: 'anderthalb', de: 'eineinhalb', ca: 'un i mig', topic: 'nombres', lesson: 'c04', book: 'holle' },
+  { id: 'c4111', ch: 'de Gwunder', de: 'die Neugier', ca: 'la curiositat', topic: 'sentiments', lesson: 'c04', book: 'holle', note: '«De Gwunder hät en gstoche» = el va poder la curiositat.' },
+  { id: 'c4112', ch: 'gwunderig', de: 'neugierig', ca: 'curiós, tafaner', topic: 'sentiments', lesson: 'c04', book: 'holle' },
+
+  // ---- Adjectius i adverbis (full p. 103) ----
+  { id: 'c4120', ch: 'blutt', de: 'nackt', ca: 'nu, descalç', topic: 'adjectius', lesson: 'c04', book: 'holle', note: '«Si gaat mit blutte Füess is Doorf.»' },
+  { id: 'c4121', ch: 'tifig', de: 'schnell', ca: 'de pressa', topic: 'adjectius', lesson: 'c04', book: 'holle', note: '«Gang tifig go poschte!» També «wäidli», «gschnäll».' },
+  { id: 'c4122', ch: 'wäidli', de: 'schnell', ca: 'de pressa', topic: 'adjectius', lesson: 'c04', book: 'holle' },
+  { id: 'c4123', ch: 'amänd', de: 'vermutlich', ca: 'segurament', topic: 'connectors', lesson: 'c04', book: 'holle', note: '«Amänd lüütet er nie mee aa.»' },
+  { id: 'c4124', ch: 'schüüli', de: 'schrecklich', ca: 'horrorós', topic: 'adjectius', lesson: 'c04', book: 'holle', note: '«E schüüligi Gschicht isch daas!»' },
+  { id: 'c4125', ch: 'grüüsli', de: 'schrecklich, unangenehm', ca: 'fastigós', topic: 'adjectius', lesson: 'c04', book: 'holle' },
+  { id: 'c4126', ch: 'zwääg', de: 'gesund, munter', ca: 'en forma, recuperat', topic: 'adjectius', lesson: 'c04', book: 'holle', note: '«Si isch wider ganz zwääg.» Molt usat.' },
+  { id: 'c4127', ch: 'buschper', de: 'munter', ca: 'espavilat, viu', topic: 'adjectius', lesson: 'c04', book: 'holle' },
+
+  // ---- On i cap on (full p. 103) ----
+  { id: 'c4140', ch: 'däne / deet äne', de: 'dort drüben', ca: 'allà a l’altra banda', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4141', ch: 'änet', de: 'jenseits', ca: 'a l’altra banda de', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4142', ch: 'fürsi', de: 'vorwärts', ca: 'endavant', topic: 'ciutat', lesson: 'c04', book: 'holle', note: '«Mach emaal fürsi mit dère Aarbet!»' },
+  { id: 'c4143', ch: 'hindersi', de: 'rückwärts', ca: 'enrere', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4144', ch: 'obsi / ufe', de: 'aufwärts, hinauf', ca: 'cap amunt', topic: 'ciutat', lesson: 'c04', book: 'holle', note: '«S gaat gèèch obsi. Chum ufe!»' },
+  { id: 'c4145', ch: 'nidsi / abe', de: 'abwärts, hinunter', ca: 'cap avall', topic: 'ciutat', lesson: 'c04', book: 'holle', note: '«Mit dère Firma gaat s nidsi» = va de mal borràs.' },
+  { id: 'c4146', ch: 'häre', de: 'hierher', ca: 'cap aquí', topic: 'ciutat', lesson: 'c04', book: 'holle', note: '«Chum sofort da ane!»' },
+  { id: 'c4147', ch: 'überobe / überune', de: 'im oberen / unteren Stockwerk', ca: 'al pis de dalt / de baix', topic: 'casa', lesson: 'c04', book: 'holle' },
+  { id: 'c4148', ch: 'äinewääg', de: 'ohnehin, sowieso', ca: 'de totes maneres', topic: 'connectors', lesson: 'c04', book: 'holle' },
+  { id: 'c4149', ch: 'allwääg', de: 'wahrscheinlich', ca: 'probablement', topic: 'connectors', lesson: 'c04', book: 'holle' },
+
+  // ---- Del que vau treballar amb la cançó ----
+  { id: 'c4160', ch: 'de Bärg', de: 'der Berg', ca: 'la muntanya', topic: 'ciutat', lesson: 'c04', book: 'holle', note: 'Plural: d Bärge. «Bärge versetze» = moure muntanyes.' },
+  { id: 'c4161', ch: 'de Schatte', de: 'der Schatten', ca: 'l’ombra', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4162', ch: 's Sunneliecht', de: 'das Sonnenlicht', ca: 'la llum del sol', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4163', ch: 'de Himmel', de: 'der Himmel', ca: 'el cel', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4164', ch: 'd Träne', de: 'die Träne', ca: 'la llàgrima', topic: 'sentiments', lesson: 'c04', book: 'holle' },
+  { id: 'c4165', ch: 'de Pfad', de: 'der Pfad', ca: 'el corriol', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4166', ch: 's Läbe', de: 'das Leben', ca: 'la vida', topic: 'basics', lesson: 'c04', book: 'holle' },
+  { id: 'c4167', ch: 'de Sturm', de: 'der Sturm', ca: 'la tempesta', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4168', ch: 's Tal', de: 'das Tal', ca: 'la vall', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4169', ch: 'd Spur', de: 'die Spur', ca: 'el rastre, la petjada', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4170', ch: 'd Freiheit', de: 'die Freiheit', ca: 'la llibertat', topic: 'basics', lesson: 'c04', book: 'holle' },
+  { id: 'c4171', ch: 'd Brugge', de: 'die Brücke', ca: 'el pont', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4172', ch: 'de Fluss', de: 'der Fluss', ca: 'el riu', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4173', ch: 'gmeinsam / mitenand', de: 'gemeinsam / miteinander', ca: 'junts, plegats', topic: 'connectors', lesson: 'c04', book: 'holle' },
+  { id: 'c4174', ch: 'zämme', de: 'zusammen', ca: 'junts', topic: 'connectors', lesson: 'c04', book: 'holle' },
+
+  // ---- Altres dels exercicis ----
+  { id: 'c4180', ch: 'd Strass', de: 'die Strasse', ca: 'el carrer', topic: 'ciutat', lesson: 'c04', book: 'schorn' },
+  { id: 'c4181', ch: 'd Gränze', de: 'die Grenze', ca: 'la frontera', topic: 'ciutat', lesson: 'c04', book: 'schorn' },
+  { id: 'c4182', ch: 'd Uusnahm', de: 'die Ausnahme', ca: 'l’excepció', topic: 'feina', lesson: 'c04', book: 'schorn' },
+  { id: 'c4183', ch: 'd Folg', de: 'die Folge', ca: 'l’episodi, la conseqüència', topic: 'feina', lesson: 'c04', book: 'schorn' },
+  { id: 'c4184', ch: 'de Chällner', de: 'der Kellner', ca: 'el cambrer', topic: 'persones', lesson: 'c04', book: 'schorn' },
+  { id: 'c4185', ch: 'de Tschugger', de: 'der Polizist', ca: 'el poli (col·loquial)', topic: 'suis', lesson: 'c04', book: 'schorn', note: 'També el títol d’una sèrie suïssa.' },
+  { id: 'c4186', ch: 'de Vogel', de: 'der Vogel', ca: 'l’ocell', topic: 'animals', lesson: 'c04', book: 'holle', note: 'Plural: d Vögel.' },
+  { id: 'c4187', ch: 'd Sunne', de: 'die Sonne', ca: 'el sol', topic: 'ciutat', lesson: 'c04', book: 'holle' },
+  { id: 'c4188', ch: 'en Huufe', de: 'ein Haufen', ca: 'un munt de', topic: 'nombres', lesson: 'c04', book: 'schorn' },
+  { id: 'c4189', ch: 'di meischte / e paar', de: 'die meisten / ein paar', ca: 'la majoria / uns quants', topic: 'nombres', lesson: 'c04', book: 'schorn' }
 ]

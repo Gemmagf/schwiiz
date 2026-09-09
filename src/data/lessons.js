@@ -20,6 +20,18 @@ export const LESSONS = [
     title: 'Classe 2 — demostratius i interrogatius',
     date: '2026-08-26',
     note: 'Schorn 3.4 i 3.5: demostratius amb daa/deet, i «Wele…?» contra «Was für…?». Més el full de verbs típicament suïssos i falsos amics.'
+  },
+  {
+    id: 'c03',
+    title: 'Classe 3 — negació i demostratius',
+    date: '2026-09-02',
+    note: 'Holle 04 (kein/kei/keis i nöd) i 05 (demostratius, amb la e llarga de «dee»). Més el full d’expressions suïsses p. 102: amigs, ämel, öppedie, allpott.'
+  },
+  {
+    id: 'c04',
+    title: 'Classe 4 — pronoms i plurals',
+    date: '2026-09-09',
+    note: 'Holle 06 (pronoms er/sie/es i les formes del plural) i Schorn 6.1 (plurals per temes: cos, medicina, família, menjar). Full d’expressions p. 103: obsi, nidsi, überobe. I la cançó «Berge versetze».'
   }
 ]
 

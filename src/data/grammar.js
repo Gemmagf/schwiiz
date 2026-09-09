@@ -164,26 +164,27 @@ const TEMES = [
     book: 'holle',
     unit: '04',
     order: 4,
+    lesson: 'c03',
     title: 'Negació: nöd i kei',
     emoji: '🚫',
-    lesson: 'base',
-    summary: 'Dues paraules, dos usos. Igual que nicht/kein en alemany.',
+    summary: 'De la classe del 02/09. Dues paraules, dos usos. Igual que nicht/kein en alemany.',
     points: [
       '**nöd** nega verbs, adjectius i frases senceres. Va DESPRÉS del verb conjugat.',
       'Ich verstahn **nöd**. · Das isch **nöd** guet. · Ich gang hüt **nöd** ge schaffe.',
-      '**kän / kä / käs** nega substantius (= cap, gens de). Va DAVANT del substantiu.',
-      'Es declina com l’article indeterminat: **kän** Hunger (m) · **kä** Milch (f) · **käs** Gäld (n).',
-      'Ich ha **kä** Ziit. · Es hät **käs** Brot meh.',
-      'Regla ràpida: si darrere hi va un substantiu sense article → kän/kä/käs. Si no → nöd.',
-      'També trobaràs escrit «kei» sense declinar. El curs de classe fa servir les formes declinades: tens el detall al tema «Article negatiu».'
+      '**kein / kei / keis** nega substantius (= cap, gens de). Va DAVANT del substantiu.',
+      'masculí **kein** Stei · femení **kei** Muus · neutre **keis** Buech · plural **kei**',
+      '⚠️ Els dos llibres ho escriuen diferent, però és el mateix: el **Holle** fa kein/kei/keis i el **Schorn** fa kän/kä/käs. Tria’n una i sigues conseqüent.',
+      'Ich ha **kei** Ziit. · Es hät **keis** Brot meh. · Ich gseh **kein** Ries.',
+      'Regla ràpida: si darrere hi va un substantiu sense article → kein/kei/keis. Si no → nöd.',
+      'I la negació del verb també varia per regions: Zuric **nöd**, Berna **nid**, altres **ned** o **nit**.'
     ],
     exercises: [
-      { id: 'g06e1', type: 'gap', q: 'Ich ha ___ Gäld (n).', a: ['käs', 'kas'], why: 'Davant d’un substantiu neutre → käs.' },
+      { id: 'g06e1', type: 'gap', q: 'Ich ha ___ Gäld (n).', a: ['keis', 'käs', 'kas'], why: 'Neutre → keis (Holle) o käs (Schorn). Les dues valen.' },
       { id: 'g06e2', type: 'gap', q: 'Das isch ___ richtig.', a: ['nöd', 'nod'], why: 'Nega un adjectiu → nöd.' },
-      { id: 'g06e3', type: 'choice', q: 'Ich verstahn ___.', options: ['kä', 'nöd', 'nüüt'], a: 1, why: 'Nega el verb → nöd. ("Ich verstahn nüüt" = no entenc RES, també correcte però és una altra cosa.)' },
-      { id: 'g06e4', type: 'choice', q: 'Er het ___ Auto (n).', options: ['nöd', 'käs', 'nüüt'], a: 1, why: 'Substantiu neutre → käs.' },
+      { id: 'g06e3', type: 'choice', q: 'Ich verstahn ___.', options: ['kei', 'nöd', 'nüüt'], a: 1, why: 'Nega el verb → nöd. ("Ich verstahn nüüt" = no entenc RES, també correcte però és una altra cosa.)' },
+      { id: 'g06e4', type: 'choice', q: 'Er het ___ Auto (n).', options: ['nöd', 'keis', 'nüüt'], a: 1, why: 'Substantiu neutre → keis.' },
       { id: 'g06e5', type: 'gap', q: 'Mir gönd hüt ___ i d Stadt.', a: ['nöd', 'nod'], why: 'Nega tota la frase → nöd, després del verb.' },
-      { id: 'g06e6', type: 'choice', q: 'Com dius "no ho sé"?', options: ['Ich weiss kä.', 'Ich weiss nöd.', 'Ich nöd weiss.'], a: 1, why: 'nöd va SEMPRE després del verb conjugat, mai davant.' }
+      { id: 'g06e6', type: 'choice', q: 'Com dius "no ho sé"?', options: ['Ich weiss kei.', 'Ich weiss nöd.', 'Ich nöd weiss.'], a: 1, why: 'nöd va SEMPRE després del verb conjugat, mai davant.' }
     ]
   },
   {
@@ -586,9 +587,9 @@ const TEMES = [
     book: 'holle',
     unit: '05',
     order: 5,
+    lesson: 'c03',
     title: 'Demostratius: dä, die, das',
     emoji: '👆',
-    lesson: 'base',
     summary: 'Assenyalar coses. Són les mateixes paraules que els articles, però dites amb força.',
     points: [
       '**dä** Maa (masculí) · **die** Frau (femení) · **das** Chind (neutre) · **die** Chind (plural)',
@@ -605,7 +606,7 @@ const TEMES = [
       { id: 'g21e1', type: 'gap', q: '___ Maa da isch min Nachbar. (aquest)', a: ['dä'], why: 'Masculí → dä.' },
       { id: 'g21e2', type: 'choice', q: '___ Frau det schaffet mit mir.', options: ['dä', 'die', 'das'], a: 1, why: 'Femení → die.' },
       { id: 'g21e3', type: 'gap', q: 'Was isch ___? (això)', a: ['das'], why: '"das" tot sol = això.' },
-      { id: 'g21e4', type: 'choice', q: 'Quina diferència hi ha entre «de Maa» i «dä Maa»?', options: ['Cap', 'El primer és l’article, el segon assenyala', 'El segon és plural'], a: 1, why: 'Mateixa família de paraules: l’article dit amb força es torna demostratiu.' },
+      { id: 'g21e4', type: 'choice', q: 'Què separa «de Vater» de «dee Vater»?', options: ['Res, s’escriuen igual i prou', 'La e llarga: la segona assenyala', 'El gènere'], a: 1, why: 'El demostratiu masculí és l’article amb la e allargada. El Schorn ho escriu «dä».' },
       { id: 'g21e5', type: 'choice', q: 'Com dius «aquelles criatures d’allà»?', options: ['die Chind det', 'das Chind det', 'dä Chind det'], a: 0, why: 'Plural → die, i "det" per marcar la distància.' }
     ]
   },
@@ -614,18 +615,20 @@ const TEMES = [
     book: 'holle',
     unit: '06',
     order: 6,
+    lesson: 'c04',
     title: 'El plural dels substantius',
     emoji: '👥',
-    lesson: 'base',
-    summary: 'La pista fiable no és la terminació: és l’article. En plural sempre és «d».',
+    summary: 'De la classe del 09/09. La pista fiable no és la terminació: és l’article. En plural sempre és «d».',
     points: [
       'Sigui quin sigui el gènere, **el plural porta sempre d**: d Manne, d Fraue, d Chind.',
       'Quatre patrons de formació:',
       'Sense canvi: s Chind → d **Chind** · s Zimmer → d **Zimmer**',
       'Només Umlaut: de Tag → d **Täg** · de Vogel → d **Vögel**',
       'Amb -e: de Fründ → d **Fründe** · d Frau → d **Fraue**',
-      'Amb -er i Umlaut: s Huus → d **Hüüser** · s Buech → d **Büecher**',
-      'Aquí el dialecte s’allunya de l’alemany: molts masculins fan el plural només amb Umlaut, sense afegir res.'
+      'Amb -er i Umlaut (femenins i neutres): s Hus → d **Hüser** · s Buech → d **Büecher** · s Muul → d **Müüler** · s Chalb → d **Chälber**',
+      'Aquí el dialecte s’allunya de l’alemany: molts masculins fan el plural només amb Umlaut, sense afegir res.',
+      'I els diminutius no canvien mai: s Blüemli → d **Blüemli**.',
+      'No hi ha regla que ho decideixi tot. Si dubtes, pregunta-ho a classe: el mateix llibre ho admet.'
     ],
     table: {
       head: ['Singular', 'Plural', 'Patró'],
@@ -1112,7 +1115,9 @@ const TEMES = [
       'Poden anar soles, sense substantiu: «Gfallt dir die Brülle daa?» — «Ja, **die** gfallt mer.»',
       'Amb les estacions i els períodes de temps marquen «aquest» en contrast amb l’anterior:',
       'De letscht Summer sim-mer id Berge, aber **dä** Summer möcht i as Meer.',
-      'Compte de no confondre **dä** (demostratiu, accentuat) amb **de** (article, àton).'
+      '⚠️ El masculí és el cas delicat: s’escriu igual que l’article, i el que els separa és **la llargada de la e**. Per marcar-ho, el Holle escriu **dee**: «**de** Vater» (el pare) contra «**dee** Vater» (aquest pare).',
+      'El Schorn ho escriu **dä**. És el mateix so; tria una grafia i sigues conseqüent.',
+      'El femení i el neutre no tenen aquest problema: d Frau → **die** Frau · s Hus → **das** Hus.'
     ],
     table: {
       head: ['Gènere', 'Article', 'Demostratiu', 'Exemple de classe'],
@@ -1246,6 +1251,117 @@ const TEMES = [
       { id: 's09e4', type: 'choice', q: 'Wänn Sie irgend ___ Aaliigge (n) händ, lüütet Sie mir aa.', options: ['en', 'e', 'es'], a: 2, why: 'Aaliigge és neutre → irgend es.' },
       { id: 's09e5', type: 'choice', q: 'Per què hi ha una -n- a «e so-n-en»?', options: ['És part de la paraula', 'Uneix dues vocals perquè no xoquin', 'Marca el plural'], a: 1, why: 'És la lligadura del dialecte, com a «wie-n-er» o «chume-n-i».' },
       { id: 's09e6', type: 'gap', q: 'Irgend ___ Chundin (f) hät aaglüütet.', a: ['e'], why: 'Chundin és femenina → irgend e.' }
+    ]
+  },
+  {
+    id: 'h01',
+    book: 'holle',
+    unit: 'lèxic p.102',
+    order: 8.7,
+    title: 'Expressions suïsses II: amigs, ämel, öppedie',
+    emoji: '🗯️',
+    lesson: 'c03',
+    summary: 'De la classe del 02/09. Els matisos que no es tradueixen però que ho canvien tot.',
+    points: [
+      '**amigs** = cada vegada, habitualment. «Si gaat **amigs** uf Züri go poschte.»',
+      '**ämel** = si més no, en tot cas. «Ich han **ämel** nüüt ghöört.»',
+      '**efängs** = de moment. «Mir gönd **efängs**.»',
+      '**ächt** i **mäini** = deu ser que…, em sembla que sí. «Sind s **ächt** verräist? **Mäini** scho.»',
+      'La família dels **ö-**: **öpper** (algú) · **öppis** (alguna cosa) · **öppe** (aproximadament) · **öppen emaal** (de tant en tant) · **öppedie** (de vegades).',
+      'I quatre que sonen igual però no ho són: **abenand** (trencat en dos) · **anenand** (sense parar) · **umenand** (d’un cantó a l’altre) · **allpott** (contínuament).',
+      '**momoll** és el «doch» reforçat: «Äch, chunsch nöd mit? **Momoll**!»'
+    ],
+    table: {
+      head: ['Dialecte', 'Vol dir', 'Exemple de classe'],
+      rows: [
+        ['amigs', 'cada vegada', 'Si gaat amigs go poschte.'],
+        ['ämel', 'si més no', 'Ich han ämel nüüt ghöört.'],
+        ['efängs', 'de moment', 'Mir gönd efängs.'],
+        ['öppedie', 'de vegades', 'Er faart öppedie uf Bern.'],
+        ['allpott', 'contínuament', 'S rägnet allpott.'],
+        ['anenand', 'sense parar', 'Föif Stund anenand.']
+      ]
+    },
+    exercises: [
+      { id: 'h01e1', type: 'gap', q: 'Si gaat ___ uf Züri go poschte. (cada vegada)', a: ['amigs', 'amig'], why: 'amigs = jeweils.' },
+      { id: 'h01e2', type: 'gap', q: 'Ich han ___ nüüt ghöört. (si més no)', a: ['ämel', 'amel'], why: 'ämel = jedenfalls.' },
+      { id: 'h01e3', type: 'choice', q: 'Quina vol dir «aproximadament»?', options: ['öpper', 'öppis', 'öppe'], a: 2, why: 'öpper = algú · öppis = alguna cosa · öppe = aproximadament.' },
+      { id: 'h01e4', type: 'choice', q: '«Das schöön Glaas isch ___» = el got s’ha trencat.', options: ['anenand', 'abenand', 'umenand'], a: 1, why: 'abenand = entzwei, partit en dos.' },
+      { id: 'h01e5', type: 'choice', q: '«Föif Stund ___ hät si gspilt» = va tocar cinc hores…', options: ['seguides', 'd’aquí cap allà', 'a estones'], a: 0, why: 'anenand = ununterbrochen, sense parar.' },
+      { id: 'h01e6', type: 'gap', q: 'Sind s ächt verräist? — ___ scho. (em sembla que sí)', a: ['mäini', 'maini'], why: 'De «meine ich».' },
+      { id: 'h01e7', type: 'choice', q: 'Et pregunten «Chunsch nöd mit?» i tu hi vols anar. Què dius?', options: ['Nei!', 'Momoll!', 'Ämel!'], a: 1, why: 'momoll = i tant que sí, contradient la pregunta negativa.' },
+      { id: 'h01e8', type: 'gap', q: 'S rägnet ___ und glii wider. (contínuament)', a: ['allpott'], why: 'allpott = immer wieder.' }
+    ]
+  },
+  {
+    id: 'h02',
+    book: 'holle',
+    unit: '06',
+    order: 6.2,
+    title: 'Pronoms: er, sie, es',
+    emoji: '🙋‍♀️',
+    lesson: 'c04',
+    summary: 'De la classe del 09/09. El pronom surt del gènere del substantiu, no del que la cosa és.',
+    points: [
+      'Article **de** → **er** · article **d** → **sie** · article **s** → **es**',
+      'de Vater → **er** · d Mueter → **sie** · es Hus → **es**',
+      'Es diuen igual que en alemany: aquí no has d’aprendre res nou de pronúncia.',
+      'El que enganya és que el gènere mana per damunt del sentit:',
+      's Meitli (una noia) → **es** · s Grosi (l’àvia) → **es** · s Chind → **es**',
+      'Són neutres perquè són diminutius, i tots els diminutius són neutres.',
+      'de Vogel → **er** · d Sunne → **sie** · s Velo → **es** · de Kafi → **er**'
+    ],
+    table: {
+      head: ['Article', 'Pronom', 'Exemple'],
+      rows: [['de', 'er', 'de Baum → er'], ['d', 'sie', 'd Tante → sie'], ['s', 'es', 's Auto → es']]
+    },
+    exercises: [
+      { id: 'h02e1', type: 'gap', q: 'de Maa → ___', a: ['er'], why: 'Article de → er.' },
+      { id: 'h02e2', type: 'gap', q: 'd Tante → ___', a: ['sie'], why: 'Article d → sie.' },
+      { id: 'h02e3', type: 'gap', q: 's Velo → ___', a: ['es'], why: 'Article s → es.' },
+      { id: 'h02e4', type: 'choice', q: 's Meitli (una noia) → quin pronom?', options: ['sie', 'es', 'er'], a: 1, why: 'Meitli és diminutiu, i els diminutius són neutres: es. Encara que parli d’una noia.' },
+      { id: 'h02e5', type: 'choice', q: 'd Sunne → ?', options: ['er', 'sie', 'es'], a: 1, why: 'Sunne és femenina → sie.' },
+      { id: 'h02e6', type: 'gap', q: 'de Öpfel → ___', a: ['er'], why: 'Öpfel és masculí → er.' },
+      { id: 'h02e7', type: 'choice', q: 's Grosi (l’àvia) → ?', options: ['sie, perquè és una dona', 'es, perquè el mot és neutre'], a: 1, why: 'Mana el gènere gramatical, no qui és la persona.' }
+    ]
+  },
+  {
+    id: 'h03',
+    book: 'holle',
+    unit: 'lèxic p.103',
+    order: 17.6,
+    title: 'On i cap on: obsi, nidsi, überobe',
+    emoji: '🧭',
+    lesson: 'c04',
+    summary: 'De la classe del 09/09. El dialecte distingeix on ets i cap on vas amb paraules diferents.',
+    points: [
+      'On ets: **daa** (aquí) · **deet** (allà) · **däne**, **deet äne** (allà a l’altra banda) · **änet** (a l’altra banda de)',
+      'Cap on vas, amunt: **obsi**, **ufe**. Avall: **nidsi**, **abe**.',
+      'Endavant: **fürsi**. Enrere: **hindersi**. Cap aquí: **häre**, **da ane**.',
+      'Els pisos d’una casa tenen paraula pròpia:',
+      '**überobe** = al pis de dalt · **überune** = al de baix',
+      '**überue** = cap al de dalt · **überabe** = cap al de baix',
+      'Fixa’t en el patró: **-obe/-une** és on ets, **-ue/-abe** és cap on vas.',
+      'Dues expressions que voldràs: «S gaat gèèch **obsi**» (puja fort) i «Mit dère Firma gaat s **nidsi**» (aquella empresa va de mal borràs).'
+    ],
+    table: {
+      head: ['', 'On ets', 'Cap on vas'],
+      rows: [
+        ['a dalt', 'überobe', 'überue / ufe / obsi'],
+        ['a baix', 'überune', 'überabe / abe / nidsi'],
+        ['aquí', 'daa', 'häre, da ane'],
+        ['allà', 'deet', 'däne, deet äne']
+      ]
+    },
+    exercises: [
+      { id: 'h03e1', type: 'gap', q: 'Er isch ___ im Badzimmer. (al pis de dalt, on és)', a: ['überobe'], why: '-obe = on ets, a dalt.' },
+      { id: 'h03e2', type: 'choice', q: 'Ich chume grad ___. (pujo ara mateix)', options: ['überobe', 'überue', 'überune'], a: 1, why: 'Moviment cap amunt → überue.' },
+      { id: 'h03e3', type: 'choice', q: 'Gang jetz äntli ___! (baixa d’una vegada)', options: ['überune', 'überabe', 'überobe'], a: 1, why: 'Moviment cap avall → überabe.' },
+      { id: 'h03e4', type: 'gap', q: 'S gaat gèèch ___. Chum ufe! (cap amunt)', a: ['obsi'], why: 'obsi = aufwärts.' },
+      { id: 'h03e5', type: 'choice', q: '«Mit dère Firma gaat s nidsi» vol dir…', options: ['l’empresa va molt bé', 'l’empresa va de mal borràs', 'l’empresa es trasllada'], a: 1, why: 'nidsi = cap avall, i figuradament que va malament.' },
+      { id: 'h03e6', type: 'gap', q: 'Mach emaal ___ mit dère Aarbet! (endavant)', a: ['fürsi', 'fürschi'], why: 'fürsi = vorwärts, literalment «cap davant seu».' },
+      { id: 'h03e7', type: 'choice', q: '«Die Chile staat ___ der Limet» = l’església és a l’altra banda del Limmat.', options: ['deet', 'änet', 'daa'], a: 1, why: 'änet = jenseits, a l’altra banda de.' },
+      { id: 'h03e8', type: 'choice', q: 'Quin és el patró dels pisos?', options: ['-obe/-une on ets, -ue/-abe cap on vas', 'a l’inrevés', 'no hi ha patró'], a: 0, why: 'überobe/überune = posició · überue/überabe = moviment.' }
     ]
   }
 ]

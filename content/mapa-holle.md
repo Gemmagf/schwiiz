@@ -55,12 +55,30 @@ Gefühle & Stimmungen, Familienmitglieder, Typisch schweizerisch.
 
 No cobert a propòsit: *Juristische Wörter & Begriffe* (molt específic; s'afegirà si el necessites).
 
+## Una cosa que no hi és, i per què
+
+La lletra de **«Berge versetze»** (Bligg / Marc Sway), treballada a la classe 4, no és a
+l'app: és una cançó amb drets d'autor. Sí que hi ha el vocabulari que en surt (Bärg,
+Schatte, Träne, Pfad, Tal, Brugge…), etiquetat a la classe 4.
+
+## Els dos llibres no escriuen igual
+
+| | Holle | Schorn |
+|---|---|---|
+| negació de substantiu | kein / kei / keis | kän / kä / käs |
+| demostratiu masculí | dee Maa (e llarga) | dä Maa |
+| vocals llargues | Hus, Bilet | Huus, Billett |
+
+Els temes de l'app ho diuen explícitament, i la cerca del lector troba les dues grafies.
+
 ## Classes
 
 | Classe | Data | Què s'hi va fer |
 |---|---|---|
 | c01 | 2026-08-19 | Schorn 2.3 i 2.4 · articles, adjectius, zum + infinitiu, «e so-n-en» · diftongs ie·ue·üe |
 | c02 | 2026-08-26 | Schorn 3.4 i 3.5 · demostratius amb daa/deet, «Wele…?» contra «Was für…?» · verbs suïssos i falsos amics |
+| c03 | 2026-09-02 | Holle 04 (kein/kei/keis, nöd) i 05 (demostratius amb la e llarga de «dee») · expressions p. 102 |
+| c04 | 2026-09-09 | Holle 06 (pronoms er/sie/es, formes del plural) i Schorn 6.1 (plurals per temes) · expressions p. 103 · cançó «Berge versetze» |
 
 ## Pendent
 

@@ -28,9 +28,14 @@ function clausDe(entrada) {
     const net = normalitza(variant)
     if (!net) continue
     claus.add(net)
+    const curt = senseVocalsDobles(net)
+    if (curt !== net) claus.add(curt)
     const parts = net.split(/\s+/)
     if (parts.length > 1) {
-      claus.add(parts[parts.length - 1])       // "de maa" -> "maa"
+      const nucli = parts[parts.length - 1]
+      claus.add(nucli)                          // "de maa" -> "maa"
+      const nucliCurt = senseVocalsDobles(nucli)
+      if (nucliCurt !== nucli) claus.add(nucliCurt)
       // La primera paraula NO s'indexa: «Guet Nacht» segrestava «guet»,
       // que ha de resoldre's a l'adjectiu.
     }
@@ -65,6 +70,13 @@ export function rebuildIndex(userCards) {
   return index
 }
 
+// Els dos llibres escriuen les vocals llargues diferent: el Holle fa «Hus», «Bilet»;
+// el Schorn i el nostre vocabulari fan «Huus», «Billett». Col·lapsar les vocals
+// dobles fa que totes dues grafies es trobin.
+function senseVocalsDobles(w) {
+  return w.replace(/([aeiouäöü])\1+/g, '$1')
+}
+
 // Desfà l'Umlaut: Hüüsli -> huusli, Schwän -> schwan.
 // El dialecte el fa servir per als plurals i els diminutius, i la forma base no en porta.
 function senseUmlaut(w) {
@@ -84,7 +96,8 @@ function variants(w) {
   // primer es prova l'arrel + e, que és com acaben els infinitius: schmöcksch -> schmöcke.
   // Sense això, «langet» anava a parar a «lang» (molta estona) en comptes de «lange» (ser prou).
   const verbals = ['sch', 'ed', 'et', 'st', 't']
-  for (const suf of ['sch', 'ed', 'et', 'st', 't', 'e', 'n', 's']) {
+  // 'er' hi és pel plural amb Umlaut: Chälber -> chalb, Müüler -> muul, Büecher -> buech
+  for (const suf of ['sch', 'ed', 'et', 'st', 'er', 't', 'e', 'n', 's']) {
     if (w.endsWith(suf) && w.length - suf.length >= 2) {
       const arrel = w.slice(0, -suf.length)
       if (verbals.includes(suf)) push(arrel + 'e')
@@ -96,11 +109,16 @@ function variants(w) {
   // diminutiu
   if (w.endsWith('li') && w.length > 4) push(w.slice(0, -2))
 
-  // Per a cada candidat, prova també la versió sense Umlaut (plurals i diminutius).
+  // Per a cada candidat, prova també la versió sense Umlaut (plurals i diminutius)
+  // i la versió amb les vocals llargues col·lapsades (grafia de l'altre llibre).
   for (const c of [...out]) {
     const pla = senseUmlaut(c)
     if (pla !== c) push(pla)
     if (c.endsWith('li') && c.length > 4) push(senseUmlaut(c.slice(0, -2)))
+  }
+  for (const c of [...out]) {
+    const curt = senseVocalsDobles(c)
+    if (curt !== c) push(curt)
   }
   return out
 }

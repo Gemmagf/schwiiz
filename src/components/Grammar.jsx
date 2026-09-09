@@ -184,7 +184,9 @@ function Practica({ quiz, onAnswer, lliso, titolLliso }) {
       </div>
       <div className="practica-tema">
         {actual.emoji} {actual.tema}
-        {actual.unit && <em className="unit"> · {actual.book === 'schorn' ? `Schorn ${actual.unit}` : `Holle cap. ${actual.unit}`}</em>}
+        {actual.unit && (
+          <em className="unit"> · {actual.book === 'schorn' ? 'Schorn' : 'Holle'} {/^\d/.test(actual.unit) ? `cap. ${actual.unit}` : actual.unit}</em>
+        )}
       </div>
       <ul className="quiz">
         <Exercise
@@ -236,7 +238,7 @@ export default function Grammar({ quiz, onAnswer, practicaLliso, titolLliso, mod
                 <span>{g.emoji} {g.title}</span>
                 {g.unit && (
                   <em className="unit">
-                    {g.book === 'schorn' ? `Schorn · ${g.unit}` : `Holle · cap. ${g.unit}`}
+                    {g.book === 'schorn' ? 'Schorn' : 'Holle'} · {/^\d/.test(g.unit) ? `cap. ${g.unit}` : g.unit}
                   </em>
                 )}
               </span>
