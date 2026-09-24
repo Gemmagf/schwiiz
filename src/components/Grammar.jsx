@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { GRAMMAR } from '../data/grammar.js'
 import { barreja } from '../lib/srs.js'
+import { LESSONS } from '../data/lessons.js'
 
 // Els punts admeten **negreta** — el suficient per destacar terminacions sense muntar un parser.
 function Rich({ text }) {
@@ -123,7 +124,8 @@ function triaExercicis(quiz, n, lliso) {
   return barreja([...barreja(fallats), ...barreja(mai), ...barreja(encertats)].slice(0, n))
 }
 
-function Practica({ quiz, onAnswer, lliso, titolLliso }) {
+function Practica({ quiz, onAnswer, lliso: llisoInicial, titolLliso }) {
+  const [lliso, setLliso] = useState(llisoInicial || null)
   const [mida, setMida] = useState(20)
   const [tanda, setTanda] = useState(null)
   const [i, setI] = useState(0)
@@ -131,6 +133,7 @@ function Practica({ quiz, onAnswer, lliso, titolLliso }) {
   const [encerts, setEncerts] = useState(0)
 
   const font = useMemo(() => (lliso ? TOTS.filter((t) => t.lesson === lliso) : TOTS), [lliso])
+  const nomLliso = LESSONS.find((l) => l.id === lliso)?.title
   const pendents = useMemo(
     () => font.filter((t) => !quiz[t.ex.id] || !quiz[t.ex.id].ok).length,
     [quiz, font]
@@ -145,11 +148,29 @@ function Practica({ quiz, onAnswer, lliso, titolLliso }) {
     return (
       <div className="practica">
         <p className="hint">
-          {lliso
-            ? `Només els exercicis de ${titolLliso}. Entren primer els que has fallat i els que no has fet mai.`
-            : 'Una tanda d’exercicis barrejats de tots els temes. Entren primer els que has fallat i els que no has fet mai; la resta s’omple amb els que ja tens fets.'}
+          Entren primer els que has fallat i els que no has fet mai; la resta s’omple amb els
+          que ja tens fets.
         </p>
-        <div className="avui-box"><b>{pendents}</b><span>exercicis per encertar</span></div>
+
+        <h2>De quina classe</h2>
+        <div className="filters">
+          <button className={`chip ${!lliso ? 'active' : ''}`} onClick={() => setLliso(null)}>
+            Totes ({TOTS.length})
+          </button>
+          {LESSONS.filter((l) => l.date).map((l) => {
+            const n = TOTS.filter((t) => t.lesson === l.id).length
+            if (!n) return null
+            return (
+              <button key={l.id} className={`chip ${lliso === l.id ? 'active' : ''}`} onClick={() => setLliso(l.id)}>
+                📘 {l.title.split('—')[0].trim()} ({n})
+              </button>
+            )
+          })}
+        </div>
+        <div className="avui-box">
+          <b>{pendents}</b>
+          <span>per encertar{nomLliso ? ` de ${nomLliso.split('—')[0].trim()}` : ''}</span>
+        </div>
         <h2>Quants</h2>
         <div className="filters">
           {[10, 20, 30, 50].map((n) => (
