@@ -32,6 +32,18 @@ export const LESSONS = [
     title: 'Classe 4 — pronoms i plurals',
     date: '2026-09-09',
     note: 'Holle 06 (pronoms er/sie/es i les formes del plural) i Schorn 6.1 (plurals per temes: cos, medicina, família, menjar). Full d’expressions p. 103: obsi, nidsi, überobe. I la cançó «Berge versetze».'
+  },
+  {
+    id: 'c05',
+    title: 'Classe 5 — conjugació i werde',
+    date: '2026-09-16',
+    note: 'Holle 08: present dels verbs regulars (amb la regla del -isch darrere z i s), sii/ha/werde, i dörfe. Holle 10: preguntes posant el verb davant del subjecte.'
+  },
+  {
+    id: 'c06',
+    title: 'Classe 6 — verbs irregulars i participis',
+    date: '2026-09-23',
+    note: 'Els 24 verbs irregulars més importants amb totes les formes, la inversió, l’imperatiu i el participi. Reforç de «gang go / chum cho» i full d’expressions p. 104.'
   }
 ]
 

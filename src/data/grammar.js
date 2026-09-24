@@ -78,14 +78,16 @@ const TEMES = [
     order: 8.3,
     title: 'Present dels verbs regulars',
     emoji: '🔁',
-    lesson: 'base',
+    lesson: 'c05',
     summary: 'Un sol patró per a gairebé tots els verbs. Molt més fàcil que l’alemany estàndard.',
     points: [
       'Infinitiu acaba en **-e** (no -en): mach**e**, lehr**e**, schaff**e**.',
       'ich mach**e** · du mach**sch** · er mach**t**',
       'mir mach**ed** · ihr mach**ed** · sie mach**ed**',
       'Les tres persones del plural són SEMPRE iguals. Recorda: **-ed**.',
-      'El -st alemany es torna -sch a tot arreu: du schaff**sch**, du lehr**sch**.'
+      'El -st alemany es torna -sch a tot arreu: du schaff**sch**, du lehr**sch**.',
+      '⚠️ Excepció de la classe del 16/09: si l’arrel acaba en **z** o **s**, la segona persona hi afegeix una **i**, perquè si no no es podria pronunciar.',
+      'tanze → du tanz**isch** · heisse → du heiss**isch** · reise → du reis**isch** · putze → du putz**isch** · küsse → du küss**isch** · motze → du motz**isch**'
     ],
     table: {
       head: ['Persona', 'mache (fer)', 'schaffe (treballar)'],
@@ -100,7 +102,10 @@ const TEMES = [
       { id: 'g03e3', type: 'choice', q: 'Was ___ ihr am Wuchenänd?', options: ['machsch', 'mached', 'macht'], a: 1, why: '"ihr" és plural → mached.' },
       { id: 'g03e4', type: 'choice', q: 'Si ella treballa molt: "Sie ___ vil."', options: ['schaffsch', 'schafft', 'schaffed'], a: 1, why: '"sie" en singular (ella) → schafft.' },
       { id: 'g03e5', type: 'gap', q: 'Ich ___ (warte) uf de Bus.', a: ['warte'], why: '1a sing. = infinitiu: warte.' },
-      { id: 'g03e6', type: 'choice', q: 'Quin és l’infinitiu correcte en dialecte?', options: ['lernen', 'lehre', 'lehren'], a: 1, why: 'Els infinitius perden la -n final: lernen → lehre.' }
+      { id: 'g03e6', type: 'choice', q: 'Quin és l’infinitiu correcte en dialecte?', options: ['lernen', 'lehre', 'lehren'], a: 1, why: 'Els infinitius perden la -n final: lernen → lehre.' },
+      { id: 'g03e7', type: 'gap', q: 'Du ___ (tanze) sehr guet.', a: ['tanzisch'], why: 'L’arrel acaba en z → du tanzisch, no «tanzsch».' },
+      { id: 'g03e8', type: 'choice', q: 'Com fa la 2a persona de «heisse»?', options: ['heissch', 'heissisch', 'heisst'], a: 1, why: 'Arrel acabada en s → s’hi afegeix la i.' },
+      { id: 'g03e9', type: 'choice', q: 'Per què «putzisch» i no «putzsch»?', options: ['Perquè és irregular', 'Perquè «tzsch» no es pot pronunciar', 'Perquè és plural'], a: 1, why: 'La i hi és per poder-ho dir.' }
     ]
   },
   {
@@ -194,7 +199,7 @@ const TEMES = [
     order: 8.4,
     title: 'Verbs modals: chöne, wölle, müese',
     emoji: '🎛️',
-    lesson: 'base',
+    lesson: 'c05',
     summary: 'Els tres que faràs servir cada dia. El segon verb va a l’infinitiu, al final.',
     points: [
       '**chöne** (poder): ich cha · du chasch · er cha · mir chönd',
@@ -216,7 +221,10 @@ const TEMES = [
       { id: 'g07e3', type: 'choice', q: 'Mir ___ jetzt gaa. (haver de)', options: ['mues', 'muesch', 'müend'], a: 2, why: 'Plural → müend.' },
       { id: 'g07e4', type: 'choice', q: 'On va l’infinitiu en "Ich cha ___ ___"?', options: ['Just després del modal', 'Al final de la frase', 'Al principi'], a: 1, why: 'L’infinitiu tanca sempre la frase: "Ich cha hüt nöd cho."' },
       { id: 'g07e5', type: 'choice', q: 'Tradueix: "Vull aprendre suís-alemany."', options: ['Ich wott Schwiizerdütsch lehre.', 'Ich lehre wott Schwiizerdütsch.', 'Ich wott lehre Schwiizerdütsch.'], a: 0, why: 'Modal en 2a posició, infinitiu al final.' },
-      { id: 'g07e6', type: 'gap', q: 'Er ___ am achti da sii. (haver de)', a: ['mues'], why: 'er mues.' }
+      { id: 'g07e6', type: 'gap', q: 'Er ___ am achti da sii. (haver de)', a: ['mues'], why: 'er mues.' },
+      { id: 'g07e7', type: 'gap', q: 'Ich ___ hüt lenger blibe. (tinc permís)', a: ['dörf'], why: 'dörfe → ich dörf.' },
+      { id: 'g07e8', type: 'choice', q: '«Ich cha schwüme» contra «Ich dörf schwüme»:', options: ['Volen dir el mateix', 'La primera és saber-ne, la segona tenir permís', 'La segona és passat'], a: 1, why: 'chöne = capacitat · dörfe = permís.' },
+      { id: 'g07e9', type: 'gap', q: 'Ich ___ nöd uufstaa. (no en tinc ganes)', a: ['mag'], why: 'möge → ich mag.' }
     ]
   },
   {
@@ -226,7 +234,7 @@ const TEMES = [
     order: 20,
     title: 'El passat: només el perfet',
     emoji: '⏪',
-    lesson: 'base',
+    lesson: 'c06',
     summary: 'Bona notícia: el suís-alemany NO té Präteritum. Un sol temps passat per a tot.',
     points: [
       'Oblida "ich machte", "ich ging", "ich war". No existeixen en dialecte.',
@@ -234,7 +242,8 @@ const TEMES = [
       'Ich **ha** gmacht. · Ich **bi** gange. · Ich **ha** gässe.',
       '"era / estava" = **ich bi gsi** (literalment "he estat"). Aquesta l’has de saber sí o sí.',
       '"tenia" = **ich ha gha**.',
-      'Verbs de moviment i de canvi d’estat fan **sii**: gange, cho, blibe, gsi.'
+      'Verbs de moviment i de canvi d’estat fan **sii**: gange, cho, blibe, gsi.',
+      'Els participis dels irregulars te’ls has de saber de memòria: els tens tots al tema «Els participis dels irregulars».'
     ],
     table: {
       head: ['Català', 'Züridütsch', 'Hochdeutsch'],
@@ -681,7 +690,7 @@ const TEMES = [
     order: 9,
     title: 'Gang go & chum cho',
     emoji: '🚶',
-    lesson: 'base',
+    lesson: 'c06',
     summary: 'Una construcció que l’alemany no té i que sentiràs cada dia. Anar a fer una cosa.',
     points: [
       'Per dir "anar a fer alguna cosa" s’hi posa **go** entremig:',
@@ -1362,6 +1371,183 @@ const TEMES = [
       { id: 'h03e6', type: 'gap', q: 'Mach emaal ___ mit dère Aarbet! (endavant)', a: ['fürsi', 'fürschi'], why: 'fürsi = vorwärts, literalment «cap davant seu».' },
       { id: 'h03e7', type: 'choice', q: '«Die Chile staat ___ der Limet» = l’església és a l’altra banda del Limmat.', options: ['deet', 'änet', 'daa'], a: 1, why: 'änet = jenseits, a l’altra banda de.' },
       { id: 'h03e8', type: 'choice', q: 'Quin és el patró dels pisos?', options: ['-obe/-une on ets, -ue/-abe cap on vas', 'a l’inrevés', 'no hi ha patró'], a: 0, why: 'überobe/überune = posició · überue/überabe = moviment.' }
+    ]
+  },
+  {
+    id: 'h04',
+    book: 'holle',
+    unit: '08',
+    order: 8.15,
+    title: 'werde: fer-se, esdevenir',
+    emoji: '🦋',
+    lesson: 'c05',
+    summary: 'De la classe del 16/09. El tercer verb bàsic, al costat de sii i haa.',
+    points: [
+      'ich **wird** · du **wirsch** · er/sie/es **wird** · mir/ihr/sie **werded**',
+      '**sii** diu com és una cosa · **haa** diu què tens · **werde** diu en què es converteix.',
+      'Ich **wird** Arzt. = Em faré metge.',
+      'De Himmel **wird** orange. = El cel s’està tornant taronja.',
+      'Sie **wird** nie erwachse. = No es farà gran mai.',
+      '⚠️ Compte: aquest «werde» és per a transformar-se, **no** per fer el futur. El futur el fa el present amb una paraula de temps.'
+    ],
+    table: {
+      head: ['', 'sii', 'haa', 'werde'],
+      rows: [
+        ['ich', 'bi', 'ha', 'wird'],
+        ['du', 'bisch', 'häsch', 'wirsch'],
+        ['er/sie/es', 'isch', 'hät', 'wird'],
+        ['mir/ihr/sie', 'sind', 'händ', 'werded']
+      ]
+    },
+    exercises: [
+      { id: 'h04e1', type: 'gap', q: 'Ich ___ Arzt. (em faré metge)', a: ['wird', 'wirde'], why: '1a persona: ich wird.' },
+      { id: 'h04e2', type: 'gap', q: 'Du ___ es guets Chind. (et faràs)', a: ['wirsch'], why: '2a persona: du wirsch.' },
+      { id: 'h04e3', type: 'choice', q: 'De Himmel ___ orange.', options: ['isch', 'hät', 'wird'], a: 2, why: 'S’està transformant → werde.' },
+      { id: 'h04e4', type: 'choice', q: 'Quin verb per «Sie hat Pech»?', options: ['Sie isch Päch.', 'Sie hät Päch.', 'Sie wird Päch.'], a: 1, why: 'Possessió → haa.' },
+      { id: 'h04e5', type: 'gap', q: 'Mir ___ alt. (ens fem grans)', a: ['werded'], why: 'Plural: werded.' },
+      { id: 'h04e6', type: 'choice', q: 'Com dius «demà treballaré»?', options: ['Ich wird morn schaffe.', 'Morn schaffe ich.'], a: 1, why: '«werde» no fa el futur: el present amb «morn» ja n’hi ha prou.' }
+    ]
+  },
+  {
+    id: 'h05',
+    book: 'holle',
+    unit: '10',
+    order: 10.1,
+    title: 'Preguntes: el verb davant del subjecte',
+    emoji: '❔',
+    lesson: 'c05',
+    summary: 'De la classe del 16/09. Per preguntar, gira l’ordre. I el verb canvia una mica.',
+    points: [
+      'Afirmació: **S Wätter isch** schön. → Pregunta: **Isch s Wätter** schön?',
+      '**Du bisch** da. → **Bisch du** da? · **Mir sind** gross. → **Sind mir** gross?',
+      'Amb «ich» el verb sovint recupera una -n que la forma normal ha perdut:',
+      'ich bi → **bin i**? · ich ha → **han i**? · ich gaane → **gaan i**? · ich chume → **chum i**?',
+      'ich gsee → **gseen i**? · ich staane → **staan i**? · ich laane → **laan i**?',
+      'I hi ha una forma per proposar coses, ajuntant el verb amb «mer» (= mir):',
+      '**simer** (siguem) · **hämer** (tinguem) · **gömer** (anem) · **chömer** (vinguem) · **ässed mer** (mengem)'
+    ],
+    table: {
+      head: ['Afirmació', 'Pregunta'],
+      rows: [
+        ['S Wätter isch schön.', 'Isch s Wätter schön?'],
+        ['Du bisch da.', 'Bisch du da?'],
+        ['Mir sind gross.', 'Sind mir gross?'],
+        ['Ich ha Ziit.', 'Han i Ziit?'],
+        ['Ich chume mit.', 'Chum i mit?']
+      ]
+    },
+    exercises: [
+      { id: 'h05e1', type: 'choice', q: 'Gira en pregunta: «Sie isch schnäll.»', options: ['Sie isch schnäll?', 'Isch sie schnäll?', 'Schnäll isch sie?'], a: 1, why: 'Verb davant del subjecte.' },
+      { id: 'h05e2', type: 'gap', q: 'Ich ha Ziit. → ___ i Ziit?', a: ['han'], why: 'Amb ich, «ha» recupera la -n: han i?' },
+      { id: 'h05e3', type: 'gap', q: 'Ich bi lustig. → ___ i lustig?', a: ['bin'], why: 'bin i?' },
+      { id: 'h05e4', type: 'choice', q: 'Gira en pregunta: «Du bisch z spaat.»', options: ['Bisch du z spaat?', 'Du bisch z spaat?', 'Z spaat bisch du?'], a: 0, why: 'Verb primer.' },
+      { id: 'h05e5', type: 'choice', q: 'Què vol dir «Gömer»?', options: ['Anem?', 'Vaig', 'Han anat'], a: 0, why: 'És gaa + mer: una proposta, «anem-hi».' },
+      { id: 'h05e6', type: 'gap', q: 'Proposa menjar-hi tots: ___ mer! (de ässe)', a: ['ässed'], why: 'ässed mer = mengem.' }
+    ]
+  },
+  {
+    id: 'h06',
+    book: 'holle',
+    unit: 'verbs irregulars',
+    order: 8.16,
+    title: 'Els verbs irregulars: totes les formes',
+    emoji: '📋',
+    lesson: 'c06',
+    summary: 'De la classe del 23/09. Els 24 que has de saber de memòria. Aprèn-te’ls a trossos.',
+    points: [
+      'El full els agrupa de sis en sis a propòsit: **en porcions**, no tots de cop.',
+      'Grup 1 — **sii, haa, gaa, tue, gèè, wele**',
+      'Grup 2 — **müese, chöne, möge, nèè, ässe, läse**',
+      'Grup 3 — **säge, trääge, choo, zie, träffe, wüsse**',
+      'Grup 4 — **sele, gsee, staa, laa, legge, ligge**',
+      'El patró que es repeteix: **el plural sempre acaba en -nd o -ed**, per a les tres persones.',
+      'I fixa’t en les parelles que es confonen: **legge** (posar una cosa) contra **ligge** (estar-hi estirat); **gèè** (donar) contra **gsee** (veure).'
+    ],
+    table: {
+      head: ['', 'gèè', 'nèè', 'ässe', 'läse', 'gsee'],
+      rows: [
+        ['ich', 'gibe', 'nime', 'isse', 'lise', 'gsee'],
+        ['du', 'gisch', 'nimsch', 'issisch', 'lisisch', 'gseesch'],
+        ['er/sie/es', 'git', 'nimt', 'isst', 'list', 'gseet'],
+        ['plural', 'gänd', 'nämed', 'ässed', 'läsed', 'gseend']
+      ]
+    },
+    exercises: [
+      { id: 'h06e1', type: 'gap', q: 'Ich ___ dir es Buech. (de gèè)', a: ['gibe'], why: 'ich gibe.' },
+      { id: 'h06e2', type: 'gap', q: 'Er ___ de Zug. (de nèè)', a: ['nimt'], why: 'er nimt.' },
+      { id: 'h06e3', type: 'choice', q: 'Du ___ gèèrn d Ziitig. (de läse)', options: ['lisisch', 'läsed', 'list'], a: 0, why: '2a persona: du lisisch.' },
+      { id: 'h06e4', type: 'choice', q: 'Quina diferència hi ha entre «legge» i «ligge»?', options: ['Cap', 'legge = posar-hi una cosa · ligge = estar-hi estirat', 'legge és el plural'], a: 1, why: 'legge/läit posa · ligge/liit està posat.' },
+      { id: 'h06e5', type: 'gap', q: 'Mir ___ z Mittag. (de ässe)', a: ['ässed'], why: 'Plural: ässed.' },
+      { id: 'h06e6', type: 'choice', q: 'Ich ___ gaar nüüt. (no hi veig res)', options: ['gibe', 'gsee', 'gib'], a: 1, why: 'gsee = veure. Vigila de no confondre’l amb gèè.' },
+      { id: 'h06e7', type: 'choice', q: 'Com acaba sempre el plural?', options: ['en -e', 'en -nd o -ed', 'en -sch'], a: 1, why: 'gänd, nämed, ässed, gseend, stönd, lönd…' }
+    ]
+  },
+  {
+    id: 'h07',
+    book: 'holle',
+    unit: 'verbs irregulars',
+    order: 20.1,
+    title: 'Els participis dels irregulars',
+    emoji: '🗂️',
+    lesson: 'c06',
+    summary: 'De la classe del 23/09. Sense aquests no pots parlar en passat, i el passat és l’únic que hi ha.',
+    points: [
+      'sii → **gsii** · haa → **ghaa** · gaa → **ggange** · tue → **taa** · gèè → **ggèè** · nèè → **gnaa**',
+      'ässe → **ggässe** · läse → **gläse** · säge → **gsäit** · trääge → **träit** · zie → **zoge**',
+      'träffe → **troffe** · wüsse → **gwüsst** · staa → **gstande** · laa → **glaa** · legge → **gläit** · ligge → **gläge**',
+      'Tres que no canvien gens: **choo → choo** · **gsee → gsee**',
+      '⚠️ Els modals fan el participi **igual que l’infinitiu**: wele → **wele** · müese → **müese** · chöne → **chöne** · möge → **möge** · sele → **sele**',
+      'Ich han nöd **chöne** cho. = No he pogut venir. (i no «gchönt»)',
+      'Fixa’t que molts comencen amb **g-** doble: **gg**ange, **gg**èè, **gg**ässe.'
+    ],
+    table: {
+      head: ['Infinitiu', 'Participi', 'Exemple'],
+      rows: [
+        ['sii', 'gsii', 'Ich bi z Bärn gsii.'],
+        ['haa', 'ghaa', 'Ich han kei Ziit ghaa.'],
+        ['gaa', 'ggange', 'Mir sind hei ggange.'],
+        ['nèè', 'gnaa', 'Er hät de Zug gnaa.'],
+        ['säge', 'gsäit', 'Was häsch gsäit?'],
+        ['träffe', 'troffe', 'Ich han sie troffe.'],
+        ['wele', 'wele', 'Ich han nöd wele.']
+      ]
+    },
+    exercises: [
+      { id: 'h07e1', type: 'gap', q: 'Participi de «gaa»: Mir sind hei ___.', a: ['ggange', 'gange'], why: 'gaa → ggange.' },
+      { id: 'h07e2', type: 'gap', q: 'Participi de «nèè»: Er hät de Zug ___.', a: ['gnaa'], why: 'nèè → gnaa.' },
+      { id: 'h07e3', type: 'choice', q: 'Participi de «säge»:', options: ['gsäit', 'gsägt', 'säge'], a: 0, why: 'säge → gsäit.' },
+      { id: 'h07e4', type: 'choice', q: 'Com es diu «no he pogut venir»?', options: ['Ich han nöd gchönt cho.', 'Ich han nöd chöne cho.'], a: 1, why: 'Els modals fan el participi igual que l’infinitiu.' },
+      { id: 'h07e5', type: 'gap', q: 'Participi de «träffe»: Ich han sie ___.', a: ['troffe'], why: 'träffe → troffe.' },
+      { id: 'h07e6', type: 'choice', q: 'Quins dos participis no canvien gens?', options: ['choo i gsee', 'gaa i staa', 'ässe i läse'], a: 0, why: 'choo → choo · gsee → gsee.' },
+      { id: 'h07e7', type: 'gap', q: 'Participi de «zie»: Er hät de Wage ___.', a: ['zoge'], why: 'zie → zoge.' },
+      { id: 'h07e8', type: 'choice', q: 'Participi de «ligge»:', options: ['gligge', 'gläge', 'gläit'], a: 1, why: 'ligge → gläge. «gläit» és de legge: vigila.' }
+    ]
+  },
+  {
+    id: 'h08',
+    book: 'holle',
+    unit: 'lèxic p.104',
+    order: 8.8,
+    title: 'Expressions suïsses III: casa i feines',
+    emoji: '🧺',
+    lesson: 'c06',
+    summary: 'De la classe del 23/09. El vocabulari de casa que no s’assembla gens a l’alemany.',
+    points: [
+      'Els cinc àpats del dia: **Zmorge** · **Znüüni** · **Zmittaag** · **Zvieri** · **Znacht**. I el verb: **zmörgele**.',
+      'Coses de casa: **d Gufe** (agulla de cap) · **s Chlüppli** (pinça d’estendre) · **de Finke** (sabatilla) · **de Lumpe** (drap) · **d Schooss** (davantal)',
+      'Feines: **büeze** (cosir) · **lisme** (fer mitja) · **glette** (planxar) · **butze** (netejar) · **zügle** (mudar-se)',
+      'La casa per dins: **de Gang** (passadís) · **d Stäge** (escala) · **d Tüürfale** (maneta) · **s Chämi** (xemeneia) · **d Stube** (sala)',
+      'Quantitats: **e Hampfle** (un grapat) · **es Stuck** (un tros) · **es bitzeli** (una miqueta) · **es birebitzeli** (encara menys)',
+      '«Legged d Finken aa!» és el que et diran en entrar a qualsevol casa suïssa.'
+    ],
+    exercises: [
+      { id: 'h08e1', type: 'choice', q: '«Legged d Finken aa!» et demana que…', options: ['t’enfilis a l’escala', 't’ho posis a la boca', 'et posis les sabatilles'], a: 2, why: 'de Finke = Hausschuh. Ho sentiràs a totes les cases.' },
+      { id: 'h08e2', type: 'gap', q: 'Si mues d Hämper ___. (planxar)', a: ['glette'], why: 'glette = bügeln.' },
+      { id: 'h08e3', type: 'choice', q: 'Què és una «Züglete»?', options: ['una mudança de casa', 'una escala', 'un àpat'], a: 0, why: 'De zügle = umziehen.' },
+      { id: 'h08e4', type: 'gap', q: 'Pass uf d ___ uuf! (l’escala)', a: ['stäge'], why: 'd Stäge = die Treppe.' },
+      { id: 'h08e5', type: 'choice', q: 'Ordena els àpats del dia:', options: ['Zmorge · Znüüni · Zmittaag · Zvieri · Znacht', 'Znüüni · Zmorge · Zvieri · Zmittaag · Znacht'], a: 0, why: 'Znüüni és el de les nou i Zvieri el de les quatre: els noms ho diuen.' },
+      { id: 'h08e6', type: 'gap', q: 'Gisch mer es ___ Chriesi? (un grapat)', a: ['hämpfeli', 'hampfle'], why: 'e Hampfle, en diminutiu es Hämpfeli.' },
+      { id: 'h08e7', type: 'choice', q: '«es birebitzeli» és…', options: ['més que es bitzeli', 'encara menys que es bitzeli'], a: 1, why: 'És el diminutiu del diminutiu.' }
     ]
   }
 ]

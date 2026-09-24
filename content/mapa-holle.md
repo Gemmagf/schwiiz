@@ -79,6 +79,8 @@ Els temes de l'app ho diuen explícitament, i la cerca del lector troba les dues
 | c02 | 2026-08-26 | Schorn 3.4 i 3.5 · demostratius amb daa/deet, «Wele…?» contra «Was für…?» · verbs suïssos i falsos amics |
 | c03 | 2026-09-02 | Holle 04 (kein/kei/keis, nöd) i 05 (demostratius amb la e llarga de «dee») · expressions p. 102 |
 | c04 | 2026-09-09 | Holle 06 (pronoms er/sie/es, formes del plural) i Schorn 6.1 (plurals per temes) · expressions p. 103 · cançó «Berge versetze» |
+| c05 | 2026-09-16 | Holle 08 (present regular amb la regla del -isch, sii/ha/werde, dörfe) i 10 (inversió a les preguntes) |
+| c06 | 2026-09-23 | Full dels 24 verbs irregulars amb totes les formes i els participis · reforç de gang go / chum cho · expressions p. 104 |
 
 ## Pendent
 

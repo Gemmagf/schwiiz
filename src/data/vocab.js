@@ -797,5 +797,83 @@ export const VOCAB = [
   { id: 'c4218', ch: 'd Toure', de: 'die Tour', ca: 'l’excursió', topic: 'ciutat', lesson: 'c04', book: 'holle' },
   { id: 'c4219', ch: 'de Wäg', de: 'der Weg', ca: 'el camí', topic: 'ciutat', lesson: 'c04', book: 'holle', note: 'Plural: d Wäge. «Wohi eus all die Wäge füehred.»' },
 
-  { id: 'c3095', ch: 'de Gugus', de: 'der Unsinn; der Kram', ca: 'bestieses; andròmines', topic: 'suis', lesson: 'c03', book: 'holle', note: 'Dues coses alhora: tonteries («Das isch doch nur Gugus!») i trastos sense importància. «Mach kei Gugus!» = no facis el ximple, o no en facis un drama.' }
+  { id: 'c3095', ch: 'de Gugus', de: 'der Unsinn; der Kram', ca: 'bestieses; andròmines', topic: 'suis', lesson: 'c03', book: 'holle', note: 'Dues coses alhora: tonteries («Das isch doch nur Gugus!») i trastos sense importància. «Mach kei Gugus!» = no facis el ximple, o no en facis un drama.' },
+
+  // ===================================================================
+  // Classe 5 — 16/09/2026 · Holle 08 (conjugació, sii/ha/werde) i 10 (inversió)
+  // ===================================================================
+  { id: 'c5001', ch: 'werde', de: 'werden', ca: 'esdevenir, fer-se', topic: 'verbs', lesson: 'c05', book: 'holle', note: 'ich wird · du wirsch · er wird · mir werded. «Ich wird Arzt werde.»' },
+  { id: 'c5002', ch: 'dörfe', de: 'dürfen', ca: 'poder (tenir permís)', topic: 'verbs', lesson: 'c05', book: 'holle', note: 'ich dörf · du dörfsch · er dörf · mir dörfed. No confonguis-ho amb chöne (ser capaç).' },
+  { id: 'c5003', ch: 'tanze', de: 'tanzen', ca: 'ballar', topic: 'verbs', lesson: 'c05', book: 'holle', note: 'du tanzisch — amb -isch perquè l’arrel acaba en z.' },
+  { id: 'c5004', ch: 'reise', de: 'reisen', ca: 'viatjar', topic: 'verbs', lesson: 'c05', book: 'holle', note: 'du reisisch.' },
+  { id: 'c5005', ch: 'küsse', de: 'küssen', ca: 'besar', topic: 'verbs', lesson: 'c05', book: 'holle', note: 'du küssisch.' },
+  { id: 'c5006', ch: 'motze', de: 'motzen', ca: 'rondinar, queixar-se', topic: 'verbs', lesson: 'c05', book: 'holle', note: 'du motzisch.' },
+  { id: 'c5007', ch: 'heisse', de: 'heissen', ca: 'dir-se', topic: 'verbs', lesson: 'c05', book: 'holle', note: 'du heissisch.' },
+  { id: 'c5008', ch: 'singe', de: 'singen', ca: 'cantar', topic: 'verbs', lesson: 'c05', book: 'holle' },
+  { id: 'c5009', ch: 'günne', de: 'gewinnen', ca: 'guanyar', topic: 'verbs', lesson: 'c05', book: 'holle' },
+  { id: 'c5010', ch: 's Glück / s Päch', de: 'das Glück / das Pech', ca: 'la sort / la mala sort', topic: 'sentiments', lesson: 'c05', book: 'holle', note: '«Sie händ Glück.» · «Sie hät Päch.»' },
+  { id: 'c5011', ch: 's Gschänk', de: 'das Geschenk', ca: 'el regal', topic: 'objectes', lesson: 'c05', book: 'holle' },
+  { id: 'c5012', ch: 'd Geduld', de: 'die Geduld', ca: 'la paciència', topic: 'sentiments', lesson: 'c05', book: 'holle', note: '«Sie händ kei Geduld.»' },
+  { id: 'c5013', ch: 'de Geburtstag', de: 'der Geburtstag', ca: 'l’aniversari', topic: 'temps', lesson: 'c05', book: 'holle' },
+  { id: 'c5014', ch: 'de Pilot', de: 'der Pilot', ca: 'el pilot', topic: 'persones', lesson: 'c05', book: 'holle' },
+  { id: 'c5015', ch: 'doof', de: 'doof', ca: 'ximple', topic: 'adjectius', lesson: 'c05', book: 'holle' },
+  { id: 'c5016', ch: 'toll', de: 'toll', ca: 'genial', topic: 'adjectius', lesson: 'c05', book: 'holle' },
+  { id: 'c5017', ch: 'dick', de: 'dick', ca: 'gruixut, gras', topic: 'adjectius', lesson: 'c05', book: 'holle' },
+  { id: 'c5018', ch: 'satt', de: 'satt', ca: 'tip, saciat', topic: 'adjectius', lesson: 'c05', book: 'holle' },
+  { id: 'c5019', ch: 'hässig', de: 'wütend', ca: 'emprenyat', topic: 'sentiments', lesson: 'c05', book: 'holle' },
+  { id: 'c5020', ch: 'zfride', de: 'zufrieden', ca: 'satisfet', topic: 'sentiments', lesson: 'c05', book: 'holle' },
+  { id: 'c5021', ch: 'fründli', de: 'freundlich', ca: 'amable', topic: 'adjectius', lesson: 'c05', book: 'holle' },
+
+  // ===================================================================
+  // Classe 6 — 23/09/2026 · Verbs irregulars + expressions p. 104
+  // ===================================================================
+  { id: 'c6001', ch: 'gèè', de: 'geben', ca: 'donar', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich gibe · du gisch · er git · mir gänd. Participi: ggèè.' },
+  { id: 'c6002', ch: 'nèè', de: 'nehmen', ca: 'agafar, prendre', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich nime · du nimsch · er nimt · mir nämed. Participi: gnaa.' },
+  { id: 'c6003', ch: 'möge', de: 'mögen', ca: 'tenir ganes, poder amb', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich mag · du magsch · er mag · mir möged. «Ich mag nöd uufstaa.»' },
+  { id: 'c6004', ch: 'sele / söle', de: 'sollen', ca: 'haver de (per encàrrec d’altri)', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich sell · du sellsch · er sell · mir seled.' },
+  { id: 'c6005', ch: 'trääge', de: 'tragen', ca: 'portar (a sobre)', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'du träisch · er trait. Participi: träit.' },
+  { id: 'c6006', ch: 'zie', de: 'ziehen', ca: 'estirar', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'du ziesch · er ziet. Participi: zoge.' },
+  { id: 'c6007', ch: 'träffe', de: 'treffen', ca: 'trobar-se amb, encertar', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich triffe · du triffsch. Participi: troffe.' },
+  { id: 'c6008', ch: 'staa', de: 'stehen', ca: 'estar dret', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich staane · du staasch · er staat · mir stönd. Participi: gstande.' },
+  { id: 'c6009', ch: 'laa', de: 'lassen', ca: 'deixar', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich laane · du laasch · er laat · mir lönd. Participi: glaa.' },
+  { id: 'c6010', ch: 'legge', de: 'legen', ca: 'posar (ajagut)', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'du läisch · er läit. Participi: gläit. «aalegge» = vestir-se.' },
+  { id: 'c6011', ch: 'ligge', de: 'liegen', ca: 'estar estirat', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'du liisch · er liit. Participi: gläge.' },
+  { id: 'c6012', ch: 'gsee', de: 'sehen', ca: 'veure', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich gsee · du gseesch · er gseet · mir gseend. Participi: gsee.' },
+
+  // ---- Menjars i coses de casa (full p. 104) ----
+  { id: 'c6020', ch: 'de Schoppe', de: 'die Milchflasche', ca: 'el biberó', topic: 'casa', lesson: 'c06', book: 'holle', note: '«Es Schöppeli Wii» = un gotet de vi.' },
+  { id: 'c6021', ch: 'd Hampfle', de: 'die Handvoll', ca: 'el grapat', topic: 'nombres', lesson: 'c06', book: 'holle', note: '«Gisch mer es Hämpfeli Chriesi?»' },
+  { id: 'c6022', ch: 's Stuck', de: 'das Stück', ca: 'el tros', topic: 'nombres', lesson: 'c06', book: 'holle', note: '«es Stuck Chueche» · «es Musigstuck».' },
+  { id: 'c6023', ch: 'zmörgele', de: 'frühstücken', ca: 'esmorzar', topic: 'menjar', lesson: 'c06', book: 'holle', note: '«Mer tüend gmüetli zmörgele.»' },
+  { id: 'c6024', ch: 'd Gufe', de: 'die Stecknadel', ca: 'l’agulla de cap', topic: 'objectes', lesson: 'c06', book: 'holle', note: 'd Schlüüssgufe = l’imperdible.' },
+  { id: 'c6025', ch: 'd Schooss', de: 'die Schürze', ca: 'el davantal', topic: 'roba', lesson: 'c06', book: 'holle' },
+  { id: 'c6026', ch: 's Chlüppli', de: 'die Wäscheklammer', ca: 'la pinça d’estendre', topic: 'casa', lesson: 'c06', book: 'holle' },
+  { id: 'c6027', ch: 'de Finke', de: 'der Hausschuh', ca: 'l’espardenya de casa', topic: 'roba', lesson: 'c06', book: 'holle', note: '«Legged d Finken aa!» = poseu-vos les sabatilles.' },
+  { id: 'c6028', ch: 'de Lumpe', de: 'der Lappen', ca: 'el drap', topic: 'casa', lesson: 'c06', book: 'holle', note: 'de Butzlumpe = el drap de netejar.' },
+
+  // ---- Feines de casa (full p. 104) ----
+  { id: 'c6030', ch: 'büeze', de: 'nähen', ca: 'cosir', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'd Büez = feina dura.' },
+  { id: 'c6031', ch: 'lisme', de: 'stricken', ca: 'fer mitja', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'd Lismete = la labor de punt.' },
+  { id: 'c6032', ch: 'glette', de: 'bügeln', ca: 'planxar', topic: 'verbs', lesson: 'c06', book: 'holle', note: '«Si mues d Hämper glette.»' },
+  { id: 'c6033', ch: 'butze', de: 'reinigen', ca: 'netejar', topic: 'verbs', lesson: 'c06', book: 'holle' },
+  { id: 'c6034', ch: 'zügle', de: 'umziehen', ca: 'mudar-se de casa', topic: 'casa', lesson: 'c06', book: 'holle', note: 'd Züglete = la mudança.' },
+
+  // ---- La casa per dins (full p. 104) ----
+  { id: 'c6040', ch: 'de Gang', de: 'der Hausflur', ca: 'el rebedor, el passadís', topic: 'casa', lesson: 'c06', book: 'holle' },
+  { id: 'c6041', ch: 'd Stäge', de: 'die Treppe', ca: 'l’escala', topic: 'casa', lesson: 'c06', book: 'holle', note: 'de Stägetritt = l’esglaó.' },
+  { id: 'c6042', ch: 'd Tüürfale', de: 'die Türklinke', ca: 'la maneta de la porta', topic: 'casa', lesson: 'c06', book: 'holle' },
+  { id: 'c6043', ch: 's Chämi', de: 'der Kamin', ca: 'la xemeneia', topic: 'casa', lesson: 'c06', book: 'holle' },
+  { id: 'c6044', ch: 'd Stube', de: 'die Stube', ca: 'la sala d’estar', topic: 'casa', lesson: 'c06', book: 'holle' },
+
+  // ---- Quantitat i temps (full p. 104) ----
+  { id: 'c6050', ch: 'paraad', de: 'bereit', ca: 'a punt', topic: 'adjectius', lesson: 'c06', book: 'holle', note: '«Bisch äntli paraad? Ja, glii!»' },
+  { id: 'c6051', ch: 'glii', de: 'bald', ca: 'aviat', topic: 'temps', lesson: 'c06', book: 'holle' },
+  { id: 'c6052', ch: 'füre', de: 'hervor', ca: 'cap endavant, a la vista', topic: 'ciutat', lesson: 'c06', book: 'holle', note: '«Dèè Brief chunt nie mee füre» = aquella carta no apareix mai més.' },
+  { id: 'c6053', ch: 'es bitzeli', de: 'ein wenig', ca: 'una miqueta', topic: 'nombres', lesson: 'c06', book: 'holle', note: 'I encara menys: «es birebitzeli».' },
+  { id: 'c6054', ch: 'suscht', de: 'sonst', ca: 'si no, altrament', topic: 'connectors', lesson: 'c06', book: 'holle', note: '«Suscht gömer halt eläi is Kino.»' },
+  { id: 'c6055', ch: 'äntli', de: 'endlich', ca: 'per fi, d’una vegada', topic: 'connectors', lesson: 'c06', book: 'holle' },
+  { id: 'c6056', ch: 'eläi', de: 'allein', ca: 'sol', topic: 'connectors', lesson: 'c06', book: 'holle' },
+  { id: 'c6057', ch: 'd Ufzgi', de: 'die Hausaufgabe', ca: 'els deures', topic: 'feina', lesson: 'c06', book: 'holle' },
+  { id: 'c6058', ch: 'd Bäiz', de: 'die Wirtschaft', ca: 'el bar de poble', topic: 'ciutat', lesson: 'c06', book: 'holle' },
+  { id: 'c6059', ch: 'd Waret', de: 'die Wahrheit', ca: 'la veritat', topic: 'basics', lesson: 'c06', book: 'holle' }
 ]

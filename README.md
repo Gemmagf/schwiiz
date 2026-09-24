@@ -15,9 +15,9 @@ Offline-first · s'actualitza per git · flashcards amb repàs espaiat, gramàti
   tens menys assentades — i s'omple amb targetes noves. Les que marques «Un altre cop»
   tornen dins de la mateixa tanda, i les de «Costa» hi tornen un cop. La direcció i els
   filtres per tema o classe són opcionals i van plegats.
-- **Gramàtica**: dos modes — *Per temes* (43 temes en l'ordre dels llibres) i *Practicar*
+- **Gramàtica**: dos modes — *Per temes* (48 temes en l'ordre dels llibres) i *Practicar*
   (tanda de 10/20/30/50 exercicis barrejats, prioritzant els fallats i els no fets).
-  En total, 256 exercicis que es
+  En total, 296 exercicis que es
   corregeixen sols.
 - **Llegir**: tres coses en una.
   - *Textos*: lector on toques qualsevol paraula i en surt la traducció (resolent formes
@@ -114,8 +114,8 @@ amb les fotos). Per moure'ls, hi ha «Exportar JSON».
 content/          material de classe en brut (font, no el llegeix l'app)
 data/state.json   progrés sincronitzat des del mòbil
 src/
-  data/vocab.js     630 paraules: dialecte · Hochdeutsch · català
-  data/grammar.js   43 temes + 256 exercicis
+  data/vocab.js     713 paraules: dialecte · Hochdeutsch · català
+  data/grammar.js   48 temes + 296 exercicis
   data/phrases.js   94 frases + 6 diàlegs
   data/readings.js  llibres de referència + textos d'exemple propis
   data/glossary.js  189 paraules de suport + 73 formes conjugades, per al lector

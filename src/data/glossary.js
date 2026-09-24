@@ -214,6 +214,42 @@ export const GLOSSARY = {
 
 // Formes conjugades i participis → la paraula que s'ha de buscar.
 export const FORMS = {
+  // --- Del full dels 24 verbs irregulars (classe del 23/09) ---
+  // Participis
+  'gsii': 'sii', 'ghaa': 'haa', 'taa': 'tue', 'ggèè': 'gèè', 'ggee': 'gèè', 'gnaa': 'nèè',
+  'ggässe': 'ässe', 'gläse': 'läse', 'gsäit': 'säge', 'träit': 'trääge', 'zoge': 'zie',
+  'troffe': 'träffe', 'gwüsst': 'wüsse', 'gstande': 'staa', 'glaa': 'laa',
+  'gläit': 'legge', 'gläge': 'ligge',
+  // werde
+  'wird': 'werde', 'wirsch': 'werde', 'werded': 'werde', 'wirde': 'werde',
+  // dörfe, möge, sele
+  'dörf': 'dörfe', 'dörfsch': 'dörfe', 'dörfed': 'dörfe',
+  'mag': 'möge', 'magsch': 'möge', 'möged': 'möge',
+  'sell': 'sele', 'sellsch': 'sele', 'seled': 'sele',
+  // gèè, nèè, ässe, läse
+  'gibe': 'gèè', 'gisch': 'gèè', 'git': 'gèè', 'gänd': 'gèè',
+  'nime': 'nèè', 'nimsch': 'nèè', 'nimt': 'nèè', 'nämed': 'nèè',
+  'isse': 'ässe', 'issisch': 'ässe', 'isst': 'ässe',
+  'lise': 'läse', 'lisisch': 'läse', 'list': 'läse',
+  // säge, trääge, zie, träffe, wüsse
+  'säisch': 'säge', 'säit': 'säge', 'säged': 'säge',
+  'träisch': 'trääge', 'trait': 'trääge', 'trääged': 'trääge',
+  'ziesch': 'zie', 'ziet': 'zie', 'ziend': 'zie',
+  'triffe': 'träffe', 'triffsch': 'träffe', 'trifft': 'träffe', 'träffed': 'träffe',
+  'wäiss': 'wüsse', 'wäisch': 'wüsse', 'wüssed': 'wüsse',
+  // staa, laa, legge, ligge, gsee
+  'staane': 'staa', 'staasch': 'staa', 'staat': 'staa', 'stönd': 'staa',
+  'laane': 'laa', 'laasch': 'laa', 'laat': 'laa', 'lönd': 'laa',
+  'läisch': 'legge', 'läit': 'legge', 'legged': 'legge',
+  'liisch': 'ligge', 'liit': 'ligge', 'ligged': 'ligge',
+  'gseene': 'gsee', 'gseesch': 'gsee', 'gseet': 'gsee', 'gseend': 'gsee',
+  // La i que s'afegeix darrere z i s (classe del 16/09)
+  'tanzisch': 'tanze', 'heissisch': 'heisse', 'reisisch': 'reise',
+  'küssisch': 'küsse', 'putzisch': 'putze', 'motzisch': 'motze',
+  // Inversió i propostes amb -mer
+  'bin': 'sii', 'han': 'haa', 'gaan': 'gaa', 'gseen': 'gsee', 'staan': 'staa', 'laan': 'laa',
+  'simer': 'sii', 'hämer': 'haa', 'gömer': 'gaa', 'chömer': 'cho', 'tüemer': 'tue',
+  'gämer': 'gèè', 'wämer': 'wölle', 'müemer': 'müesse',
   // sii (ser/estar)
   'bi': 'sii', 'bisch': 'sii', 'isch': 'sii', 'sind': 'sii', 'gsi': 'sii', 'sig': 'sii',
   // haa (tenir)
