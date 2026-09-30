@@ -27,7 +27,7 @@ function normalitza(s) {
     .replace(/\s+/g, ' ')
 }
 
-function Exercise({ ex, saved, onAnswer, onResolt }) {
+function Exercise({ ex, g, saved, onAnswer, onResolt }) {
   const t = useT()
   const [tria, setTria] = useState(null)
   const [text, setText] = useState('')
@@ -57,11 +57,11 @@ function Exercise({ ex, saved, onAnswer, onResolt }) {
 
   return (
     <li className="quiz-q">
-      <p className="q-text"><Rich text={ex.q} /></p>
+      <p className="q-text"><Rich text={g ? t.ex(g, ex, 'q') : ex.q} /></p>
 
       {ex.type === 'choice' ? (
         <div className="q-options">
-          {ex.options.map((o, i) => {
+          {(g ? t.ex(g, ex, 'options') : ex.options).map((o, i) => {
             let cls = 'q-opt'
             if (resultat !== null) {
               if (i === ex.a) cls += ' correct'
@@ -93,9 +93,9 @@ function Exercise({ ex, saved, onAnswer, onResolt }) {
       {resultat !== null && (
         <>
           <div className={`q-verdict ${resultat ? 'ok' : 'ko'}`}>
-            {resultat ? t('gram_correct') : t('gram_wrong', { a: ex.type === 'choice' ? ex.options[ex.a] : ex.a[0] })}
+            {resultat ? t('gram_correct') : t('gram_wrong', { a: ex.type === 'choice' ? (g ? t.ex(g, ex, 'options') : ex.options)[ex.a] : ex.a[0] })}
           </div>
-          <div className="q-explain">{ex.why}</div>
+          <div className="q-explain">{g ? t.ex(g, ex, 'why') : ex.why}</div>
           <button className="retry" onClick={altraVegada}>{t('gram_retry')}</button>
         </>
       )}
@@ -109,7 +109,7 @@ function Exercise({ ex, saved, onAnswer, onResolt }) {
 
 // Tots els exercicis, amb el tema d'on surten, per poder-los barrejar.
 const TOTS = GRAMMAR.flatMap((g) =>
-  g.exercises.map((ex) => ({ ex, tema: g.title, emoji: g.emoji, unit: g.unit, book: g.book, lesson: g.lesson }))
+  g.exercises.map((ex) => ({ ex, g, tema: g.title, emoji: g.emoji, unit: g.unit, book: g.book, lesson: g.lesson }))
 )
 
 // Tria N exercicis. No és del tot a l'atzar: primer els que no has fet mai,
@@ -207,7 +207,7 @@ function Practica({ quiz, onAnswer, lliso: llisoInicial, titolLliso }) {
         <span>{i + 1} / {tanda.length}</span>
       </div>
       <div className="practica-tema">
-        {actual.emoji} {actual.tema}
+        {actual.emoji} {t.gram(actual.g, 'title')}
         {actual.unit && (
           <em className="unit"> · {actual.book === 'schorn' ? 'Schorn' : 'Holle'} {/^\d/.test(actual.unit) ? `cap. ${actual.unit}` : actual.unit}</em>
         )}
@@ -216,6 +216,7 @@ function Practica({ quiz, onAnswer, lliso: llisoInicial, titolLliso }) {
         <Exercise
           key={actual.ex.id}
           ex={actual.ex}
+          g={actual.g}
           saved={quiz[actual.ex.id]}
           onAnswer={onAnswer}
           onResolt={(ok) => { setResolt(true); if (ok) setEncerts((e) => e + 1) }}
@@ -256,7 +257,7 @@ export default function Grammar({ quiz, onAnswer, practicaLliso, titolLliso, mod
           <section key={g.id} className="study-sec">
             <button className="study-head" onClick={() => setObert(isOpen ? null : g.id)}>
               <span className="sh-title">
-                <span>{g.emoji} {g.title}</span>
+                <span>{g.emoji} {t.gram(g, 'title')}</span>
                 {g.unit && (
                   <em className="unit">
                     {g.book === 'schorn' ? 'Schorn' : 'Holle'} · {/^\d/.test(g.unit) ? `cap. ${g.unit}` : g.unit}
@@ -268,15 +269,15 @@ export default function Grammar({ quiz, onAnswer, practicaLliso, titolLliso, mod
 
             {isOpen && (
               <>
-                <p className="g-summary">{g.summary}</p>
+                <p className="g-summary">{t.gram(g, 'summary')}</p>
                 <ul className="study-points">
-                  {g.points.map((p, i) => <li key={i}><Rich text={p} /></li>)}
+                  {t.gram(g, 'points').map((p, i) => <li key={i}><Rich text={p} /></li>)}
                 </ul>
 
                 {g.table && (
                   <div className="g-table-wrap">
                     <table className="g-table">
-                      <thead><tr>{g.table.head.map((h, i) => <th key={i}>{h}</th>)}</tr></thead>
+                      <thead><tr>{(t.gram(g, 'tableHead') || g.table.head).map((h, i) => <th key={i}>{h}</th>)}</tr></thead>
                       <tbody>
                         {g.table.rows.map((r, i) => (
                           <tr key={i}>{r.map((c, j) => <td key={j}>{c}</td>)}</tr>
@@ -289,7 +290,7 @@ export default function Grammar({ quiz, onAnswer, practicaLliso, titolLliso, mod
                 <h3 className="g-ex-title">{t('gram_exercises')}</h3>
                 <ul className="quiz">
                   {g.exercises.map((ex) => (
-                    <Exercise key={ex.id} ex={ex} saved={quiz[ex.id]} onAnswer={onAnswer} />
+                    <Exercise key={ex.id} ex={ex} g={g} saved={quiz[ex.id]} onAnswer={onAnswer} />
                   ))}
                 </ul>
               </>
