@@ -202,7 +202,7 @@ export const VOCAB = [
   { id: 'v199', ch: 'links / rächts', de: 'links / rechts', ca: 'esquerra / dreta', topic: 'ciutat', lesson: 'base' },
   { id: 'v200', ch: 'gradus', de: 'geradeaus', ca: 'tot recte', topic: 'ciutat', lesson: 'base' },
   { id: 'v201', ch: 'de Wääg', de: 'der Weg', ca: 'el camí', topic: 'ciutat', lesson: 'base' },
-  { id: 'v202', ch: 'de Bärg', de: 'der Berg', ca: 'la muntanya', topic: 'ciutat', lesson: 'base' },
+  { id: 'v202', ch: 'de Bärg', de: 'der Berg', ca: 'la muntanya', topic: 'ciutat', lesson: 'base', note: 'Plural: d Bärge. «Bärge versetze» = moure muntanyes.' },
   { id: 'v203', ch: 'de See', de: 'der See', ca: 'el llac', topic: 'ciutat', lesson: 'base' },
   { id: 'v204', ch: 'd Poscht', de: 'die Post', ca: 'correus', topic: 'ciutat', lesson: 'base' },
 
@@ -329,7 +329,7 @@ export const VOCAB = [
   { id: 'v453', ch: 'd Chue', de: 'die Kuh', ca: 'la vaca', topic: 'animals', lesson: 'base', book: 'holle' },
   { id: 'v454', ch: 'd Geiss', de: 'die Ziege', ca: 'la cabra', topic: 'animals', lesson: 'base', book: 'holle' },
   { id: 'v455', ch: 's Schaf', de: 'das Schaf', ca: 'l’ovella', topic: 'animals', lesson: 'base', book: 'holle' },
-  { id: 'v456', ch: 'de Vogel', de: 'der Vogel', ca: 'l’ocell', topic: 'animals', lesson: 'base', book: 'holle' },
+  { id: 'v456', ch: 'de Vogel', de: 'der Vogel', ca: 'l’ocell', topic: 'animals', lesson: 'base', book: 'holle', note: 'Plural: d Vögel.' },
   { id: 'v457', ch: 'de Fisch', de: 'der Fisch', ca: 'el peix', topic: 'animals', lesson: 'base', book: 'holle' },
   { id: 'v458', ch: 'd Muus', de: 'die Maus', ca: 'el ratolí', topic: 'animals', lesson: 'base', book: 'holle' },
   { id: 'v459', ch: 'de Bär', de: 'der Bär', ca: 'l’ós', topic: 'animals', lesson: 'base', book: 'holle' },
@@ -434,7 +434,6 @@ export const VOCAB = [
   { id: 'c1066', ch: 's Guetsli', de: 'das Guetzli / der Keks', ca: 'la galeta', topic: 'menjar', lesson: 'c01', book: 'schorn' },
   { id: 'c1067', ch: 's Müesli', de: 'das Müesli', ca: 'els cereals amb fruita', topic: 'menjar', lesson: 'c01', book: 'schorn', note: 'El Birchermüesli és l’esmorzar suís per excel·lència.' },
   { id: 'c1068', ch: 'd Butter', de: 'die Butter', ca: 'la mantega', topic: 'menjar', lesson: 'c01', book: 'schorn', note: 'En dialecte és masculí: «de Butter».' },
-  { id: 'c1069', ch: 'de Fisch', de: 'der Fisch', ca: 'el peix (per menjar)', topic: 'menjar', lesson: 'c01', book: 'schorn' },
   { id: 'c1070', ch: 'de Weichchäs', de: 'der Weichkäse', ca: 'el formatge tou', topic: 'menjar', lesson: 'c02', book: 'schorn' },
   { id: 'c1071', ch: 's Chriesi', de: 'die Kirsche', ca: 'la cirera', topic: 'menjar', lesson: 'c01', book: 'schorn' },
   { id: 'c1072', ch: 's Rüebligmües', de: 'das Karottengemüse', ca: 'la verdura de pastanaga', topic: 'menjar', lesson: 'c01', book: 'schorn' },
@@ -543,7 +542,7 @@ export const VOCAB = [
   { id: 'c1216', ch: 'hebe', de: 'halten', ca: 'aguantar, subjectar', topic: 'verbs', lesson: 'c02', book: 'schorn', note: '⚠️ NO és aixecar. «Heb emaal de Hamer!»' },
   { id: 'c1217', ch: 'lupfe', de: 'heben', ca: 'aixecar', topic: 'verbs', lesson: 'c02', book: 'schorn', note: '«Lupf emaal dë Choorb!»' },
   { id: 'c1218', ch: 'bhalte', de: 'aufbewahren, behalten', ca: 'quedar-se amb, guardar', topic: 'verbs', lesson: 'c02', book: 'schorn' },
-  { id: 'c1219', ch: 'versoorge', de: 'wegräumen', ca: 'desar, endreçar', topic: 'verbs', lesson: 'c02', book: 'schorn', note: '«Versoorg äntli diini Büecher!»' },
+  { id: 'c1219', ch: 'versoorge', de: 'wegräumen', ca: 'desar, endreçar', topic: 'verbs', lesson: 'c02', book: 'schorn', note: 'NO és separable: ich versoorge. «Versoorg äntli diini Büecher!»' },
   { id: 'c1220', ch: 'lose', de: 'zuhören, horchen', ca: 'escoltar', topic: 'verbs', lesson: 'c02', book: 'schorn', note: '«Luege, lose, lauffe!» — el lema de seguretat viària suís.' },
   { id: 'c1221', ch: 'folge', de: 'gehorchen', ca: 'obeir', topic: 'verbs', lesson: 'c02', book: 'schorn', note: '«Häsch nie gleert folge?»' },
   { id: 'c1222', ch: 'überchoo', de: 'bekommen, erhalten', ca: 'rebre, obtenir', topic: 'verbs', lesson: 'c02', book: 'schorn' },
@@ -552,7 +551,7 @@ export const VOCAB = [
   { id: 'c1225', ch: 'trüle', de: 'drehen', ca: 'girar', topic: 'verbs', lesson: 'c02', book: 'schorn', note: '«Chasch diin Chopf echli trüle?»' },
   { id: 'c1226', ch: 'lange', de: 'ausreichen', ca: 'ser prou', topic: 'verbs', lesson: 'c02', book: 'schorn', note: '«Jetz langet s aber!» = ja n’hi ha prou!' },
   { id: 'c1227', ch: 'schwiine', de: 'schwinden, abnehmen', ca: 'minvar', topic: 'verbs', lesson: 'c02', book: 'schorn', note: '«De Moond schwiinet.»' },
-  { id: 'c1228', ch: 'gsee', de: 'sehen', ca: 'veure', topic: 'verbs', lesson: 'c02', book: 'schorn', note: '«Ich gseene gaar nüüt.»' },
+  { id: 'c1228', ch: 'gsee', de: 'sehen', ca: 'veure', topic: 'verbs', lesson: 'c02', book: 'schorn', note: 'ich gsee · du gseesch · er gseet · mir gseend. «Ich gseene gaar nüüt.»' },
 
   // ===================================================================
   // Classe 3 — 02/09/2026 · Holle 04 (negació) i 05 (demostratius)
@@ -560,7 +559,6 @@ export const VOCAB = [
   // ===================================================================
 
   // ---- Animals de granja (full p. 102) ----
-  { id: 'c3001', ch: 's Ross', de: 'das Pferd', ca: 'el cavall', topic: 'animals', lesson: 'c03', book: 'holle' },
   { id: 'c3002', ch: 's Gampiross', de: 'das Schaukelpferd', ca: 'el cavallet de balancí', topic: 'animals', lesson: 'c03', book: 'holle' },
   { id: 'c3003', ch: 'd Gäiss', de: 'die Ziege', ca: 'la cabra', topic: 'animals', lesson: 'c03', book: 'holle', note: 'De la Gäiss en surten el Gäissechèès i la Gäissemilch.' },
   { id: 'c3004', ch: 'de Gäissbock', de: 'der Ziegenbock', ca: 'el boc', topic: 'animals', lesson: 'c03', book: 'holle' },
@@ -747,7 +745,6 @@ export const VOCAB = [
   { id: 'c4149', ch: 'allwääg', de: 'wahrscheinlich', ca: 'probablement', topic: 'connectors', lesson: 'c04', book: 'holle' },
 
   // ---- Del que vau treballar amb la cançó ----
-  { id: 'c4160', ch: 'de Bärg', de: 'der Berg', ca: 'la muntanya', topic: 'ciutat', lesson: 'c04', book: 'holle', note: 'Plural: d Bärge. «Bärge versetze» = moure muntanyes.' },
   { id: 'c4161', ch: 'de Schatte', de: 'der Schatten', ca: 'l’ombra', topic: 'ciutat', lesson: 'c04', book: 'holle' },
   { id: 'c4162', ch: 's Sunneliecht', de: 'das Sonnenlicht', ca: 'la llum del sol', topic: 'ciutat', lesson: 'c04', book: 'holle' },
   { id: 'c4163', ch: 'de Himmel', de: 'der Himmel', ca: 'el cel', topic: 'ciutat', lesson: 'c04', book: 'holle' },
@@ -770,7 +767,6 @@ export const VOCAB = [
   { id: 'c4183', ch: 'd Folg', de: 'die Folge', ca: 'l’episodi, la conseqüència', topic: 'feina', lesson: 'c04', book: 'schorn' },
   { id: 'c4184', ch: 'de Chällner', de: 'der Kellner', ca: 'el cambrer', topic: 'persones', lesson: 'c04', book: 'schorn' },
   { id: 'c4185', ch: 'de Tschugger', de: 'der Polizist', ca: 'el poli (col·loquial)', topic: 'suis', lesson: 'c04', book: 'schorn', note: 'També el títol d’una sèrie suïssa.' },
-  { id: 'c4186', ch: 'de Vogel', de: 'der Vogel', ca: 'l’ocell', topic: 'animals', lesson: 'c04', book: 'holle', note: 'Plural: d Vögel.' },
   { id: 'c4187', ch: 'd Sunne', de: 'die Sonne', ca: 'el sol', topic: 'ciutat', lesson: 'c04', book: 'holle' },
   { id: 'c4188', ch: 'en Huufe', de: 'ein Haufen', ca: 'un munt de', topic: 'nombres', lesson: 'c04', book: 'schorn' },
   { id: 'c4189', ch: 'di meischte / e paar', de: 'die meisten / ein paar', ca: 'la majoria / uns quants', topic: 'nombres', lesson: 'c04', book: 'schorn' },
@@ -790,7 +786,7 @@ export const VOCAB = [
   { id: 'c4211', ch: 'verpflichtet', de: 'verpflichtet', ca: 'compromès, obligat', topic: 'sentiments', lesson: 'c04', book: 'holle' },
   { id: 'c4212', ch: 'entschlosse', de: 'entschlossen', ca: 'decidit', topic: 'sentiments', lesson: 'c04', book: 'holle' },
   { id: 'c4213', ch: 'stürme', de: 'stürmen', ca: 'bufar fort, empènyer', topic: 'verbs', lesson: 'c04', book: 'holle' },
-  { id: 'c4214', ch: 'ligge', de: 'liegen', ca: 'jeure, estar estirat', topic: 'verbs', lesson: 'c04', book: 'holle' },
+  { id: 'c4214', ch: 'ligge', de: 'liegen', ca: 'jeure, estar estirat', topic: 'verbs', lesson: 'c04', book: 'holle', note: 'du liisch · er liit. Participi: gläge.' },
   { id: 'c4215', ch: 'füehre', de: 'führen', ca: 'portar, guiar', topic: 'verbs', lesson: 'c04', book: 'holle' },
   { id: 'c4216', ch: 'bereise', de: 'bereisen', ca: 'recórrer viatjant', topic: 'verbs', lesson: 'c04', book: 'holle' },
   { id: 'c4217', ch: 'de Bernhardiner', de: 'der Bernhardiner', ca: 'el sant bernat (gos)', topic: 'animals', lesson: 'c04', book: 'holle', note: 'El gos de rescat dels Alps suïssos.' },
@@ -821,7 +817,6 @@ export const VOCAB = [
   { id: 'c5017', ch: 'dick', de: 'dick', ca: 'gruixut, gras', topic: 'adjectius', lesson: 'c05', book: 'holle' },
   { id: 'c5018', ch: 'satt', de: 'satt', ca: 'tip, saciat', topic: 'adjectius', lesson: 'c05', book: 'holle' },
   { id: 'c5019', ch: 'hässig', de: 'wütend', ca: 'emprenyat', topic: 'sentiments', lesson: 'c05', book: 'holle' },
-  { id: 'c5020', ch: 'zfride', de: 'zufrieden', ca: 'satisfet', topic: 'sentiments', lesson: 'c05', book: 'holle' },
   { id: 'c5021', ch: 'fründli', de: 'freundlich', ca: 'amable', topic: 'adjectius', lesson: 'c05', book: 'holle' },
 
   // ===================================================================
@@ -831,14 +826,12 @@ export const VOCAB = [
   { id: 'c6002', ch: 'nèè', de: 'nehmen', ca: 'agafar, prendre', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich nime · du nimsch · er nimt · mir nämed. Participi: gnaa.' },
   { id: 'c6003', ch: 'möge', de: 'mögen', ca: 'tenir ganes, poder amb', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich mag · du magsch · er mag · mir möged. «Ich mag nöd uufstaa.»' },
   { id: 'c6004', ch: 'sele / söle', de: 'sollen', ca: 'haver de (per encàrrec d’altri)', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich sell · du sellsch · er sell · mir seled.' },
-  { id: 'c6005', ch: 'trääge', de: 'tragen', ca: 'portar (a sobre)', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'du träisch · er trait. Participi: träit.' },
+  { id: 'c6005', ch: 'trääge', de: 'tragen', ca: 'portar (a sobre)', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'du träisch · er träit · mir trääged. NO és separable.' },
   { id: 'c6006', ch: 'zie', de: 'ziehen', ca: 'estirar', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'du ziesch · er ziet. Participi: zoge.' },
   { id: 'c6007', ch: 'träffe', de: 'treffen', ca: 'trobar-se amb, encertar', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich triffe · du triffsch. Participi: troffe.' },
   { id: 'c6008', ch: 'staa', de: 'stehen', ca: 'estar dret', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich staane · du staasch · er staat · mir stönd. Participi: gstande.' },
   { id: 'c6009', ch: 'laa', de: 'lassen', ca: 'deixar', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich laane · du laasch · er laat · mir lönd. Participi: glaa.' },
   { id: 'c6010', ch: 'legge', de: 'legen', ca: 'posar (ajagut)', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'du läisch · er läit. Participi: gläit. «aalegge» = vestir-se.' },
-  { id: 'c6011', ch: 'ligge', de: 'liegen', ca: 'estar estirat', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'du liisch · er liit. Participi: gläge.' },
-  { id: 'c6012', ch: 'gsee', de: 'sehen', ca: 'veure', topic: 'verbs', lesson: 'c06', book: 'holle', note: 'ich gsee · du gseesch · er gseet · mir gseend. Participi: gsee.' },
 
   // ---- Menjars i coses de casa (full p. 104) ----
   { id: 'c6020', ch: 'de Schoppe', de: 'die Milchflasche', ca: 'el biberó', topic: 'casa', lesson: 'c06', book: 'holle', note: '«Es Schöppeli Wii» = un gotet de vi.' },
@@ -889,10 +882,6 @@ export const VOCAB = [
   { id: 'c7004', ch: 'näime / nöime', de: 'irgendwo', ca: 'en algun lloc', topic: 'basics', lesson: 'c07', book: 'schorn', note: '«Näime mues doch miin Chugi sii!»' },
   { id: 'c7005', ch: 'niene', de: 'nirgends', ca: 'enlloc', topic: 'basics', lesson: 'c07', book: 'schorn' },
   { id: 'c7006', ch: 'niemer', de: 'niemand', ca: 'ningú', topic: 'basics', lesson: 'c07', book: 'schorn', note: '«Ich ha niemer gsee.»' },
-  { id: 'c7007', ch: 'öpper', de: 'jemand', ca: 'algú', topic: 'basics', lesson: 'c07', book: 'schorn' },
-  { id: 'c7008', ch: 'öppis', de: 'etwas', ca: 'alguna cosa', topic: 'basics', lesson: 'c07', book: 'schorn' },
-  { id: 'c7009', ch: 'öppe', de: 'etwa', ca: 'si fa no fa, potser', topic: 'basics', lesson: 'c07', book: 'schorn' },
-  { id: 'c7010', ch: 'öppedie', de: 'dann und wann', ca: 'de tant en tant', topic: 'basics', lesson: 'c07', book: 'schorn' },
 
   // ---- Roba i higiene (grup 25) ----
   { id: 'c7020', ch: 's Naastuech', de: 'das Taschentuch', ca: 'el mocador', topic: 'objectes', lesson: 'c07', book: 'schorn', note: 'Plural: Naastüecher. «Schnüüz is Naastuech!»' },
@@ -924,14 +913,12 @@ export const VOCAB = [
   { id: 'c7066', ch: 'de Gingg', de: 'der Fusstritt', ca: 'la puntada de peu', topic: 'basics', lesson: 'c07', book: 'schorn', note: 'El verb: gingge. «Si rammled und gingged enand.»' },
   { id: 'c7067', ch: 'cheere / umcheere', de: 'wenden', ca: 'girar, tombar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«D Siite vom Nooteheft umcheere.»' },
   { id: 'c7068', ch: 'enand', de: 'einander', ca: 'l’un a l’altre', topic: 'basics', lesson: 'c07', book: 'schorn' },
-  { id: 'c7069', ch: 'schüüli', de: 'schrecklich', ca: 'terriblement', topic: 'basics', lesson: 'c07', book: 'schorn' },
 
   // ---- Trencar i qualificar (grup 28) ----
   { id: 'c7080', ch: 'schliisse / verheie', de: 'zerstören, kaputt machen', ca: 'trencar, destrossar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Wèr hät das gschlisse?»' },
   { id: 'c7081', ch: 'giire', de: 'knirschen, knarren', ca: 'grinyolar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Die zwoo Tüüre giired scho lang.»' },
   { id: 'c7082', ch: 'spöize', de: 'spucken', ca: 'escopir', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Dèè spöizt bim Rede.»' },
   { id: 'c7083', ch: 'fiin / fäin', de: 'fein', ca: 'fi / bo de gust', topic: 'adjectius', lesson: 'c07', book: 'schorn', note: '⚠️ «fäin» només per al menjar. «So fiini Haar hät das Mäiteli.»' },
-  { id: 'c7084', ch: 'gschiid', de: 'klug', ca: 'llest', topic: 'adjectius', lesson: 'c07', book: 'schorn' },
   { id: 'c7085', ch: 'zwoo', de: 'zwei (femení)', ca: 'dues', topic: 'nombres', lesson: 'c07', book: 'schorn', note: 'El dialecte distingeix el gènere al 2: zwee (m), zwoo (f), zwäi (n).' },
 
   // ---- Camp i casa (grup 29) ----
@@ -948,8 +935,6 @@ export const VOCAB = [
   // ---- Endreçar i renovar («En Glücksfall») ----
   { id: 'c7120', ch: 'uufruume', de: 'aufräumen', ca: 'endreçar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: 'Separable: ich ruume uuf.' },
   { id: 'c7121', ch: 'furtrüere', de: 'fortwerfen', ca: 'llençar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: 'Separable: ich rüere furt.' },
-  { id: 'c7122', ch: 'versoorge', de: 'wegräumen, versorgen', ca: 'desar, guardar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: 'NO és separable: ich versoorge.' },
-  { id: 'c7123', ch: 'trääge', de: 'tragen', ca: 'portar, carregar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: 'du träisch, er träit, mir trääged.' },
   { id: 'c7124', ch: 'eerbe', de: 'erben', ca: 'heretar', topic: 'verbs', lesson: 'c07', book: 'schorn' },
   { id: 'c7125', ch: 'phalte', de: 'aufbewahren', ca: 'conservar, guardar', topic: 'verbs', lesson: 'c07', book: 'schorn' },
   { id: 'c7126', ch: 'begäischteret', de: 'begeistert', ca: 'entusiasmat', topic: 'sentiments', lesson: 'c07', book: 'schorn' },
@@ -970,5 +955,47 @@ export const VOCAB = [
   { id: 'c7141', ch: 'raate', de: 'raten', ca: 'aconsellar', topic: 'verbs', lesson: 'c07', book: 'schorn' },
   { id: 'c7142', ch: 'maale', de: 'malen', ca: 'pintar', topic: 'verbs', lesson: 'c07', book: 'schorn' },
   { id: 'c7143', ch: 'de Architäkt', de: 'der Architekt', ca: 'l’arquitecte', topic: 'feina', lesson: 'c07', book: 'schorn' },
-  { id: 'c7144', ch: 'pschlosse', de: 'abgeschlossen', ca: 'tancat amb clau', topic: 'adjectius', lesson: 'c07', book: 'schorn' }
+  { id: 'c7144', ch: 'pschlosse', de: 'abgeschlossen', ca: 'tancat amb clau', topic: 'adjectius', lesson: 'c07', book: 'schorn' },
+
+  // ---- Paraules que surten als exemples dels fulls de vocabulari ----
+  { id: 'x001', ch: 'schnüüze', de: 'sich schnäuzen', ca: 'mocar-se', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Schnüüz is Naastuech!»' },
+  { id: 'x002', ch: 'd Sune', de: 'die Sonne', ca: 'el sol', topic: 'ciutat', lesson: 'c07', book: 'schorn', note: '«Verusse schiint d Sune.»' },
+  { id: 'x003', ch: 'schiine', de: 'scheinen', ca: 'brillar', topic: 'verbs', lesson: 'c07', book: 'schorn' },
+  { id: 'x004', ch: 'd Straass', de: 'die Strasse', ca: 'el carrer', topic: 'ciutat', lesson: 'c07', book: 'schorn' },
+  { id: 'x005', ch: 'd Siite', de: 'die Seite', ca: 'la pàgina, el costat', topic: 'objectes', lesson: 'c07', book: 'schorn' },
+  { id: 'x006', ch: 's Heft', de: 'das Heft', ca: 'la llibreta', topic: 'objectes', lesson: 'c07', book: 'schorn', note: 'Nooteheft = de notes, Räinheft = de ratlles.' },
+  { id: 'x007', ch: 's Haar', de: 'das Haar', ca: 'el cabell', topic: 'salut', lesson: 'c07', book: 'schorn' },
+  { id: 'x008', ch: 'blüeje', de: 'blühen', ca: 'florir', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Uf dèm Acher blüet de Wäize.»' },
+  { id: 'x009', ch: 'de Hamer', de: 'der Hammer', ca: 'el martell', topic: 'objectes', lesson: 'c01', book: 'schorn', note: '«Heb emaal de Hamer!»' },
+  { id: 'x010', ch: 'de Choorb', de: 'der Korb', ca: 'el cistell', topic: 'objectes', lesson: 'c01', book: 'schorn', note: '«Lupf emaal dèè Choorb!»' },
+  { id: 'x011', ch: 'de Röiel', de: 'der Kater', ca: 'el gat mascle', topic: 'animals', lesson: 'c01', book: 'schorn', note: '«Lueg emaal dèè Röiel aa!»' },
+  { id: 'x012', ch: 'de Künschtler', de: 'der Künstler', ca: 'l’artista', topic: 'feina', lesson: 'c01', book: 'schorn' },
+  { id: 'x013', ch: 'de Gschtank', de: 'der Gestank', ca: 'la pudor', topic: 'basics', lesson: 'c01', book: 'schorn', note: '«Schmöcksch dèè Gschtank?»' },
+  { id: 'x014', ch: 'emaal', de: 'mal, einmal', ca: 'va, una mica (partícula de petició)', topic: 'basics', lesson: 'c01', book: 'schorn', note: 'Suavitza els imperatius: «Lupf emaal…» = aixeca, va.' },
+  { id: 'x015', ch: 'echli', de: 'ein bisschen', ca: 'una mica', topic: 'basics', lesson: 'c01', book: 'schorn', note: 'Variant de «chli». «Chasch diin Chopf echli trüle?»' },
+  { id: 'x016', ch: 'äigetli', de: 'eigentlich', ca: 'de fet, la veritat', topic: 'basics', lesson: 'c01', book: 'schorn' },
+  { id: 'x017', ch: 'lenger', de: 'länger', ca: 'més temps', topic: 'basics', lesson: 'c01', book: 'schorn', note: '«Das bhalt i nüme lenger.»' },
+  { id: 'x018', ch: 's Doorf', de: 'das Dorf', ca: 'el poble', topic: 'ciutat', lesson: 'c01', book: 'schorn' },
+  { id: 'x019', ch: 's Mäitli', de: 'das Mädchen', ca: 'la nena', topic: 'persones', lesson: 'c01', book: 'schorn', note: 'Diminutiu: Mäiteli.' },
+  { id: 'x020', ch: 'd Chischte', de: 'die Kiste', ca: 'la caixa', topic: 'objectes', lesson: 'c07', book: 'schorn' },
+  { id: 'x021', ch: 'schwèèr', de: 'schwer', ca: 'pesat, difícil', topic: 'adjectius', lesson: 'c07', book: 'schorn' },
+  { id: 'x022', ch: 's Baad', de: 'das Bad', ca: 'el bany', topic: 'casa', lesson: 'c07', book: 'schorn' },
+  { id: 'x023', ch: 'd Garage', de: 'die Garage', ca: 'el garatge', topic: 'casa', lesson: 'c07', book: 'schorn' },
+  { id: 'x024', ch: 'wèr', de: 'wer', ca: 'qui', topic: 'basics', lesson: 'c01', book: 'schorn' },
+  { id: 'x025', ch: 'gaar', de: 'gar', ca: 'gens (reforça la negació)', topic: 'basics', lesson: 'c01', book: 'schorn', note: '«Ich gseene gaar nüüt.»' },
+  { id: 'x026', ch: 'sowisoo', de: 'sowieso', ca: 'de totes maneres', topic: 'connectors', lesson: 'c07', book: 'schorn' },
+  { id: 'x027', ch: 'uusruebe', de: 'ausruhen', ca: 'descansar', topic: 'verbs', lesson: 'c07', book: 'schorn' },
+  { id: 'x028', ch: 'antiik', de: 'antik', ca: 'antic (de valor)', topic: 'adjectius', lesson: 'c07', book: 'schorn' },
+  { id: 'x029', ch: 'tue', de: 'tun', ca: 'fer', topic: 'verbs', lesson: 'c01', book: 'schorn', note: 'ich tue, du tuesch, er tuet. Sovint només reforça: «Es tuet briegge.»' },
+  { id: 'x030', ch: 'möge / mag', de: 'mögen', ca: 'tenir ganes, poder', topic: 'verbs', lesson: 'c01', book: 'schorn', note: '«Ich mag nüme wiiter räne.» = ja no puc córrer més.' },
+  { id: 'x031', ch: 'wele', de: 'wollen', ca: 'voler (participi: gwele)', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Si händ nume na wele uusruebe.»' },
+  { id: 'x032', ch: 'de Spiegel', de: 'der Spiegel', ca: 'el mirall', topic: 'casa', lesson: 'c07', book: 'schorn' },
+  { id: 'x033', ch: 'd Terasse', de: 'die Terrasse', ca: 'la terrassa', topic: 'casa', lesson: 'c07', book: 'schorn' },
+  { id: 'x034', ch: 'de Zürisee', de: 'der Zürichsee', ca: 'el llac de Zuric', topic: 'ciutat', lesson: 'c07', book: 'schorn' },
+  { id: 'x035', ch: 'd Mulde', de: 'die Mulde', ca: 'el contenidor de runa', topic: 'casa', lesson: 'c07', book: 'schorn' },
+  { id: 'x036', ch: 's Stiilmööbel', de: 'das Stilmöbel', ca: 'el moble d’època', topic: 'casa', lesson: 'c07', book: 'schorn' },
+  { id: 'x037', ch: 'renoviere', de: 'renovieren', ca: 'reformar', topic: 'verbs', lesson: 'c07', book: 'schorn' },
+  { id: 'x038', ch: 'kabutt', de: 'kaputt', ca: 'espatllat', topic: 'adjectius', lesson: 'c07', book: 'schorn' },
+  { id: 'x039', ch: 'wohère', de: 'wohin', ca: 'cap on', topic: 'basics', lesson: 'c07', book: 'schorn' },
+  { id: 'x040', ch: 'lätz', de: 'verkehrt, falsch', ca: 'al revés, malament', topic: 'adjectius', lesson: 'c07', book: 'schorn', note: '«Da isch öppis lätz.» = aquí hi ha alguna cosa que no rutlla.' }
 ]
