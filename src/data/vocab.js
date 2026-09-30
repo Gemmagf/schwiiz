@@ -875,5 +875,100 @@ export const VOCAB = [
   { id: 'c6056', ch: 'eläi', de: 'allein', ca: 'sol', topic: 'connectors', lesson: 'c06', book: 'holle' },
   { id: 'c6057', ch: 'd Ufzgi', de: 'die Hausaufgabe', ca: 'els deures', topic: 'feina', lesson: 'c06', book: 'holle' },
   { id: 'c6058', ch: 'd Bäiz', de: 'die Wirtschaft', ca: 'el bar de poble', topic: 'ciutat', lesson: 'c06', book: 'holle' },
-  { id: 'c6059', ch: 'd Waret', de: 'die Wahrheit', ca: 'la veritat', topic: 'basics', lesson: 'c06', book: 'holle' }
+  { id: 'c6059', ch: 'd Waret', de: 'die Wahrheit', ca: 'la veritat', topic: 'basics', lesson: 'c06', book: 'holle' },
+
+  // ===================================================================
+  // Classe 7 — 30/09/2026. Full de vocabulari p.105 (grups 24-29)
+  // i «En Glücksfall» p.30: öpper/öppis/öppe i verbs separables.
+  // ===================================================================
+
+  // ---- Negació i indefinits (grup 24) ----
+  { id: 'c7001', ch: 'nüme', de: 'nicht mehr', ca: 'ja no', topic: 'basics', lesson: 'c07', book: 'schorn', note: '«Ich mag nüme wiiter räne.»' },
+  { id: 'c7002', ch: 'nume / nu', de: 'nur', ca: 'només', topic: 'basics', lesson: 'c07', book: 'schorn' },
+  { id: 'c7003', ch: 'na', de: 'noch', ca: 'encara', topic: 'basics', lesson: 'c07', book: 'schorn', note: '«Si händ nume na wele uusruebe.»' },
+  { id: 'c7004', ch: 'näime / nöime', de: 'irgendwo', ca: 'en algun lloc', topic: 'basics', lesson: 'c07', book: 'schorn', note: '«Näime mues doch miin Chugi sii!»' },
+  { id: 'c7005', ch: 'niene', de: 'nirgends', ca: 'enlloc', topic: 'basics', lesson: 'c07', book: 'schorn' },
+  { id: 'c7006', ch: 'niemer', de: 'niemand', ca: 'ningú', topic: 'basics', lesson: 'c07', book: 'schorn', note: '«Ich ha niemer gsee.»' },
+  { id: 'c7007', ch: 'öpper', de: 'jemand', ca: 'algú', topic: 'basics', lesson: 'c07', book: 'schorn' },
+  { id: 'c7008', ch: 'öppis', de: 'etwas', ca: 'alguna cosa', topic: 'basics', lesson: 'c07', book: 'schorn' },
+  { id: 'c7009', ch: 'öppe', de: 'etwa', ca: 'si fa no fa, potser', topic: 'basics', lesson: 'c07', book: 'schorn' },
+  { id: 'c7010', ch: 'öppedie', de: 'dann und wann', ca: 'de tant en tant', topic: 'basics', lesson: 'c07', book: 'schorn' },
+
+  // ---- Roba i higiene (grup 25) ----
+  { id: 'c7020', ch: 's Naastuech', de: 'das Taschentuch', ca: 'el mocador', topic: 'objectes', lesson: 'c07', book: 'schorn', note: 'Plural: Naastüecher. «Schnüüz is Naastuech!»' },
+  { id: 'c7021', ch: 'de Strèèl', de: 'der Kamm', ca: 'la pinta', topic: 'objectes', lesson: 'c07', book: 'schorn' },
+  { id: 'c7022', ch: 'strèèle', de: 'kämmen', ca: 'pentinar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Settsch di halt emaal strèèle.»' },
+  { id: 'c7023', ch: 'de Jupe', de: 'der Rock', ca: 'la faldilla', topic: 'roba', lesson: 'c07', book: 'schorn', note: 'Del francès. «Dèè Jupe isch vil z chuurz.»' },
+  { id: 'c7024', ch: 'aalegge', de: 'anziehen', ca: 'posar-se (roba)', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Muesch d Händsche aalegge!»' },
+  { id: 'c7025', ch: 'abzie', de: 'ausziehen, ablegen', ca: 'treure’s (roba)', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Zie äntli dèè Wulepuli ab!»' },
+  { id: 'c7026', ch: 'd Händsche', de: 'die Handschuhe', ca: 'els guants', topic: 'roba', lesson: 'c07', book: 'schorn' },
+  { id: 'c7027', ch: 'de Wulepuli', de: 'der Wollpullover', ca: 'el jersei de llana', topic: 'roba', lesson: 'c07', book: 'schorn' },
+  { id: 'c7028', ch: 'chuurz', de: 'kurz', ca: 'curt', topic: 'adjectius', lesson: 'c07', book: 'schorn' },
+
+  // ---- Al carrer (grup 26) ----
+  { id: 'c7040', ch: 'verusse', de: 'im Freien, draussen', ca: 'a fora', topic: 'ciutat', lesson: 'c07', book: 'schorn', note: '«Verusse schiint d Sune.» Amb moviment: veruse.' },
+  { id: 'c7041', ch: 'im Schuss', de: 'in Eile, im Nu', ca: 'de pressa, en un tres i no res', topic: 'ciutat', lesson: 'c07', book: 'schorn', note: '«Im Schuss rännt si über d Straass.»' },
+  { id: 'c7042', ch: 's Trottoir', de: 'der Gehsteig', ca: 'la vorera', topic: 'ciutat', lesson: 'c07', book: 'schorn', note: 'Del francès, com Velo i Billett.' },
+  { id: 'c7043', ch: 'de Wäägwiiser', de: 'der Wegweiser', ca: 'el senyal indicador', topic: 'ciutat', lesson: 'c07', book: 'schorn' },
+  { id: 'c7044', ch: 'd Bsetzi', de: 'die Steinpflästerung', ca: 'l’empedrat', topic: 'ciutat', lesson: 'c07', book: 'schorn', note: 'Els llambordes: Bsetzistäi. «Stürchle nöd über d Bsetzistäi!»' },
+  { id: 'c7045', ch: 'stürchle', de: 'stolpern', ca: 'ensopegar', topic: 'verbs', lesson: 'c07', book: 'schorn' },
+  { id: 'c7046', ch: 'gschiider', de: 'besser, gescheiter', ca: 'més val que…', topic: 'basics', lesson: 'c07', book: 'schorn', note: '«Mer gönd gschiider ufs Trottoir.»' },
+
+  // ---- Verbs d’acció (grup 27) ----
+  { id: 'c7060', ch: 'rüere', de: 'werfen, rühren', ca: 'llençar, remenar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Broot rüert me nöd furt!» No es llença el pa.' },
+  { id: 'c7061', ch: 'briegge', de: 'weinen', ca: 'plorar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Es mues schüüli briegge.»' },
+  { id: 'c7062', ch: 'schreie', de: 'weinen, schreien', ca: 'plorar, cridar', topic: 'verbs', lesson: 'c07', book: 'schorn' },
+  { id: 'c7063', ch: 'göisse', de: 'kreischen', ca: 'xisclar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Nu d Mäitli göissed immer.»' },
+  { id: 'c7064', ch: 'weisse', de: 'laut jammern', ca: 'queixar-se en veu alta', topic: 'verbs', lesson: 'c07', book: 'schorn' },
+  { id: 'c7065', ch: 'rammle', de: 'raufen', ca: 'barallar-se (a mans)', topic: 'verbs', lesson: 'c07', book: 'schorn' },
+  { id: 'c7066', ch: 'de Gingg', de: 'der Fusstritt', ca: 'la puntada de peu', topic: 'basics', lesson: 'c07', book: 'schorn', note: 'El verb: gingge. «Si rammled und gingged enand.»' },
+  { id: 'c7067', ch: 'cheere / umcheere', de: 'wenden', ca: 'girar, tombar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«D Siite vom Nooteheft umcheere.»' },
+  { id: 'c7068', ch: 'enand', de: 'einander', ca: 'l’un a l’altre', topic: 'basics', lesson: 'c07', book: 'schorn' },
+  { id: 'c7069', ch: 'schüüli', de: 'schrecklich', ca: 'terriblement', topic: 'basics', lesson: 'c07', book: 'schorn' },
+
+  // ---- Trencar i qualificar (grup 28) ----
+  { id: 'c7080', ch: 'schliisse / verheie', de: 'zerstören, kaputt machen', ca: 'trencar, destrossar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Wèr hät das gschlisse?»' },
+  { id: 'c7081', ch: 'giire', de: 'knirschen, knarren', ca: 'grinyolar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Die zwoo Tüüre giired scho lang.»' },
+  { id: 'c7082', ch: 'spöize', de: 'spucken', ca: 'escopir', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Dèè spöizt bim Rede.»' },
+  { id: 'c7083', ch: 'fiin / fäin', de: 'fein', ca: 'fi / bo de gust', topic: 'adjectius', lesson: 'c07', book: 'schorn', note: '⚠️ «fäin» només per al menjar. «So fiini Haar hät das Mäiteli.»' },
+  { id: 'c7084', ch: 'gschiid', de: 'klug', ca: 'llest', topic: 'adjectius', lesson: 'c07', book: 'schorn' },
+  { id: 'c7085', ch: 'zwoo', de: 'zwei (femení)', ca: 'dues', topic: 'nombres', lesson: 'c07', book: 'schorn', note: 'El dialecte distingeix el gènere al 2: zwee (m), zwoo (f), zwäi (n).' },
+
+  // ---- Camp i casa (grup 29) ----
+  { id: 'c7100', ch: 'de Wümet / wüme', de: 'die Weinlese / Trauben lesen', ca: 'la verema / veremar', topic: 'ciutat', lesson: 'c07', book: 'schorn' },
+  { id: 'c7101', ch: 'de Acher', de: 'der Acker', ca: 'el camp de conreu', topic: 'ciutat', lesson: 'c07', book: 'schorn', note: '«Uf dèm Acher blüet de Wäize.»' },
+  { id: 'c7102', ch: 'de Wäize', de: 'der Weizen', ca: 'el blat', topic: 'menjar', lesson: 'c07', book: 'schorn' },
+  { id: 'c7103', ch: 'de Gaartehaag', de: 'der Gartenzaun', ca: 'la tanca del jardí', topic: 'casa', lesson: 'c07', book: 'schorn' },
+  { id: 'c7104', ch: 'de Gugger', de: 'der Kuckuck', ca: 'el cucut', topic: 'animals', lesson: 'c07', book: 'schorn', note: '«En Gugger sitzt uf öisem Haag.»' },
+  { id: 'c7105', ch: 'de Güselchübel', de: 'der Mülleimer', ca: 'la galleda de les escombraries', topic: 'casa', lesson: 'c07', book: 'schorn', note: 'La bossa: de Güselsack.' },
+  { id: 'c7106', ch: 'porzevole', de: 'randvoll', ca: 'ple a vessar', topic: 'adjectius', lesson: 'c07', book: 'schorn' },
+  { id: 'c7107', ch: 'de Tolgge', de: 'der Tintenklecks', ca: 'la taca de tinta', topic: 'objectes', lesson: 'c07', book: 'schorn', note: '«Jetz häsch en Tolgge im Räinheft!»' },
+  { id: 'c7108', ch: 'pucke', de: 'sich bücken', ca: 'ajupir-se', topic: 'verbs', lesson: 'c07', book: 'schorn', note: '«Bim Wüme mues me si pucke.»' },
+
+  // ---- Endreçar i renovar («En Glücksfall») ----
+  { id: 'c7120', ch: 'uufruume', de: 'aufräumen', ca: 'endreçar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: 'Separable: ich ruume uuf.' },
+  { id: 'c7121', ch: 'furtrüere', de: 'fortwerfen', ca: 'llençar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: 'Separable: ich rüere furt.' },
+  { id: 'c7122', ch: 'versoorge', de: 'wegräumen, versorgen', ca: 'desar, guardar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: 'NO és separable: ich versoorge.' },
+  { id: 'c7123', ch: 'trääge', de: 'tragen', ca: 'portar, carregar', topic: 'verbs', lesson: 'c07', book: 'schorn', note: 'du träisch, er träit, mir trääged.' },
+  { id: 'c7124', ch: 'eerbe', de: 'erben', ca: 'heretar', topic: 'verbs', lesson: 'c07', book: 'schorn' },
+  { id: 'c7125', ch: 'phalte', de: 'aufbewahren', ca: 'conservar, guardar', topic: 'verbs', lesson: 'c07', book: 'schorn' },
+  { id: 'c7126', ch: 'begäischteret', de: 'begeistert', ca: 'entusiasmat', topic: 'sentiments', lesson: 'c07', book: 'schorn' },
+  { id: 'c7127', ch: 'risig', de: 'riesig', ca: 'enorme', topic: 'adjectius', lesson: 'c07', book: 'schorn' },
+  { id: 'c7128', ch: 'altmöödig', de: 'altmodisch', ca: 'passat de moda', topic: 'adjectius', lesson: 'c07', book: 'schorn' },
+  { id: 'c7129', ch: 'wertvoll', de: 'wertvoll', ca: 'valuós', topic: 'adjectius', lesson: 'c07', book: 'schorn' },
+  { id: 'c7130', ch: 'de Huusraat', de: 'der Hausrat', ca: 'els estris de la casa', topic: 'casa', lesson: 'c07', book: 'schorn' },
+  { id: 'c7131', ch: 'd Winde', de: 'der Dachboden', ca: 'les golfes', topic: 'casa', lesson: 'c07', book: 'schorn' },
+  { id: 'c7132', ch: 'de Chäler', de: 'der Keller', ca: 'el celler, el soterrani', topic: 'casa', lesson: 'c07', book: 'schorn' },
+  { id: 'c7133', ch: 's Gschiir', de: 'das Geschirr', ca: 'la vaixella', topic: 'casa', lesson: 'c07', book: 'schorn' },
+  { id: 'c7134', ch: 's Bschteck', de: 'das Besteck', ca: 'els coberts', topic: 'casa', lesson: 'c07', book: 'schorn' },
+  { id: 'c7135', ch: 's Wèrchzüüg', de: 'das Werkzeug', ca: 'les eines', topic: 'objectes', lesson: 'c07', book: 'schorn' },
+  { id: 'c7136', ch: 'd Pfane', de: 'die Pfanne', ca: 'la cassola', topic: 'casa', lesson: 'c07', book: 'schorn' },
+  { id: 'c7137', ch: 'd Pantoffle', de: 'die Pantoffeln', ca: 'les sabatilles', topic: 'roba', lesson: 'c07', book: 'schorn' },
+  { id: 'c7138', ch: 'd Wöschzäine', de: 'der Wäschekorb', ca: 'el cistell de la roba', topic: 'casa', lesson: 'c07', book: 'schorn' },
+  { id: 'c7139', ch: 'gschwind', de: 'schnell, geschwind', ca: 'de pressa', topic: 'basics', lesson: 'c07', book: 'schorn' },
+  { id: 'c7140', ch: 'dune', de: 'drunten', ca: 'a baix', topic: 'basics', lesson: 'c07', book: 'schorn' },
+  { id: 'c7141', ch: 'raate', de: 'raten', ca: 'aconsellar', topic: 'verbs', lesson: 'c07', book: 'schorn' },
+  { id: 'c7142', ch: 'maale', de: 'malen', ca: 'pintar', topic: 'verbs', lesson: 'c07', book: 'schorn' },
+  { id: 'c7143', ch: 'de Architäkt', de: 'der Architekt', ca: 'l’arquitecte', topic: 'feina', lesson: 'c07', book: 'schorn' },
+  { id: 'c7144', ch: 'pschlosse', de: 'abgeschlossen', ca: 'tancat amb clau', topic: 'adjectius', lesson: 'c07', book: 'schorn' }
 ]

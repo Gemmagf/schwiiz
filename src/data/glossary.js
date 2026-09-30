@@ -274,5 +274,8 @@ export const FORMS = {
   // formes de present molt vistes
   'lueg': 'luege', 'luegt': 'luege', 'seit': 'säge', 'redsch': 'rede', 'redet': 'rede',
   'mached': 'mache', 'trinked': 'trinke', 'schriibt': 'schriibe', 'lüütet': 'lüüte',
+  // Separables: l'arrel sola no diu res, cal portar-la a l'infinitiu sencer
+  'ruume': 'uufruume', 'ruumsch': 'uufruume', 'ruumt': 'uufruume', 'ruumed': 'uufruume',
+  'träisch': 'trääge', 'träit': 'trääge', 'trääged': 'trääge',
   'rägnet': 'rägne', 'freut': 'freue', 'bringt': 'bringe', 'kännt': 'chenne', 'ghört': 'ghöre'
 }

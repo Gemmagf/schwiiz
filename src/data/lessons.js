@@ -44,6 +44,12 @@ export const LESSONS = [
     title: 'Classe 6 — verbs irregulars i participis',
     date: '2026-09-23',
     note: 'Els 24 verbs irregulars més importants amb totes les formes, la inversió, l’imperatiu i el participi. Reforç de «gang go / chum cho» i full d’expressions p. 104.'
+  },
+  {
+    id: 'c07',
+    title: 'Classe 7 — öpper/öppis/öppe i verbs separables',
+    date: '2026-09-30',
+    note: 'Full de vocabulari p.105 (grups 24–29): negació, roba, carrer, verbs d’acció i camp. I «En Glücksfall» p.30: öpper/öppis/öppe i quins verbs se separen.'
   }
 ]
 

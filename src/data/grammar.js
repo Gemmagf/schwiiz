@@ -1549,6 +1549,81 @@ const TEMES = [
       { id: 'h08e6', type: 'gap', q: 'Gisch mer es ___ Chriesi? (un grapat)', a: ['hämpfeli', 'hampfle'], why: 'e Hampfle, en diminutiu es Hämpfeli.' },
       { id: 'h08e7', type: 'choice', q: '«es birebitzeli» és…', options: ['més que es bitzeli', 'encara menys que es bitzeli'], a: 1, why: 'És el diminutiu del diminutiu.' }
     ]
+  },
+  {
+    id: 's20',
+    book: 'schorn',
+    unit: 'c7',
+    order: 5.7,
+    title: 'öpper, öppis, öppe — i els seus contraris',
+    emoji: '❔',
+    lesson: 'c07',
+    summary: 'De la classe 7. Tres paraules que s’assemblen molt i volen dir coses diferents.',
+    points: [
+      '**öpper** = algú (jemand) · **öppis** = alguna cosa (etwas) · **öppe** = si fa no fa, potser (etwa)',
+      '**öppedie** = de tant en tant (dann und wann)',
+      'Isch **öppen öpper** i s Huus ie choo? = ¿Ha entrat algú a casa?',
+      'Ich hett gèèrn **öppis** Nöis. = Voldria alguna cosa nova.',
+      'Els contraris són paraules pròpies, no es nega amb nöd:',
+      '**niemer** = ningú · **nüüt** = res · **niene** = enlloc',
+      'Ich ha **niemer** gsee und **nie nüüt** ghöört. (la doble negació aquí és normal)',
+      'Compte amb la **-n-** de lligadura: «öppe**n** öpper», com a «e so-n-en».'
+    ],
+    table: {
+      head: ['Afirmatiu', 'Vol dir', 'Contrari'],
+      rows: [
+        ['öpper', 'algú', 'niemer (ningú)'],
+        ['öppis', 'alguna cosa', 'nüüt (res)'],
+        ['näime / nöime', 'en algun lloc', 'niene (enlloc)'],
+        ['öppe', 'potser, si fa no fa', '—'],
+        ['öppedie', 'de tant en tant', 'nie (mai)']
+      ]
+    },
+    exercises: [
+      { id: 's20e1', type: 'gap', q: 'Isch ___ i s Huus ie choo? (algú)', a: ['öpper', 'oepper'], why: 'öpper = jemand.' },
+      { id: 's20e2', type: 'gap', q: 'Ich hett gèèrn ___ Nöis. (alguna cosa)', a: ['öppis', 'oeppis'], why: 'öppis = etwas.' },
+      { id: 's20e3', type: 'choice', q: 'Ich ha ___ gsee. (no he vist ningú)', options: ['nüüt', 'niemer', 'niene'], a: 1, why: 'niemer = ningú. nüüt és «res» i niene «enlloc».' },
+      { id: 's20e4', type: 'choice', q: 'Què vol dir «öppedie»?', options: ['algú', 'de tant en tant', 'enlloc'], a: 1, why: 'öppedie = dann und wann.' },
+      { id: 's20e5', type: 'gap', q: '___ mues doch miin Chugi sii! (en algun lloc)', a: ['näime', 'naime', 'nöime'], why: 'näime / nöime = irgendwo.' },
+      { id: 's20e6', type: 'choice', q: 'Hi ha una -n- a «öppen öpper». Per què?', options: ['És part de la paraula', 'Lligadura entre dues vocals', 'Marca el plural'], a: 1, why: 'La mateixa -n- de «e so-n-en» o «wie-n-er».' },
+      { id: 's20e7', type: 'choice', q: '«Si hät nie nüüt gsäit» vol dir…', options: ['No ha dit mai res', 'Ha dit alguna cosa', 'Sempre diu coses'], a: 0, why: 'La doble negació en dialecte reforça, no s’anul·la.' }
+    ]
+  },
+  {
+    id: 's21',
+    book: 'schorn',
+    unit: 'c7',
+    order: 8.7,
+    title: 'Quins verbs se separen i quins no',
+    emoji: '🔪',
+    lesson: 'c07',
+    summary: 'De la classe 7. El prefix se’n va al final… però només d’alguns. La taula de «Vor em Renoviere».',
+    points: [
+      'Se separen: **uufruume** → ich ruume **uuf** · **furtrüere** → ich rüere **furt**',
+      'NO se separen: **versoorge** → ich versoorge · **trääge** → ich trääge',
+      'La pista: si el prefix és una paraula amb sentit propi (**uuf**, **furt**, **aa**, **ab**, **mit**, **ue**), se separa.',
+      'Si és un prefix àton que no vol dir res tot sol (**ver-**, **be-**, **ge-**, **er-**), no se separa.',
+      'S Rägi **ruumt** d Chuchi **uuf**. · S Rägi **versoorget** s Gschiir.',
+      'Compte amb trääge, que canvia la vocal: ich trääge, du **träisch**, er **träit**, mir trääged.'
+    ],
+    table: {
+      head: ['', 'uufruume (sep.)', 'furtrüere (sep.)', 'versoorge', 'trääge'],
+      rows: [
+        ['ich', 'ruume uuf', 'rüere furt', 'versoorge', 'trääge'],
+        ['du', 'ruumsch uuf', 'rüersch furt', 'versoorgsch', 'träisch'],
+        ['er/si/es', 'ruumt uuf', 'rüert furt', 'versoorget', 'träit'],
+        ['mir/ir/si', 'ruumed uuf', 'rüered furt', 'versoorged', 'trääged']
+      ]
+    },
+    exercises: [
+      { id: 's21e1', type: 'gap', q: 'S Rägi ___ d Chuchi uuf. (uufruume)', a: ['ruumt'], why: 'Se separa: ruumt … uuf.' },
+      { id: 's21e2', type: 'choice', q: 'Quina és correcta amb furtrüere?', options: ['S Rägi furtrüert di Schue.', 'S Rägi rüert di Schue furt.', 'S Rägi rüert furt di Schue.'], a: 1, why: 'El prefix «furt» tanca la frase.' },
+      { id: 's21e3', type: 'gap', q: 'S Rägi ___ s Gschiir. (versoorge)', a: ['versoorget'], why: 'ver- no se separa mai: versoorget.' },
+      { id: 's21e4', type: 'gap', q: 'De Hans ___ e schwèèri Büecherchischte. (trääge)', a: ['träit'], why: '3a persona: träit, amb canvi de vocal.' },
+      { id: 's21e5', type: 'choice', q: 'Com saps si un verb se separa?', options: ['Pel nombre de síl·labes', 'Si el prefix vol dir alguna cosa tot sol', 'Si acaba en -e'], a: 1, why: 'uuf, furt, aa, ab, mit són paraules amb sentit propi i se separen. ver-, be-, ge-, er- no.' },
+      { id: 's21e6', type: 'gap', q: '___ du d Winden uuf, Rägi? (uufruume)', a: ['ruumsch'], why: '2a persona: ruumsch … uuf.' },
+      { id: 's21e7', type: 'choice', q: 'Mer ___ aber ja nöd ales furt! (furtrüere, nosaltres)', options: ['rüere', 'rüert', 'rüered'], a: 2, why: 'Plural: rüered … furt.' }
+    ]
   }
 ]
 
