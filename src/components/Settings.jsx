@@ -3,12 +3,14 @@ import { pushToGit, pullFromGit, isConfigured } from '../lib/sync.js'
 import { importAll, resetSrs, resetQuiz, exportAll } from '../lib/db.js'
 import { voices, onVoicesReady, speak, ttsAvailable } from '../lib/tts.js'
 import { todayISO } from '../lib/srs.js'
+import { useT } from '../i18n/index.jsx'
 
 // Un sol repo, com al caleta-tracker: el codi i el progrés viuen junts.
 // Els capítols de lectura NO hi van (vegeu src/lib/db.js).
 const DEFECTES = { gh_owner: 'Gemmagf', gh_repo: 'schwiiz', gh_branch: 'main', gh_token: '' }
 
-export default function Settings({ getConfig, setConfig, setToast, onReload, voiceURI, setVoiceURI, dirty, syncOn, mida, setMida }) {
+export default function Settings({ getConfig, setConfig, setToast, onReload, voiceURI, setVoiceURI, dirty, syncOn, mida, setMida, lang, setLang }) {
+  const t = useT()
   const [gh, setGh] = useState({ gh_owner: 'Gemmagf', gh_repo: 'schwiiz', gh_branch: 'main', gh_token: '' })
   const [lastSync, setLastSync] = useState('')
   const [llista, setLlista] = useState([])
@@ -35,7 +37,7 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
 
   async function desar() {
     for (const [k, v] of Object.entries(gh)) await setConfig(k, v.trim())
-    setToast('Configuració desada ✓')
+    setToast(t('toast_saved'))
   }
 
   async function pujar() {
@@ -54,7 +56,7 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
         }
         r = await pushToGit({ force: true })
       }
-      setToast(r.ok ? 'Progrés pujat a git ✓' : `No s’ha pogut pujar: ${r.reason}`)
+      setToast(r.ok ? t('toast_pushed') : `No s’ha pogut pujar: ${r.reason}`)
       if (r.ok) { setLastSync(new Date().toISOString()); await onReload() }
     } catch (e) {
       setToast(`Error: ${e.message}`)
@@ -63,12 +65,12 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
   }
 
   async function baixar() {
-    if (!confirm('Això SOBREESCRIU el progrés d’aquest mòbil amb el que hi ha al repo. Segur?')) return
+    if (!confirm(t('confirm_pull'))) return
     setOcupat(true)
     try {
       const remot = await pullFromGit()
       if (!remot) setToast('No s’ha trobat cap estat al repo')
-      else { await importAll(remot); await onReload(); setToast('Progrés recuperat del repo ✓') }
+      else { await importAll(remot); await onReload(); setToast(t('toast_pulled')) }
     } catch (e) {
       setToast(`Error: ${e.message}`)
     }
@@ -78,7 +80,7 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
   // A iOS una PWA es pot quedar encallada en una versió antiga. Això la neteja de debò:
   // esborra el service worker i tota la memòria cau, i recarrega.
   async function actualitzar() {
-    if (!confirm('Es baixarà l’última versió de l’app. El teu progrés NO es toca. Continuar?')) return
+    if (!confirm(t('confirm_update'))) return
     setOcupat(true)
     try {
       if ('serviceWorker' in navigator) {
@@ -104,105 +106,85 @@ export default function Settings({ getConfig, setConfig, setToast, onReload, voi
   }
 
   async function esborrar(tipus) {
-    if (!confirm('Segur? Això no es pot desfer en aquest dispositiu.')) return
+    if (!confirm(t('confirm_reset'))) return
     if (tipus === 'srs') await resetSrs()
     else await resetQuiz()
     await onReload()
-    setToast('Esborrat')
+    setToast(t('toast_deleted'))
   }
 
   const veus = llista.length ? llista : voices()
 
   return (
     <div className="settings">
-      <h2>Repàs</h2>
-      <label>Targetes per tanda</label>
+      <h2>{t('set_language')}</h2>
+      <select value={lang} onChange={(e) => setLang(e.target.value)}>
+        <option value="ca">Català</option>
+        <option value="en">English</option>
+      </select>
+      <p className="hint">{t('set_language_hint')}</p>
+
+      <h2>{t('set_review')}</h2>
+      <label>{t('set_round_size')}</label>
       <select value={mida} onChange={(e) => setMida(Number(e.target.value))}>
         {[50, 100, 150, 200, 300, 500].map((n) => <option key={n} value={n}>{n}</option>)}
       </select>
-      <p className="hint">
-        Quantes targetes et proposa cada tanda. Quan l’acabes pots fer-ne una altra: el compte
-        del dia va sumant. Dins de cada tanda entren primer les que et costen més (les que has
-        fallat més vegades i les que tens menys assentades), i s’omple amb targetes noves.
-      </p>
+      <p className="hint">{t('set_round_hint')}</p>
 
-      <h2>Pronunciació</h2>
+      <h2>{t('set_pron')}</h2>
       {!ttsAvailable() ? (
         <p className="hint">Aquest navegador no té síntesi de veu.</p>
       ) : (
         <>
-          <label>Veu (alemanya)</label>
+          <label>{t('set_voice')}</label>
           <select value={voiceURI || ''} onChange={(e) => setVoiceURI(e.target.value)}>
-            <option value="">Automàtica (de-CH si n’hi ha)</option>
+            <option value="">{t('set_voice_auto')}</option>
             {veus.map((v) => <option key={v.voiceURI} value={v.voiceURI}>{v.name} — {v.lang}</option>)}
           </select>
           <div className="btn-row">
-            <button onClick={() => speak('Grüezi mitenand, wie gaht’s?', { voiceURI })}>Provar la veu</button>
+            <button onClick={() => speak('Grüezi mitenand, wie gaht’s?', { voiceURI })}>{t('set_voice_test')}</button>
           </div>
-          <p className="hint warn">
-            No existeix cap veu de suís-alemany al mòbil. El que sents és una veu alemanya llegint
-            text dialectal: et serveix per fixar paraules, però la pronúncia bona te la dona la classe.
-          </p>
+          <p className="hint warn">{t('set_voice_warn')}</p>
         </>
       )}
 
-      <h2>Sincronitzar el progrés amb git</h2>
-      <p className="hint">
-        Opcional. Serveix per passar el teu progrés d’un dispositiu a un altre. Sense això l’app
-        funciona igual, però el progrés només viu en aquest mòbil. Puja el repàs, la ratxa, els
-        exercicis i les teves paraules a <code>data/state.json</code>. Els <b>capítols de
-        lectura no hi pugen mai</b>: es queden en aquest dispositiu.
-      </p>
+      <h2>{t('set_sync')}</h2>
+      <p className="hint">{t('set_sync_hint')}</p>
       {syncOn && (
         <div className={`sync-state ${dirty ? 'pend' : 'ok'}`}>
-          {dirty
-            ? '↑ Tens progrés sense pujar. Es puja sol quan hi hagi connexió, o prem «Pujar progrés».'
-            : '✓ Tot el progrés està pujat al repo.'}
+          {dirty ? t('set_pending') : t('set_all_synced')}
         </div>
       )}
-      <label>Usuari de GitHub</label>
+      <label>{t('set_user')}</label>
       <input value={gh.gh_owner} onChange={(e) => setGh({ ...gh, gh_owner: e.target.value })} placeholder="Gemmagf" autoCapitalize="off" />
-      <label>Repo</label>
+      <label>{t('set_repo')}</label>
       <input value={gh.gh_repo} onChange={(e) => setGh({ ...gh, gh_repo: e.target.value })} autoCapitalize="off" />
-      <label>Branca</label>
+      <label>{t('set_branch')}</label>
       <input value={gh.gh_branch} onChange={(e) => setGh({ ...gh, gh_branch: e.target.value })} autoCapitalize="off" />
       <label>Token (fine-grained sobre <code>schwiiz</code>, Contents: read/write)</label>
       <input type="password" value={gh.gh_token} onChange={(e) => setGh({ ...gh, gh_token: e.target.value })} placeholder="github_pat_..." autoCapitalize="off" />
-      <p className="hint warn">
-        El token es guarda en aquest dispositiu (IndexedDB), sense xifrar. Fes servir només un token
-        fine-grained limitat a aquest repo, i si el mòbil es perd, revoca’l des de GitHub.
-      </p>
+      <p className="hint warn">{t('set_token_warn')}</p>
       <div className="btn-row">
-        <button onClick={desar}>Desar config</button>
-        <button onClick={pujar} disabled={ocupat}>⬆ Pujar progrés</button>
-        <button onClick={baixar} disabled={ocupat}>⬇ Baixar progrés</button>
+        <button onClick={desar}>{t('set_save_cfg')}</button>
+        <button onClick={pujar} disabled={ocupat}>{t('set_push')}</button>
+        <button onClick={baixar} disabled={ocupat}>{t('set_pull')}</button>
       </div>
-      {lastSync && <p className="hint">Última sincronització: {new Date(lastSync).toLocaleString('ca-ES')}</p>}
+      {lastSync && <p className="hint">{t('set_last_sync', { d: new Date(lastSync).toLocaleString(t.lang === 'en' ? 'en-GB' : 'ca-ES') })}</p>}
 
-      <h2>Contingut nou</h2>
-      <p className="hint">
-        El material de classe no arriba per aquí: viu al codi del repo. Quan s’hi afegeix contingut
-        nou i es torna a desplegar, l’app s’actualitza sola en obrir-la amb connexió. Si sembla que
-        no arriba, tanca-la del tot i torna-la a obrir.
-      </p>
+      
 
-      <h2>Versió</h2>
-      <p className="hint">
-        Compilada el <b>{typeof __BUILD__ !== 'undefined' ? __BUILD__ : '—'}</b> (UTC).
-      </p>
+      <h2>{t('set_version')}</h2>
+      <p className="hint">{t('set_built', { d: typeof __BUILD__ !== 'undefined' ? __BUILD__ : '—' })}</p>
       <div className="btn-row">
-        <button onClick={actualitzar} disabled={ocupat}>↻ Forçar actualització</button>
+        <button onClick={actualitzar} disabled={ocupat}>{t('set_force_update')}</button>
       </div>
-      <p className="hint">
-        Fes-ho servir si la data de dalt no coincideix amb l’última versió. Esborra la memòria
-        cau i el service worker i torna a baixar l’app. El progrés no es toca.
-      </p>
+      <p className="hint">{t('set_force_hint')}</p>
 
-      <h2>Dades</h2>
+      <h2>{t('set_data')}</h2>
       <div className="btn-row">
-        <button onClick={exportar}>Exportar JSON</button>
-        <button className="danger" onClick={() => esborrar('srs')}>Reiniciar flashcards</button>
-        <button className="danger" onClick={() => esborrar('quiz')}>Reiniciar exercicis</button>
+        <button onClick={exportar}>{t('set_export')}</button>
+        <button className="danger" onClick={() => esborrar('srs')}>{t('set_reset_cards')}</button>
+        <button className="danger" onClick={() => esborrar('quiz')}>{t('set_reset_ex')}</button>
       </div>
     </div>
   )

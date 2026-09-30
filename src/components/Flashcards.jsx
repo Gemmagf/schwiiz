@@ -3,11 +3,12 @@ import { TOPICS } from '../data/vocab.js'
 import { LESSONS } from '../data/lessons.js'
 import { GRADES, dueCards, construeixTanda, grade as gradeCard, newCard } from '../lib/srs.js'
 import { speak, ttsAvailable } from '../lib/tts.js'
+import { useT } from '../i18n/index.jsx'
 
 const DIRECTIONS = [
-  { id: 'ch2ca', label: 'Dialecte → Català', front: 'ch', hint: 'llegeixes el dialecte i en surt el català i l’alemany' },
-  { id: 'ca2ch', label: 'Català → Dialecte', front: 'ca', hint: 'et fa produir, és el que més costa' },
-  { id: 'de2ch', label: 'Hochdeutsch → Dialecte', front: 'de', hint: 'per fixar els canvis de so' }
+  { id: 'ch2ca', clau: 'dir_ch2x', front: 'ch' },
+  { id: 'ca2ch', clau: 'dir_x2ch', front: 'nat' },
+  { id: 'de2ch', clau: 'dir_de2ch', front: 'de' }
 ]
 
 export default function Flashcards({
@@ -21,6 +22,7 @@ export default function Flashcards({
   const [ronda, setRonda] = useState(0)
   const [lliure, setLliure] = useState(false)
   const [filtresOberts, setFiltresOberts] = useState(true)
+  const t = useT()
 
   // Les que has marcat «Costa» tornen una vegada dins de la mateixa tanda.
   // Amb el Set evitem que una targeta difícil et faci un bucle infinit.
@@ -78,83 +80,83 @@ export default function Flashcards({
       <div className="cards-intro">
         {acabada && (
           <div className="done-box">
-            <b>Tanda {ronda} acabada 🎉</b>
+            <b>{t('cards_round_done', { n: ronda })}</b>
             <span>
-              {done} targetes{lliure ? ' · sessió lliure, no compta per al calendari' : ''}
+              {done} {t('cards_cards')}{lliure ? t('cards_free_note') : ''}
             </span>
           </div>
         )}
 
         <div className="avui-box">
           <b>{avuiFetes}</b>
-          <span>targetes repassades avui</span>
+          <span>{t('cards_today')}</span>
         </div>
 
         <button className="cta" onClick={() => comenca(false)} disabled={!seguents}>
           {seguents
-            ? acabada ? `Una altra tanda (${seguents})` : `Repassar ${seguents} targetes`
-            : 'Res per repassar avui 🎉'}
+            ? acabada ? t('cards_another', { n: seguents }) : t('dash_review_n', { n: seguents })
+            : t('dash_nothing')}
         </button>
 
         {!seguents && (
           <p className="hint center">
-            Ja has repassat tot el que tocava. Si en vols més, fes una sessió lliure.
+            {t('cards_all_done')}
           </p>
         )}
         {Boolean(seguents) && pendents.length > mida && (
           <p className="hint center">
-            En queden {pendents.length} en total. Es reparteixen en tandes de {mida}.
+            {t('cards_left', { n: pendents.length, m: mida })}
           </p>
         )}
 
         <button className="cta ghost" onClick={() => comenca(true)} disabled={!pool.length}>
-          Sessió lliure ({Math.min(mida, pool.length)} a l’atzar)
+          {t('cards_free', { n: Math.min(mida, pool.length) })}
         </button>
 
         <button className="filtres-toggle" onClick={() => setFiltresOberts(!filtresOberts)}>
-          {filtresOberts ? '▾' : '▸'} Direcció i filtres
+          {filtresOberts ? '▾' : '▸'} {t('cards_filters')}
           {(topicFilter !== 'tots' || lessonFilter !== 'tots') && <span className="punt" />}
         </button>
 
         {filtresOberts && (
           <div className="filtres-panel">
-            <h2>Direcció</h2>
+            <h2>{t('cards_direction')}</h2>
             <div className="dir-list">
               {DIRECTIONS.map((d) => (
                 <button key={d.id} className={`dir-btn ${dir === d.id ? 'active' : ''}`} onClick={() => setDir(d.id)}>
-                  <b>{d.label}</b><span>{d.hint}</span>
+                  <b>{t(d.clau)}</b><span>{t(d.clau + '_hint')}</span>
                 </button>
               ))}
             </div>
 
-            <h2>D’on ve</h2>
+            <h2>{t('cards_source')}</h2>
             <div className="filters">
               <button className={`chip ${lessonFilter === 'tots' ? 'active' : ''}`} onClick={() => setLessonFilter('tots')}>
-                Tot ({vocab.length})
+                {t('cards_all', { n: vocab.length })}
               </button>
               {LESSONS.map((l) => {
                 const n = vocab.filter((v) => (v.lesson || 'base') === l.id).length
                 if (!n) return null
                 return (
                   <button key={l.id} className={`chip ${lessonFilter === l.id ? 'active' : ''}`} onClick={() => setLessonFilter(l.id)}>
-                    {l.date ? `📘 ${l.title.split('—')[0].trim()}` : '📗 Fonaments'} ({n})
+                    {l.date ? `📘 ${l.title.split('—')[0].trim()}` : `📗 ${t('cards_basics')}`} ({n})
                   </button>
                 )
               })}
             </div>
 
-            <h2>Tema</h2>
+            <h2>{t('cards_topic')}</h2>
             <div className="filters">
               <button className={`chip ${topicFilter === 'tots' ? 'active' : ''}`} onClick={() => setTopicFilter('tots')}>
-                Tots ({pool.length})
+                {t('cards_all_topics', { n: pool.length })}
               </button>
-              {TOPICS.map((t) => {
+              {TOPICS.map((tp) => {
                 const base = lessonFilter === 'tots' ? vocab : vocab.filter((v) => (v.lesson || 'base') === lessonFilter)
-                const n = base.filter((v) => v.topic === t.id).length
+                const n = base.filter((v) => v.topic === tp.id).length
                 if (!n) return null
                 return (
-                  <button key={t.id} className={`chip ${topicFilter === t.id ? 'active' : ''}`} onClick={() => setTopicFilter(t.id)}>
-                    {t.emoji} {t.label} ({n})
+                  <button key={tp.id} className={`chip ${topicFilter === tp.id ? 'active' : ''}`} onClick={() => setTopicFilter(tp.id)}>
+                    {tp.emoji} {t.nat(tp, 'label')} ({n})
                   </button>
                 )
               })}
@@ -162,7 +164,7 @@ export default function Flashcards({
 
             {(topicFilter !== 'tots' || lessonFilter !== 'tots') && (
               <button className="quit" onClick={() => { setTopicFilter('tots'); setLessonFilter('tots') }}>
-                Treure els filtres i tornar a la barreja
+                {t('cards_clear_filters')}
               </button>
             )}
           </div>
@@ -173,7 +175,7 @@ export default function Flashcards({
 
   // ---------- Targeta ----------
   const item = queue[idx]
-  const front = item[direccio.front]
+  const front = direccio.front === 'nat' ? t.nat(item) : item[direccio.front]
   const estat = srs[item.id]
   const topic = TOPICS.find((t) => t.id === item.topic)
 
@@ -186,25 +188,25 @@ export default function Flashcards({
 
       <div className="flash">
         <div className="flash-topic">
-          {topic?.emoji} {topic?.label}
-          {estat?.reps ? ` · vista ${estat.reps}×` : ' · nova'}
-          {estat?.lapses ? ` · fallada ${estat.lapses}×` : ''}
+          {topic?.emoji} {t.nat(topic, 'label')}
+          {estat?.reps ? ` · ${t('cards_seen', { n: estat.reps })}` : ` · ${t('cards_new')}`}
+          {estat?.lapses ? ` · ${t('cards_failed', { n: estat.lapses })}` : ''}
         </div>
         <div className="flash-front">{front}</div>
 
         {shown ? (
           <div className="flash-back">
-            <div className="fb-row"><span className="fb-lbl">Dialecte</span><b className="ch">{item.ch}</b>
+            <div className="fb-row"><span className="fb-lbl">{t('lbl_dialect')}</span><b className="ch">{item.ch}</b>
               {ttsAvailable() && (
                 <button className="speak" onClick={() => speak(item.ch, { voiceURI })} aria-label="Escoltar">🔊</button>
               )}
             </div>
-            <div className="fb-row"><span className="fb-lbl">Hochdeutsch</span><span>{item.de}</span></div>
-            <div className="fb-row"><span className="fb-lbl">Català</span><span>{item.ca}</span></div>
+            <div className="fb-row"><span className="fb-lbl">{t('lbl_german')}</span><span>{item.de}</span></div>
+            <div className="fb-row"><span className="fb-lbl">{t('lbl_native')}</span><span>{t.nat(item)}</span></div>
             {item.note && <p className="flash-note">{item.note}</p>}
           </div>
         ) : (
-          <button className="reveal" onClick={() => setShown(true)}>Mostrar</button>
+          <button className="reveal" onClick={() => setShown(true)}>{t('cards_show')}</button>
         )}
       </div>
 
@@ -212,13 +214,13 @@ export default function Flashcards({
         <div className="grades">
           {GRADES.map((g) => (
             <button key={g.g} className={`grade ${g.cls}`} onClick={() => answer(g.g)}>
-              <b>{g.label}</b><span>{g.hint}</span>
+              <b>{t('grade_' + g.cls)}</b><span>{t('grade_' + g.cls + '_hint')}</span>
             </button>
           ))}
         </div>
       )}
 
-      <button className="quit" onClick={() => { setQueue(null); setIdx(0) }}>Deixar-ho aquí</button>
+      <button className="quit" onClick={() => { setQueue(null); setIdx(0) }}>{t('cards_quit')}</button>
     </div>
   )
 }

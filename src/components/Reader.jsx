@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { READINGS, BOOKS } from '../data/readings.js'
 import { cerca, tokenitza, normalitza, rebuildIndex } from '../lib/lookup.js'
 import { speak, ttsAvailable } from '../lib/tts.js'
+import { useT } from '../i18n/index.jsx'
 
 const buit = { ch: '', de: '', ca: '' }
 
@@ -11,6 +12,7 @@ export default function Reader({ userCards, texts, onAddCard, onUpdateCard, onDe
   const [sel, setSel] = useState(null)             // { raw, trobat }
   const [form, setForm] = useState(buit)
   const [nou, setNou] = useState({ title: '', book: 'hansdampf', body: '' })
+  const t = useT()
 
   // L'índex de cerca ha d'incloure les teves targetes: el que hi has posat tu mana.
   useEffect(() => { rebuildIndex(userCards) }, [userCards])
@@ -59,13 +61,13 @@ export default function Reader({ userCards, texts, onAddCard, onUpdateCard, onDe
     return (
       <div className="reader">
         <div className="reader-bar">
-          <button className="mini" onClick={() => setVista('afegir')}>＋ Afegir un text</button>
+          <button className="mini" onClick={() => setVista('afegir')}>{t('read_add_text')}</button>
           <button className="mini" onClick={() => setVista('paraules')}>
-            Les meves paraules ({userCards.length})
+            {t('read_my_words', { n: userCards.length })}
           </button>
         </div>
 
-        {texts.length > 0 && <h2>Els teus capítols</h2>}
+        {texts.length > 0 && <h2>{t('read_your_chapters')}</h2>}
         {texts.map((t) => (
           <div key={t.id} className="read-card">
             <button className="read-open" onClick={() => { setActiu(t); setVista('text') }}>
@@ -76,11 +78,8 @@ export default function Reader({ userCards, texts, onAddCard, onUpdateCard, onDe
           </div>
         ))}
 
-        <h2>Textos d’exemple</h2>
-        <p className="hint">
-          Escrits per a l’app, per practicar el lector. El teu llibre de lectura no ve inclòs:
-          els capítols que vulguis treballar els enganxes tu amb «Afegir un text».
-        </p>
+        <h2>{t('read_samples')}</h2>
+        <p className="hint">{t('read_samples_hint')}</p>
         {READINGS.map((r) => (
           <div key={r.id} className="read-card">
             <button className="read-open" onClick={() => { setActiu(r); setVista('text') }}>
@@ -97,22 +96,18 @@ export default function Reader({ userCards, texts, onAddCard, onUpdateCard, onDe
   if (vista === 'afegir') {
     return (
       <div className="reader">
-        <button className="tornar" onClick={() => setVista('llista')}>← Tornar</button>
-        <h2>Afegir un text</h2>
-        <p className="hint">
-          Enganxa o escriu el capítol que estàs treballant. Es guarda <b>només en aquest
-          dispositiu</b> i no puja mai a git, ni tan sols amb la sincronització activada.
-          Per moure’l a un altre mòbil, fes servir «Exportar JSON» als Ajustos.
-        </p>
-        <label>Títol</label>
+        <button className="tornar" onClick={() => setVista('llista')}>{t('read_back')}</button>
+        <h2>{t('read_add_text')}</h2>
+        <p className="hint">{t('read_add_hint')}</p>
+        <label>{t('read_title')}</label>
         <input value={nou.title} onChange={(e) => setNou({ ...nou, title: e.target.value })} placeholder="p. ex. Hansdampf — Kapitel 3" />
-        <label>D’on ve</label>
+        <label>{t('read_from')}</label>
         <select value={nou.book} onChange={(e) => setNou({ ...nou, book: e.target.value })}>
           {BOOKS.map((b) => <option key={b.id} value={b.id}>{b.title}</option>)}
-          <option value="altre">Altre</option>
+          <option value="altre">{t('read_other')}</option>
         </select>
-        <label>Text</label>
-        <textarea rows={12} value={nou.body} onChange={(e) => setNou({ ...nou, body: e.target.value })} placeholder="Enganxa el text en dialecte aquí…" />
+        <label>{t('read_text')}</label>
+        <textarea rows={12} value={nou.body} onChange={(e) => setNou({ ...nou, body: e.target.value })} placeholder={t('read_text_ph')} />
         <div className="btn-row">
           <button
             disabled={!nou.title.trim() || !nou.body.trim()}
@@ -121,7 +116,7 @@ export default function Reader({ userCards, texts, onAddCard, onUpdateCard, onDe
               setNou({ title: '', book: 'hansdampf', body: '' })
               setVista('llista')
             }}
-          >Desar</button>
+          >{t('read_save')}</button>
         </div>
       </div>
     )
@@ -131,13 +126,10 @@ export default function Reader({ userCards, texts, onAddCard, onUpdateCard, onDe
   if (vista === 'paraules') {
     return (
       <div className="reader">
-        <button className="tornar" onClick={() => setVista('llista')}>← Tornar</button>
-        <h2>Les meves paraules ({userCards.length})</h2>
-        <p className="hint">
-          Les que has anat afegint llegint. Entren al repàs espaiat com qualsevol altra targeta.
-          Les que no tenen traducció surten marcades.
-        </p>
-        {!userCards.length && <p className="hint">Encara no n’has afegit cap. Obre un text i toca una paraula.</p>}
+        <button className="tornar" onClick={() => setVista('llista')}>{t('read_back')}</button>
+        <h2>{t('read_my_words', { n: userCards.length })}</h2>
+        <p className="hint">{t('read_words_hint')}</p>
+        {!userCards.length && <p className="hint">{t('read_no_words')}</p>}
         <ul className="mywords">
           {userCards.map((c) => (
             <li key={c.id} className={c.ca ? '' : 'pendent'}>
@@ -146,9 +138,9 @@ export default function Reader({ userCards, texts, onAddCard, onUpdateCard, onDe
                 {ttsAvailable() && <button className="speak" onClick={() => speak(c.ch, { voiceURI })}>🔊</button>}
                 <button className="del" onClick={() => { if (confirm(`Esborrar «${c.ch}»?`)) onDeleteCard(c.id) }}>🗑</button>
               </div>
-              {c.ca ? <div className="ph-ca">{c.ca}</div> : <div className="mw-todo">sense traducció — toca-la per escriure-la</div>}
+              {c.ca ? <div className="ph-ca">{c.ca}</div> : <div className="mw-todo">{t('read_no_translation')}</div>}
               {c.de && <div className="ph-de">{c.de}</div>}
-              <div className="mw-src">de: {c.source}</div>
+              <div className="mw-src">{t('read_from_label', { s: c.source })}</div>
               <button className="retry" onClick={() => { setSel({ raw: c.ch, trobat: { ...c, font: 'teva' } }); setForm({ ch: c.ch, de: c.de || '', ca: c.ca || '' }) }}>
                 Editar
               </button>
@@ -164,10 +156,10 @@ export default function Reader({ userCards, texts, onAddCard, onUpdateCard, onDe
   const paragrafs = actiu.body.split(/\n\s*\n/)
   return (
     <div className="reader">
-      <button className="tornar" onClick={() => { setVista('llista'); setSel(null) }}>← Tornar</button>
+      <button className="tornar" onClick={() => { setVista('llista'); setSel(null) }}>{t('read_back')}</button>
       <h1 className="read-title">{actiu.title}</h1>
       {actiu.intro && <p className="read-intro">{actiu.intro}</p>}
-      <p className="hint">Toca qualsevol paraula per veure què vol dir i afegir-la a les targetes.</p>
+      <p className="hint">{t('read_tap_hint')}</p>
 
       <div className="read-body">
         {paragrafs.map((p, i) => (
@@ -189,7 +181,7 @@ export default function Reader({ userCards, texts, onAddCard, onUpdateCard, onDe
 
       {ttsAvailable() && (
         <button className="cta ghost" onClick={() => speak(actiu.body.replace(/\n+/g, '. '), { voiceURI })}>
-          🔊 Escoltar tot el text
+          {t('read_listen_all')}
         </button>
       )}
 
@@ -200,8 +192,9 @@ export default function Reader({ userCards, texts, onAddCard, onUpdateCard, onDe
 
 // Panell inferior amb la paraula tocada.
 function Panel({ sel, form, setForm, setSel, guardaTargeta, voiceURI, userCards }) {
+  const tt = useT()
   const jaLaTens = userCards.find((c) => normalitza(c.ch) === normalitza(form.ch))
-  const t = sel.trobat
+  const trob = sel.trobat
 
   return (
     <>
@@ -213,35 +206,32 @@ function Panel({ sel, form, setForm, setSel, guardaTargeta, voiceURI, userCards 
           <button className="panel-x" onClick={() => setSel(null)}>✕</button>
         </div>
 
-        {t ? (
+        {trob ? (
           <div className="panel-found">
-            {!t.exacte && t.formaBuscada && (
-              <div className="panel-via">forma base: <b>{t.ch}</b></div>
+            {!trob.exacte && trob.formaBuscada && (
+              <div className="panel-via">{tt('read_base_form')} <b>{trob.ch}</b></div>
             )}
-            <div className="fb-row"><span className="fb-lbl">Català</span><span>{t.ca || '—'}</span></div>
-            <div className="fb-row"><span className="fb-lbl">Hochdeutsch</span><span>{t.de || '—'}</span></div>
-            {t.note && <p className="flash-note">{t.note}</p>}
+            <div className="fb-row"><span className="fb-lbl">{tt('lbl_native')}</span><span>{trob.ca || '—'}</span></div>
+            <div className="fb-row"><span className="fb-lbl">{tt('lbl_german')}</span><span>{trob.de || '—'}</span></div>
+            {trob.note && <p className="flash-note">{trob.note}</p>}
             <div className="panel-font">
-              {t.font === 'teva' ? 'ja la tens a les teves paraules' : `del ${t.font}`}
+              {trob.font === 'teva' ? tt('read_from_yours') : tt('read_from_src', { s: trob.font })}
             </div>
           </div>
         ) : (
-          <p className="panel-nores">
-            No la tinc al diccionari. Escriu tu què vol dir i queda desada — i si me la passes,
-            l’afegeixo al vocabulari de l’app.
-          </p>
+          <p className="panel-nores">{tt('read_not_found')}</p>
         )}
 
-        <label>Com la vols guardar</label>
-        <input value={form.ch} onChange={(e) => setForm({ ...form, ch: e.target.value })} placeholder="dialecte" />
-        <label>Català</label>
-        <input value={form.ca} onChange={(e) => setForm({ ...form, ca: e.target.value })} placeholder="què vol dir" />
-        <label>Hochdeutsch (opcional)</label>
-        <input value={form.de} onChange={(e) => setForm({ ...form, de: e.target.value })} placeholder="equivalent en alemany" />
+        <label>{tt('read_save_as')}</label>
+        <input value={form.ch} onChange={(e) => setForm({ ...form, ch: e.target.value })} placeholder={tt('lbl_dialect')} />
+        <label>{tt('lbl_native')}</label>
+        <input value={form.ca} onChange={(e) => setForm({ ...form, ca: e.target.value })} placeholder={tt('read_meaning_ph')} />
+        <label>{tt('read_de_ph')}</label>
+        <input value={form.de} onChange={(e) => setForm({ ...form, de: e.target.value })} placeholder={tt('read_de_ph')} />
 
         <div className="btn-row">
           <button onClick={guardaTargeta} disabled={!form.ch.trim()}>
-            {jaLaTens ? 'Actualitzar la targeta' : '＋ Afegir com a flashcard'}
+            {jaLaTens ? tt('read_update_card') : tt('read_add_card')}
           </button>
         </div>
       </div>

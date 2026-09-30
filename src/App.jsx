@@ -4,6 +4,8 @@ import {
   getCards, putCard, deleteCard, getTexts, putText, deleteText
 } from './lib/db.js'
 import { VOCAB } from './data/vocab.js'
+import { LangContext, idiomaPerDefecte } from './i18n/index.jsx'
+import { tr } from './i18n/ui.js'
 import { LESSONS } from './data/lessons.js'
 import { syncIfDirty, isConfigured, pullFromGit } from './lib/sync.js'
 import { todayISO } from './lib/srs.js'
@@ -14,11 +16,11 @@ import Phrases from './components/Phrases.jsx'
 import Settings from './components/Settings.jsx'
 
 const TABS = [
-  { id: 'dash', label: 'Tauler', emoji: '🏠' },
-  { id: 'cards', label: 'Repàs', emoji: '🃏' },
-  { id: 'gram', label: 'Gramàtica', emoji: '📐' },
-  { id: 'frases', label: 'Llegir', emoji: '📖' },
-  { id: 'set', label: 'Ajustos', emoji: '⚙️' }
+  { id: 'dash', clau: 'tab_dash', emoji: '🏠' },
+  { id: 'cards', clau: 'tab_cards', emoji: '🃏' },
+  { id: 'gram', clau: 'tab_gram', emoji: '📐' },
+  { id: 'frases', clau: 'tab_read', emoji: '📖' },
+  { id: 'set', clau: 'tab_set', emoji: '⚙️' }
 ]
 
 export default function App() {
@@ -31,6 +33,7 @@ export default function App() {
   const [topicFilter, setTopicFilter] = useState('tots')
   const [lessonFilter, setLessonFilter] = useState('tots')
   const [mida, setMida] = useState(200) // targetes per tanda
+  const [lang, setLang] = useState('ca')
   const [practicaLliso, setPracticaLliso] = useState(null)
   const [gramMode, setGramMode] = useState('temes')
   const [dir, setDir] = useState('ch2ca')
@@ -57,6 +60,7 @@ export default function App() {
       setVoiceURIState((await getConfig('voiceURI')) || '')
       setDir((await getConfig('dir')) || 'ch2ca')
       setMida((await getConfig('mida')) || 200)
+      setLang((await getConfig('lang')) || idiomaPerDefecte())
     })()
     const on = () => setOnline(true)
     const off = () => setOnline(false)
@@ -145,6 +149,12 @@ export default function App() {
     await setConfig('voiceURI', uri)
   }
 
+  async function saveLang(l) {
+    setLang(l)
+    await setConfig('lang', l)
+    document.documentElement.lang = l
+  }
+
   async function saveMida(n) {
     setMida(n)
     await setConfig('mida', n)
@@ -174,6 +184,7 @@ export default function App() {
   }
 
   return (
+    <LangContext.Provider value={lang}>
     <div className="app">
       <header className="topbar">
         <div className="brand">🇨🇭 <span>Schwiiz</span></div>
@@ -229,6 +240,7 @@ export default function App() {
             dirty={dirty} syncOn={syncOn}
             voiceURI={voiceURI} setVoiceURI={saveVoice}
             mida={mida} setMida={saveMida}
+            lang={lang} setLang={saveLang}
           />
         )}
       </main>
@@ -246,10 +258,11 @@ export default function App() {
             }}
           >
             <span className="emoji">{t.emoji}</span>
-            <span className="lbl">{t.label}</span>
+            <span className="lbl">{tr(t.clau, lang)}</span>
           </button>
         ))}
       </nav>
     </div>
+    </LangContext.Provider>
   )
 }

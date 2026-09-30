@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { GRAMMAR } from '../data/grammar.js'
 import { barreja } from '../lib/srs.js'
 import { LESSONS } from '../data/lessons.js'
+import { useT } from '../i18n/index.jsx'
 
 // Els punts admeten **negreta** — el suficient per destacar terminacions sense muntar un parser.
 function Rich({ text }) {
@@ -27,6 +28,7 @@ function normalitza(s) {
 }
 
 function Exercise({ ex, saved, onAnswer, onResolt }) {
+  const t = useT()
   const [tria, setTria] = useState(null)
   const [text, setText] = useState('')
   const [resultat, setResultat] = useState(null) // null | true | false
@@ -78,28 +80,28 @@ function Exercise({ ex, saved, onAnswer, onResolt }) {
           <input
             value={text}
             onChange={(e) => setText(e.target.value)}
-            placeholder="escriu la resposta"
+            placeholder={t('gram_answer_ph')}
             disabled={resultat !== null}
             autoCapitalize="off"
             autoCorrect="off"
             spellCheck={false}
           />
-          {resultat === null && <button type="submit">Comprovar</button>}
+          {resultat === null && <button type="submit">{t('gram_check')}</button>}
         </form>
       )}
 
       {resultat !== null && (
         <>
           <div className={`q-verdict ${resultat ? 'ok' : 'ko'}`}>
-            {resultat ? '✓ Correcte' : `✗ La resposta és: ${ex.type === 'choice' ? ex.options[ex.a] : ex.a[0]}`}
+            {resultat ? t('gram_correct') : t('gram_wrong', { a: ex.type === 'choice' ? ex.options[ex.a] : ex.a[0] })}
           </div>
           <div className="q-explain">{ex.why}</div>
-          <button className="retry" onClick={altraVegada}>Provar-ho un altre cop</button>
+          <button className="retry" onClick={altraVegada}>{t('gram_retry')}</button>
         </>
       )}
 
       {resultat === null && saved && (
-        <div className="q-prev">{saved.ok ? 'L’havies encertada' : 'L’havies fallada'} · {saved.tries} intents</div>
+        <div className="q-prev">{saved.ok ? t('gram_had_right') : t('gram_had_wrong')} · {t('gram_tries', { n: saved.tries })}</div>
       )}
     </li>
   )
@@ -125,6 +127,7 @@ function triaExercicis(quiz, n, lliso) {
 }
 
 function Practica({ quiz, onAnswer, lliso: llisoInicial, titolLliso }) {
+  const t = useT()
   const [lliso, setLliso] = useState(llisoInicial || null)
   const [mida, setMida] = useState(20)
   const [tanda, setTanda] = useState(null)
@@ -152,7 +155,7 @@ function Practica({ quiz, onAnswer, lliso: llisoInicial, titolLliso }) {
           que ja tens fets.
         </p>
 
-        <h2>De quina classe</h2>
+        <h2>{t('gram_which_class')}</h2>
         <div className="filters">
           <button className={`chip ${!lliso ? 'active' : ''}`} onClick={() => setLliso(null)}>
             Totes ({TOTS.length})
@@ -171,7 +174,7 @@ function Practica({ quiz, onAnswer, lliso: llisoInicial, titolLliso }) {
           <b>{pendents}</b>
           <span>per encertar{nomLliso ? ` de ${nomLliso.split('—')[0].trim()}` : ''}</span>
         </div>
-        <h2>Quants</h2>
+        <h2>{t('prac_how_many')}</h2>
         <div className="filters">
           {[10, 20, 30, 50].map((n) => (
             <button key={n} className={`chip ${mida === n ? 'active' : ''}`} onClick={() => setMida(n)}>{n}</button>
@@ -187,11 +190,11 @@ function Practica({ quiz, onAnswer, lliso: llisoInicial, titolLliso }) {
     return (
       <div className="practica">
         <div className="done-box">
-          <b>{encerts} de {tanda.length} encertats ({pct}%)</b>
-          <span>{pct >= 80 ? 'Molt bé 🎉' : pct >= 50 ? 'Va bé, insisteix-hi' : 'Toca repassar la teoria'}</span>
+          <b>{t('prac_score', { a: encerts, b: tanda.length, p: pct })}</b>
+          <span>{pct >= 80 ? t('prac_great') : pct >= 50 ? t('prac_ok') : t('prac_bad')}</span>
         </div>
-        <button className="cta" onClick={comenca}>Una altra tanda</button>
-        <button className="cta ghost" onClick={() => setTanda(null)}>Canviar la mida</button>
+        <button className="cta" onClick={comenca}>{t('prac_another')}</button>
+        <button className="cta ghost" onClick={() => setTanda(null)}>{t('prac_resize')}</button>
       </div>
     )
   }
@@ -220,10 +223,10 @@ function Practica({ quiz, onAnswer, lliso: llisoInicial, titolLliso }) {
       </ul>
       {resolt && (
         <button className="cta" onClick={() => { setI(i + 1); setResolt(false) }}>
-          {i + 1 < tanda.length ? 'Següent' : 'Veure el resultat'}
+          {i + 1 < tanda.length ? t('prac_next') : t('prac_result')}
         </button>
       )}
-      <button className="quit" onClick={() => setTanda(null)}>Deixar-ho aquí</button>
+      <button className="quit" onClick={() => setTanda(null)}>{t('cards_quit')}</button>
     </div>
   )
 }
@@ -231,22 +234,19 @@ function Practica({ quiz, onAnswer, lliso: llisoInicial, titolLliso }) {
 export default function Grammar({ quiz, onAnswer, practicaLliso, titolLliso, modeInicial }) {
   const [obert, setObert] = useState(GRAMMAR[0].id)
   const [mode, setMode] = useState(modeInicial || 'temes')
+  const t = useT()
 
   return (
     <div className="grammar">
       <div className="subtabs">
-        <button className={mode === 'temes' ? 'active' : ''} onClick={() => setMode('temes')}>📚 Per temes</button>
-        <button className={mode === 'practica' ? 'active' : ''} onClick={() => setMode('practica')}>🎲 Practicar</button>
+        <button className={mode === 'temes' ? 'active' : ''} onClick={() => setMode('temes')}>{t('gram_by_topic')}</button>
+        <button className={mode === 'practica' ? 'active' : ''} onClick={() => setMode('practica')}>{t('gram_practice')}</button>
       </div>
 
       {mode === 'practica' && <Practica quiz={quiz} onAnswer={onAnswer} lliso={practicaLliso} titolLliso={titolLliso} />}
 
       {mode === 'temes' && (<>
-      <p className="hint">
-        Els temes segueixen l’ordre dels capítols de <b>Schweizerdeutsch verstehen</b> (Holle).
-        Els que porten <b>Schorn</b> vénen del curs de classe i s’han col·locat al costat del
-        capítol equivalent. Cada tema té l’explicació i després exercicis que es corregeixen sols.
-      </p>
+      <p className="hint">{t('gram_intro')}</p>
 
       {GRAMMAR.map((g) => {
         const isOpen = obert === g.id
@@ -263,7 +263,7 @@ export default function Grammar({ quiz, onAnswer, practicaLliso, titolLliso, mod
                   </em>
                 )}
               </span>
-              <span className="exam-count">{fets ? `${ok}/${g.exercises.length}` : `${g.exercises.length} ex.`} {isOpen ? '▾' : '▸'}</span>
+              <span className="exam-count">{fets ? `${ok}/${g.exercises.length}` : `${t('gram_ex_short', { n: g.exercises.length })}`} {isOpen ? '▾' : '▸'}</span>
             </button>
 
             {isOpen && (
@@ -286,7 +286,7 @@ export default function Grammar({ quiz, onAnswer, practicaLliso, titolLliso, mod
                   </div>
                 )}
 
-                <h3 className="g-ex-title">Exercicis</h3>
+                <h3 className="g-ex-title">{t('gram_exercises')}</h3>
                 <ul className="quiz">
                   {g.exercises.map((ex) => (
                     <Exercise key={ex.id} ex={ex} saved={quiz[ex.id]} onAnswer={onAnswer} />

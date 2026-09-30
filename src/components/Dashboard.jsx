@@ -3,6 +3,7 @@ import { GRAMMAR } from '../data/grammar.js'
 import { LESSONS } from '../data/lessons.js'
 import { PHRASES, DIALOGS } from '../data/phrases.js'
 import { stats, todayISO } from '../lib/srs.js'
+import { useT } from '../i18n/index.jsx'
 
 // Ratxa: dies consecutius amb almenys un repàs, comptant enrere des d'avui (o ahir).
 function streak(sessions) {
@@ -55,7 +56,7 @@ function ultims30(sessions) {
   return serie
 }
 
-function Evolucio({ sessions }) {
+function Evolucio({ sessions, t }) {
   const serie = ultims30(sessions)
   const max = Math.max(1, ...serie.map((d) => d.total))
   const totalRepassades = sessions.reduce((a, s) => a + s.reviewed, 0)
@@ -66,12 +67,12 @@ function Evolucio({ sessions }) {
   const encert = fets ? Math.round((totalEncertades / fets) * 100) : 0
 
   if (!diesEstudiats) {
-    return <p className="hint">Quan comencis a repassar, aquí hi veuràs l’evolució dia a dia.</p>
+    return <p className="hint">{t('dash_no_history')}</p>
   }
 
   return (
     <>
-      <div className="sparkbars" role="img" aria-label={`Repassos dels últims 30 dies, màxim ${max} en un dia`}>
+      <div className="sparkbars" role="img" aria-label={t('dash_evolution')}>
         {serie.map((d) => (
           <div key={d.iso} className="sb" title={`${d.iso}: ${d.repassades} targetes · ${d.exercicis} exercicis`}>
             {d.total === 0 && <div className="sb-fill buit" style={{ height: '2%' }} />}
@@ -84,18 +85,18 @@ function Evolucio({ sessions }) {
           </div>
         ))}
       </div>
-      <div className="spark-eixos"><span>fa 30 dies</span><span>avui</span></div>
+      <div className="spark-eixos"><span>{t('dash_30_ago')}</span><span>{t('dash_today_short')}</span></div>
 
       <div className="spark-llegenda">
-        <span><i className="mostra targ" /> targetes</span>
-        <span><i className="mostra exer" /> exercicis</span>
+        <span><i className="mostra targ" /> {t('dash_cards_w')}</span>
+        <span><i className="mostra exer" /> {t('dash_ex_w')}</span>
       </div>
 
       <div className="stat-row">
-        <div className="stat-cell"><b>{diesEstudiats}</b><span>dies estudiats</span></div>
-        <div className="stat-cell"><b>{totalRepassades}</b><span>targetes</span></div>
-        <div className="stat-cell"><b>{totalExercicis}</b><span>exercicis</span></div>
-        <div className="stat-cell ok"><b>{encert}%</b><span>d’encert</span></div>
+        <div className="stat-cell"><b>{diesEstudiats}</b><span>{t('dash_days_studied')}</span></div>
+        <div className="stat-cell"><b>{totalRepassades}</b><span>{t('dash_cards_w')}</span></div>
+        <div className="stat-cell"><b>{totalExercicis}</b><span>{t('dash_ex_w')}</span></div>
+        <div className="stat-cell ok"><b>{encert}%</b><span>{t('dash_accuracy')}</span></div>
       </div>
     </>
   )
@@ -117,7 +118,7 @@ function esHoraDeRepassar(classe, ara = new Date()) {
   return (dia === vigilia && hora >= 17) || (dia === diaClasse && hora < 14)
 }
 
-function RepasClasse({ vocab, srs, quiz, onAnar }) {
+function RepasClasse({ vocab, srs, quiz, onAnar, t }) {
   const classe = ultimaClasse()
   if (!classe) return null
 
@@ -133,21 +134,21 @@ function RepasClasse({ vocab, srs, quiz, onAnar }) {
   return (
     <section className={`preclasse ${toca ? 'toca' : ''}`}>
       <div className="preclasse-cap">
-        <b>🎓 Repàs abans de classe</b>
-        {toca && <span className="ara">ara toca</span>}
+        <b>{t('pre_title')}</b>
+        {toca && <span className="ara">{t('pre_now')}</span>}
       </div>
       <p className="preclasse-sub">{classe.title} · {classe.date}</p>
 
       <div className="preclasse-botons">
         <button onClick={() => onAnar('vocab', classe.id)}>
           <b>{st.nous + st.arepassar}</b>
-          <span>paraules per repassar</span>
-          <em>{st.apresos}/{st.total} assentades</em>
+          <span>{t('pre_words')}</span>
+          <em>{t('pre_settled', { a: st.apresos, b: st.total })}</em>
         </button>
         <button onClick={() => onAnar('gram', classe.id)}>
           <b>{exercicis.length - exOk}</b>
-          <span>exercicis per encertar</span>
-          <em>{exOk}/{exercicis.length} encertats</em>
+          <span>{t('pre_ex')}</span>
+          <em>{t('pre_ex_ok', { a: exOk, b: exercicis.length })}</em>
         </button>
       </div>
     </section>
@@ -155,6 +156,7 @@ function RepasClasse({ vocab, srs, quiz, onAnar }) {
 }
 
 export default function Dashboard({ vocab = [], srs, quiz, sessions, onStart, onGoTo, onRepasClasse }) {
+  const t = useT()
   const s = stats(vocab, srs)
   const pendents = s.nous + s.arepassar
   const pct = s.total ? Math.round((s.apresos / s.total) * 100) : 0
@@ -172,60 +174,62 @@ export default function Dashboard({ vocab = [], srs, quiz, sessions, onStart, on
             <div className="ring" style={{ '--p': `${pct * 3.6}deg` }}>
               <div className="ring-num">{pct}%</div>
             </div>
-            <b>Vocabulari</b>
-            <span>{s.apresos} de {s.total} paraules</span>
+            <b>{t('dash_vocab')}</b>
+            <span>{t('dash_of_words', { a: s.apresos, b: s.total })}</span>
           </div>
           <div className="anell-bloc">
             <div className="ring gram" style={{ '--p': `${pctGram * 3.6}deg` }}>
               <div className="ring-num">{pctGram}%</div>
             </div>
-            <b>Gramàtica entesa</b>
-            <span>{exOk} de {totalEx} exercicis</span>
+            <b>{t('dash_gram_ring')}</b>
+            <span>{t('dash_of_ex', { a: exOk, b: totalEx })}</span>
           </div>
         </div>
         {ratxa > 0 && (
           <div className="streak">
-            🔥 {ratxa} {ratxa === 1 ? 'dia' : 'dies'} seguits
-            {millorRatxa(sessions) > ratxa && <em> · rècord {millorRatxa(sessions)}</em>}
+            🔥 {ratxa} {ratxa === 1 ? t('dash_streak_day') : t('dash_streak_days')}
+            {millorRatxa(sessions) > ratxa && <em> · {t('dash_record')} {millorRatxa(sessions)}</em>}
           </div>
         )}
       </div>
 
       <button className="cta" onClick={onStart} disabled={pendents === 0}>
-        {pendents > 0 ? `Repassar ${pendents} targetes` : 'Res per repassar avui 🎉'}
+        {pendents > 0 ? t('dash_review_n', { n: pendents }) : t('dash_nothing')}
       </button>
       {pendents === 0 && (
-        <p className="hint center">Torna demà, o entra a Repàs i força una sessió lliure.</p>
+        <p className="hint center">{t('dash_nothing_hint')}</p>
       )}
       {avui && (
         <p className="hint center">
-          Avui: {avui.reviewed} {avui.reviewed === 1 ? 'targeta' : 'targetes'}
-          {' · '}{avui.exercicis || 0} {avui.exercicis === 1 ? 'exercici' : 'exercicis'} de gramàtica
+          {t('dash_today2', {
+            c: avui.reviewed, cw: avui.reviewed === 1 ? t('dash_card_w') : t('dash_cards_w'),
+            e: avui.exercicis || 0, ew: avui.exercicis === 1 ? t('dash_ex_w1') : t('dash_ex_w')
+          })}
         </p>
       )}
 
-      <RepasClasse vocab={vocab} srs={srs} quiz={quiz} onAnar={onRepasClasse} />
+      <RepasClasse vocab={vocab} srs={srs} quiz={quiz} onAnar={onRepasClasse} t={t} />
 
-      <h2>La teva evolució</h2>
-      <Evolucio sessions={sessions} />
+      <h2>{t('dash_evolution')}</h2>
+      <Evolucio sessions={sessions} t={t} />
 
-      <h2>Com estàs</h2>
+      <h2>{t('dash_how')}</h2>
       <div className="stat-row">
-        <div className="stat-cell new"><b>{s.nous}</b><span>noves</span></div>
-        <div className="stat-cell due"><b>{s.arepassar}</b><span>a repassar</span></div>
-        <div className="stat-cell ok"><b>{s.apresos}</b><span>assentades</span></div>
+        <div className="stat-cell new"><b>{s.nous}</b><span>{t('dash_new')}</span></div>
+        <div className="stat-cell due"><b>{s.arepassar}</b><span>{t('dash_due')}</span></div>
+        <div className="stat-cell ok"><b>{s.apresos}</b><span>{t('dash_settled_short')}</span></div>
       </div>
 
-      <h2>Per tema</h2>
+      <h2>{t('dash_by_topic')}</h2>
       <div className="topic-grid">
-        {TOPICS.map((t) => {
-          const items = vocab.filter((v) => v.topic === t.id)
+        {TOPICS.map((tp) => {
+          const items = vocab.filter((v) => v.topic === tp.id)
           if (!items.length) return null
           const ts = stats(items, srs)
           const p = ts.total ? Math.round((ts.apresos / ts.total) * 100) : 0
           return (
-            <button key={t.id} className="topic-card" onClick={() => onGoTo('cards', t.id)}>
-              <div className="topic-head"><span>{t.emoji}</span> {t.label}</div>
+            <button key={tp.id} className="topic-card" onClick={() => onGoTo('cards', tp.id)}>
+              <div className="topic-head"><span>{tp.emoji}</span> {t.nat(tp, 'label')}</div>
               <div className="bar"><div className="fill" style={{ width: `${p}%` }} /></div>
               <div className="topic-count">{ts.apresos}/{ts.total}</div>
             </button>
@@ -233,15 +237,15 @@ export default function Dashboard({ vocab = [], srs, quiz, sessions, onStart, on
         })}
       </div>
 
-      <h2>La resta</h2>
+      <h2>{t('dash_rest')}</h2>
       <div className="link-cards">
         <button className="link-card" onClick={() => onGoTo('gram')}>
-          <b>📐 Gramàtica</b>
-          <span>{GRAMMAR.length} temes · en queden {totalEx - exOk} per encertar</span>
+          <b>📐 {t('tab_gram')}</b>
+          <span>{t('dash_gram_left', { n: GRAMMAR.length, r: totalEx - exOk })}</span>
         </button>
         <button className="link-card" onClick={() => onGoTo('frases')}>
-          <b>💬 Frases i diàlegs</b>
-          <span>{PHRASES.length} frases · {DIALOGS.length} diàlegs</span>
+          <b>💬 {t('read_phrases')}</b>
+          <span>{t('dash_phrases_card', { p: PHRASES.length, d: DIALOGS.length })}</span>
         </button>
       </div>
     </div>
