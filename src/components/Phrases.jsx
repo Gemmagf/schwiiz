@@ -39,9 +39,9 @@ export default function Phrases({ voiceURI, reader }) {
         <>
           <div className="filters">
             <button className={`chip ${tag === 'tots' ? 'active' : ''}`} onClick={() => setTag('tots')}>{t('read_all_phrases')}</button>
-            {PHRASE_TAGS.map((t) => (
-              <button key={t.id} className={`chip ${tag === t.id ? 'active' : ''}`} onClick={() => setTag(t.id)}>
-                {t.emoji} {t.label}
+            {PHRASE_TAGS.map((et) => (
+              <button key={et.id} className={`chip ${tag === et.id ? 'active' : ''}`} onClick={() => setTag(et.id)}>
+                {et.emoji} {t.nat(et, 'label', 'tag_')}
               </button>
             ))}
           </div>
@@ -56,7 +56,7 @@ export default function Phrases({ voiceURI, reader }) {
                   <Speak text={p.ch} voiceURI={voiceURI} />
                 </div>
                 <Hidden tapat={tapat}>
-                  <div className="ph-ca">{p.ca}</div>
+                  <div className="ph-ca">{t.nat(p)}</div>
                   <div className="ph-de">{p.de}</div>
                 </Hidden>
                 {p.note && <div className="ph-note">{p.note}</div>}
@@ -70,12 +70,12 @@ export default function Phrases({ voiceURI, reader }) {
           return (
             <section key={d.id} className="study-sec">
               <button className="study-head" onClick={() => setObert(isOpen ? null : d.id)}>
-                <span>{d.emoji} {d.title}</span>
+                <span>{d.emoji} {t.nat({ id: d.id }, 'x') ?? d.title}</span>
                 <span className="exam-count">{t('read_lines', { n: d.lines.length })} {isOpen ? '▾' : '▸'}</span>
               </button>
               {isOpen && (
                 <>
-                  <p className="g-summary">{d.setting}</p>
+                  <p className="g-summary">{t.nat({ id: d.id + '_set' }, 'x') ?? d.setting}</p>
                   <ul className="dialog">
                     {d.lines.map((l, i) => (
                       <li key={i} className={l.who === 'you' ? 'you' : 'them'}>
@@ -84,7 +84,7 @@ export default function Phrases({ voiceURI, reader }) {
                           <Speak text={l.ch} voiceURI={voiceURI} />
                         </div>
                         <Hidden tapat={tapat}>
-                          <div className="ph-ca">{l.ca}</div>
+                          <div className="ph-ca">{t.nat({ id: `${d.id}_${i}`, ca: l.ca }, 'ca')}</div>
                           <div className="ph-de">{l.de}</div>
                         </Hidden>
                       </li>
