@@ -28,6 +28,18 @@ Offline-first · s'actualitza per git · flashcards amb repàs espaiat, gramàti
   - *Frases*: 94 frases per situació, amb opció de tapar la traducció.
 - **Ajustos**: veu, sincronització del progrés amb git, exportar dades.
 
+## Idiomes
+
+L'app funciona en **català i anglès**. Es canvia a *Ajustos → Idioma*, i per defecte
+agafa l'idioma del navegador. La traducció cobreix la interfície, les 814 paraules, les
+94 frases, els 6 diàlegs i els 51 temes de gramàtica amb els seus 348 exercicis.
+
+Els textos anglesos viuen a `src/i18n/en.js`, per identificador, separats del contingut
+original. Si un identificador no hi és, es mostra el català: així mai queda res en blanc.
+
+El progrés és per dispositiu, de manera que compartir l'enllaç amb algú altre li dona el
+seu propi registre sense configurar res.
+
 ## Els llibres de classe
 
 L'app està pensada per acompanyar tres llibres:
