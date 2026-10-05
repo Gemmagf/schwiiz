@@ -1977,6 +1977,12 @@
       "at": "2026-08-31T20:20:58.884Z"
     },
     {
+      "id": "g23e2",
+      "ok": false,
+      "tries": 1,
+      "at": "2026-10-05T13:49:36.283Z"
+    },
+    {
       "id": "g23e4",
       "ok": true,
       "tries": 1,
@@ -2005,6 +2011,12 @@
       "ok": false,
       "tries": 5,
       "at": "2026-08-31T20:18:46.838Z"
+    },
+    {
+      "id": "g31e3",
+      "ok": true,
+      "tries": 1,
+      "at": "2026-10-05T13:49:45.150Z"
     },
     {
       "id": "h07e5",
@@ -2117,10 +2129,10 @@
       "date": "2026-10-05",
       "reviewed": 0,
       "correct": 0,
-      "exercicis": 1,
-      "exercicisOk": 0
+      "exercicis": 3,
+      "exercicisOk": 1
     }
   ],
   "cards": [],
-  "exportedAt": "2026-10-05T13:49:35.897Z"
+  "exportedAt": "2026-10-05T13:49:53.170Z"
 }
