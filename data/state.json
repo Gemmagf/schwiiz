@@ -2007,6 +2007,12 @@
       "at": "2026-08-31T20:18:46.838Z"
     },
     {
+      "id": "h07e5",
+      "ok": false,
+      "tries": 1,
+      "at": "2026-10-05T13:49:27.852Z"
+    },
+    {
       "id": "s01e1",
       "ok": true,
       "tries": 1,
@@ -2106,8 +2112,15 @@
       "correct": 50,
       "exercicis": 10,
       "exercicisOk": 2
+    },
+    {
+      "date": "2026-10-05",
+      "reviewed": 0,
+      "correct": 0,
+      "exercicis": 1,
+      "exercicisOk": 0
     }
   ],
   "cards": [],
-  "exportedAt": "2026-09-01T05:07:19.568Z"
+  "exportedAt": "2026-10-05T13:49:35.897Z"
 }
