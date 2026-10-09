@@ -98,22 +98,22 @@ export const VOCAB = [
   { id: 'v065', ch: 'de Bueb / s Meitli', de: 'der Junge / das Mädchen', ca: 'el noi / la noia', topic: 'persones', lesson: 'base' },
 
   // ---- Nombres ----
-  { id: 'v070', ch: 'eis', de: 'eins', ca: 'u (1)', topic: 'nombres', lesson: 'base' },
-  { id: 'v071', ch: 'zwei', de: 'zwei', ca: 'dos (2)', topic: 'nombres', lesson: 'base' },
-  { id: 'v072', ch: 'drü', de: 'drei', ca: 'tres (3)', topic: 'nombres', lesson: 'base' },
+  { id: 'v070', ch: 'äis', de: 'eins', ca: 'u (1)', topic: 'nombres', lesson: 'base' },
+  { id: 'v071', ch: 'zwäi', de: 'zwei', ca: 'dos (2)', topic: 'nombres', lesson: 'base' },
+  { id: 'v072', ch: 'drüü', de: 'drei', ca: 'tres (3)', topic: 'nombres', lesson: 'base' },
   { id: 'v073', ch: 'vier', de: 'vier', ca: 'quatre (4)', topic: 'nombres', lesson: 'base' },
-  { id: 'v074', ch: 'foif', de: 'fünf', ca: 'cinc (5)', topic: 'nombres', lesson: 'base' },
+  { id: 'v074', ch: 'föif', de: 'fünf', ca: 'cinc (5)', topic: 'nombres', lesson: 'base' },
   { id: 'v075', ch: 'sächs', de: 'sechs', ca: 'sis (6)', topic: 'nombres', lesson: 'base' },
   { id: 'v076', ch: 'sibe', de: 'sieben', ca: 'set (7)', topic: 'nombres', lesson: 'base' },
   { id: 'v077', ch: 'acht', de: 'acht', ca: 'vuit (8)', topic: 'nombres', lesson: 'base' },
   { id: 'v078', ch: 'nüün', de: 'neun', ca: 'nou (9)', topic: 'nombres', lesson: 'base' },
-  { id: 'v079', ch: 'zäh', de: 'zehn', ca: 'deu (10)', topic: 'nombres', lesson: 'base' },
+  { id: 'v079', ch: 'zää', de: 'zehn', ca: 'deu (10)', topic: 'nombres', lesson: 'base' },
   { id: 'v080', ch: 'elf / zwölf', de: 'elf / zwölf', ca: 'onze / dotze', topic: 'nombres', lesson: 'base' },
   { id: 'v081', ch: 'zwänzg', de: 'zwanzig', ca: 'vint (20)', topic: 'nombres', lesson: 'base' },
-  { id: 'v082', ch: 'drissg', de: 'dreissig', ca: 'trenta (30)', topic: 'nombres', lesson: 'base' },
+  { id: 'v082', ch: 'driissg', de: 'dreissig', ca: 'trenta (30)', topic: 'nombres', lesson: 'base' },
   { id: 'v083', ch: 'füfzg', de: 'fünfzig', ca: 'cinquanta (50)', topic: 'nombres', lesson: 'base' },
   { id: 'v084', ch: 'hundert', de: 'hundert', ca: 'cent (100)', topic: 'nombres', lesson: 'base' },
-  { id: 'v085', ch: 'einezwänzg', de: 'einundzwanzig', ca: 'vint-i-u (21)', topic: 'nombres', lesson: 'base', note: 'Com en alemany: primer la unitat, després la desena.' },
+  { id: 'v085', ch: 'äinezwänzg', de: 'einundzwanzig', ca: 'vint-i-u (21)', topic: 'nombres', lesson: 'base', note: 'Com en alemany: primer la unitat, després la desena.' },
 
   // ---- Temps ----
   { id: 'v090', ch: 'hüt', de: 'heute', ca: 'avui', topic: 'temps', lesson: 'base' },
@@ -122,13 +122,13 @@ export const VOCAB = [
   { id: 'v093', ch: 'am Morge', de: 'am Morgen', ca: 'al matí', topic: 'temps', lesson: 'base' },
   { id: 'v094', ch: 'am Namittag', de: 'am Nachmittag', ca: 'a la tarda', topic: 'temps', lesson: 'base' },
   { id: 'v095', ch: 'am Aabig', de: 'am Abend', ca: 'al vespre', topic: 'temps', lesson: 'base' },
-  { id: 'v096', ch: 'Mäntig', de: 'Montag', ca: 'dilluns', topic: 'temps', lesson: 'base' },
+  { id: 'v096', ch: 'Mèèndig', de: 'Montag', ca: 'dilluns', topic: 'temps', lesson: 'base' },
   { id: 'v097', ch: 'Ziischtig', de: 'Dienstag', ca: 'dimarts', topic: 'temps', lesson: 'base' },
   { id: 'v098', ch: 'Mittwuch', de: 'Mittwoch', ca: 'dimecres', topic: 'temps', lesson: 'base' },
   { id: 'v099', ch: 'Dunschtig', de: 'Donnerstag', ca: 'dijous', topic: 'temps', lesson: 'base' },
   { id: 'v100', ch: 'Friitig', de: 'Freitag', ca: 'divendres', topic: 'temps', lesson: 'base' },
   { id: 'v101', ch: 'Samschtig', de: 'Samstag', ca: 'dissabte', topic: 'temps', lesson: 'base' },
-  { id: 'v102', ch: 'Sunntig', de: 'Sonntag', ca: 'diumenge', topic: 'temps', lesson: 'base' },
+  { id: 'v102', ch: 'Sundig', de: 'Sonntag', ca: 'diumenge', topic: 'temps', lesson: 'base' },
   { id: 'v103', ch: 'd Wuche', de: 'die Woche', ca: 'la setmana', topic: 'temps', lesson: 'base' },
   { id: 'v111', ch: 's Buech', de: 'das Buch', ca: 'el llibre', topic: 'objectes', lesson: 'base', note: 'Plural: d Büecher.' },
   { id: 'v110', ch: 'de Tag', de: 'der Tag', ca: 'el dia', topic: 'temps', lesson: 'base', note: 'Plural: d Täg, només amb Umlaut.' },
@@ -305,9 +305,9 @@ export const VOCAB = [
   { id: 'v409', ch: 'rosa', de: 'rosa', ca: 'rosa', topic: 'colors', lesson: 'base', book: 'holle' },
 
   // ---- Mesos i estacions (Holle · Monate, Jahreszeiten) ----
-  { id: 'v420', ch: 'Januar', de: 'Januar', ca: 'gener', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v420', ch: 'Jäner', de: 'Januar', ca: 'gener', topic: 'calendari', lesson: 'base', book: 'holle' },
   { id: 'v421', ch: 'Februar', de: 'Februar', ca: 'febrer', topic: 'calendari', lesson: 'base', book: 'holle' },
-  { id: 'v422', ch: 'März', de: 'März', ca: 'març', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v422', ch: 'Mèèrz', de: 'März', ca: 'març', topic: 'calendari', lesson: 'base', book: 'holle' },
   { id: 'v423', ch: 'April', de: 'April', ca: 'abril', topic: 'calendari', lesson: 'base', book: 'holle' },
   { id: 'v424', ch: 'Mai', de: 'Mai', ca: 'maig', topic: 'calendari', lesson: 'base', book: 'holle' },
   { id: 'v425', ch: 'Juni', de: 'Juni', ca: 'juny', topic: 'calendari', lesson: 'base', book: 'holle' },
@@ -317,9 +317,9 @@ export const VOCAB = [
   { id: 'v429', ch: 'Oktober', de: 'Oktober', ca: 'octubre', topic: 'calendari', lesson: 'base', book: 'holle' },
   { id: 'v430', ch: 'Novämber', de: 'November', ca: 'novembre', topic: 'calendari', lesson: 'base', book: 'holle' },
   { id: 'v431', ch: 'Dezämber', de: 'Dezember', ca: 'desembre', topic: 'calendari', lesson: 'base', book: 'holle' },
-  { id: 'v432', ch: 'de Frühlig', de: 'der Frühling', ca: 'la primavera', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v432', ch: 'de Früelig', de: 'der Frühling', ca: 'la primavera', topic: 'calendari', lesson: 'base', book: 'holle' },
   { id: 'v433', ch: 'de Summer', de: 'der Sommer', ca: 'l’estiu', topic: 'calendari', lesson: 'base', book: 'holle' },
-  { id: 'v434', ch: 'de Herbscht', de: 'der Herbst', ca: 'la tardor', topic: 'calendari', lesson: 'base', book: 'holle' },
+  { id: 'v434', ch: 'de Hèrbscht', de: 'der Herbst', ca: 'la tardor', topic: 'calendari', lesson: 'base', book: 'holle' },
   { id: 'v435', ch: 'de Winter', de: 'der Winter', ca: 'l’hivern', topic: 'calendari', lesson: 'base', book: 'holle' },
 
   // ---- Animals (Holle · Tiere) ----
@@ -997,5 +997,114 @@ export const VOCAB = [
   { id: 'x037', ch: 'renoviere', de: 'renovieren', ca: 'reformar', topic: 'verbs', lesson: 'c07', book: 'schorn' },
   { id: 'x038', ch: 'kabutt', de: 'kaputt', ca: 'espatllat', topic: 'adjectius', lesson: 'c07', book: 'schorn' },
   { id: 'x039', ch: 'wohère', de: 'wohin', ca: 'cap on', topic: 'basics', lesson: 'c07', book: 'schorn' },
-  { id: 'x040', ch: 'lätz', de: 'verkehrt, falsch', ca: 'al revés, malament', topic: 'adjectius', lesson: 'c07', book: 'schorn', note: '«Da isch öppis lätz.» = aquí hi ha alguna cosa que no rutlla.' }
+  { id: 'x040', ch: 'lätz', de: 'verkehrt, falsch', ca: 'al revés, malament', topic: 'adjectius', lesson: 'c07', book: 'schorn', note: '«Da isch öppis lätz.» = aquí hi ha alguna cosa que no rutlla.' },
+
+  // ===================================================================
+  // Classe 8 — 09/10/2026. Full de vocabulari p.106 (grups 30–34),
+  // els nombres i l'hora (p.20) i els diners suïssos (p.23).
+  // ===================================================================
+
+  // ---- Substantius abstractes amb -i i -ig (grup 30) ----
+  { id: 'c8001', ch: 'd Tünkli', de: 'die Dunkelheit', ca: 'la foscor', topic: 'basics', lesson: 'c08', book: 'schorn', note: '«Gseesch öppis i dère Tünkli?»' },
+  { id: 'c8002', ch: 'd Füechti', de: 'die Feuchtigkeit', ca: 'la humitat', topic: 'basics', lesson: 'c08', book: 'schorn' },
+  { id: 'c8003', ch: 'd Forschig', de: 'die Forschung', ca: 'la recerca', topic: 'feina', lesson: 'c08', book: 'schorn' },
+  { id: 'c8004', ch: 'd Oornig', de: 'die Ordnung', ca: 'l’ordre', topic: 'basics', lesson: 'c08', book: 'schorn' },
+  { id: 'c8006', ch: 's Gsuech', de: 'das Gesuch', ca: 'la sol·licitud', topic: 'feina', lesson: 'c08', book: 'schorn' },
+  { id: 'c8007', ch: 'de Pricht', de: 'der Bericht', ca: 'l’informe', topic: 'feina', lesson: 'c08', book: 'schorn', note: 'El verb: prichte. «Muesch em das doch prichte!»' },
+  { id: 'c8008', ch: 'de Pschäid', de: 'der Bescheid', ca: 'la resposta, l’avís', topic: 'feina', lesson: 'c08', book: 'schorn' },
+  { id: 'c8009', ch: 'd Grössi', de: 'die Grösse', ca: 'la mida', topic: 'basics', lesson: 'c08', book: 'schorn', note: 'Patró -i: gross → Grössi, bräit → Bräiti, nass → Nessi.' },
+  { id: 'c8010', ch: 'd Bräiti', de: 'die Breite', ca: 'l’amplada', topic: 'basics', lesson: 'c08', book: 'schorn' },
+  { id: 'c8011', ch: 'd Nessi', de: 'die Nässe', ca: 'la humitat, el mullat', topic: 'basics', lesson: 'c08', book: 'schorn' },
+
+  // ---- Verbs del grup 31 ----
+  { id: 'c8020', ch: 'bsoorge', de: 'besorgen; heimzahlen', ca: 'aconseguir; tornar-la', topic: 'verbs', lesson: 'c08', book: 'schorn', note: '«Dèm han i s psoorget!» = a aquell ja li he tornat.' },
+  { id: 'c8021', ch: 'plange', de: 'sich sehnen', ca: 'esperar amb candeletes', topic: 'verbs', lesson: 'c08', book: 'schorn', note: '«D Chind planged uf d Wienacht.»' },
+  { id: 'c8022', ch: 'chnüüble', de: 'klauben', ca: 'pelar, treure amb els dits', topic: 'verbs', lesson: 'c08', book: 'schorn', note: '«Chnüüble doch die Chèèrndli use!»' },
+  { id: 'c8023', ch: 'zläidwèrche', de: 'zuleide tun', ca: 'fer la guitza', topic: 'verbs', lesson: 'c08', book: 'schorn' },
+  { id: 'c8024', ch: 'spienzle', de: 'heimlich hinschauen', ca: 'mirar d’amagat', topic: 'verbs', lesson: 'c08', book: 'schorn', note: '«Spienzle nöd uf miin Znüüni!»' },
+  { id: 'c8025', ch: 'd Wienacht', de: 'Weihnachten', ca: 'el Nadal', topic: 'calendari', lesson: 'c08', book: 'schorn' },
+  { id: 'c8026', ch: 's Chèèrndli', de: 'das Kernchen', ca: 'el pinyolet, el gra', topic: 'menjar', lesson: 'c08', book: 'schorn' },
+
+  // ---- Feina i esforç (grup 32) ----
+  { id: 'c8040', ch: 'halbbatzig', de: 'unzulänglich', ca: 'fet a mitges', topic: 'adjectius', lesson: 'c08', book: 'schorn', note: '«E halbbatzigi Aarbet isch das!»' },
+  { id: 'c8041', ch: 's Gänggelizüüg', de: 'unergiebige Arbeit', ca: 'la feina que no llueix', topic: 'feina', lesson: 'c08', book: 'schorn' },
+  { id: 'c8042', ch: 'de Chnoorz', de: 'mühsame Arbeit', ca: 'la feinada pesada', topic: 'feina', lesson: 'c08', book: 'schorn', note: 'El verb: chnoorze. «En gruusige Chnoorz isch s gsii!»' },
+  { id: 'c8043', ch: 'stüürchle', de: 'straucheln, stolpern', ca: 'ensopegar', topic: 'verbs', lesson: 'c08', book: 'schorn', note: '«Er stüürchlet über e Wuurzle.»' },
+  { id: 'c8044', ch: 'gluschtig', de: 'begehrlich, begierig', ca: 'llaminer, que fa venir ganes', topic: 'adjectius', lesson: 'c08', book: 'schorn', note: '«Machsch mi grad gluschtig.»' },
+  { id: 'c8045', ch: 'd Wuurzle', de: 'die Wurzel', ca: 'l’arrel', topic: 'ciutat', lesson: 'c08', book: 'schorn' },
+  { id: 'c8046', ch: 'gruusig', de: 'grausig, scheusslich', ca: 'horrible', topic: 'adjectius', lesson: 'c08', book: 'schorn' },
+
+  // ---- Connectors (grup 33) ----
+  { id: 'c8060', ch: 'derfüür', de: 'dafür', ca: 'en canvi', topic: 'connectors', lesson: 'c08', book: 'schorn', note: '«Si gaat nie is Kino, defüür…»' },
+  { id: 'c8061', ch: 'drufabe', de: 'hierauf, daraufhin', ca: 'tot seguit', topic: 'connectors', lesson: 'c08', book: 'schorn' },
+  { id: 'c8062', ch: 'naadisnaa', de: 'nach und nach', ca: 'de mica en mica', topic: 'connectors', lesson: 'c08', book: 'schorn', note: '«Naadisnaa isch si druus choo.» = De mica en mica se’n va adonar.' },
+  { id: 'c8063', ch: 'ä wän', de: 'obwohl', ca: 'encara que', topic: 'connectors', lesson: 'c08', book: 'schorn', note: 'No el confonguis amb «wänn» (quan / si).' },
+  { id: 'c8064', ch: 'wägemiine', de: 'meinetwegen', ca: 'per mi, cap problema', topic: 'connectors', lesson: 'c08', book: 'schorn', note: '«Gömer i d Chile? Wägemiine!»' },
+  { id: 'c8065', ch: 'hagle', de: 'hageln', ca: 'calamarsejar', topic: 'verbs', lesson: 'c08', book: 'schorn' },
+  { id: 'c8066', ch: 'druus choo', de: 'dahinterkommen', ca: 'adonar-se’n, entendre-ho', topic: 'verbs', lesson: 'c08', book: 'schorn' },
+
+  // ---- Adverbis (grup 34) ----
+  { id: 'c8080', ch: 'schier / fascht', de: 'beinahe, fast', ca: 'gairebé', topic: 'basics', lesson: 'c08', book: 'schorn', note: '«Es hät mer schier öppis ggèè!»' },
+  { id: 'c8081', ch: 'bsunders', de: 'besonders', ca: 'especialment', topic: 'basics', lesson: 'c08', book: 'schorn', note: '«Flueche chan er bsunders guet.»' },
+  { id: 'c8082', ch: 'mängsmaal', de: 'mehrmals, oft', ca: 'sovint, més d’un cop', topic: 'basics', lesson: 'c08', book: 'schorn', note: 'També: mängisch.' },
+  { id: 'c8083', ch: 'doozmaal', de: 'damals', ca: 'aleshores, en aquell temps', topic: 'basics', lesson: 'c08', book: 'schorn' },
+  { id: 'c8084', ch: 'zeerscht', de: 'zuerst', ca: 'primer de tot', topic: 'basics', lesson: 'c08', book: 'schorn', note: '«Ich bi zeerscht devooggrännt.»' },
+  { id: 'c8085', ch: 'flueche', de: 'fluchen', ca: 'renegar', topic: 'verbs', lesson: 'c08', book: 'schorn' },
+  { id: 'c8086', ch: 'de Zopf', de: 'der Zopf', ca: 'la trena', topic: 'salut', lesson: 'c08', book: 'schorn', note: 'També el pa trenat del diumenge. «Früener han i langi Zöpf ghaa.»' },
+
+  // ---- Els nombres que faltaven ----
+  { id: 'c8100', ch: 'drizä', de: 'dreizehn', ca: 'tretze (13)', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8101', ch: 'vierzä', de: 'vierzehn', ca: 'catorze (14)', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8102', ch: 'füfzä', de: 'fünfzehn', ca: 'quinze (15)', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8103', ch: 'sächzä', de: 'sechzehn', ca: 'setze (16)', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8104', ch: 'sibezä', de: 'siebzehn', ca: 'disset (17)', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8105', ch: 'achtzä', de: 'achtzehn', ca: 'divuit (18)', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8106', ch: 'nüünzä', de: 'neunzehn', ca: 'dinou (19)', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8107', ch: 'vierzg', de: 'vierzig', ca: 'quaranta (40)', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8108', ch: 'sächzg', de: 'sechzig', ca: 'seixanta (60)', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8109', ch: 'sibezg', de: 'siebzig', ca: 'setanta (70)', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8110', ch: 'achzg', de: 'achtzig', ca: 'vuitanta (80)', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8111', ch: 'nüünzg', de: 'neunzig', ca: 'noranta (90)', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8112', ch: 'tuusig', de: 'tausend', ca: 'mil (1000)', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8113', ch: 'e Milioon', de: 'eine Million', ca: 'un milió', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8114', ch: 'zwee / zwoo / zwäi', de: 'zwei (m / f / n)', ca: 'dos (segons el gènere)', topic: 'nombres', lesson: 'c08', book: 'schorn', note: 'zwee Mane · zwoo Fraue · zwäi Chind. Avui gairebé tothom diu «zwäi» per a tot.' },
+  { id: 'c8115', ch: 'drei / drüü', de: 'drei (m·f / n)', ca: 'tres (segons el gènere)', topic: 'nombres', lesson: 'c08', book: 'schorn', note: 'drei Mane, drei Fraue, drüü Chind.' },
+
+  // ---- Ordinals ----
+  { id: 'c8130', ch: 'eerscht', de: 'erste', ca: 'primer', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8131', ch: 'zwäit', de: 'zweite', ca: 'segon', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8132', ch: 'dritt', de: 'dritte', ca: 'tercer', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8133', ch: 'föift', de: 'fünfte', ca: 'cinquè', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8134', ch: 'zäät', de: 'zehnte', ca: 'desè', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8135', ch: 'zwänzgischt', de: 'zwanzigste', ca: 'vintè', topic: 'nombres', lesson: 'c08', book: 'schorn', note: 'A partir del 20, el sufix és -ischt.' },
+  { id: 'c8136', ch: 'hundertscht', de: 'hundertste', ca: 'centè', topic: 'nombres', lesson: 'c08', book: 'schorn' },
+
+  // ---- L'hora ----
+  { id: 'c8150', ch: 'Wivil Ziit isch?', de: 'Wie viel Uhr ist es?', ca: 'Quina hora és?', topic: 'temps', lesson: 'c08', book: 'schorn', note: 'També: «Was isch für Ziit?»' },
+  { id: 'c8151', ch: 'phunkt Nüüni', de: 'Punkt neun', ca: 'les nou en punt', topic: 'temps', lesson: 'c08', book: 'schorn' },
+  { id: 'c8152', ch: 'viertel ab Nüüni', de: 'viertel nach neun', ca: 'un quart de deu (9.15)', topic: 'temps', lesson: 'c08', book: 'schorn', note: '«ab» = passades.' },
+  { id: 'c8153', ch: 'viertel vor Zääni', de: 'viertel vor zehn', ca: 'tres quarts de deu (9.45)', topic: 'temps', lesson: 'c08', book: 'schorn' },
+  { id: 'c8154', ch: 'halbi Zääni', de: 'halb zehn', ca: 'dos quarts de deu (9.30)', topic: 'temps', lesson: 'c08', book: 'schorn', note: '⚠️ Mitja hora ABANS de les deu, no després.' },
+  { id: 'c8155', ch: 'föif vor halbi Zääni', de: 'fünf vor halb zehn', ca: 'les 9.25', topic: 'temps', lesson: 'c08', book: 'schorn' },
+  { id: 'c8156', ch: 'föif ab halbi Zääni', de: 'fünf nach halb zehn', ca: 'les 9.35', topic: 'temps', lesson: 'c08', book: 'schorn' },
+  { id: 'c8157', ch: 'am Sibni', de: 'um sieben', ca: 'a les set', topic: 'temps', lesson: 'c08', book: 'schorn' },
+  { id: 'c8158', ch: 'S schlaat Zwölfi', de: 'Es schlägt zwölf', ca: 'Toquen les dotze', topic: 'temps', lesson: 'c08', book: 'schorn' },
+  { id: 'c8159', ch: 'um di Drüü ume', de: 'ungefähr um drei', ca: 'cap a les tres', topic: 'temps', lesson: 'c08', book: 'schorn' },
+  { id: 'c8160', ch: 'gäg den Achte', de: 'gegen acht', ca: 'cap a les vuit', topic: 'temps', lesson: 'c08', book: 'schorn' },
+  { id: 'c8161', ch: 'Um weli Ziit?', de: 'Um welche Zeit?', ca: 'A quina hora?', topic: 'temps', lesson: 'c08', book: 'schorn' },
+
+  // ---- Els diners ----
+  { id: 'c8180', ch: 's Gäld / s Gält', de: 'das Geld', ca: 'els diners', topic: 'compres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8181', ch: 'd Banknoote', de: 'die Banknote', ca: 'el bitllet de banc', topic: 'compres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8182', ch: 'd Zäänernoote', de: 'die Zehnernote', ca: 'el bitllet de deu', topic: 'compres', lesson: 'c08', book: 'schorn', note: 'Igual: Zwänzgernoote, Füfzgernoote, Hunderternoote, Tuusigernoote.' },
+  { id: 'c8183', ch: 'de Föifer', de: 'das Fünfrappenstück', ca: 'la moneda de 5 cèntims', topic: 'compres', lesson: 'c08', book: 'schorn', note: 'També Föifräppler.' },
+  { id: 'c8184', ch: 'de Zääner', de: 'das Zehnrappenstück', ca: 'la moneda de 10 cèntims', topic: 'compres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8185', ch: 'de Zwänzger', de: 'das Zwanzigrappenstück', ca: 'la moneda de 20 cèntims', topic: 'compres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8186', ch: 'de Füfzger', de: 'das Fünfzigrappenstück', ca: 'la moneda de 50 cèntims', topic: 'compres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8187', ch: 'de Äifränkler', de: 'das Einfrankenstück', ca: 'la moneda d’un franc', topic: 'compres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8188', ch: 'de Zwäifränkler', de: 'das Zweifrankenstück', ca: 'la moneda de dos francs', topic: 'compres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8189', ch: 'de Föifliiber', de: 'das Fünffrankenstück', ca: 'la moneda de cinc francs', topic: 'compres', lesson: 'c08', book: 'schorn', note: 'Del francès «livre». També Föiffränkler.' },
+  { id: 'c8190', ch: 'S choscht …', de: 'Es kostet …', ca: 'Costa…', topic: 'compres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8191', ch: 'Wie zaaled Si?', de: 'Wie zahlen Sie?', ca: 'Com vol pagar?', topic: 'compres', lesson: 'c08', book: 'schorn' },
+  { id: 'c8192', ch: 'Ich gibe Ine …', de: 'Ich gebe Ihnen …', ca: 'Li dono…', topic: 'compres', lesson: 'c08', book: 'schorn' }
 ]

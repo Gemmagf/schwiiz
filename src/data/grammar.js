@@ -1683,6 +1683,155 @@ const TEMES = [
       { id: 's22e37', type: 'gap', q: 'Settsch di halt emaal ___. (pentinar-se)', a: ['strèèle', 'streele', 'strele'], why: 'strèèle, del Strèèl (la pinta).' },
       { id: 's22e38', type: 'choice', q: 'Quin d’aquests NO vol dir córrer?', options: ['räne', 'springe', 'lauffe'], a: 2, why: 'lauffe és caminar. Recorda-ho.' }
     ]
+  },
+  {
+    id: 's23',
+    book: 'schorn',
+    unit: 'c8',
+    order: 11.1,
+    title: 'Nombres, ordinals i edat',
+    emoji: '🔢',
+    lesson: 'c08',
+    summary: 'De la classe 8. Els nombres del full, i els dos sufixos que has de saber: -i per a l’edat i -scht per als ordinals.',
+    points: [
+      'Les unitats van **abans** de la desena, unides amb **-e-**: **äinedriissg** (31) · **sibenefüfzg** (57) · **vieresächzg** (64) · **achtenüünzg** (98)',
+      'Les desenes: zwänzg · **driissg** · **vierzg** · füfzg · **sächzg** · **sibezg** · **achzg** · **nüünzg**',
+      'Ordinals: **eerscht · zwäit · dritt · viert · föift · sächst · sibet · acht · nüünt · zäät · elft · zwölft**',
+      'A partir del 20 el sufix passa a ser **-ischt**: **zwänzgischt** · **driissgischt** · **hundertscht** · **tuusigscht**',
+      'L’**edat** porta **-i**: ich bi **vieri**, **zääni**, **zwäiezwänzgi**, **sächsedriissgi**, **föifesächzgi**',
+      '⚠️ Però 1, 2 i 3 no: ich bi **äis**, **zwäi**, **drüü**.',
+      '89 fa **nüünedachzgi** amb una **d** entremig, perquè si no xocarien dues vocals.',
+      'I el 2 i el 3 encara tenen gènere: **zwee** Mane · **zwoo** Fraue · **zwäi** Chind. Avui gairebé tothom diu «zwäi» per a tot.'
+    ],
+    table: {
+      head: ['', 'Cardinal', 'Ordinal', 'Edat'],
+      rows: [
+        ['1', 'äis', 'eerscht', 'äis'],
+        ['4', 'vier', 'viert', 'vieri'],
+        ['10', 'zää', 'zäät', 'zääni'],
+        ['22', 'zwäiezwänzg', 'zwäiezwänzgischt', 'zwäiezwänzgi'],
+        ['89', 'nüünedachzg', 'nüünedachzgischt', 'nüünedachzgi']
+      ]
+    },
+    exercises: [
+      { id: 's23e1', type: 'gap', q: '31 en dialecte: ___', a: ['äinedriissg', 'ainedriissg', 'einedriissg'], why: 'Primer la unitat, unida amb -e-: äine + driissg.' },
+      { id: 's23e2', type: 'choice', q: 'Com es diu 57?', options: ['füfzgsibe', 'sibenefüfzg', 'sibe füfzg'], a: 1, why: 'Unitat + e + desena: sibenefüfzg.' },
+      { id: 's23e3', type: 'gap', q: 'Ich bi ___. (tinc 10 anys)', a: ['zääni', 'zaani'], why: 'L’edat porta -i: zääni.' },
+      { id: 's23e4', type: 'choice', q: 'I si en tens 3?', options: ['drüüi', 'drüü', 'dritti'], a: 1, why: '1, 2 i 3 no porten -i: ich bi drüü.' },
+      { id: 's23e5', type: 'gap', q: 'Ordinal de 20: ___', a: ['zwänzgischt', 'zwanzgischt'], why: 'A partir del 20, -ischt.' },
+      { id: 's23e6', type: 'choice', q: 'Per què «nüünedachzgi» porta una d?', options: ['És irregular', 'Perquè si no xocarien dues vocals', 'Marca el femení'], a: 1, why: 'nüüne + achzgi donaria dues vocals seguides: s’hi posa una d.' },
+      { id: 's23e7', type: 'choice', q: '«zwoo Fraue» vol dir…', options: ['dues dones', 'dos homes', 'dues criatures'], a: 0, why: 'zwee (m) · zwoo (f) · zwäi (n).' },
+      { id: 's23e8', type: 'gap', q: '1000 en dialecte: ___', a: ['tuusig'], why: 'tuusig. I 2000 = zwäituusig.' }
+    ]
+  },
+  {
+    id: 's24',
+    book: 'schorn',
+    unit: 'c8',
+    order: 11.2,
+    title: 'L’hora',
+    emoji: '🕘',
+    lesson: 'c08',
+    summary: 'De la classe 8. L’hora porta -i, i la mitja va cap enrere. Si no ho tens clar, arribaràs una hora tard.',
+    points: [
+      'Les hores porten **-i**: Vier**i**, Föif**i**, Sächs**i**, Sibn**i**, Acht**i**, Nüün**i**, Zään**i**, Elf**i**, Zwölf**i**',
+      '⚠️ L’u, les dues i les tres no: **Äis**, **Zwäi**, **Drüü**.',
+      '**ab** = passades · **vor** = menys. viertel **ab** Nüüni (9.15) · viertel **vor** Zääni (9.45)',
+      '⚠️ **halbi Zääni** són les 9.30: mitja hora **abans** de les deu, no després. És l’error que fa arribar tard.',
+      'I al voltant de la mitja es compta des de la mitja: **föif vor halbi Zääni** (9.25) · **föif ab halbi Zääni** (9.35)',
+      'Per dir a quina hora: **am** Sibni · **gäg den** Achte (cap a les vuit) · **um di** Drüü **ume** (cap a les tres) · **ab de** Sibne (a partir de les set)',
+      'Preguntes: **Wivil Ziit isch?** · **Was isch für Ziit?** · **Wie spaat isch es?** · **Um weli Ziit wämer is träffe?**'
+    ],
+    table: {
+      head: ['Hora', 'Es diu', 'Literalment'],
+      rows: [
+        ['9.00', 'phunkt Nüüni', 'les nou en punt'],
+        ['9.15', 'viertel ab Nüüni', 'un quart passades les nou'],
+        ['9.25', 'föif vor halbi Zääni', 'cinc abans de la mitja de les deu'],
+        ['9.30', 'halbi Zääni', 'mitja de les deu'],
+        ['9.35', 'föif ab halbi Zääni', 'cinc passada la mitja'],
+        ['9.45', 'viertel vor Zääni', 'un quart abans de les deu']
+      ]
+    },
+    exercises: [
+      { id: 's24e1', type: 'choice', q: 'Quina hora és «halbi Zääni»?', options: ['10.30', '9.30', '10.00'], a: 1, why: 'Mitja hora ABANS de les deu: 9.30. L’error clàssic és entendre 10.30.' },
+      { id: 's24e2', type: 'gap', q: '9.15 → viertel ___ Nüüni', a: ['ab'], why: 'ab = passades.' },
+      { id: 's24e3', type: 'gap', q: '9.45 → viertel ___ Zääni', a: ['vor'], why: 'vor = menys, abans de.' },
+      { id: 's24e4', type: 'choice', q: 'Què són les 9.25?', options: ['zwänzg ab Nüüni', 'föif vor halbi Zääni', 'föif ab halbi Zääni'], a: 1, why: 'Al voltant de la mitja es compta des de la mitja.' },
+      { id: 's24e5', type: 'choice', q: 'I les 9.35?', options: ['föif vor halbi Zääni', 'föif ab halbi Zääni', 'füfezwänzg vor Zääni'], a: 1, why: 'Cinc passada la mitja.' },
+      { id: 's24e6', type: 'gap', q: 'Les set en punt: phunkt ___', a: ['sibni'], why: 'Les hores porten -i: Sibni.' },
+      { id: 's24e7', type: 'choice', q: 'Quina NO porta -i?', options: ['Vieri', 'Drüü', 'Zääni'], a: 1, why: 'L’u, les dues i les tres van sense: Äis, Zwäi, Drüü.' },
+      { id: 's24e8', type: 'gap', q: 'Quedem a les set: ___ Sibni', a: ['am'], why: 'am + hora.' },
+      { id: 's24e9', type: 'choice', q: '«um di Drüü ume» vol dir…', options: ['a les tres en punt', 'cap a les tres', 'fins a les tres'], a: 1, why: 'És l’aproximació: cap a les tres.' },
+      { id: 's24e10', type: 'gap', q: 'Pregunta l’hora: ___ Ziit isch?', a: ['wivil'], why: 'Wivil Ziit isch? També «Wie spaat isch es?».' }
+    ]
+  },
+  {
+    id: 's25',
+    book: 'schorn',
+    unit: 'c8',
+    order: 11.3,
+    title: 'Els diners suïssos',
+    emoji: '💰',
+    lesson: 'c08',
+    summary: 'De la classe 8. Cada bitllet i cada moneda tenen nom propi, i no és el que diu la xifra.',
+    points: [
+      'Les monedes es formen amb **-er** o **-fränkler**:',
+      '5 ct **de Föifer** (Föifräppler) · 10 ct **de Zääner** · 20 ct **de Zwänzger** · 50 ct **de Füfzger**',
+      '1 fr **de Äifränkler** · 2 fr **de Zwäifränkler** · 5 fr **de Föifliiber** (o Föiffränkler)',
+      '**Föifliiber** ve del francès *livre*, una lliura. És la que més sentiràs.',
+      'Els bitllets fan **-ernoote**: **d Zäänernoote** · **d Zwänzgernoote** · **d Füfzgernoote** · **d Hunderternoote** · **d Tuusigernoote**',
+      'Els bitllets nous porten un tema cadascun: 10 **Ziit** (gääl) · 20 **Liecht** (root) · 50 **Wind** (grüen) · 100 **Wasser** (blau) · 200 **Materie** (bruun) · 1000 **Spraach** (violett)',
+      'A la botiga: **S choscht …** · **Wie zaaled Si?** · **Ich gibe Ine …**'
+    ],
+    table: {
+      head: ['Valor', 'Com es diu'],
+      rows: [
+        ['5 ct', 'de Föifer'],
+        ['50 ct', 'de Füfzger'],
+        ['1 fr', 'de Äifränkler'],
+        ['5 fr', 'de Föifliiber'],
+        ['10 fr', 'd Zäänernoote'],
+        ['100 fr', 'd Hunderternoote']
+      ]
+    },
+    exercises: [
+      { id: 's25e1', type: 'gap', q: 'La moneda de 5 francs: de ___', a: ['föifliiber', 'foifliiber', 'föiffränkler'], why: 'Föifliiber, del francès «livre».' },
+      { id: 's25e2', type: 'choice', q: 'I la de 5 cèntims?', options: ['de Föifliiber', 'de Föifer', 'd Föifernoote'], a: 1, why: 'de Föifer, o Föifräppler.' },
+      { id: 's25e3', type: 'gap', q: 'El bitllet de 100: d ___', a: ['hunderternoote'], why: 'Els bitllets fan -ernoote.' },
+      { id: 's25e4', type: 'choice', q: 'Quin tema porta el bitllet de 50?', options: ['Ziit', 'Wind', 'Wasser'], a: 1, why: '50 = Wind, i és verd. El 10 és Ziit, el 100 Wasser.' },
+      { id: 's25e5', type: 'gap', q: 'A la caixa et pregunten: Wie ___ Si? (pagar)', a: ['zaaled'], why: 'zaale = pagar.' },
+      { id: 's25e6', type: 'choice', q: 'Com es diu la moneda d’un franc?', options: ['de Äiner', 'de Äifränkler', 'd Äinernoote'], a: 1, why: 'Els francs fan -fränkler; els cèntims, -er.' }
+    ]
+  },
+  {
+    id: 's26',
+    book: 'schorn',
+    unit: 'pronúncia',
+    order: 1.2,
+    title: 'P i T sense aspiració',
+    emoji: '💨',
+    lesson: 'c08',
+    summary: 'De la classe 8. En alemany la P i la T bufen; en dialecte, no. És el que més delata un accent estranger.',
+    points: [
+      'En alemany, **P** i **T** van amb un cop d’aire: *Paar*, *Tür*. En suís-alemany **no**.',
+      'L’exercici del full: dir-les de pressa alternant amb B i D, i que sonin iguals de suaus:',
+      '**Baar – Paar** · **Dur – Tuur**',
+      'Trabucallengües per practicar cada dia:',
+      '«**T**icki **T**antene **t**anzed **t**ruurig **T**ango.»',
+      '«**P**laageti **P**uure **p**oschted **P**ier.»',
+      '«Häsch äntli säb gääl Hämp gwäsche?»',
+      '«**Ch**um **ch**o **Ch**abis **ch**oche!»',
+      '«Wèèr lèèrt em echli mee Thee is Bääbitässli?»',
+      'La **ch** d’aquests exercicis és l’altre so difícil: ve del fons de la gola, com la *j* castellana però més aspra.'
+    ],
+    exercises: [
+      { id: 's26e1', type: 'choice', q: 'Com es pronuncia la P en suís-alemany?', options: ['Amb un cop d’aire, com en alemany', 'Suau, sense aire', 'Com una F'], a: 1, why: 'Sense aspiració. Per això «Paar» i «Baar» sonen gairebé igual.' },
+      { id: 's26e2', type: 'choice', q: 'Per a què serveix l’exercici «Baar – Paar»?', options: ['Per distingir-les més', 'Per acostumar-te que sonin igual de suaus', 'Per aprendre vocabulari'], a: 1, why: 'L’objectiu és treure l’aspiració de la P.' },
+      { id: 's26e3', type: 'choice', q: 'Quin so treballa «Chum cho Chabis choche»?', options: ['La ch de gola', 'La r', 'Els diftongs'], a: 0, why: 'Quatre ch seguides: ve del fons de la gola.' },
+      { id: 's26e4', type: 'gap', q: 'Completa el trabucallengües: Ticki Tantene ___ truurig Tango.', a: ['tanzed'], why: 'tanze en plural: tanzed.' },
+      { id: 's26e5', type: 'choice', q: 'Si aspires la P i la T, què passa?', options: ['Res, s’entén igual', 'Sones a alemany, no a suís', 'Es confon amb la B'], a: 1, why: 'És una de les coses que més delata l’accent.' }
+    ]
   }
 ]
 

@@ -50,6 +50,12 @@ export const LESSONS = [
     title: 'Classe 7 — öpper/öppis/öppe i verbs separables',
     date: '2026-09-30',
     note: 'Full de vocabulari p.105 (grups 24–29): negació, roba, carrer, verbs d’acció i camp. I «En Glücksfall» p.30: öpper/öppis/öppe i quins verbs se separen.'
+  },
+  {
+    id: 'c08',
+    title: 'Classe 8 — nombres, hora i diners',
+    date: '2026-10-09',
+    note: 'Full de vocabulari p.106 (grups 30–34), els nombres, els ordinals, l’edat i l’hora (p.20), i els diners suïssos (p.23). També els exercicis de pronúncia de P i T.'
   }
 ]
 
